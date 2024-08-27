@@ -26,4 +26,4 @@ ENV NAME=knowemployee
 
 # Run app.py when the container launches
 #CMD ["uvicorn", "knowemployee:app", "--host", "0.0.0.0", "--port", "8005", "--log-level", "debug"]
-CMD ["gunicorn", "-w", "3", "-k", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:8005", "wsgi:app", "-c", "gunicorn.conf.py"]
+CMD ["gunicorn", "wsgi:app", "-c", "gunicorn.conf.py"]
