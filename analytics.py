@@ -1,4 +1,4 @@
-from knowemployee import app, db, TestingResult, GPTPricer, decrypt
+from server import app, db, TestingResult, GPTPricer, decrypt
 import time
 import json
 import os
@@ -12,7 +12,7 @@ load_dotenv()
 
 # Connect to OpenAI
 client = OpenAI(
-    api_key=os.getenv('OPENAI_API_KEY'),
+    api_key=os.getenv('API_KEY_OPENAI'),
     organization=os.getenv('OPENAI_ORGANIZATION_ID'),
 )
 # Set the maximum number of tokens that can be used in a single request and the cost of using them

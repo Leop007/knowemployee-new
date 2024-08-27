@@ -1,0 +1,7 @@
+__pycache__
+*.pyc
+*.pyo
+.anima
+.venv
+gunicorn/
+.idea/
