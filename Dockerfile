@@ -1,14 +1,20 @@
-FROM python:bullseye
+FROM python:3.10-alpine
 
 # Install necessary dependencies
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    pkg-config \
-    default-libmysqlclient-dev \
-    libmariadb-dev \
-    gcc \
-    && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y \
+#     build-essential \
+#     pkg-config \
+#     default-libmysqlclient-dev \
+#     libmariadb-dev \
+#     gcc \
+#     && rm -rf /var/lib/apt/lists/*
 
+RUN apk add --no-cache \
+    build-base \
+    pkgconf \
+    mariadb-dev \
+    python3-dev 
+    
 # Set the working directory in the container
 WORKDIR /know
 

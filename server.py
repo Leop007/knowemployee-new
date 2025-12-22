@@ -35,6 +35,7 @@ from PIL import Image
 import io
 from threading import Thread
 import subprocess
+import logging
 
 
 
@@ -46,6 +47,14 @@ NAME_PLATFORM = "KnowEmployee"
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '97473497e94c7289a98fae8e9636ae67'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///service.db'
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
 DG_API_KEY = os.getenv('DEEPGRAM_API_KEY') 
 KEY = b'LIuLpwBjtQgsOlEKmY43Zd5xO_HqwW332ZM478rkHRM='
 MIMETYPE = 'audio/wav'
@@ -171,13 +180,30 @@ def qrCodeAnonimusFeedback(hash, company_name):
     return base64_img
 
 def send_mail(recipient, token, type="register"):
-
+    """
+    Send email to recipient with confirmation token.
+    
+    Args:
+        recipient: Email address of the recipient
+        token: JWT token for email confirmation
+        type: Type of email (default: "register")
+    
+    Returns:
+        bool: True if email sent successfully, False otherwise
+    """
+    logger.info(f"Attempting to send {type} email to: {recipient}")
+    
     msg = MIMEMultipart()
     body = f"Click the link to confirm: {DOMAIN}/confirm/{token}"
     subject = NAME_PLATFORM + ' | eMail confirmation'
-    sender = "knowemployee.ca@gmail.com"
-    email_password = "xeuvnobietzcfdld"
+    sender = os.getenv('EMAIL_SENDER', 'knowemployee.ca@gmail.com')
+    email_password = os.getenv('EMAIL_PASSWORD')
+    
+    if not email_password:
+        logger.error("EMAIL_PASSWORD environment variable is not set. Cannot send email.")
+        return False
 
+    logger.debug(f"Email configuration - Sender: {sender}, SMTP: smtp.gmail.com:465")
     
     msg['Subject'] = subject
     msg['From'] = sender
@@ -185,18 +211,37 @@ def send_mail(recipient, token, type="register"):
     msg.attach(MIMEText(body, 'plain'))
     
     try:
+        logger.debug("Connecting to SMTP server...")
         smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        logger.debug("SMTP connection established")
         
+        logger.debug("Authenticating with SMTP server...")
         smtp_server.login(sender, email_password)
+        logger.debug("SMTP authentication successful")
+        
+        logger.debug(f"Sending email to {recipient}...")
         smtp_server.sendmail(sender, recipient, msg.as_string())
+        logger.info(f"Email successfully sent to {recipient} (type: {type})")
+        
         smtp_server.quit()
-        print("Verifivation eMail sent!")
+        logger.debug("SMTP connection closed")
         
         return True
     
+    except smtplib.SMTPAuthenticationError as e:
+        logger.error(f"SMTP authentication failed for {sender}: {str(e)}")
+        return False
+    except smtplib.SMTPRecipientsRefused as e:
+        logger.error(f"SMTP recipient refused: {recipient} - {str(e)}")
+        return False
+    except smtplib.SMTPServerDisconnected as e:
+        logger.error(f"SMTP server disconnected: {str(e)}")
+        return False
+    except smtplib.SMTPException as e:
+        logger.error(f"SMTP error occurred: {str(e)}")
+        return False
     except Exception as e:
-        print(f"Error sending email: {e}")
-        
+        logger.error(f"Unexpected error sending email to {recipient}: {str(e)}", exc_info=True)
         return False
 
 @app.route('/')
@@ -214,6 +259,22 @@ def home():
             pass
 
     return render_template('index.html', is_authenticated=is_authenticated)
+
+@app.route('/contact')
+def contact():
+    token = session.get('token', None)
+    is_authenticated = False
+
+    if token:
+        try:
+            decoded_token = jwt.decode(token, app.config['SECRET_KEY'], algorithms=["HS256"])
+            current_user = User.query.filter_by(public_id=decoded_token['public_id']).first()
+            if current_user:
+                is_authenticated = True
+        except (jwt.ExpiredSignatureError, jwt.InvalidTokenError):
+            pass
+
+    return render_template('contact.html', is_authenticated=is_authenticated)
 
 def token_required(f):
     @wraps(f)

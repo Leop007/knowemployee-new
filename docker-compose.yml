@@ -1,0 +1,29 @@
+
+services:
+  knowemployee:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: knowemployee-app
+    ports:
+      - "8000:8005"
+    volumes:
+      # Persist SQLite database
+      - ./instance:/know/instance
+      # Optional: Mount static files if you want to edit them without rebuilding
+      - ./static:/know/static
+      - ./templates:/know/templates
+    environment:
+      - NAME=knowemployee
+      # Load from .env file (see env_file below)
+    env_file:
+      - .env
+    restart: unless-stopped
+    # Optional: Uncomment and install wget/curl in Dockerfile if you want healthchecks
+    # healthcheck:
+    #   test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8005/"] || exit 1
+    #   interval: 30s
+    #   timeout: 10s
+    #   retries: 3
+    #   start_period: 40s
+
