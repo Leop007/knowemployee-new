@@ -21,27 +21,27 @@
 <div class="list_menu">
     <ul class="list">
         <li>
-            <a href="/dashboard" class="only">Dashboard</a>
+            <a href="/dashboard" class="only">{{ _('Dashboard') }}</a>
         </li>
         <li>
-            <a href="/dashboard/services/feedback/custom" class="only">Surveys</a>
+            <a href="/dashboard/services/feedback/custom" class="only">{{ _('Surveys') }}</a>
         </li>
         <li>
-            <a href="/dashboard/services" class="only">Analytics</a>
+            <a href="/dashboard/services" class="only">{{ _('Analytics') }}</a>
         </li>
         <li>
-            <a href="/dashboard/settings" class="only">Settings</a>
+            <a href="/dashboard/settings" class="only">{{ _('Settings') }}</a>
         </li>
         <li>
-            <a href="#" class="only support">Support</a>
+            <a href="#" class="only support">{{ _('Support') }}</a>
         </li>
         <li>
-            <a href="/logout" class="only logout">Logout</a>
+            <a href="/logout" class="only logout">{{ _('Logout') }}</a>
         </li>
     </ul>
 </div>
 
 <div class="sub_menu"> 
-    <h3>Your plan: {{ "Trial" if data_page.user_data.plan == '0' else data_page.user_data.plan }}</h3>
-    <a href="/plan">Change plan</a>
+    <h3>{{ _('Your plan:') }} {{ _('Trial') if data_page.user_data.plan == '0' else data_page.user_data.plan }}</h3>
+    <a href="/plan">{{ _('Change plan') }}</a>
 </div>

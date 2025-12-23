@@ -4,26 +4,26 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path>
             </svg>
-            Create a Survey
+            {{ _('Create a Survey') }}
         </a>
     </div>
     <div class="name_link">
-        <input type="text" class="shadow big_fields" placeholder="Survey Name">
+        <input type="text" class="shadow big_fields" placeholder="{{ _('Survey Name') }}">
         <span id="err-n"></span>
         <button class="button button_big shadow" disabled d-e="{{ data_page.edit }}">
             {% if data_page.edit %}
-            <span>Save changes</span>
+            <span>{{ _('Save changes') }}</span>
             {% else %}
-            <span>Get the link</span>
+            <span>{{ _('Get the link') }}</span>
             {% endif %}
         </button>
     </div>
     <div class="fe">
         <div class="link_line">
             <div class="row">
-                <label class="visually-hidden" for="q-new">Question</label>
-                <input id="q-new" type="text" placeholder="Add question">
-                <button class="shadow" id="add" disabled>Add the question</button>
+                <label class="visually-hidden" for="q-new">{{ _('Question') }}</label>
+                <input id="q-new" type="text" placeholder="{{ _('Add question') }}">
+                <button class="shadow" id="add" disabled>{{ _('Add the question') }}</button>
             </div>
             <span id="err-q"></span>
             <div class="questions" draggable="true">
@@ -48,74 +48,70 @@
         <div class="link_line">
 
             <div class="check_container" id="ai_testing">
-                <h3>Provide recommendations from AI?</h3>
-                <p>Our AI component can provide you with recommendations on how to improve your work environment.</p>
+                <h3>{{ _('Provide recommendations from AI?') }}</h3>
+                <p>{{ _('Our AI component can provide you with recommendations on how to improve your work environment.') }}</p>
                 {% if data_page.obj %}
                 <div class="check">
-                    <button {% if data_page.obj.ai %}class="active" {% endif %}>Yes</button>
-                    <button {% if not data_page.obj.ai %}class="active" {% endif %}>No</button>
+                    <button {% if data_page.obj.ai %}class="active" {% endif %}>{{ _('Yes') }}</button>
+                    <button {% if not data_page.obj.ai %}class="active" {% endif %}>{{ _('No') }}</button>
                 </div>
                 {% else %}
                 <div class="check">
-                    <button>Yes</button>
-                    <button class="active">No</button>
+                    <button>{{ _('Yes') }}</button>
+                    <button class="active">{{ _('No') }}</button>
                 </div>
                 {% endif %}
             </div>
 
             <div class="check_container" id="anonymous_test">
-                <h3>Will the link be anonymous?</h3>
-                <p>If the link is anonymous, the user will see that they can say anything, and you won't see what the
-                    user said.</p>
+                <h3>{{ _('Will the link be anonymous?') }}</h3>
+                <p>{{ _('If the link is anonymous, the user will see that they can say anything, and you won\'t see what the user said.') }}</p>
                 {% if data_page.obj %}
                 <div class="check">
                     <button {% if data_page.obj.anonimus_feedback==
-                    "1" %}class="active"{% endif %}>Yes</button>
-                    <button {% if data_page.obj.anonimus_feedback !="1" %}class="active" {% endif %}>No</button>
+                    "1" %}class="active"{% endif %}>{{ _('Yes') }}</button>
+                    <button {% if data_page.obj.anonimus_feedback !="1" %}class="active" {% endif %}>{{ _('No') }}</button>
                 </div>
                 {% else %}
                 <div class="check">
-                    <button class="active">Yes</button>
-                    <button>No</button>
+                    <button class="active">{{ _('Yes') }}</button>
+                    <button>{{ _('No') }}</button>
                 </div>
                 {% endif %}
             </div>
 
             <div class="check_container" id="multiple">
-                <h3>Multiple links?</h3>
-                <p>YES means that one user can leave multiple reviews, NO means that on this link you can leave only
-                    one-time review.</p>
+                <h3>{{ _('Multiple links?') }}</h3>
+                <p>{{ _('YES means that one user can leave multiple reviews, NO means that on this link you can leave only one-time review.') }}</p>
                 {% if data_page.obj %}
                 <div class="check">
-                    <button {% if data_page.obj.multiple %}class="active" {% endif %}>Yes</button>
-                    <button {% if not data_page.obj.multiple %}class="active" {% endif %}>No</button>
+                    <button {% if data_page.obj.multiple %}class="active" {% endif %}>{{ _('Yes') }}</button>
+                    <button {% if not data_page.obj.multiple %}class="active" {% endif %}>{{ _('No') }}</button>
                 </div>
                 {% else %}
                 <div class="check">
-                    <button>Yes</button>
-                    <button class="active">No</button>
+                    <button>{{ _('Yes') }}</button>
+                    <button class="active">{{ _('No') }}</button>
                 </div>
                 {% endif %}
             </div>
 
             {% if data_page.obj %}
             <div class="check_container {{ 'hidden' if data_page.obj.anonimus_feedback == '1' }}" id="username_req">
-                <h3>Requesting a username?</h3>
-                <p>This function is so that you can identify the person who will be tested. If you allow it, we will ask
-                    for the person's name before we start the review/testing process.</p>
+                <h3>{{ _('Requesting a username?') }}</h3>
+                <p>{{ _('This function is so that you can identify the person who will be tested. If you allow it, we will ask for the person\'s name before we start the review/testing process.') }}</p>
                 <div class="check">
-                    <button {% if data_page.obj.username_bool %}class="active" {% endif %}>Yes</button>
-                    <button {% if not data_page.obj.username_bool %}class="active" {% endif %}>No</button>
+                    <button {% if data_page.obj.username_bool %}class="active" {% endif %}>{{ _('Yes') }}</button>
+                    <button {% if not data_page.obj.username_bool %}class="active" {% endif %}>{{ _('No') }}</button>
                 </div>
             </div>
             {% else %}
             <div class="check_container hidden" id="username_req">
-                <h3>Requesting a username?</h3>
-                <p>This function is so that you can identify the person who will be tested. If you allow it, we will ask
-                    for the person's name before we start the review/testing process.</p>
+                <h3>{{ _('Requesting a username?') }}</h3>
+                <p>{{ _('This function is so that you can identify the person who will be tested. If you allow it, we will ask for the person\'s name before we start the review/testing process.') }}</p>
                 <div class="check">
-                    <button>Yes</button>
-                    <button class="active">No</button>
+                    <button>{{ _('Yes') }}</button>
+                    <button class="active">{{ _('No') }}</button>
                 </div>
             </div>
             {% endif %}

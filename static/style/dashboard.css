@@ -318,6 +318,19 @@ a:hover {
   font-size: 11px;
 }
 
+/* Dashboard header wrapper for positioning language selector */
+.dashboard-header-wrapper {
+  position: relative;
+}
+
+.dashboard-header-wrapper .language-selector {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  right: 20px !important;
+  z-index: 10000;
+}
+
 .alert_promo {
   width: 100%;
   justify-content: center;
