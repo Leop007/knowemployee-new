@@ -8,6 +8,7 @@
     <title>Sign Up | {{ name_platform }}</title>
 </head>
 <body>
+{% include "components/_language_selector.html" %}
 <div class="container sign_up">
     <a href="/"><img src="../static/assets/images/logo-dark.svg"></a>
     <section class="wrapper">
@@ -267,6 +268,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <script src="{{ url_for('static', filename='assets/04b29480233f4def5c875875b6bdc3b1_no_obfscation.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/menu/script.js') }}"></script>
 </div>
 </body>
 </html>

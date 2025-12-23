@@ -281,6 +281,11 @@ def set_language(language):
     """Set the language in session and redirect back"""
     if language in app.config['LANGUAGES']:
         session['language'] = language
+    
+    # Check for redirect parameter, otherwise use referrer or home
+    redirect_url = request.args.get('redirect')
+    if redirect_url:
+        return redirect(redirect_url)
     return redirect(request.referrer or url_for('home'))
 
 @app.route('/')
