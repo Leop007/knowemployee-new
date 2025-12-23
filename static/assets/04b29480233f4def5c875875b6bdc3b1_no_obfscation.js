@@ -280,14 +280,16 @@ function signup(){
             resetPasswordFields();
 
             $.ajax({
-                url: './static/assets/country.json',
+                url: '/static/assets/country.json',
                 type: 'GET',
                 dataType: 'json'
             }).done(function(data) {
+                let countryFound = false;
                 data.forEach(function(country) {
                     const countryName = country.data.code.toLowerCase();
                     const isSelected = countryName === $('#countries').val();
                     if(isSelected){
+                        countryFound = true;
                         obj['__data__']['__user__']['code_number'] = country.data.number;
                         obj['__data__']['__user__']['timezone'] = country.data.timezone;
 
@@ -332,9 +334,28 @@ function signup(){
                                     $('#confirm').addClass("invalid")
                                 }
                             }
-                        })
+                        }).fail(function(xhr, status, error) {
+                            console.error('Registration error:', error);
+                            $('.set .loader').addClass('hidden');
+                            $('.set p').removeClass('hidden');
+                            $('.hold').removeClass('show');
+                            alert('Registration failed. Please try again.');
+                        });
                     }
                 });
+                if (!countryFound) {
+                    console.error('Country not found');
+                    $('.set .loader').addClass('hidden');
+                    $('.set p').removeClass('hidden');
+                    $('.hold').removeClass('show');
+                    alert('Please select a valid country.');
+                }
+            }).fail(function(xhr, status, error) {
+                console.error('Failed to load country data:', error);
+                $('.set .loader').addClass('hidden');
+                $('.set p').removeClass('hidden');
+                $('.hold').removeClass('show');
+                alert('Failed to load country data. Please refresh the page.');
             });
         }
 
@@ -377,6 +398,16 @@ function signup(){
                         $('#password').addClass("invalid")
                     }
                 }
+            }).fail(function(xhr, status, error) {
+                console.error('Login error:', error, xhr.responseText);
+                $('.set .loader').addClass('hidden');
+                $('.set p').removeClass('hidden');
+                $('.hold').removeClass('show');
+                let errorMsg = 'Login failed. Please try again.';
+                if (xhr.responseJSON && xhr.responseJSON.message) {
+                    errorMsg = xhr.responseJSON.message;
+                }
+                alert(errorMsg);
             })
         }
     }

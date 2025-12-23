@@ -1,0 +1,744 @@
+# French translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-12-23 22:28+0000\n"
+"PO-Revision-Date: 2025-12-23 23:20+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: templates/footer.html:6
+msgid "Services"
+msgstr "Services"
+
+#: templates/footer.html:9
+msgid "Anonymous feedback"
+msgstr "Retour d'information anonyme"
+
+#: templates/footer.html:12
+msgid "Custom feedback"
+msgstr "Retour d'information personnalisé"
+
+#: templates/footer.html:15
+msgid "Metrica feedback"
+msgstr "Retour d'information métrique"
+
+#: templates/footer.html:21
+msgid "Why do we"
+msgstr "Pourquoi nous"
+
+#: templates/footer.html:24
+msgid "About Us"
+msgstr "À propos de nous"
+
+#: templates/footer.html:27
+msgid "Partners"
+msgstr "Partenaires"
+
+#: templates/footer.html:30 templates/index.html:30
+msgid "Contact us"
+msgstr "Contactez-nous"
+
+#: templates/footer.html:36
+msgid "Legal"
+msgstr "Légal"
+
+#: templates/footer.html:39
+msgid "Cookie Policy"
+msgstr "Politique de cookies"
+
+#: templates/footer.html:42
+msgid "Privacy Policy"
+msgstr "Politique de confidentialité"
+
+#: templates/footer.html:54
+msgid ""
+"We provide tools to analyze your workplace environment, and have created "
+"a solution that can improve your employee satisfaction. We know that if a"
+" person comes to work in a good mood, they'll be more likely to perform "
+"at work."
+msgstr ""
+"Nous fournissons des outils pour analyser l'environnement de votre lieu "
+"de travail et avons créé une solution qui peut améliorer la satisfaction "
+"de vos employés. Nous savons que si une personne vient travailler de "
+"bonne humeur, elle sera plus susceptible de bien performer au travail."
+
+#: templates/footer.html:55
+msgid ""
+"Get to know your employee better, improve the work environment with our "
+"analysis tools"
+msgstr ""
+"Mieux connaître vos employés, améliorer l'environnement de travail avec "
+"nos outils d'analyse"
+
+#: templates/footer.html:59
+msgid "All rights reserved."
+msgstr "Tous droits réservés."
+
+#: templates/header-main.html:117
+msgid "Know Employee is an"
+msgstr "Know Employee est une startup"
+
+#: templates/header-main.html:117
+msgid ""
+"-powered startup reshaping how businesses assess employee satisfaction. "
+"With cutting-edge algorithms ensuring anonymity, the platform delivers "
+"insightful analyses of workforce sentiment."
+msgstr ""
+"alimentée par l'IA qui transforme la façon dont les entreprises évaluent "
+"la satisfaction des employés. Avec des algorithmes de pointe garantissant"
+" l'anonymat, la plateforme fournit des analyses approfondies du sentiment"
+" de la main-d'œuvre."
+
+#: templates/header-main.html:119
+msgid "Start the process"
+msgstr "Démarrer le processus"
+
+#: templates/index.html:11
+msgid "Anonymous"
+msgstr "Anonyme"
+
+#: templates/index.html:12
+msgid "Employees can express themselves without fear"
+msgstr "Les employés peuvent s'exprimer sans crainte"
+
+#: templates/index.html:15
+msgid "Real-time"
+msgstr "Temps réel"
+
+#: templates/index.html:16
+msgid "Real-time analysis for immediate impact"
+msgstr "Analyse en temps réel pour un impact immédiat"
+
+#: templates/index.html:19
+msgid "Advanced"
+msgstr "Avancé"
+
+#: templates/index.html:20
+msgid "Cutting-edge AI algorithm ensuring accuracy"
+msgstr "Algorithme d'IA de pointe garantissant la précision"
+
+#: templates/index.html:28
+msgid ""
+"Still have questions about our product? Would you like to test a product "
+"in your company? Contact us to receive a personal advantageous offer."
+msgstr ""
+"Vous avez encore des questions sur notre produit ? Souhaitez-vous tester "
+"un produit dans votre entreprise ? Contactez-nous pour recevoir une offre"
+" personnelle avantageuse."
+
+#: templates/menu.html:16
+msgid "Home"
+msgstr "Accueil"
+
+#: templates/menu.html:17
+msgid "Contact"
+msgstr "Contact"
+
+#: templates/menu.html:18
+msgid "Sign Up"
+msgstr "S'inscrire"
+
+#: templates/menu.html:19
+msgid "Sign In"
+msgstr "Se connecter"
+
+#: templates/sign_in.html:16
+msgid "Sign in"
+msgstr "Se connecter"
+
+#: templates/sign_in.html:21 templates/sign_up.html:27
+msgid "E-mail"
+msgstr "E-mail"
+
+#: templates/sign_in.html:38 templates/sign_up.html:51
+msgid "Password"
+msgstr "Mot de passe"
+
+#: templates/sign_in.html:51
+msgid "Continue"
+msgstr "Continuer"
+
+#: templates/sign_in.html:55
+msgid "You still don't have an account?"
+msgstr "Vous n'avez toujours pas de compte ?"
+
+#: templates/sign_in.html:55
+msgid "Sign up."
+msgstr "S'inscrire."
+
+#: templates/sign_up.html:16
+msgid "Sign up"
+msgstr "S'inscrire"
+
+#: templates/sign_up.html:22
+msgid "Company Name"
+msgstr "Nom de l'entreprise"
+
+#: templates/sign_up.html:33
+msgid "Country"
+msgstr "Pays"
+
+#: templates/sign_up.html:58
+msgid "Business Address"
+msgstr "Adresse professionnelle"
+
+#: templates/sign_up.html:63
+msgid "Postal Code"
+msgstr "Code postal"
+
+#: templates/sign_up.html:84
+msgid "Confirm Password"
+msgstr "Confirmer le mot de passe"
+
+#: templates/sign_up.html:89
+msgid "I have carefully reviewed and hereby accept the"
+msgstr "J'ai soigneusement examiné et j'accepte par la présente les"
+
+#: templates/sign_up.html:91
+msgid "terms of use"
+msgstr "conditions d'utilisation"
+
+#: templates/sign_up.html:91
+msgid "and"
+msgstr "et la"
+
+#: templates/sign_up.html:92
+msgid "privacy policy"
+msgstr "politique de confidentialité"
+
+#: templates/sign_up.html:92
+msgid ""
+"By continuing to use this service, I acknowledge and agree to comply with"
+" all applicable terms and conditions."
+msgstr ""
+"En continuant à utiliser ce service, je reconnais et accepte de me "
+"conformer à tous les termes et conditions applicables."
+
+#: templates/sign_up.html:106
+msgid "Register a company"
+msgstr "Enregistrer une entreprise"
+
+#: templates/sign_up.html:110
+msgid "You already have an account?"
+msgstr "Vous avez déjà un compte ?"
+
+#: templates/sign_up.html:110
+msgid "Sign in."
+msgstr "Se connecter."
+
+#: templates/subscribe.html:4
+msgid "Subscribe"
+msgstr "S'abonner"
+
+#: templates/subscribe.html:5
+msgid "Subscribe so not to miss exclusive offers"
+msgstr "Abonnez-vous pour ne pas manquer les offres exclusives"
+
+#: templates/w-know.html:3
+msgid "How does it work?"
+msgstr "Comment ça fonctionne ?"
+
+#: templates/w-know.html:4
+msgid ""
+"By understanding and prioritizing the well-being of your team, we aim to "
+"contribute to the creation of a positive work environment that inherently"
+" fosters success."
+msgstr ""
+"En comprenant et en priorisant le bien-être de votre équipe, nous visons "
+"à contribuer à la création d'un environnement de travail positif qui "
+"favorise intrinsèquement le succès."
+
+#: templates/w-know.html:6
+msgid ""
+"We prepare questions to determine necessary changes or checks in your "
+"company"
+msgstr ""
+"Nous préparons des questions pour déterminer les changements ou "
+"vérifications nécessaires dans votre entreprise"
+
+#: templates/w-know.html:7
+msgid "We process your answers confidentially without recording voice messages"
+msgstr ""
+"Nous traitons vos réponses de manière confidentielle sans enregistrer de "
+"messages vocaux"
+
+#: templates/w-know.html:8
+msgid "After the questionnaire, you can provide your feedback for AI analysis"
+msgstr ""
+"Après le questionnaire, vous pouvez fournir vos commentaires pour "
+"l'analyse par IA"
+
+#: templates/w-know.html:9
+msgid "Our platform informs the employer about staff preferences and concerns"
+msgstr ""
+"Notre plateforme informe l'employeur des préférences et préoccupations du"
+" personnel"
+
+#: templates/header-contact.html:4
+msgid "Contact us"
+msgstr "Contactez-nous"
+
+#: templates/cookie_policy.html:11
+msgid "Cookie Policy"
+msgstr "Politique de cookies"
+
+#: templates/cookie_policy.html:14
+msgid "Last updated:"
+msgstr "Dernière mise à jour :"
+
+#: templates/cookie_policy.html:17
+msgid "This Cookie Policy explains how"
+msgstr "Cette politique de cookies explique comment"
+
+#: templates/cookie_policy.html:17
+msgid "(\"we\", \"us\", \"our\")"
+msgstr "(\"nous\", \"notre\")"
+
+#: templates/cookie_policy.html:17
+msgid "uses cookies and similar technologies when you visit our website"
+msgstr "utilise des cookies et technologies similaires lorsque vous visitez notre site web"
+
+#: templates/cookie_policy.html:23
+msgid "What are cookies?"
+msgstr "Que sont les cookies ?"
+
+#: templates/cookie_policy.html:25
+msgid "Cookies are small text files that are stored on your device (computer, smartphone, tablet) when you visit a website. They are widely used to make websites work properly, improve efficiency, and provide information to the website owner."
+msgstr "Les cookies sont de petits fichiers texte stockés sur votre appareil (ordinateur, smartphone, tablette) lorsque vous visitez un site web. Ils sont largement utilisés pour faire fonctionner correctement les sites web, améliorer l'efficacité et fournir des informations au propriétaire du site web."
+
+#: templates/cookie_policy.html:30
+msgid "Cookies can be:"
+msgstr "Les cookies peuvent être :"
+
+#: templates/cookie_policy.html:33
+msgid "Session cookies"
+msgstr "Cookies de session"
+
+#: templates/cookie_policy.html:33
+msgid "deleted when you close your browser"
+msgstr "supprimés lorsque vous fermez votre navigateur"
+
+#: templates/cookie_policy.html:34
+msgid "Persistent cookies"
+msgstr "Cookies persistants"
+
+#: templates/cookie_policy.html:34
+msgid "remain on your device for a defined period or until deleted"
+msgstr "restent sur votre appareil pendant une période définie ou jusqu'à leur suppression"
+
+#: templates/cookie_policy.html:39
+msgid "Types of cookies we use"
+msgstr "Types de cookies que nous utilisons"
+
+#: templates/cookie_policy.html:41
+msgid "Strictly necessary cookies"
+msgstr "Cookies strictement nécessaires"
+
+#: templates/cookie_policy.html:43
+msgid "These cookies are essential for the website to function correctly. They enable core features such as security, network management, and accessibility."
+msgstr "Ces cookies sont essentiels au bon fonctionnement du site web. Ils activent des fonctionnalités de base telles que la sécurité, la gestion du réseau et l'accessibilité."
+
+#: templates/cookie_policy.html:47
+msgid "Legal basis: Legitimate interest"
+msgstr "Base légale : Intérêt légitime"
+
+#: templates/cookie_policy.html:48
+msgid "Consent required: No"
+msgstr "Consentement requis : Non"
+
+#: templates/cookie_policy.html:51
+msgid "Functional cookies"
+msgstr "Cookies fonctionnels"
+
+#: templates/cookie_policy.html:53
+msgid "These cookies allow the website to remember choices you make (such as language or region) and provide enhanced, more personalized features."
+msgstr "Ces cookies permettent au site web de se souvenir des choix que vous faites (comme la langue ou la région) et de fournir des fonctionnalités améliorées et plus personnalisées."
+
+#: templates/cookie_policy.html:57
+msgid "Legal basis: Consent"
+msgstr "Base légale : Consentement"
+
+#: templates/cookie_policy.html:58
+msgid "Consent required: Yes"
+msgstr "Consentement requis : Oui"
+
+#: templates/cookie_policy.html:61
+msgid "Analytics / performance cookies"
+msgstr "Cookies d'analyse / de performance"
+
+#: templates/cookie_policy.html:63
+msgid "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously."
+msgstr "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site web en collectant et en rapportant des informations de manière anonyme."
+
+#: templates/cookie_policy.html:69
+msgid "Examples:"
+msgstr "Exemples :"
+
+#: templates/cookie_policy.html:71
+msgid "Page visit statistics"
+msgstr "Statistiques de visite de pages"
+
+#: templates/cookie_policy.html:72
+msgid "Traffic sources"
+msgstr "Sources de trafic"
+
+#: templates/cookie_policy.html:73
+msgid "Error monitoring"
+msgstr "Surveillance des erreurs"
+
+#: templates/cookie_policy.html:78
+msgid "Marketing / advertising cookies"
+msgstr "Cookies marketing / publicitaires"
+
+#: templates/cookie_policy.html:80
+msgid "These cookies are used to track visitors across websites in order to display relevant advertisements and measure the effectiveness of marketing campaigns."
+msgstr "Ces cookies sont utilisés pour suivre les visiteurs sur différents sites web afin d'afficher des publicités pertinentes et de mesurer l'efficacité des campagnes marketing."
+
+#: templates/cookie_policy.html:90
+msgid "Third-party cookies"
+msgstr "Cookies tiers"
+
+#: templates/cookie_policy.html:92
+msgid "We may allow third-party service providers to place cookies on your device to provide analytics, functionality, or marketing services."
+msgstr "Nous pouvons autoriser des prestataires de services tiers à placer des cookies sur votre appareil pour fournir des services d'analyse, de fonctionnalité ou de marketing."
+
+#: templates/cookie_policy.html:96
+msgid "These third parties may collect data independently in accordance with their own privacy policies."
+msgstr "Ces tiers peuvent collecter des données indépendamment conformément à leurs propres politiques de confidentialité."
+
+#: templates/cookie_policy.html:101
+msgid "Cookie consent and management"
+msgstr "Consentement et gestion des cookies"
+
+#: templates/cookie_policy.html:103
+msgid "When you first visit our website, you will be presented with a cookie banner allowing you to:"
+msgstr "Lors de votre première visite sur notre site web, une bannière de cookies vous sera présentée vous permettant de :"
+
+#: templates/cookie_policy.html:106
+msgid "Accept all cookies"
+msgstr "Accepter tous les cookies"
+
+#: templates/cookie_policy.html:107
+msgid "Reject non-essential cookies"
+msgstr "Rejeter les cookies non essentiels"
+
+#: templates/cookie_policy.html:108
+msgid "Customize your cookie preferences"
+msgstr "Personnaliser vos préférences de cookies"
+
+#: templates/cookie_policy.html:111
+msgid "You can change or withdraw your consent at any time by adjusting your cookie settings or browser preferences."
+msgstr "Vous pouvez modifier ou retirer votre consentement à tout moment en ajustant vos paramètres de cookies ou les préférences de votre navigateur."
+
+#: templates/cookie_policy.html:117
+msgid "How to manage cookies in your browser"
+msgstr "Comment gérer les cookies dans votre navigateur"
+
+#: templates/cookie_policy.html:119
+msgid "Most browsers allow you to view, delete, or block cookies. Instructions vary by browser. Please refer to your browser's help section for more information."
+msgstr "La plupart des navigateurs vous permettent de visualiser, supprimer ou bloquer les cookies. Les instructions varient selon le navigateur. Veuillez consulter la section d'aide de votre navigateur pour plus d'informations."
+
+#: templates/cookie_policy.html:123
+msgid "Please note that disabling cookies may affect the functionality of the website."
+msgstr "Veuillez noter que la désactivation des cookies peut affecter la fonctionnalité du site web."
+
+#: templates/cookie_policy.html:128
+msgid "Data protection and privacy"
+msgstr "Protection des données et confidentialité"
+
+#: templates/cookie_policy.html:130
+msgid "Any personal data collected through cookies is processed in accordance with our"
+msgstr "Toutes les données personnelles collectées via les cookies sont traitées conformément à notre"
+
+#: templates/cookie_policy.html:130
+msgid "and applicable data protection laws, including the GDPR."
+msgstr "et aux lois applicables sur la protection des données, y compris le RGPD."
+
+#: templates/cookie_policy.html:136
+msgid "Updates to this Cookie Policy"
+msgstr "Mises à jour de cette politique de cookies"
+
+#: templates/cookie_policy.html:138
+msgid "We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our practices. The updated version will be published on this page with a revised \"Last updated\" date."
+msgstr "Nous pouvons mettre à jour cette politique de cookies de temps à autre pour refléter les changements technologiques, législatifs ou nos pratiques. La version mise à jour sera publiée sur cette page avec une date de \"Dernière mise à jour\" révisée."
+
+#: templates/cookie_policy.html:145
+msgid "Contact information"
+msgstr "Informations de contact"
+
+#: templates/cookie_policy.html:147
+msgid "If you have any questions about this Cookie Policy or our use of cookies, please contact us:"
+msgstr "Si vous avez des questions concernant cette politique de cookies ou notre utilisation des cookies, veuillez nous contacter :"
+
+#: templates/cookie_policy.html:150
+msgid "Email:"
+msgstr "E-mail :"
+
+#: templates/cookie_policy.html:151
+msgid "Phone:"
+msgstr "Téléphone :"
+
+#: templates/cookie_policy.html:152
+msgid "Address:"
+msgstr "Adresse :"
+
+#: templates/privacy_policy.html:11
+msgid "Privacy Policy"
+msgstr "Politique de confidentialité"
+
+#: templates/privacy_policy.html:14
+msgid "Last updated:"
+msgstr "Dernière mise à jour :"
+
+#: templates/privacy_policy.html:17
+msgid "This Privacy Policy describes how"
+msgstr "Cette politique de confidentialité décrit comment"
+
+#: templates/privacy_policy.html:17
+msgid "(\"we\", \"us\", or \"our\") collects, uses, and discloses information when you visit or use our website"
+msgstr "(\"nous\", \"notre\") collecte, utilise et divulgue des informations lorsque vous visitez ou utilisez notre site web"
+
+#: templates/privacy_policy.html:17
+msgid "(the \"Website\")."
+msgstr "(le \"Site web\")."
+
+#: templates/privacy_policy.html:23
+msgid "By accessing or using the Website, you agree to the collection and use of information in accordance with this Privacy Policy."
+msgstr "En accédant ou en utilisant le Site web, vous acceptez la collecte et l'utilisation d'informations conformément à cette politique de confidentialité."
+
+#: templates/privacy_policy.html:30
+msgid "Information we collect"
+msgstr "Informations que nous collectons"
+
+#: templates/privacy_policy.html:32
+msgid "We may collect the following categories of information:"
+msgstr "Nous pouvons collecter les catégories d'informations suivantes :"
+
+#: templates/privacy_policy.html:35
+msgid "Personal information"
+msgstr "Informations personnelles"
+
+#: templates/privacy_policy.html:35
+msgid "such as name, email address, phone number, company name, or other information you voluntarily provide"
+msgstr "telles que le nom, l'adresse e-mail, le numéro de téléphone, le nom de l'entreprise ou d'autres informations que vous fournissez volontairement"
+
+#: templates/privacy_policy.html:36
+msgid "Internet or technical information"
+msgstr "Informations Internet ou techniques"
+
+#: templates/privacy_policy.html:36
+msgid "such as IP address, browser type, device type, operating system, and referring URLs"
+msgstr "telles que l'adresse IP, le type de navigateur, le type d'appareil, le système d'exploitation et les URL de référence"
+
+#: templates/privacy_policy.html:37
+msgid "Usage data"
+msgstr "Données d'utilisation"
+
+#: templates/privacy_policy.html:37
+msgid "including pages viewed, time spent on the Website, and interactions"
+msgstr "y compris les pages consultées, le temps passé sur le Site web et les interactions"
+
+#: templates/privacy_policy.html:44
+msgid "How we use information"
+msgstr "Comment nous utilisons les informations"
+
+#: templates/privacy_policy.html:46
+msgid "We use collected information for purposes including:"
+msgstr "Nous utilisons les informations collectées à des fins notamment :"
+
+#: templates/privacy_policy.html:49
+msgid "Operating and maintaining the Website"
+msgstr "Exploitation et maintenance du Site web"
+
+#: templates/privacy_policy.html:50
+msgid "Responding to inquiries or requests"
+msgstr "Répondre aux demandes ou requêtes"
+
+#: templates/privacy_policy.html:51
+msgid "Improving functionality and user experience"
+msgstr "Améliorer la fonctionnalité et l'expérience utilisateur"
+
+#: templates/privacy_policy.html:52
+msgid "Monitoring security and preventing fraud or misuse"
+msgstr "Surveillance de la sécurité et prévention de la fraude ou de l'utilisation abusive"
+
+#: templates/privacy_policy.html:53
+msgid "Complying with legal obligations"
+msgstr "Conformité aux obligations légales"
+
+#: templates/privacy_policy.html:60
+msgid "Cookies and tracking technologies"
+msgstr "Cookies et technologies de suivi"
+
+#: templates/privacy_policy.html:62
+msgid "We may use cookies, pixels, and similar tracking technologies to analyze usage and enhance the Website's performance. You may control cookies through your browser settings."
+msgstr "Nous pouvons utiliser des cookies, pixels et technologies de suivi similaires pour analyser l'utilisation et améliorer les performances du Site web. Vous pouvez contrôler les cookies via les paramètres de votre navigateur."
+
+#: templates/privacy_policy.html:65
+msgid "For more information, please see our"
+msgstr "Pour plus d'informations, veuillez consulter notre"
+
+#: templates/privacy_policy.html:73
+msgid "Sharing of information"
+msgstr "Partage d'informations"
+
+#: templates/privacy_policy.html:75
+msgid "We do not sell personal information. We may share information in the following situations:"
+msgstr "Nous ne vendons pas d'informations personnelles. Nous pouvons partager des informations dans les situations suivantes :"
+
+#: templates/privacy_policy.html:78
+msgid "With service providers that assist in operating the Website (hosting, analytics, support)"
+msgstr "Avec des prestataires de services qui aident à exploiter le Site web (hébergement, analyse, support)"
+
+#: templates/privacy_policy.html:79
+msgid "To comply with applicable laws, regulations, or legal processes"
+msgstr "Pour se conformer aux lois, réglementations ou processus légaux applicables"
+
+#: templates/privacy_policy.html:80
+msgid "To protect the rights, safety, or property of the Website, users, or others"
+msgstr "Pour protéger les droits, la sécurité ou les biens du Site web, des utilisateurs ou d'autres personnes"
+
+#: templates/privacy_policy.html:81
+msgid "In connection with a business transaction (merger, sale, or acquisition)"
+msgstr "Dans le cadre d'une transaction commerciale (fusion, vente ou acquisition)"
+
+#: templates/privacy_policy.html:88
+msgid "Data retention"
+msgstr "Conservation des données"
+
+#: templates/privacy_policy.html:90
+msgid "We retain personal information only for as long as reasonably necessary to fulfill the purposes described in this Privacy Policy, unless a longer retention period is required or permitted by law."
+msgstr "Nous conservons les informations personnelles uniquement aussi longtemps que raisonnablement nécessaire pour remplir les objectifs décrits dans cette politique de confidentialité, sauf si une période de conservation plus longue est requise ou permise par la loi."
+
+#: templates/privacy_policy.html:99
+msgid "Data security"
+msgstr "Sécurité des données"
+
+#: templates/privacy_policy.html:101
+msgid "We use reasonable administrative, technical, and physical safeguards designed to protect personal information. However, no method of transmission or storage is completely secure."
+msgstr "Nous utilisons des mesures de protection administratives, techniques et physiques raisonnables conçues pour protéger les informations personnelles. Cependant, aucune méthode de transmission ou de stockage n'est totalement sécurisée."
+
+#: templates/privacy_policy.html:110
+msgid "Your privacy rights"
+msgstr "Vos droits en matière de confidentialité"
+
+#: templates/privacy_policy.html:112
+msgid "United States (California residents)"
+msgstr "États-Unis (résidents de Californie)"
+
+#: templates/privacy_policy.html:114
+msgid "If you are a California resident, you may have rights under the"
+msgstr "Si vous êtes résident de Californie, vous pouvez avoir des droits en vertu de la"
+
+#: templates/privacy_policy.html:114
+msgid "California Consumer Privacy Act (CCPA)"
+msgstr "Loi californienne sur la protection de la vie privée des consommateurs (CCPA)"
+
+#: templates/privacy_policy.html:114
+msgid "and the"
+msgstr "et de la"
+
+#: templates/privacy_policy.html:114
+msgid "California Privacy Rights Act (CPRA)"
+msgstr "Loi californienne sur les droits à la vie privée (CPRA)"
+
+#: templates/privacy_policy.html:114
+msgid "including:"
+msgstr "notamment :"
+
+#: templates/privacy_policy.html:119
+msgid "The right to know what personal information is collected"
+msgstr "Le droit de savoir quelles informations personnelles sont collectées"
+
+#: templates/privacy_policy.html:120
+msgid "The right to request deletion of personal information"
+msgstr "Le droit de demander la suppression d'informations personnelles"
+
+#: templates/privacy_policy.html:121
+msgid "The right to correct inaccurate personal information"
+msgstr "Le droit de corriger des informations personnelles inexactes"
+
+#: templates/privacy_policy.html:122
+msgid "The right to opt out of the sale or sharing of personal information"
+msgstr "Le droit de refuser la vente ou le partage d'informations personnelles"
+
+#: templates/privacy_policy.html:123
+msgid "The right to not be discriminated against for exercising privacy rights"
+msgstr "Le droit de ne pas être discriminé pour avoir exercé des droits en matière de confidentialité"
+
+#: templates/privacy_policy.html:126
+msgid "Requests can be made using the contact details below."
+msgstr "Les demandes peuvent être faites en utilisant les coordonnées ci-dessous."
+
+#: templates/privacy_policy.html:131
+msgid "Canada"
+msgstr "Canada"
+
+#: templates/privacy_policy.html:133
+msgid "If you are located in Canada, we process personal information in accordance with"
+msgstr "Si vous êtes situé au Canada, nous traitons les informations personnelles conformément à la"
+
+#: templates/privacy_policy.html:133
+msgid "and applicable provincial privacy laws. You have the right to:"
+msgstr "et aux lois provinciales applicables sur la protection de la vie privée. Vous avez le droit de :"
+
+#: templates/privacy_policy.html:137
+msgid "Access your personal information"
+msgstr "Accéder à vos informations personnelles"
+
+#: templates/privacy_policy.html:138
+msgid "Request corrections to inaccurate information"
+msgstr "Demander des corrections aux informations inexactes"
+
+#: templates/privacy_policy.html:139
+msgid "Withdraw consent, subject to legal or contractual restrictions"
+msgstr "Retirer le consentement, sous réserve de restrictions légales ou contractuelles"
+
+#: templates/privacy_policy.html:146
+msgid "Children's privacy"
+msgstr "Confidentialité des enfants"
+
+#: templates/privacy_policy.html:148
+msgid "The Website is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information, please contact us."
+msgstr "Le Site web n'est pas destiné aux enfants de moins de 13 ans. Nous ne collectons pas sciemment d'informations personnelles auprès d'enfants. Si vous pensez qu'un enfant a fourni des informations personnelles, veuillez nous contacter."
+
+#: templates/privacy_policy.html:157
+msgid "External links"
+msgstr "Liens externes"
+
+#: templates/privacy_policy.html:159
+msgid "The Website may contain links to third-party websites. We are not responsible for the privacy practices or content of those websites."
+msgstr "Le Site web peut contenir des liens vers des sites web tiers. Nous ne sommes pas responsables des pratiques de confidentialité ou du contenu de ces sites web."
+
+#: templates/privacy_policy.html:167
+msgid "Changes to this Privacy Policy"
+msgstr "Modifications de cette politique de confidentialité"
+
+#: templates/privacy_policy.html:169
+msgid "We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date."
+msgstr "Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Toute modification sera publiée sur cette page avec une date de révision mise à jour."
+
+#: templates/privacy_policy.html:177
+msgid "Contact information"
+msgstr "Informations de contact"
+
+#: templates/privacy_policy.html:179
+msgid "If you have questions or requests regarding this Privacy Policy, please contact us:"
+msgstr "Si vous avez des questions ou des demandes concernant cette politique de confidentialité, veuillez nous contacter :"
+
+#: templates/privacy_policy.html:182
+msgid "Company Name:"
+msgstr "Nom de l'entreprise :"
+

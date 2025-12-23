@@ -5,3 +5,17 @@ __pycache__
 .venv
 gunicorn/*
 .idea/
+
+# Environment files
+.env
+.env.dev
+.env.local
+.env.*.local
+
+# Database
+instance/*.db
+instance/*.db-journal
+
+# Translations
+translations/**/*.mo
+messages.pot

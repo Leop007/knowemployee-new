@@ -1,0 +1,3 @@
+# This file ensures the translations directory is tracked by git
+# Translation .po files should be committed, but .mo files are ignored
+

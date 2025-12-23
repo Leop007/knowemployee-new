@@ -36,32 +36,57 @@ import io
 from threading import Thread
 import subprocess
 import logging
+from flask_babel import Babel, gettext as _, lazy_gettext as _l
 
 
 
 load_dotenv()
 
-# DOMAIN = "http://127.0.0.1:3000"
-DOMAIN = "knowemployee.com"
+# Environment configuration
+ENV = os.getenv('FLASK_ENV', 'production')  # 'development' or 'production'
+DOMAIN = os.getenv('DOMAIN', 'knowemployee.com')
 NAME_PLATFORM = "KnowEmployee"
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '97473497e94c7289a98fae8e9636ae67'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///service.db'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', '97473497e94c7289a98fae8e9636ae67')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI', 'sqlite:///service.db')
 
-# Trust proxy headers from nginx
-from werkzeug.middleware.proxy_fix import ProxyFix
-app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
+# Flask-Babel configuration
+app.config['LANGUAGES'] = {
+    'en': 'English',
+    'fr': 'Français'
+}
+app.config['BABEL_DEFAULT_LOCALE'] = 'en'
+app.config['BABEL_DEFAULT_TIMEZONE'] = 'UTC'
 
-# Force HTTPS URLs when behind proxy
-app.config['PREFERRED_URL_SCHEME'] = 'https'
+def get_locale():
+    # Check if language is in session
+    language = session.get('language', 'en')
+    if language in app.config['LANGUAGES']:
+        return language
+    # Fallback to browser language
+    return request.accept_languages.best_match(app.config['LANGUAGES'].keys()) or 'en'
+
+babel = Babel(app, locale_selector=get_locale)
+
+# Trust proxy headers from nginx (only in production)
+if ENV == 'production':
+    from werkzeug.middleware.proxy_fix import ProxyFix
+    app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
+    # Force HTTPS URLs when behind proxy
+    app.config['PREFERRED_URL_SCHEME'] = 'https'
+else:
+    # Development mode - use HTTP
+    app.config['PREFERRED_URL_SCHEME'] = 'http'
 
 # Configure logging
+log_level = logging.DEBUG if ENV == 'development' else logging.INFO
 logging.basicConfig(
-    level=logging.INFO,
+    level=log_level,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 logger = logging.getLogger(__name__)
+logger.info(f"Application starting in {ENV} mode. Domain: {DOMAIN}")
 DG_API_KEY = os.getenv('DEEPGRAM_API_KEY') 
 KEY = b'LIuLpwBjtQgsOlEKmY43Zd5xO_HqwW332ZM478rkHRM='
 MIMETYPE = 'audio/wav'
@@ -251,6 +276,13 @@ def send_mail(recipient, token, type="register"):
         logger.error(f"Unexpected error sending email to {recipient}: {str(e)}", exc_info=True)
         return False
 
+@app.route('/set_language/<language>')
+def set_language(language):
+    """Set the language in session and redirect back"""
+    if language in app.config['LANGUAGES']:
+        session['language'] = language
+    return redirect(request.referrer or url_for('home'))
+
 @app.route('/')
 def home():
     token = session.get('token', None)
@@ -282,6 +314,18 @@ def contact():
             pass
 
     return render_template('contact.html', is_authenticated=is_authenticated)
+
+@app.route('/cookie-policy')
+def cookie_policy():
+    return render_template('cookie_policy.html', name_platform=NAME_PLATFORM, DOMAIN=DOMAIN)
+
+@app.route('/privacy-policy')
+def privacy_policy():
+    return render_template('privacy_policy.html', name_platform=NAME_PLATFORM, DOMAIN=DOMAIN)
+
+@app.route('/terms')
+def terms():
+    return render_template('terms.html', name_platform=NAME_PLATFORM)
 
 def token_required(f):
     @wraps(f)

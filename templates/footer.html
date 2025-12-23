@@ -3,43 +3,43 @@
         <div class="content">
             <div class="list">
                 <div class="column">
-                    <h2>Services</h2>
+                    <h2>{{ _('Services') }}</h2>
                     <ul>
                         <li>
-                            <a href="#">Anonymous feedback</a>
+                            <a href="#">{{ _('Anonymous feedback') }}</a>
                         </li>
                         <li>
-                            <a href="#">Custom feedback</a>
+                            <a href="#">{{ _('Custom feedback') }}</a>
                         </li>
                         <li>
-                            <a href="#">Metrica feedback</a>
+                            <a href="#">{{ _('Metrica feedback') }}</a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="column">
-                    <h2>Why do we</h2>
+                    <h2>{{ _('Why do we') }}</h2>
                     <ul>
                         <li>
-                            <a href="#">About Us</a>
+                            <a href="#">{{ _('About Us') }}</a>
                         </li>
                         <li>
-                            <a href="#">Partners</a>
+                            <a href="#">{{ _('Partners') }}</a>
                         </li>
                         <li>
-                            <a href="#">Contact us</a>
+                            <a href="#">{{ _('Contact us') }}</a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="column">
-                    <h2>Legal</h2>
+                    <h2>{{ _('Legal') }}</h2>
                     <ul>
                         <li>
-                            <a href="#">Cookie Policy</a>
+                            <a href="{{ url_for('cookie_policy') }}">{{ _('Cookie Policy') }}</a>
                         </li>
                         <li>
-                            <a href="#">Privacy Policy</a>
+                            <a href="{{ url_for('privacy_policy') }}">{{ _('Privacy Policy') }}</a>
                         </li>
                     </ul>
                 </div>
@@ -51,14 +51,12 @@
                          alt="KnowEmployee">
                 </div>
 
-                <p>We provide tools to analyze your workplace environment, and have created a solution that can
-                    improve your employee satisfaction. We know that if a person comes to work in a good mood,
-                    they'll be more likely to perform at work.</p>
-                <p>Get to know your employee better, improve the work environment with our analysis tools</p>
+                <p>{{ _('We provide tools to analyze your workplace environment, and have created a solution that can improve your employee satisfaction. We know that if a person comes to work in a good mood, they\'ll be more likely to perform at work.') }}</p>
+                <p>{{ _('Get to know your employee better, improve the work environment with our analysis tools') }}</p>
             </div>
         </div>
         <div class="copyright">
-            <span>© {{ year }} KnowEmployee. All rights reserved.</span>
+            <span>© {{ year }} KnowEmployee. {{ _('All rights reserved.') }}</span>
         </div>
     </div>
 </footer>
