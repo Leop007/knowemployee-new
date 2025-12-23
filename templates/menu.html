@@ -2,7 +2,10 @@
     <div class="l">
         <div class="logo">
             <img src="../static/assets/images/logo-dark.svg" alt="KnowEmployee">
-            <h3 class="menu_lang">EN</h3>
+            <select class="menu_lang" id="language-selector" aria-label="Select language">
+                <option value="en" selected>🇺🇸 EN</option>
+                <option value="fr">🇫🇷 FR</option>
+            </select>
         </div>
         <nav class="navigation">
         </nav>
@@ -10,10 +13,10 @@
     <div class="menu_toggler cross"></div>
     <div class="r">
         <div class="menu">
-            <a href="/">Home</a>
-            <a href="/contact">Contact</a>
-            <a href="/register">Sign Up</a>
-            <a class="up" href="/login">Sign In</a>
+            <a href="/">{{ _('Home') }}</a>
+            <a href="/contact">{{ _('Contact') }}</a>
+            <a href="/register">{{ _('Sign Up') }}</a>
+            <a class="up" href="/login">{{ _('Sign In') }}</a>
         </div>
     </div>
 </div>

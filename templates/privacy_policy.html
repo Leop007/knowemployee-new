@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/contact/style.css') }}" type="text/css">
+{% endblock %}
+{% block title %}Privacy Policy - {{ name_platform }}{% endblock %}
+{% block headercontent %}
+{% include 'header-contact.html' %}
+{% endblock %}
+{% block maincontent %}
+<div class="wrapper" style="max-width: 800px; margin: 50px auto; padding: 20px; color: #000000;">
+    <h1 style="font-size: 32px; margin-bottom: 30px; font-weight: 800;">{{ _('Privacy Policy') }}</h1>
+    
+    <div style="line-height: 1.8; font-size: 16px;">
+        <p><strong>{{ _('Last updated:') }}</strong> December 23, 2024</p>
+        
+        <p>
+            {{ _('This Privacy Policy describes how') }} <strong>{{ name_platform }}</strong> {{ _('("we", "us", or "our") collects, uses, and discloses information when you visit or use our website') }} <strong>{{ DOMAIN }}</strong> {{ _('(the "Website").') }}
+        </p>
+        
+        <p>
+            {{ _('By accessing or using the Website, you agree to the collection and use of information in accordance with this Privacy Policy.') }}
+        </p>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">1. {{ _('Information we collect') }}</h2>
+            <p>
+                {{ _('We may collect the following categories of information:') }}
+            </p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li><strong>{{ _('Personal information') }}</strong> {{ _('such as name, email address, phone number, company name, or other information you voluntarily provide') }}</li>
+                <li><strong>{{ _('Internet or technical information') }}</strong> {{ _('such as IP address, browser type, device type, operating system, and referring URLs') }}</li>
+                <li><strong>{{ _('Usage data') }}</strong> {{ _('including pages viewed, time spent on the Website, and interactions') }}</li>
+            </ul>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">2. {{ _('How we use information') }}</h2>
+            <p>
+                {{ _('We use collected information for purposes including:') }}
+            </p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>{{ _('Operating and maintaining the Website') }}</li>
+                <li>{{ _('Responding to inquiries or requests') }}</li>
+                <li>{{ _('Improving functionality and user experience') }}</li>
+                <li>{{ _('Monitoring security and preventing fraud or misuse') }}</li>
+                <li>{{ _('Complying with legal obligations') }}</li>
+            </ul>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">3. {{ _('Cookies and tracking technologies') }}</h2>
+            <p>
+                {{ _('We may use cookies, pixels, and similar tracking technologies to analyze usage and enhance the Website\'s performance. You may control cookies through your browser settings.') }}
+            </p>
+            <p>
+                {{ _('For more information, please see our') }} <strong><a href="{{ url_for('cookie_policy') }}" style="color: #2a94f4;">{{ _('Cookie Policy') }}</a></strong>.
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">4. {{ _('Sharing of information') }}</h2>
+            <p>
+                {{ _('We do not sell personal information. We may share information in the following situations:') }}
+            </p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>{{ _('With service providers that assist in operating the Website (hosting, analytics, support)') }}</li>
+                <li>{{ _('To comply with applicable laws, regulations, or legal processes') }}</li>
+                <li>{{ _('To protect the rights, safety, or property of the Website, users, or others') }}</li>
+                <li>{{ _('In connection with a business transaction (merger, sale, or acquisition)') }}</li>
+            </ul>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">5. {{ _('Data retention') }}</h2>
+            <p>
+                {{ _('We retain personal information only for as long as reasonably necessary to fulfill the purposes described in this Privacy Policy, unless a longer retention period is required or permitted by law.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">6. {{ _('Data security') }}</h2>
+            <p>
+                {{ _('We use reasonable administrative, technical, and physical safeguards designed to protect personal information. However, no method of transmission or storage is completely secure.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">7. {{ _('Your privacy rights') }}</h2>
+            
+            <h3 style="font-size: 20px; margin-top: 20px; margin-bottom: 10px;">7.1 {{ _('United States (California residents)') }}</h3>
+            <p>
+                {{ _('If you are a California resident, you may have rights under the') }} <strong>{{ _('California Consumer Privacy Act (CCPA)') }}</strong> {{ _('and the') }} <strong>{{ _('California Privacy Rights Act (CPRA)') }}</strong>, {{ _('including:') }}
+            </p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>{{ _('The right to know what personal information is collected') }}</li>
+                <li>{{ _('The right to request deletion of personal information') }}</li>
+                <li>{{ _('The right to correct inaccurate personal information') }}</li>
+                <li>{{ _('The right to opt out of the sale or sharing of personal information') }}</li>
+                <li>{{ _('The right to not be discriminated against for exercising privacy rights') }}</li>
+            </ul>
+            <p>
+                {{ _('Requests can be made using the contact details below.') }}
+            </p>
+
+            <hr style="border: none; border-top: 1px solid #444; margin: 20px 0;">
+
+            <h3 style="font-size: 20px; margin-top: 20px; margin-bottom: 10px;">7.2 {{ _('Canada') }}</h3>
+            <p>
+                {{ _('If you are located in Canada, we process personal information in accordance with') }} <strong>PIPEDA</strong> {{ _('and applicable provincial privacy laws. You have the right to:') }}
+            </p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>{{ _('Access your personal information') }}</li>
+                <li>{{ _('Request corrections to inaccurate information') }}</li>
+                <li>{{ _('Withdraw consent, subject to legal or contractual restrictions') }}</li>
+            </ul>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">8. {{ _('Children\'s privacy') }}</h2>
+            <p>
+                {{ _('The Website is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information, please contact us.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">9. {{ _('External links') }}</h2>
+            <p>
+                {{ _('The Website may contain links to third-party websites. We are not responsible for the privacy practices or content of those websites.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">10. {{ _('Changes to this Privacy Policy') }}</h2>
+            <p>
+                {{ _('We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">11. {{ _('Contact information') }}</h2>
+            <p>
+                {{ _('If you have questions or requests regarding this Privacy Policy, please contact us:') }}
+            </p>
+            <p>
+                <strong>{{ _('Company Name:') }}</strong> {{ name_platform }}<br>
+                <strong>{{ _('Email:') }}</strong> <a href="mailto:knowemployee.ai@gmail.com" style="color: #2a94f4;">knowemployee.ai@gmail.com</a><br>
+                <strong>{{ _('Phone:') }}</strong> <a href="tel:+14372391720" style="color: #2a94f4;">+14372391720 CA</a><br>
+                <strong>{{ _('Address:') }}</strong> Fredericton, New Brunswick
+            </p>
+        </section>
+    </div>
+</div>
+{% include "footer-logo.html" %}
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='assets/menu/script.js') }}"></script>
+{% endblock %}

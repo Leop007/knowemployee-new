@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/contact/style.css') }}" type="text/css">
+{% endblock %}
+{% block title %}Cookie Policy - {{ name_platform }}{% endblock %}
+{% block headercontent %}
+{% include 'header-contact.html' %}
+{% endblock %}
+{% block maincontent %}
+<div class="wrapper" style="max-width: 800px; margin: 50px auto; padding: 20px; color: #000000;">
+    <h1 style="font-size: 32px; margin-bottom: 30px; font-weight: 800;">{{ _('Cookie Policy') }}</h1>
+    
+    <div style="line-height: 1.8; font-size: 16px;">
+        <p><strong>{{ _('Last updated:') }}</strong> December 23, 2025</p>
+        
+        <p>
+            {{ _('This Cookie Policy explains how') }} <strong>{{ name_platform }}</strong> {{ _('("we", "us", "our")') }} {{ _('uses cookies and similar technologies when you visit our website') }} <strong>{{ DOMAIN }}</strong>.
+        </p>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">1. {{ _('What are cookies?') }}</h2>
+            <p>
+                {{ _('Cookies are small text files that are stored on your device (computer, smartphone, tablet) when you visit a website. They are widely used to make websites work properly, improve efficiency, and provide information to the website owner.') }}
+            </p>
+            <p>
+                {{ _('Cookies can be:') }}
+            </p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li><strong>{{ _('Session cookies') }}</strong> – {{ _('deleted when you close your browser') }}</li>
+                <li><strong>{{ _('Persistent cookies') }}</strong> – {{ _('remain on your device for a defined period or until deleted') }}</li>
+            </ul>
+        </section>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">2. {{ _('Types of cookies we use') }}</h2>
+
+            <h3 style="font-size: 20px; margin-top: 20px; margin-bottom: 10px;">2.1 {{ _('Strictly necessary cookies') }}</h3>
+            <p>
+                {{ _('These cookies are essential for the website to function correctly. They enable core features such as security, network management, and accessibility.') }}
+            </p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>{{ _('Legal basis: Legitimate interest') }}</li>
+                <li>{{ _('Consent required: No') }}</li>
+            </ul>
+
+            <h3 style="font-size: 20px; margin-top: 20px; margin-bottom: 10px;">2.2 {{ _('Functional cookies') }}</h3>
+            <p>
+                {{ _('These cookies allow the website to remember choices you make (such as language or region) and provide enhanced, more personalized features.') }}
+            </p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>{{ _('Legal basis: Consent') }}</li>
+                <li>{{ _('Consent required: Yes') }}</li>
+            </ul>
+
+            <h3 style="font-size: 20px; margin-top: 20px; margin-bottom: 10px;">2.3 {{ _('Analytics / performance cookies') }}</h3>
+            <p>
+                {{ _('These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.') }}
+            </p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>{{ _('Legal basis: Consent') }}</li>
+                <li>{{ _('Consent required: Yes') }}</li>
+                <li>{{ _('Examples:') }}
+                    <ul style="margin-left: 20px; margin-top: 5px;">
+                        <li>{{ _('Page visit statistics') }}</li>
+                        <li>{{ _('Traffic sources') }}</li>
+                        <li>{{ _('Error monitoring') }}</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 style="font-size: 20px; margin-top: 20px; margin-bottom: 10px;">2.4 {{ _('Marketing / advertising cookies') }}</h3>
+            <p>
+                {{ _('These cookies are used to track visitors across websites in order to display relevant advertisements and measure the effectiveness of marketing campaigns.') }}
+            </p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>{{ _('Legal basis: Consent') }}</li>
+                <li>{{ _('Consent required: Yes') }}</li>
+            </ul>
+        </section>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">3. {{ _('Third-party cookies') }}</h2>
+            <p>
+                {{ _('We may allow third-party service providers to place cookies on your device to provide analytics, functionality, or marketing services.') }}
+            </p>
+            <p>
+                {{ _('These third parties may collect data independently in accordance with their own privacy policies.') }}
+            </p>
+        </section>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">4. {{ _('Cookie consent and management') }}</h2>
+            <p>
+                {{ _('When you first visit our website, you will be presented with a cookie banner allowing you to:') }}
+            </p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>{{ _('Accept all cookies') }}</li>
+                <li>{{ _('Reject non-essential cookies') }}</li>
+                <li>{{ _('Customize your cookie preferences') }}</li>
+            </ul>
+            <p>
+                {{ _('You can change or withdraw your consent at any time by adjusting your cookie settings or browser preferences.') }}
+            </p>
+        </section>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">5. {{ _('How to manage cookies in your browser') }}</h2>
+            <p>
+                {{ _('Most browsers allow you to view, delete, or block cookies. Instructions vary by browser. Please refer to your browser\'s help section for more information.') }}
+            </p>
+            <p>
+                {{ _('Please note that disabling cookies may affect the functionality of the website.') }}
+            </p>
+        </section>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">6. {{ _('Data protection and privacy') }}</h2>
+            <p>
+                {{ _('Any personal data collected through cookies is processed in accordance with our') }} <strong><a href="{{ url_for('privacy_policy') }}" style="color: #2a94f4;">{{ _('Privacy Policy') }}</a></strong> {{ _('and applicable data protection laws, including the GDPR.') }}
+            </p>
+        </section>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">7. {{ _('Updates to this Cookie Policy') }}</h2>
+            <p>
+                {{ _('We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our practices. The updated version will be published on this page with a revised "Last updated" date.') }}
+            </p>
+        </section>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">8. {{ _('Contact information') }}</h2>
+            <p>
+                {{ _('If you have any questions about this Cookie Policy or our use of cookies, please contact us:') }}
+            </p>
+            <p>
+                <strong>{{ _('Email:') }}</strong> <a href="mailto:knowemployee.ai@gmail.com" style="color: #2a94f4;">knowemployee.ai@gmail.com</a><br>
+                <strong>{{ _('Phone:') }}</strong> <a href="tel:+14372391720" style="color: #2a94f4;">+14372391720 CA</a><br>
+                <strong>{{ _('Address:') }}</strong> Fredericton, New Brunswick
+            </p>
+        </section>
+    </div>
+</div>
+{% include "footer-logo.html" %}
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='assets/menu/script.js') }}"></script>
+{% endblock %}
+

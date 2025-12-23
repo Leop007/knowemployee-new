@@ -12,8 +12,13 @@ services:
       # Optional: Mount static files if you want to edit them without rebuilding
       - ./static:/know/static
       - ./templates:/know/templates
+      # Mount translations directory for i18n
+      - ./translations:/know/translations
+      - ./babel:/know/babel
     environment:
       - NAME=knowemployee
+      - FLASK_ENV=production
+      # DOMAIN and other vars loaded from .env file
     env_file:
       - .env
     restart: unless-stopped

@@ -39,6 +39,35 @@
     .l {
       display: flex;
       flex: 1;
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .menu_lang {
+          padding: 6px 12px;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          background-color: #fff;
+          color: #444;
+          font-size: 14px;
+          font-weight: 600;
+          font-family: Arial, Helvetica, sans-serif;
+          cursor: pointer;
+          outline: none;
+          transition: all 0.2s ease;
+
+          &:hover {
+            border-color: #34DD0A;
+          }
+
+          &:focus {
+            border-color: #34DD0A;
+            box-shadow: 0 0 0 2px rgba(52, 221, 10, 0.2);
+          }
+        }
+      }
     }
 
     .r {

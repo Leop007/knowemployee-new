@@ -1,0 +1,33 @@
+services:
+  knowemployee:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: knowemployee-app-dev
+    ports:
+      - "8001:8005"  # Expose directly for local development (changed from 8000 to avoid conflicts)
+    volumes:
+      # Persist SQLite database
+      - ./instance:/know/instance
+      # Mount source files for hot-reload (if using Flask dev server)
+      - ./static:/know/static
+      - ./templates:/know/templates
+      - ./server.py:/know/server.py
+      - ./wsgi.py:/know/wsgi.py
+      - ./functions.py:/know/functions.py
+      - ./analytics.py:/know/analytics.py
+      # Mount translations directory for i18n
+      - ./translations:/know/translations
+      - ./babel:/know/babel
+    environment:
+      - NAME=knowemployee
+      - FLASK_ENV=development
+      - DOMAIN=http://localhost:8001
+      # Override with .env.dev if needed
+    env_file:
+      - .env  # Primary env file (create this with your credentials)
+    restart: unless-stopped
+    # Override CMD to use Flask dev server for hot-reload (optional)
+    # Uncomment the line below if you want Flask dev server instead of gunicorn
+    # command: ["python", "server.py"]
+
