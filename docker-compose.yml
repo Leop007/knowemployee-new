@@ -1,12 +1,11 @@
-
 services:
   knowemployee:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: knowemployee-app
-    ports:
-      - "8000:8005"
+    expose:
+      - "8005"
     volumes:
       # Persist SQLite database
       - ./instance:/know/instance
@@ -15,15 +14,40 @@ services:
       - ./templates:/know/templates
     environment:
       - NAME=knowemployee
-      # Load from .env file (see env_file below)
     env_file:
       - .env
     restart: unless-stopped
-    # Optional: Uncomment and install wget/curl in Dockerfile if you want healthchecks
-    # healthcheck:
-    #   test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8005/"] || exit 1
-    #   interval: 30s
-    #   timeout: 10s
-    #   retries: 3
-    #   start_period: 40s
+    networks:
+      - knowemployee-network
 
+  nginx:
+    image: nginx:alpine
+    container_name: knowemployee-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./certbot/conf:/etc/letsencrypt:ro
+      - ./certbot/www:/var/www/certbot:ro
+      # Remove the static mount - Flask will serve static files
+    depends_on:
+      - knowemployee
+    restart: unless-stopped
+    networks:
+      - knowemployee-network
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+
+  certbot:
+    image: certbot/certbot
+    container_name: knowemployee-certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    restart: unless-stopped
+
+networks:
+  knowemployee-network:
+    driver: bridge

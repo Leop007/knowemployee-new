@@ -48,6 +48,13 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = '97473497e94c7289a98fae8e9636ae67'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///service.db'
 
+# Trust proxy headers from nginx
+from werkzeug.middleware.proxy_fix import ProxyFix
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
+
+# Force HTTPS URLs when behind proxy
+app.config['PREFERRED_URL_SCHEME'] = 'https'
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
