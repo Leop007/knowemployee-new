@@ -235,6 +235,19 @@ body > .container {
   }
 }
 
+// Dashboard header wrapper for positioning language selector
+.dashboard-header-wrapper {
+  position: relative;
+  
+  .language-selector {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    right: 20px !important;
+    z-index: 10000;
+  }
+}
+
 .alert_promo {
   width: 100%;
   @include mq(0px) {

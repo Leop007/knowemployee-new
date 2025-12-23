@@ -512,7 +512,7 @@ def dashboard(current_user):
     user_data = getUserData(current_user)
     with open("./templates/pages_dashboard/main.html", 'r') as f:
         html = f.read()
-    rendered_html = render_template_string(html, data_page=user_data)
+    rendered_html = render_template_string(html, data_page=user_data, _=_)
 
     data_page = {
         "title": "Dashboard",
@@ -556,11 +556,13 @@ def services(current_user):
 
     with open("./templates/pages_dashboard/services.html", 'r', encoding='utf-8') as f:
         html = f.read()
+    rendered_html = render_template_string(html, data_page=user_data, _=_)
+    
     data_page = {
         "title": "Services",
         "path": request.path,
         "name_platform": NAME_PLATFORM,
-        "html_page": html,
+        "html_page": rendered_html,
         "branch": [
             {"link": "/", "name": "Home"},
             {"link": "/dashboard/services", "name": "Services"},
@@ -577,11 +579,13 @@ def services_anonymous(current_user):
 
     with open("./templates/pages_dashboard/feedback_anonimus.html", 'r', encoding='utf-8') as f:
         html = f.read()
+    rendered_html = render_template_string(html, data_page=user_data, _=_)
+    
     data_page = {
         "title": "Anonymous feedback",
         "path": request.path,
         "name_platform": NAME_PLATFORM,
-        "html_page": html,
+        "html_page": rendered_html,
         "branch": [
             {"link": "/", "name": "Home"},
             {"link": "/dashboard/services", "name": "Services"},
@@ -599,7 +603,7 @@ def feedback_custom(current_user):
 
     with open("./templates/pages_dashboard/feedback_custom.html", 'r', encoding='utf-8') as f:
         html = f.read()
-    rendered_html = render_template_string(html, data_page={"question": QUESTIONS, "domain": DOMAIN})
+    rendered_html = render_template_string(html, data_page={"question": QUESTIONS, "domain": DOMAIN}, _=_)
     data_page = {
         "title": "Custom feedback",
         "path": request.path,
@@ -622,7 +626,7 @@ def quiz_create_link(current_user):
 
     with open("./templates/pages_dashboard/quiz/create_quiz.html", 'r', encoding='utf-8') as f:
         html = f.read()
-    rendered_html = render_template_string(html, data_page={"question": QUESTIONS, "edit": False,})
+    rendered_html = render_template_string(html, data_page={"question": QUESTIONS, "edit": False,}, _=_)
     data_page = {
         "title": "Create quiz",
         "path": request.path,
@@ -660,7 +664,7 @@ def quiz_edit(current_user, token):
     user_data = getUserData(current_user)
     with open("./templates/pages_dashboard/quiz/create_quiz.html", 'r', encoding='utf-8') as f:
         html = f.read()
-    rendered_html = render_template_string(html, data_page={"question": QUESTIONS, "edit": True, "data": obj})
+    rendered_html = render_template_string(html, data_page={"question": QUESTIONS, "edit": True, "data": obj}, _=_)
     data_page = {
         "title": "Edit quiz",
         "path": request.path,
@@ -917,7 +921,7 @@ def quiz_list(current_user):
                 "company_badge": quiz.company_badge,
                 "timestamp": quiz.timestamp,
             })
-    rendered_html = render_template_string(html, data_page={"domain": DOMAIN, "data": list})
+    rendered_html = render_template_string(html, data_page={"domain": DOMAIN, "data": list}, _=_)
     
     data_page = {
         "title": "Quiz",
@@ -1035,7 +1039,7 @@ def quiz_token_info(current_user, token):
         html = f.read()
 
     reversed_array = quiz_results_array[::-1]
-    rendered_html = render_template_string(html, data_page={"domain": DOMAIN, "token": token_quiz, "info_quiz": obj_info, "data": reversed_array})
+    rendered_html = render_template_string(html, data_page={"domain": DOMAIN, "token": token_quiz, "info_quiz": obj_info, "data": reversed_array}, _=_)
     data_page = {
         "title": f"Quiz",
         "path": request.path,
@@ -1059,7 +1063,7 @@ def feedback_custom_create(current_user):
 
     with open("./templates/pages_dashboard/create_custom_link.html", 'r', encoding='utf-8') as f:
         html = f.read()
-    rendered_html = render_template_string(html, data_page={"question": QUESTIONS, "edit": False,})
+    rendered_html = render_template_string(html, data_page={"question": QUESTIONS, "edit": False,}, _=_)
     data_page = {
         "title": "Create custom link",
         "path": request.path,
@@ -1083,7 +1087,7 @@ def settings(current_user):
 
     with open("./templates/pages_dashboard/settings.html", 'r', encoding="utf-8") as f:
         html_template = f.read()
-    rendered_html = render_template_string(html_template, data_page={"user_data": user_data})
+    rendered_html = render_template_string(html_template, data_page={"user_data": user_data}, _=_)
     data_page = {
         "title": "Settings",
         "path": request.path,
@@ -1429,7 +1433,7 @@ def feedback_custom_edit(current_user, token):
         "username_bool": tested_data.username_bool,
         "anonimus_feedback": tested_data.anonimus_feedback
     }
-    rendered_html = render_template_string(html, data_page={"question": answer, "obj": obj, "edit": True})
+    rendered_html = render_template_string(html, data_page={"question": answer, "obj": obj, "edit": True}, _=_)
 
     data_page = {
         "title": "Edit custom link",

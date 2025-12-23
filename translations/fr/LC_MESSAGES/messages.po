@@ -742,3 +742,243 @@ msgstr "Si vous avez des questions ou des demandes concernant cette politique de
 msgid "Company Name:"
 msgstr "Nom de l'entreprise :"
 
+#: templates/components/_menu.html:24
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#: templates/components/_menu.html:27
+msgid "Surveys"
+msgstr "Enquêtes"
+
+#: templates/components/_menu.html:30
+msgid "Analytics"
+msgstr "Analyses"
+
+#: templates/components/_menu.html:33
+msgid "Settings"
+msgstr "Paramètres"
+
+#: templates/components/_menu.html:36
+msgid "Support"
+msgstr "Support"
+
+#: templates/components/_menu.html:39
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: templates/components/_menu.html:45
+msgid "Your plan:"
+msgstr "Votre plan :"
+
+#: templates/components/_menu.html:45
+msgid "Trial"
+msgstr "Essai"
+
+#: templates/components/_menu.html:46
+msgid "Change plan"
+msgstr "Changer de plan"
+
+#: templates/pages_dashboard/main.html:3
+msgid "Welcome,"
+msgstr "Bienvenue,"
+
+#: templates/pages_dashboard/main.html:4
+msgid "The place of your atmosphere management in the work of your employees"
+msgstr "L'endroit de votre gestion de l'atmosphère dans le travail de vos employés"
+
+#: templates/pages_dashboard/main.html:10
+msgid "All"
+msgstr "Tout"
+
+#: templates/pages_dashboard/settings.html:21
+msgid "Company name"
+msgstr "Nom de l'entreprise"
+
+#: templates/pages_dashboard/settings.html:24
+msgid "Name Company"
+msgstr "Nom de l'entreprise"
+
+#: templates/pages_dashboard/settings.html:30
+msgid "Company description"
+msgstr "Description de l'entreprise"
+
+#: templates/pages_dashboard/settings.html:43
+msgid "Change the password"
+msgstr "Changer le mot de passe"
+
+#: templates/pages_dashboard/settings.html:44
+msgid "Current password"
+msgstr "Mot de passe actuel"
+
+#: templates/pages_dashboard/settings.html:45
+msgid "Current Password"
+msgstr "Mot de passe actuel"
+
+#: templates/pages_dashboard/settings.html:46
+msgid "New password"
+msgstr "Nouveau mot de passe"
+
+#: templates/pages_dashboard/settings.html:47
+msgid "New Password"
+msgstr "Nouveau mot de passe"
+
+#: templates/pages_dashboard/settings.html:48
+msgid "Confirm password"
+msgstr "Confirmer le mot de passe"
+
+#: templates/pages_dashboard/settings.html:49
+msgid "Confirm Password"
+msgstr "Confirmer le mot de passe"
+
+#: templates/pages_dashboard/settings.html:51
+msgid "Save changes"
+msgstr "Enregistrer les modifications"
+
+#: templates/pages_dashboard/settings.html:66
+msgid "Watch out for the danger zone"
+msgstr "Attention à la zone de danger"
+
+#: templates/pages_dashboard/settings.html:67
+msgid "If you choose to delete your company account, your data will be irreversibly erased. We grant you the right to make this decision."
+msgstr "Si vous choisissez de supprimer le compte de votre entreprise, vos données seront irréversiblement effacées. Nous vous accordons le droit de prendre cette décision."
+
+#: templates/pages_dashboard/settings.html:70
+msgid "Delete account"
+msgstr "Supprimer le compte"
+
+#: templates/pages_dashboard/feedback_custom.html:9
+msgid "Create a Survey"
+msgstr "Créer une enquête"
+
+#: templates/pages_dashboard/feedback_custom.html:13
+msgid "Search for survey"
+msgstr "Rechercher une enquête"
+
+#: templates/pages_dashboard/feedback_custom.html:15
+msgid "Search survey"
+msgstr "Rechercher une enquête"
+
+#: templates/pages_dashboard/feedback_custom.html:16
+msgid "Survey Name"
+msgstr "Nom de l'enquête"
+
+#: templates/pages_dashboard/feedback_custom.html:35
+msgid "Uploading the list custom feedbacks"
+msgstr "Téléchargement de la liste des retours personnalisés"
+
+#: templates/pages_dashboard/feedback_anonimus.html:5
+msgid "Uploading the list of anonymous reviews"
+msgstr "Téléchargement de la liste des avis anonymes"
+
+#: templates/pages_dashboard/services.html:9
+msgid "Anonymous feedback"
+msgstr "Retour d'information anonyme"
+
+#: templates/pages_dashboard/services.html:10
+msgid "Find out from your staff what they think about the company and the working atmosphere in your company's campuses."
+msgstr "Découvrez ce que votre personnel pense de l'entreprise et de l'atmosphère de travail dans les campus de votre entreprise."
+
+#: templates/pages_dashboard/services.html:15
+msgid "Use"
+msgstr "Utiliser"
+
+#: templates/pages_dashboard/services.html:30
+msgid "Custom reviews"
+msgstr "Avis personnalisés"
+
+#: templates/pages_dashboard/services.html:31
+msgid "Test process similar to that of anonymous reviews. But with custom ones, you have more options to customize exactly to your needs. Use flexibility to make life better for your employees."
+msgstr "Processus de test similaire à celui des avis anonymes. Mais avec les avis personnalisés, vous avez plus d'options pour personnaliser exactement selon vos besoins. Utilisez la flexibilité pour améliorer la vie de vos employés."
+
+#: templates/pages_dashboard/services.html:51
+msgid "Range estimation"
+msgstr "Estimation de plage"
+
+#: templates/pages_dashboard/services.html:52
+msgid "This component will give you the ability to customize questions and get results metrics. Give your worker the ability to make a score from 1 to 10 based on your questions."
+msgstr "Ce composant vous permettra de personnaliser les questions et d'obtenir des métriques de résultats. Donnez à votre travailleur la possibilité de faire un score de 1 à 10 basé sur vos questions."
+
+#: templates/pages_dashboard/services.html:72
+msgid "Quiz"
+msgstr "Quiz"
+
+#: templates/pages_dashboard/services.html:73
+msgid "Create a survey for people on behalf of your company from which you can make an analysis. Fine tune the quiz, change the theme, and the picture of the quiz, get a preview when you create it."
+msgstr "Créez une enquête pour les personnes au nom de votre entreprise à partir de laquelle vous pouvez faire une analyse. Ajustez le quiz, changez le thème et l'image du quiz, obtenez un aperçu lors de sa création."
+
+#: templates/pages_dashboard/create_custom_link.html:7
+msgid "Create a Survey"
+msgstr "Créer une enquête"
+
+#: templates/pages_dashboard/create_custom_link.html:11
+msgid "Survey Name"
+msgstr "Nom de l'enquête"
+
+#: templates/pages_dashboard/create_custom_link.html:15
+msgid "Save changes"
+msgstr "Enregistrer les modifications"
+
+#: templates/pages_dashboard/create_custom_link.html:17
+msgid "Get the link"
+msgstr "Obtenir le lien"
+
+#: templates/pages_dashboard/create_custom_link.html:24
+msgid "Question"
+msgstr "Question"
+
+#: templates/pages_dashboard/create_custom_link.html:25
+msgid "Add question"
+msgstr "Ajouter une question"
+
+#: templates/pages_dashboard/create_custom_link.html:26
+msgid "Add the question"
+msgstr "Ajouter la question"
+
+#: templates/pages_dashboard/create_custom_link.html:51
+msgid "Provide recommendations from AI?"
+msgstr "Fournir des recommandations de l'IA ?"
+
+#: templates/pages_dashboard/create_custom_link.html:52
+msgid "Our AI component can provide you with recommendations on how to improve your work environment."
+msgstr "Notre composant IA peut vous fournir des recommandations sur la façon d'améliorer votre environnement de travail."
+
+#: templates/pages_dashboard/create_custom_link.html:55
+msgid "Yes"
+msgstr "Oui"
+
+#: templates/pages_dashboard/create_custom_link.html:56
+msgid "No"
+msgstr "Non"
+
+#: templates/pages_dashboard/create_custom_link.html:67
+msgid "Will the link be anonymous?"
+msgstr "Le lien sera-t-il anonyme ?"
+
+#: templates/pages_dashboard/create_custom_link.html:68
+msgid "If the link is anonymous, the user will see that they can say anything, and you won't see what the user said."
+msgstr "Si le lien est anonyme, l'utilisateur verra qu'il peut dire n'importe quoi, et vous ne verrez pas ce que l'utilisateur a dit."
+
+#: templates/pages_dashboard/create_custom_link.html:85
+msgid "Multiple links?"
+msgstr "Liens multiples ?"
+
+#: templates/pages_dashboard/create_custom_link.html:86
+msgid "YES means that one user can leave multiple reviews, NO means that on this link you can leave only one-time review."
+msgstr "OUI signifie qu'un utilisateur peut laisser plusieurs avis, NON signifie que sur ce lien vous ne pouvez laisser qu'un seul avis."
+
+#: templates/pages_dashboard/create_custom_link.html:103
+msgid "Requesting a username?"
+msgstr "Demander un nom d'utilisateur ?"
+
+#: templates/pages_dashboard/create_custom_link.html:104
+msgid "This function is so that you can identify the person who will be tested. If you allow it, we will ask for the person's name before we start the review/testing process."
+msgstr "Cette fonction permet d'identifier la personne qui sera testée. Si vous l'autorisez, nous demanderons le nom de la personne avant de commencer le processus d'évaluation/test."
+
+#: templates/components/_promo.html:2
+msgid "Get -30%% premium rate, until Dec 30th"
+msgstr "Obtenez -30%% sur le tarif premium, jusqu'au 30 déc"
+
+#: templates/components/_promo.html:3
+msgid "Buy at a discount"
+msgstr "Acheter à prix réduit"
+
