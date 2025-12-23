@@ -982,3 +982,111 @@ msgstr "Obtenez -30%% sur le tarif premium, jusqu'au 30 déc"
 msgid "Buy at a discount"
 msgstr "Acheter à prix réduit"
 
+#: templates/testing.html:35
+msgid "Anonymous company review to improve level of satisfaction"
+msgstr "Évaluation anonyme de l'entreprise pour améliorer le niveau de satisfaction"
+
+#: templates/testing.html:36
+msgid "Do not worry that your feedback can be seen. We don't save your feedback voice or results."
+msgstr "Ne vous inquiétez pas que vos commentaires puissent être vus. Nous ne sauvegardons pas votre voix ou vos résultats."
+
+#: templates/testing.html:37
+msgid "The employer will only get a squeeze of artificial intelligence."
+msgstr "L'employeur ne recevra qu'un résumé de l'intelligence artificielle."
+
+#: templates/testing.html:42
+msgid "Anonymous company review, to improve quality in the work environment"
+msgstr "Évaluation anonyme de l'entreprise, pour améliorer la qualité de l'environnement de travail"
+
+#: templates/testing.html:43
+msgid "Important! do not worry that your feedback can be seen, we do not save your feedback not your voice feedback. The employer will only get a squeeze of artificial intelligence."
+msgstr "Important ! Ne vous inquiétez pas que vos commentaires puissent être vus, nous ne sauvegardons pas vos commentaires ni vos commentaires vocaux. L'employeur ne recevra qu'un résumé de l'intelligence artificielle."
+
+#: templates/testing.html:47
+msgid "You can provide feedback here, but be aware that your responses will be shared with management. To leave an anonymous review for this company,"
+msgstr "Vous pouvez fournir des commentaires ici, mais sachez que vos réponses seront partagées avec la direction. Pour laisser un avis anonyme pour cette entreprise,"
+
+#: templates/testing.html:48
+msgid "click here"
+msgstr "cliquez ici"
+
+#: templates/testing.html:54
+msgid "Your name"
+msgstr "Votre nom"
+
+#: templates/testing.html:67
+msgid "Get Started"
+msgstr "Commencer"
+
+#: templates/testing.html:73
+msgid "By clicking the \"Start testing\" button you agree to the processing and transfer of data to your management team."
+msgstr "En cliquant sur le bouton \"Démarrer le test\", vous acceptez le traitement et le transfert des données à votre équipe de direction."
+
+#: templates/testing.html:87
+msgid "Question"
+msgstr "Question"
+
+#: templates/testing.html:99
+msgid "Your thoughtful and honest responses are crucial for your employer. Answering thoughtfully ensures meaningful insights that contribute to a better work environment. Rest assured, your responses are completely anonymous, prioritizing your privacy throughout the process"
+msgstr "Vos réponses réfléchies et honnêtes sont cruciales pour votre employeur. Répondre de manière réfléchie garantit des informations significatives qui contribuent à un meilleur environnement de travail. Soyez assuré que vos réponses sont complètement anonymes, priorisant votre confidentialité tout au long du processus"
+
+#: templates/testing.html:107
+msgid "Continue"
+msgstr "Continuer"
+
+#: templates/testing.html:175
+msgid "Please answer the questions for accurate analysis, you will have the opportunity to add information from yourself at the end of the thesis"
+msgstr "Veuillez répondre aux questions pour une analyse précise, vous aurez l'occasion d'ajouter des informations de votre part à la fin du questionnaire"
+
+#: templates/testing.html:187
+msgid "How does it work?"
+msgstr "Comment ça fonctionne ?"
+
+#: templates/testing.html:191
+msgid "We prepare questions to determine necessary changes in your company."
+msgstr "Nous préparons des questions pour déterminer les changements nécessaires dans votre entreprise."
+
+#: templates/testing.html:195
+msgid "We process your answers confidentially without recording voice messages."
+msgstr "Nous traitons vos réponses de manière confidentielle sans enregistrer de messages vocaux."
+
+#: templates/testing.html:199
+msgid "After the questionnaire, you can provide further feedback for analysis."
+msgstr "Après le questionnaire, vous pouvez fournir d'autres commentaires pour l'analyse."
+
+#: templates/testing.html:203
+msgid "Our service informs the employer about staff preferences and concerns."
+msgstr "Notre service informe l'employeur des préférences et préoccupations du personnel."
+
+#: templates/testing.html:207
+msgid "Your company receives insights for workflow improvement."
+msgstr "Votre entreprise reçoit des informations pour l'amélioration du flux de travail."
+
+#: templates/testing.html:219
+msgid "Thank you for your feedback"
+msgstr "Merci pour vos commentaires"
+
+#: templates/testing.html:229
+msgid "We are sure your feedback can improve quality in the workplace."
+msgstr "Nous sommes sûrs que vos commentaires peuvent améliorer la qualité sur le lieu de travail."
+
+#: templates/testing.html:230
+msgid "You have already left a review. This link is disposable!"
+msgstr "Vous avez déjà laissé un avis. Ce lien est à usage unique !"
+
+#: templates/testing.html:249
+msgid "Thank you"
+msgstr "Merci"
+
+#: templates/testing.html:249
+msgid "for your feedback"
+msgstr "pour vos commentaires"
+
+#: templates/testing.html:272
+msgid "powered by"
+msgstr "propulsé par"
+
+#: templates/ui_chunks/pre-questionary.html:12
+msgid "Continue"
+msgstr "Continuer"
+

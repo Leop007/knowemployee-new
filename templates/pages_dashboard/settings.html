@@ -18,16 +18,16 @@
     <div class="change_data">
         <span class="alr"></span>
         <div class="row">
-            <label for="name_company" class="tc visually-hidden">Company name</label>
+            <label for="name_company" class="tc visually-hidden">{{ _('Company name') }}</label>
             <input id="name_company" type="text"
                    value="{{ '' if data_page.user_data.company_name == '0' else data_page.user_data.company_name }}"
-                   placeholder="Name Company">
+                   placeholder="{{ _('Name Company') }}">
         </div>
     </div>
 
     <div class="change_data f">
         <span class="alr"></span>
-        <h3 class="tc visually-hidden">Company description</h3>
+        <h3 class="tc visually-hidden">{{ _('Company description') }}</h3>
         <div class="row">
             <div id="update_slogan" contenteditable="true">
                 {{ "" if data_page.user_data.slogan == '0' else data_page.user_data.slogan }}
@@ -40,15 +40,15 @@
     <div class="change_data change_password">
         <span class="alr"></span>
         <div class="row">
-            <h3 class="tc">Change the password</h3>
-            <label class="visually-hidden" for="current_password">Current password</label>
-            <input id="current_password" placeholder="Current Password">
-            <label class="visually-hidden" for="new_password">New password</label>
-            <input id="new_password" placeholder="New Password">
-            <label class="visually-hidden" for="confirm_password">Confirm password</label>
-            <input id="confirm_password" placeholder="Confirm Password">
+            <h3 class="tc">{{ _('Change the password') }}</h3>
+            <label class="visually-hidden" for="current_password">{{ _('Current password') }}</label>
+            <input id="current_password" placeholder="{{ _('Current Password') }}">
+            <label class="visually-hidden" for="new_password">{{ _('New password') }}</label>
+            <input id="new_password" placeholder="{{ _('New Password') }}">
+            <label class="visually-hidden" for="confirm_password">{{ _('Confirm password') }}</label>
+            <input id="confirm_password" placeholder="{{ _('Confirm Password') }}">
         </div>
-        <button id="save_changes" disabled>Save changes</button>
+        <button id="save_changes" disabled>{{ _('Save changes') }}</button>
     </div>
 
 
@@ -63,11 +63,10 @@
     <div class="change_data">
         <div class="delete_account">
             <div class="warning">
-                <h4>Watch out for the danger zone</h4>
-                <p>If you choose to delete your company account, your data will be irreversibly erased. We grant you the
-                    right to make this decision.</p>
+                <h4>{{ _('Watch out for the danger zone') }}</h4>
+                <p>{{ _('If you choose to delete your company account, your data will be irreversibly erased. We grant you the right to make this decision.') }}</p>
             </div>
-            <button>Delete account</button>
+            <button>{{ _('Delete account') }}</button>
         </div>
     </div>
 

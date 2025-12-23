@@ -9,6 +9,7 @@
           type="text/css">
 </head>
 <body>
+{% include "components/_language_selector.html" %}
 
 <div class="pre-questionary">
     {% include "ui_chunks/pre-questionary.html" %}
@@ -32,29 +33,27 @@
                     <p>{{ data_company.slogan if data_company.slogan != "" and data_company.slogan != '0' else "" }}</p>
                 </div>
                 <div class="description">
-                    <p>Anonymous company review to improve level of satisfaction</p>
-                    <p>Do not worry that your feedback can be seen. We don’t save your feedback voice or
-                        results.<br>
-                        The employer will only get a squeeze of artificial intelligence.</p>
+                    <p>{{ _('Anonymous company review to improve level of satisfaction') }}</p>
+                    <p>{{ _('Do not worry that your feedback can be seen. We don\'t save your feedback voice or results.') }}<br>
+                        {{ _('The employer will only get a squeeze of artificial intelligence.') }}</p>
                 </div>
 
                 {% if data_company.anonimus_feedback == "1" %}
                 <div class="row_user">
-                    <p class="type">Anonymous company review, to improve quality in the work environment</p>
-                    <span>Important! do not worry that your feedback can be seen, we do not save your feedback not your voice feedback. The employer will only get a squeeze of artificial intelligence.</span>
+                    <p class="type">{{ _('Anonymous company review, to improve quality in the work environment') }}</p>
+                    <span>{{ _('Important! do not worry that your feedback can be seen, we do not save your feedback not your voice feedback. The employer will only get a squeeze of artificial intelligence.') }}</span>
                 </div>
                 {% else %}
                 <div class="row_user">
-                    <p class="type">You can provide feedback here, but be aware that your responses will be shared with
-                        management. To leave an anonymous review for this company, <a
-                                href="{{ data_company.anonimus_feedback_link  }}">click here</a></p>
+                    <p class="type">{{ _('You can provide feedback here, but be aware that your responses will be shared with management. To leave an anonymous review for this company,') }} <a
+                                href="{{ data_company.anonimus_feedback_link  }}">{{ _('click here') }}</a></p>
                 </div>
                 {% endif %}
 
                 {% if data_company.username_bool == True %}
                 <div class="input_user">
-                    <label class="visually-hidden" for="name">Your name</label>
-                    <input type="text" placeholder="Your name">
+                    <label class="visually-hidden" for="name">{{ _('Your name') }}</label>
+                    <input type="text" placeholder="{{ _('Your name') }}">
                 </div>
                 {% endif %}
 
@@ -64,13 +63,13 @@
                             {% if data_company.username_bool %}disabled="disabled" {% endif %}
                             type_test="{{ 'custom' if data_company.type == 'custom' else 'anonymous' }}"
                             id="startRecording">
-                        <span>Get Started</span>
+                        <span>{{ _('Get Started') }}</span>
                     </button>
                     <span id="error"></span>
                 </div>
 
                 {% if data_company.anonimus_feedback == "0" %}
-                <span class="confident_accept">By clicking the "Start testing" button you agree to the processing and transfer of data to your management team.</span>
+                <span class="confident_accept">{{ _('By clicking the "Start testing" button you agree to the processing and transfer of data to your management team.') }}</span>
                 {% endif %}
             </div>
 
@@ -86,7 +85,7 @@
                 <img src="./../../static/assets/images/logo-dark.svg" alt="Know Employee survey page">
             </div>
             <div class="question">
-                <div class="q_count">Question <span id="a">1</span>/<span id="c"></span></div>
+                <div class="q_count">{{ _('Question') }} <span id="a">1</span>/<span id="c"></span></div>
                 <div class="slide">
                     <h3></h3>
                     <h3></h3>
@@ -96,15 +95,13 @@
                     <canvas id="visualization"></canvas>
                 </div>
                 <h5>
-                    Your thoughtful and honest responses are crucial for your employer. Answering thoughtfully ensures
-                    meaningful insights that contribute to a better work environment. Rest assured, your responses are
-                    completely anonymous, prioritizing your privacy throughout the process
+                    {{ _('Your thoughtful and honest responses are crucial for your employer. Answering thoughtfully ensures meaningful insights that contribute to a better work environment. Rest assured, your responses are completely anonymous, prioritizing your privacy throughout the process') }}
                 </h5>
 
 
                 <div class="row_button">
                     <button class="bt button button_big" type="button" id="stopRecording">
-                        <span>Continue</span>
+                        <span>{{ _('Continue') }}</span>
                     </button>
                 </div>
 
@@ -131,15 +128,15 @@
                 </div>
 
                 <div class="row_user">
-                    <p class="type">Anonymous company review, to improve quality in the work environment</p>
-                    <span>Important! do not worry that your feedback can be seen, we do not save your feedback not your voice feedback. The employer will only get a squeeze of artificial intelligence.</span>
+                    <p class="type">{{ _('Anonymous company review, to improve quality in the work environment') }}</p>
+                    <span>{{ _('Important! do not worry that your feedback can be seen, we do not save your feedback not your voice feedback. The employer will only get a squeeze of artificial intelligence.') }}</span>
                 </div>
 
                 <div class="submit">
                     <button class="button button_big" type="button"
                             type_test="{{ 'custom' if data_company.type == 'custom' else 'anonymous' }}"
                             id="startRecording">
-                        <span>Get Started</span>
+                        <span>{{ _('Get Started') }}</span>
                     </button>
                     <span id="error"></span>
 
@@ -160,19 +157,18 @@
                     <h3></h3>
                     <h3></h3>
                 </div>
-                <div class="q_count"><span id="a">1</span>/<span id="c"></span></div>
+                <div class="q_count">{{ _('Question') }} <span id="a">1</span>/<span id="c"></span></div>
                 <div class="recognize">
                     <canvas id="visualization"></canvas>
                 </div>
 
                 <div class="row_button">
                     <button class="bt button button_big" type="button" id="stopRecording">
-                        <span>Continue</span>
+                        <span>{{ _('Continue') }}</span>
                     </button>
                 </div>
 
-                <h5>Please answer the questions for accurate analysis, you will have the opportunity to add information
-                    from yourself at the end of the thesis</h5>
+                <h5>{{ _('Please answer the questions for accurate analysis, you will have the opportunity to add information from yourself at the end of the thesis') }}</h5>
 
             </div>
             <div class="load hidden">
@@ -184,27 +180,27 @@
         </div>
         <div class="boxed_info">
             <div class="content_info">
-                <h3>How does it work?</h3>
+                <h3>{{ _('How does it work?') }}</h3>
                 <div class="list">
                     <div class="box">
                         <span class="cube">1</span>
-                        <p>We prepare questions to determine necessary changes in your company.</p>
+                        <p>{{ _('We prepare questions to determine necessary changes in your company.') }}</p>
                     </div>
                     <div class="box">
                         <span class="cube">2</span>
-                        <p>We process your answers confidentially without recording voice messages.</p>
+                        <p>{{ _('We process your answers confidentially without recording voice messages.') }}</p>
                     </div>
                     <div class="box">
                         <span class="cube">3</span>
-                        <p>After the questionnaire, you can provide further feedback for analysis.</p>
+                        <p>{{ _('After the questionnaire, you can provide further feedback for analysis.') }}</p>
                     </div>
                     <div class="box">
                         <span class="cube">4</span>
-                        <p>Our service informs the employer about staff preferences and concerns.</p>
+                        <p>{{ _('Our service informs the employer about staff preferences and concerns.') }}</p>
                     </div>
                     <div class="box">
                         <span class="cube">5</span>
-                        <p>Your company receives insights for workflow improvement.</p>
+                        <p>{{ _('Your company receives insights for workflow improvement.') }}</p>
                     </div>
                 </div>
             </div>
@@ -216,7 +212,7 @@
                     <img src="./../../static/assets/images/logo-light.svg" alt="Know Employee survey page">
                 </div>
                 <div class="content_thankyou hidden">
-                    <h2>Thank you for your feedback</h2>
+                    <h2>{{ _('Thank you for your feedback') }}</h2>
                     <div class="load">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z"
@@ -246,7 +242,7 @@
                     <h1 style="color: #fff;">{{ data_company.username }}</h1>
                     {% endif %}
                     <div class="star"></div>
-                    <h2>Thank you<br> for your feedback</h2>
+                    <h2>{{ _('Thank you') }}<br> {{ _('for your feedback') }}</h2>
                     <div class="load">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z"
@@ -260,7 +256,7 @@
                     </p>
 
                     {% if data_company.checked == True %}
-                    <p style="margin: 0;">You have already left a review. This link is disposable!</p>
+                    <p style="margin: 0;">{{ _('You have already left a review. This link is disposable!') }}</p>
                     {% endif %}
                 </div>
                 <div class="circle_abs"></div>
@@ -269,11 +265,12 @@
         </div>
 
     </div>
-    <div class="powered">powered by <a href="/">KnowEmployee</a></div>
+    <div class="powered">{{ _('powered by') }} <a href="/">KnowEmployee</a></div>
 </section>
 
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='assets/menu/script.js') }}"></script>
 {{ data_company.questions|safe }}
 <script src="{{ url_for('static', filename='js/testing.js') }}"></script>
 </body>
