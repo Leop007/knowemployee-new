@@ -116,6 +116,32 @@ body {
   overflow: hidden !important;
 }
 
+/* Allow scrolling on mobile devices */
+@media screen and (max-width: 768px) {
+  .thank_you {
+    height: auto !important;
+    min-height: 100vh !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+    position: relative !important;
+    width: 100% !important;
+  }
+  
+  /* Make body and html scrollable on mobile */
+  body {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    height: auto !important;
+  }
+  
+  html {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    height: auto !important;
+  }
+}
+
 @media screen and (min-width: 1150px) {
   .thank_you {
     width: 1310px;
@@ -136,6 +162,18 @@ body {
   z-index: 100;
   padding: 0 50px;
   text-align: center;
+}
+
+/* On mobile, allow content to scroll and adjust layout */
+@media screen and (max-width: 768px) {
+  .thank_you .content_thankyou {
+    height: auto !important;
+    min-height: calc(100vh + 100px) !important;
+    justify-content: flex-start !important;
+    padding: 60px 20px 120px 20px !important;
+    overflow-y: visible !important;
+    width: 100% !important;
+  }
 }
 
 @media screen and (min-width: 1160px) {
@@ -244,23 +282,30 @@ body {
 
 @media screen and (max-width: 768px) {
   .thank_you .content_thankyou {
-    padding: 0 20px;
+    height: auto;
+    min-height: 100vh;
+    padding: 60px 20px 80px 20px;
+    overflow-y: visible;
   }
   
   .thank_you .content_thankyou h2 {
     text-align: center;
     width: 100%;
+    margin-bottom: 15px;
   }
   
   .thank_you .content_thankyou p {
     text-align: center;
     width: 100%;
     padding: 0 10px;
+    margin-bottom: 20px;
   }
   
   .thank_you .content_thankyou .close-window-btn {
     width: 80%;
     max-width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
 
@@ -358,9 +403,7 @@ body {
   padding: 50px 0;
 }
 
-.thank_you {
-  min-height: 100vh;
-}
+/* Duplicate rule removed - using main .thank_you definition above */
 
 .input_user input {
   padding: 2px 30px;
@@ -565,6 +608,16 @@ body {
   flex-direction: column;
 }
 
+/* On mobile, ensure wpr_tests allows scrolling */
+@media screen and (max-width: 768px) {
+  .wpr_tests {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+}
+
 .wpr_tests .wrapper {
   width: 100%;
   min-height: 100%;
@@ -573,6 +626,14 @@ body {
   align-items: center;
   display: flex;
   position: relative;
+}
+
+/* On mobile, allow wrapper to scroll if content overflows */
+@media screen and (max-width: 768px) {
+  .wpr_tests .wrapper {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 @media screen and (min-width: 0px) {

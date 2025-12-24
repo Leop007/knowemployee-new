@@ -38,6 +38,17 @@
   @include mq(1150px){
     width: 1310px;
   }
+  
+  // Allow scrolling on mobile devices
+  @media screen and (max-width: 768px) {
+    height: auto !important;
+    min-height: 100vh !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+    position: relative !important;
+    width: 100% !important;
+  }
 
   .load {
     display: flex !important;
@@ -52,6 +63,16 @@
     align-items: center;
     z-index: 100;
     padding: 0 50px;
+    
+    // On mobile, allow content to scroll and adjust layout
+    @media screen and (max-width: 768px) {
+      height: auto !important;
+      min-height: calc(100vh + 100px) !important;
+      justify-content: flex-start !important;
+      padding: 60px 20px 120px 20px !important;
+      overflow-y: visible !important;
+      width: 100% !important;
+    }
 
     @include mq(1160px){
       padding: 0;
