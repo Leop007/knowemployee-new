@@ -68,6 +68,11 @@ def get_locale():
 
 babel = Babel(app, locale_selector=get_locale)
 
+# Context processor to make 'year' available to all templates
+@app.context_processor
+def inject_year():
+    return {'year': datetime.datetime.now().year}
+
 # Trust proxy headers from nginx (only in production)
 if ENV == 'production':
     from werkzeug.middleware.proxy_fix import ProxyFix
