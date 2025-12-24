@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/home/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/cookie-consent/cookie-consent.css') }}" type="text/css">
     {% block style %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
 {% include "components/_language_selector.html" %}
+{% include "components/_cookie_consent.html" %}
 <div class="wrapper_container">
     <header class="header">
         {% include "menu.html" %}
@@ -19,6 +21,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='assets/menu/script.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/cookie-consent/cookie-consent.js') }}"></script>
 {% block scripts %} {% endblock %}
 </body>
 </html>

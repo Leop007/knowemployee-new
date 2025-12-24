@@ -1,0 +1,47 @@
+<div id="cookie-consent-banner" class="cookie-consent-banner" style="display: none;">
+    <div class="cookie-consent-content">
+        <div class="cookie-consent-text">
+            <h3>{{ _('Cookie Consent') }}</h3>
+            <p>{{ _('We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.') }}</p>
+            <p>
+                <a href="{{ url_for('cookie_policy') }}" target="_blank">{{ _('Learn more in our Cookie Policy') }}</a>
+            </p>
+        </div>
+        <div class="cookie-consent-actions">
+            <button id="cookie-accept-all" class="cookie-btn cookie-btn-accept">{{ _('Accept All') }}</button>
+            <button id="cookie-accept-necessary" class="cookie-btn cookie-btn-necessary">{{ _('Necessary Only') }}</button>
+            <button id="cookie-customize" class="cookie-btn cookie-btn-customize">{{ _('Customize') }}</button>
+        </div>
+    </div>
+    
+    <!-- Customize Panel (hidden by default) -->
+    <div id="cookie-customize-panel" class="cookie-customize-panel" style="display: none;">
+        <h4>{{ _('Cookie Preferences') }}</h4>
+        <div class="cookie-category">
+            <label>
+                <input type="checkbox" id="cookie-necessary" checked disabled>
+                <strong>{{ _('Necessary Cookies') }}</strong>
+                <span class="cookie-desc">{{ _('These cookies are essential for the website to function properly. They cannot be disabled.') }}</span>
+            </label>
+        </div>
+        <div class="cookie-category">
+            <label>
+                <input type="checkbox" id="cookie-analytics">
+                <strong>{{ _('Analytics Cookies') }}</strong>
+                <span class="cookie-desc">{{ _('These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.') }}</span>
+            </label>
+        </div>
+        <div class="cookie-category">
+            <label>
+                <input type="checkbox" id="cookie-marketing">
+                <strong>{{ _('Marketing Cookies') }}</strong>
+                <span class="cookie-desc">{{ _('These cookies are used to track visitors across websites to display relevant advertisements.') }}</span>
+            </label>
+        </div>
+        <div class="cookie-consent-actions">
+            <button id="cookie-save-preferences" class="cookie-btn cookie-btn-accept">{{ _('Save Preferences') }}</button>
+            <button id="cookie-cancel-customize" class="cookie-btn cookie-btn-cancel">{{ _('Cancel') }}</button>
+        </div>
+    </div>
+</div>
+

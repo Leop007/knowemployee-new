@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/style_ui_chunks/pre-questionary.css') }}"
           type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/cookie-consent/cookie-consent.css') }}" type="text/css">
 </head>
 <body>
 {% include "components/_language_selector.html" %}
+{% include "components/_cookie_consent.html" %}
 
 <div class="pre-questionary">
     {% include "ui_chunks/pre-questionary.html" %}
@@ -271,6 +273,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='assets/menu/script.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/cookie-consent/cookie-consent.js') }}"></script>
 {{ data_company.questions|safe }}
 <script src="{{ url_for('static', filename='js/testing.js') }}"></script>
 </body>

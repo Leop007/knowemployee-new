@@ -1318,3 +1318,63 @@ msgstr "Know Employee est bien plus qu'une plateforme : c'est un engagement en f
 msgid "Because when people feel good at work, everyone benefits."
 msgstr "Parce que lorsque les collaborateurs se sentent bien au travail, tout le monde y gagne."
 
+#: templates/components/_cookie_consent.html:4
+msgid "Cookie Consent"
+msgstr "Consentement aux cookies"
+
+#: templates/components/_cookie_consent.html:5
+msgid "We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies."
+msgstr "Nous utilisons des cookies pour améliorer votre expérience de navigation, fournir du contenu personnalisé et analyser notre trafic. En cliquant sur \"Tout accepter\", vous consentez à notre utilisation des cookies."
+
+#: templates/components/_cookie_consent.html:7
+msgid "Learn more in our Cookie Policy"
+msgstr "En savoir plus dans notre Politique de cookies"
+
+#: templates/components/_cookie_consent.html:12
+msgid "Accept All"
+msgstr "Tout accepter"
+
+#: templates/components/_cookie_consent.html:13
+msgid "Necessary Only"
+msgstr "Nécessaires uniquement"
+
+#: templates/components/_cookie_consent.html:14
+msgid "Customize"
+msgstr "Personnaliser"
+
+#: templates/components/_cookie_consent.html:19
+msgid "Cookie Preferences"
+msgstr "Préférences de cookies"
+
+#: templates/components/_cookie_consent.html:23
+msgid "Necessary Cookies"
+msgstr "Cookies nécessaires"
+
+#: templates/components/_cookie_consent.html:24
+msgid "These cookies are essential for the website to function properly. They cannot be disabled."
+msgstr "Ces cookies sont essentiels au bon fonctionnement du site web. Ils ne peuvent pas être désactivés."
+
+#: templates/components/_cookie_consent.html:29
+msgid "Analytics Cookies"
+msgstr "Cookies d'analyse"
+
+#: templates/components/_cookie_consent.html:30
+msgid "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously."
+msgstr "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site web en collectant et en rapportant des informations de manière anonyme."
+
+#: templates/components/_cookie_consent.html:35
+msgid "Marketing Cookies"
+msgstr "Cookies marketing"
+
+#: templates/components/_cookie_consent.html:36
+msgid "These cookies are used to track visitors across websites to display relevant advertisements."
+msgstr "Ces cookies sont utilisés pour suivre les visiteurs sur différents sites web afin d'afficher des publicités pertinentes."
+
+#: templates/components/_cookie_consent.html:41
+msgid "Save Preferences"
+msgstr "Enregistrer les préférences"
+
+#: templates/components/_cookie_consent.html:42
+msgid "Cancel"
+msgstr "Annuler"
+
