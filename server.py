@@ -45,7 +45,15 @@ load_dotenv()
 
 # Environment configuration
 ENV = os.getenv('FLASK_ENV', 'production')  # 'development' or 'production'
-DOMAIN = os.getenv('DOMAIN', 'knowemployee.com')
+DOMAIN_RAW = os.getenv('DOMAIN', 'knowemployee.com')
+# Ensure DOMAIN always includes protocol
+if not DOMAIN_RAW.startswith(('http://', 'https://')):
+    if ENV == 'production':
+        DOMAIN = f"https://{DOMAIN_RAW}"
+    else:
+        DOMAIN = f"http://{DOMAIN_RAW}"
+else:
+    DOMAIN = DOMAIN_RAW
 NAME_PLATFORM = "KnowEmployee"
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', '97473497e94c7289a98fae8e9636ae67')
