@@ -37,6 +37,7 @@ from threading import Thread
 import subprocess
 import logging
 from flask_babel import Babel, gettext as _, lazy_gettext as _l
+from openai import OpenAI
 
 
 
@@ -92,8 +93,55 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 logger.info(f"Application starting in {ENV} mode. Domain: {DOMAIN}")
-DG_API_KEY = os.getenv('DEEPGRAM_API_KEY') 
-KEY = b'LIuLpwBjtQgsOlEKmY43Zd5xO_HqwW332ZM478rkHRM='
+DG_API_KEY = os.getenv('DEEPGRAM_API_KEY')
+if not DG_API_KEY:
+    logger.warning("DEEPGRAM_API_KEY is not set in environment variables. Deepgram transcription will not work.")
+
+# OpenAI client for TTS
+# Note: This is a known issue with openai==1.23.2 and httpx compatibility
+# The workaround is to initialize lazily (only when needed) or update to openai>=1.55.3
+OPENAI_API_KEY = os.getenv('API_KEY_OPENAI')
+OPENAI_ORG_ID = os.getenv('OPENAI_ORGANIZATION_ID')
+openai_client = None
+
+def get_openai_client():
+    """Lazy initialization of OpenAI client to avoid proxy issues at startup"""
+    global openai_client
+    if openai_client is not None:
+        return openai_client
+    
+    if not OPENAI_API_KEY:
+        logger.warning("API_KEY_OPENAI is not set. Text-to-speech will not work.")
+        return None
+    
+    try:
+        # Initialize exactly like analytics.py
+        if OPENAI_ORG_ID:
+            openai_client = OpenAI(
+                api_key=OPENAI_API_KEY,
+                organization=OPENAI_ORG_ID
+            )
+        else:
+            openai_client = OpenAI(
+                api_key=OPENAI_API_KEY
+            )
+        logger.info("OpenAI client initialized for TTS")
+        return openai_client
+    except Exception as e:
+        logger.warning(f"Failed to initialize OpenAI client: {e}")
+        return None
+
+# Fernet encryption key - load from env or generate from SECRET_KEY
+FERNET_KEY = os.getenv('FERNET_KEY')
+if not FERNET_KEY:
+    # Generate a Fernet key from SECRET_KEY using SHA256 hash
+    # This ensures we always have a valid 32-byte key
+    key_hash = hashlib.sha256(app.config['SECRET_KEY'].encode()).digest()
+    FERNET_KEY = base64.urlsafe_b64encode(key_hash).decode()
+    logger.info("FERNET_KEY not set in environment, generated from SECRET_KEY")
+else:
+    logger.info("FERNET_KEY loaded from environment")
+
 MIMETYPE = 'audio/wav'
 QUESTIONS = [
     "How would you rate the overall culture and climate of the company on a scale from 1 to 10? Please specify the reasons for your rating.",
@@ -113,7 +161,7 @@ QUESTIONS = [
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-cipher = Fernet(KEY)
+cipher = Fernet(FERNET_KEY.encode())
 
 def encrypt(message: str) -> str:
     """Encrypts the message"""
@@ -1138,13 +1186,21 @@ def stream():
     token = request.files.get('token')
     audio_file = request.files.get('buffer')
     audio_bytes = audio_file.read()
-    path_audio = "./file/audio/" +  str(uuid.uuid4()) + "_" + str(uuid.uuid4()) + ".wav"
+    
+    # Ensure the directory exists before writing
+    audio_dir = "./file/audio"
+    os.makedirs(audio_dir, exist_ok=True)
+    
+    path_audio = os.path.join(audio_dir, str(uuid.uuid4()) + "_" + str(uuid.uuid4()) + ".wav")
     print(f"Path: {path_audio}")
     with open(path_audio, 'wb') as file:
         file.write(audio_bytes)
 
         
     async def main():
+        if not DG_API_KEY:
+            raise ValueError("DEEPGRAM_API_KEY is not configured. Please set it in your .env file.")
+        
         deepgram = DeepgramClient(DG_API_KEY)
         with open(path_audio, 'rb') as file:
             buffer_data = file.read()
@@ -1174,13 +1230,103 @@ def stream():
         return jsonify({"success": True, "message": "Thanks for the feedback!", "text": encrypted_message})
         
         
+    except ValueError as e:
+        # API key missing error
+        logger.error(f"Deepgram API key error: {e}")
+        return jsonify({"success": False, "message": "Transcription service is not configured. Please contact support."})
     except Exception as e:
         exception_type, exception_object, exception_traceback = sys.exc_info()
+        logger.error(f"Deepgram transcription error: {e}", exc_info=True)
+        line_number = exception_traceback.tb_lineno if exception_traceback else None
         print(f"Error: {e}")
-        line_number = exception_traceback.tb_lineno
-        print(f"Line: {line_number}")
+        if line_number:
+            print(f"Line: {line_number}")
         return jsonify({"success": False, "message": "There was some kind of error. Try again"})
+
+# Text-to-Speech endpoint using OpenAI TTS API
+@app.route('/api/tts', methods=['POST'])
+def text_to_speech():
+    """Convert text to speech using OpenAI TTS API"""
+    try:
+        data = request.get_json()
+        text = data.get('text', '')
+        voice = data.get('voice', 'alloy')  # Options: alloy, echo, fable, onyx, nova, shimmer
+        language = data.get('language', 'en')  # Language code (en, fr, etc.)
         
+        if not text:
+            return jsonify({"success": False, "message": "No text provided"}), 400
+        
+        # Use lazy initialization to avoid proxy issues
+        client = get_openai_client()
+        if not client:
+            return jsonify({"success": False, "message": "TTS service is not configured"}), 503
+        
+        # Generate speech using OpenAI TTS
+        response = client.audio.speech.create(
+            model="gpt-4o-mini-tts",  # Using gpt-4o-mini-tts model
+            voice=voice,
+            input=text,
+            response_format="mp3",  # Options: mp3, opus, aac, flac
+            speed=1.0  # Speed: 0.25 to 4.0
+        )
+        
+        # Convert response to base64 for JSON transmission
+        audio_data = response.content
+        audio_base64 = base64.b64encode(audio_data).decode('utf-8')
+        
+        return jsonify({
+            "success": True,
+            "audio": audio_base64,
+            "format": "mp3"
+        })
+        
+    except Exception as e:
+        error_message = str(e)
+        error_code = None
+        error_type = type(e).__name__
+        openai_error_detail = None
+        
+        # Try to extract detailed error message from OpenAI response
+        if hasattr(e, 'body') and isinstance(e.body, dict):
+            if 'error' in e.body and isinstance(e.body['error'], dict):
+                openai_error_detail = e.body['error'].get('message', '')
+        elif hasattr(e, 'response') and hasattr(e.response, 'json'):
+            try:
+                error_body = e.response.json()
+                if 'error' in error_body and isinstance(error_body['error'], dict):
+                    openai_error_detail = error_body['error'].get('message', '')
+            except:
+                pass
+        
+        # Check for specific OpenAI API errors
+        if hasattr(e, 'status_code'):
+            error_code = e.status_code
+        elif hasattr(e, 'response') and hasattr(e.response, 'status_code'):
+            error_code = e.response.status_code
+        
+        # Handle PermissionDeniedError (403) specifically
+        if error_code == 403 or "403" in error_message or "Forbidden" in error_message or "PermissionDenied" in error_type:
+            if openai_error_detail and "does not have access to model" in openai_error_detail:
+                error_message = f"TTS model access denied: {openai_error_detail}. Please enable the TTS model (gpt-4o-mini-tts) in your OpenAI project settings at https://platform.openai.com/settings/project."
+            elif "does not have access to model" in error_message:
+                error_message = f"TTS model access denied: {error_message}. Please enable the TTS model (gpt-4o-mini-tts) in your OpenAI project settings at https://platform.openai.com/settings/project."
+            else:
+                error_message = "TTS access denied (403). Your OpenAI project may not have access to TTS models. Please check: 1) Enable TTS models in your OpenAI project settings, 2) Your account has billing enabled, 3) Your account tier supports TTS API."
+        elif error_code == 401 or "401" in error_message or "Authentication" in error_type:
+            error_message = "Invalid OpenAI API key (401). Please check your API_KEY_OPENAI in .env file."
+        elif error_code == 429 or "429" in error_message or "RateLimit" in error_type:
+            error_message = "OpenAI API rate limit exceeded (429). Please try again later."
+        elif openai_error_detail:
+            error_message = f"OpenAI API error: {openai_error_detail}"
+        elif error_code:
+            error_message = f"OpenAI API error ({error_code}): {str(e)}"
+        
+        # Log 403 errors as warnings since we have browser TTS fallback
+        if error_code == 403:
+            logger.warning(f"TTS OpenAI access denied (fallback to browser TTS): {error_message}")
+        else:
+            logger.error(f"TTS error: {error_message} (Type: {error_type}, Code: {error_code}, Detail: {openai_error_detail})", exc_info=True)
+        return jsonify({"success": False, "message": error_message}), 500
 
 @app.route('/anonymous/<token>', methods=['GET'])
 def anonimy(token):
