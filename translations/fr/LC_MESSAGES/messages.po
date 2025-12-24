@@ -1378,3 +1378,19 @@ msgstr "Enregistrer les préférences"
 msgid "Cancel"
 msgstr "Annuler"
 
+#: templates/testing.html:63
+msgid "Select Microphone"
+msgstr "Sélectionner le microphone"
+
+#: templates/testing.html:65
+msgid "Loading microphones..."
+msgstr "Chargement des microphones..."
+
+#: templates/testing.html:64
+msgid "Allow Microphone Access"
+msgstr "Autoriser l'accès au microphone"
+
+#: templates/testing.html:273
+msgid "Close Window"
+msgstr "Fermer la fenêtre"
+

@@ -59,6 +59,13 @@
                 </div>
                 {% endif %}
 
+                <div class="microphone_selector" style="display: block; margin-bottom: 20px;">
+                    <label for="microphoneSelector" style="display: block; margin-bottom: 8px; font-weight: 500; text-align: center;">{{ _('Select Microphone') }}</label>
+                    <select id="microphoneSelector" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; margin-top: 10px;">
+                        <option value="">{{ _('Loading microphones...') }}</option>
+                    </select>
+                </div>
+
                 <div class="submit">
 
                     <button class="bt button button_big" type="button"
@@ -91,6 +98,13 @@
                 <div class="slide">
                     <h3></h3>
                     <h3></h3>
+                </div>
+                <div class="tts-controls" style="text-align: center; margin: 15px 0;">
+                    <button id="playQuestionBtn" type="button" style="padding: 10px 20px; background: #6563ff; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; display: inline-flex; align-items: center; gap: 8px;">
+                        <span id="playIcon">🔊</span>
+                        <span id="playText">{{ _('Read Question Aloud') }}</span>
+                    </button>
+                    <audio id="questionAudio" style="display: none;"></audio>
                 </div>
 
                 <div class="recognize">
@@ -224,9 +238,10 @@
                     <img alt="thank you for your feedback" src="../static/assets/images/people.png">
                     <div class="star"></div>
                     <p>
-                        We are sure your feedback can improve quality in the workplace.
-                        You have already left a review. This link is disposable!
+                        {{ _('We are sure your feedback can improve quality in the workplace.') }}
+                        <br>{{ _('You have already left a review. This link is disposable!') }}
                     </p>
+                    <button id="closeWindowBtn3" type="button" class="close-window-btn">{{ _('Close Window') }}</button>
                 </div>
                 <div class="circle_abs"></div>
             </div>
@@ -241,7 +256,7 @@
                 <div class="content_thankyou hidden">
                     {% if data_company.multiple == False and data_company.checked == True and data_company.username !=
                     "" %}
-                    <h1 style="color: #fff;">{{ data_company.username }}</h1>
+                    <h1 style="color: #fff; text-align: center;">{{ data_company.username }}</h1>
                     {% endif %}
                     <div class="star"></div>
                     <h2>{{ _('Thank you') }}<br> {{ _('for your feedback') }}</h2>
@@ -253,13 +268,14 @@
                     </div>
                     <img alt="thank you for your feedback" src="../static/assets/images/people.png">
                     <p>
-                        We are sure your feedback can improve quality in the workplace.
-                        You have already left a review. This link is disposable!
+                        {{ _('We are sure your feedback can improve quality in the workplace.') }}
+                        {% if data_company.checked == True %}
+                        <br>{{ _('You have already left a review. This link is disposable!') }}
+                        {% else %}
+                        <br>{{ _('You have already left a review. This link is disposable!') }}
+                        {% endif %}
                     </p>
-
-                    {% if data_company.checked == True %}
-                    <p style="margin: 0;">{{ _('You have already left a review. This link is disposable!') }}</p>
-                    {% endif %}
+                    <button id="closeWindowBtn" type="button" class="close-window-btn">{{ _('Close Window') }}</button>
                 </div>
                 <div class="circle_abs"></div>
 
@@ -267,7 +283,7 @@
         </div>
 
     </div>
-    <div class="powered">{{ _('powered by') }} <a href="/">KnowEmployee</a></div>
+    <div class="powered">{{ _('powered by') }} <span>KnowEmployee</span></div>
 </section>
 
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="

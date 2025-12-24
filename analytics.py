@@ -156,7 +156,7 @@ def analyze_answers(arr_step):
                 available_tokens_for_response = MAX_TOKENS // 2
 
             response = client.chat.completions.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4o-mini",
                 messages=messages_q1,
                 max_tokens=available_tokens_for_response,
                 stop=None

@@ -226,6 +226,7 @@ html {
 }
 
 .pre-questionary .button-wrapper {
+  margin-top: -40px;
   padding-bottom: 90px;
 }
 
