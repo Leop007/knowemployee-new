@@ -593,6 +593,10 @@ function startFullListCustomFeedbacks() {
 
 
                             let domain = $('#_feead_custom').attr('domain');
+                            // Ensure domain has protocol
+                            if (domain && !/^https?:\/\//.test(domain)) {
+                                domain = window.location.protocol + '//' + domain;
+                            }
                             html_table += `
                             <div class="card_box">
                                 <div class="content_box">
@@ -1920,6 +1924,10 @@ if (document.querySelector('.quiz_section')) {
                     if (response.list.length > 0) {
                         response.list.reverse().map((item) => {
                             let domain = $('#_domain').attr('domain');
+                            // Ensure domain has protocol
+                            if (domain && !/^https?:\/\//.test(domain)) {
+                                domain = window.location.protocol + '//' + domain;
+                            }
 
                             const dateObject = new Date(item.timestamp);
                             const month = (dateObject.getMonth() + 1).toString().padStart(2, '0');
@@ -1932,9 +1940,9 @@ if (document.querySelector('.quiz_section')) {
                             html_table += `
                             <div class="quiz_box">
                                 <div class="content_box">
-                                    <button class="copy_link" title="Link to take the survey" href="${domain}/quiz/${item.token_quiz}">
+                                    <a class="copy_link" title="Link to take the survey" href="${domain}/quiz/${item.token_quiz}" target="_blank">
                                         <svg version="1.1" viewBox="0 0 20 12" width="20px" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink"><title/><desc/><defs/><g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1"><g fill="#000000" id="Core" transform="translate(-380.000000, -300.000000)"><g id="link" transform="translate(380.000000, 300.000000)"><path d="M6,7 L14,7 L14,5 L6,5 L6,7 L6,7 Z M1.9,6 C1.9,3.7 3.7,1.9 6,1.9 L9,1.9 L9,0 L6,0 C2.7,0 0,2.7 0,6 C0,9.3 2.7,12 6,12 L9,12 L9,10.1 L6,10.1 C3.7,10.1 1.9,8.3 1.9,6 L1.9,6 Z M14,0 L11,0 L11,1.9 L14,1.9 C16.3,1.9 18.1,3.7 18.1,6 C18.1,8.3 16.3,10.1 14,10.1 L11,10.1 L11,12 L14,12 C17.3,12 20,9.3 20,6 C20,2.7 17.3,0 14,0 L14,0 Z" id="Shape"/></g></g></g></svg>
-                                    </button>
+                                    </a>
                                 </div>
                                 <div class="col">
                                     <span class="time">
@@ -1962,10 +1970,16 @@ if (document.querySelector('.quiz_section')) {
                         $('.table_data .container_quiz').removeClass('hidden')
                         $('.table_data .container_quiz').html(html_table)
 
-                        $('.copy_link').click(async (e) => {
+                        // Only attach click handler to copy_link elements that are buttons, not anchor tags
+                        // Anchor tags should navigate normally without any JavaScript interference
+                        $('.container_quiz .copy_link').filter('button, [role="button"]').click(async (e) => {
+                            e.preventDefault();
                             let target = $(e.target).closest('.copy_link');
-                            let link = $(target).attr('href');
-
+                            let link = target.attr('href');
+                            if (!link) {
+                                let father = target.closest('.link');
+                                link = father.find('.link_domain').text();
+                            }
                             try {
                                 await navigator.clipboard.writeText(link);
                                 $.toast({
@@ -1985,6 +1999,15 @@ if (document.querySelector('.quiz_section')) {
                                     icon: 'error',
                                     stack: false
                                 })
+                            }
+                        });
+                        
+                        // Explicitly ensure anchor tags with .copy_link navigate normally
+                        // Remove any potential event handlers and let browser handle it
+                        $('.container_quiz .copy_link').filter('a').off('click').each(function() {
+                            // Ensure target="_blank" is set
+                            if (!$(this).attr('target')) {
+                                $(this).attr('target', '_blank');
                             }
                         });
 
@@ -2063,32 +2086,7 @@ if (document.querySelector('.quiz_section')) {
 }
 // ===========================
 
-if (document.querySelector('.quiz_veiwer .copy_link')) {
-    $('.copy_link').click(async (e) => {
-        let target = $(e.target).closest('.copy_link');
-        let link = $(target).attr('href');
-
-        try {
-            await navigator.clipboard.writeText(link);
-            $.toast({
-                text: "Link to review copied",
-                position: 'top-right',
-                hideAfter: 3000,
-                showHideTransition: 'fade',
-                icon: 'success',
-                stack: false
-            })
-        } catch (err) {
-            $.toast({
-                text: "Copy error",
-                position: 'top-right',
-                hideAfter: 3000,
-                showHideTransition: 'fade',
-                icon: 'error',
-                stack: false
-            })
-        }
-    });
-}
+// Handle Ctrl/Cmd+Click on quiz viewer copy links for copying
+// This is handled by the global handler above, so no need for separate handler here
 
 
