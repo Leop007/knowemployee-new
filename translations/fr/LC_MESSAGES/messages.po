@@ -1090,3 +1090,231 @@ msgstr "propulsé par"
 msgid "Continue"
 msgstr "Continuer"
 
+#: templates/header-about.html:3
+msgid "About Us"
+msgstr "À propos de nous"
+
+#: templates/about_us.html
+msgid "At Know Employee, we believe that understanding people is the foundation of building successful, resilient, and high-performing organizations. We are an AI-powered startup dedicated to transforming how businesses understand employee satisfaction, workplace sentiment, and organizational well-being. By combining advanced technology with a deep appreciation for human behavior, we help companies create healthier, more productive work environments where people feel heard, respected, and motivated."
+msgstr "Chez Know Employee, nous sommes convaincus que la compréhension des personnes est le fondement de toute organisation performante, résiliente et durable. Nous sommes une startup innovante, propulsée par l'intelligence artificielle, dont la mission est de transformer la manière dont les entreprises évaluent la satisfaction des employés, le climat de travail et le ressenti des équipes. En combinant des technologies avancées à une compréhension approfondie du facteur humain, nous aidons les organisations à créer des environnements de travail plus sains, plus productifs et plus épanouissants, où chaque collaborateur se sent écouté, respecté et motivé."
+
+#: templates/about_us.html
+msgid "In today's fast-paced and competitive business landscape, organizations are under constant pressure to perform, innovate, and adapt. Yet behind every metric, deadline, and strategic decision stands a workforce whose mood, engagement, and sense of belonging directly influence outcomes. At Know Employee, we start with a simple but powerful belief: when people come to work in a good mood, they are more likely to perform at their best. Our mission is to help organizations understand what shapes that mood—and what they can do to improve it."
+msgstr "Dans un contexte économique en constante évolution, les entreprises doivent sans cesse innover, s'adapter et performer. Pourtant, derrière chaque objectif, chaque indicateur et chaque décision stratégique se trouvent des femmes et des hommes dont l'état d'esprit, l'engagement et le sentiment d'appartenance ont un impact direct sur les résultats. Chez Know Employee, nous partons d'une conviction simple mais essentielle : lorsqu'une personne arrive au travail dans un bon état d'esprit, elle est plus susceptible de donner le meilleur d'elle-même. Notre objectif est d'aider les entreprises à comprendre ce qui influence cet état d'esprit — et comment l'améliorer durablement."
+
+#: templates/about_us.html
+msgid "Our Vision"
+msgstr "Notre vision"
+
+#: templates/about_us.html
+msgid "Our vision is to redefine how companies assess and improve employee satisfaction. Traditional surveys and feedback tools often fall short: they are infrequent, overly rigid, or fail to capture the real sentiment of employees. Even worse, employees may hesitate to provide honest feedback if they fear being identified or judged."
+msgstr "Notre vision est de repenser en profondeur la manière dont les entreprises mesurent et améliorent la satisfaction de leurs employés. Les méthodes traditionnelles, comme les enquêtes ponctuelles ou les outils de feedback classiques, montrent souvent leurs limites : elles sont trop rigides, trop rares, ou ne parviennent pas à refléter le ressenti réel des collaborateurs. Plus encore, de nombreux employés hésitent à s'exprimer librement lorsqu'ils craignent de ne pas être totalement anonymes."
+
+#: templates/about_us.html
+msgid "Know Employee was created to solve these challenges. We envision a workplace where employee feedback is continuous, meaningful, and safe. A workplace where insights are data-driven, actionable, and rooted in genuine trust. And ultimately, a workplace where organizations can align performance goals with employee well-being."
+msgstr "Know Employee est né pour répondre à ces défis. Nous imaginons un monde du travail dans lequel le feedback des employés est continu, pertinent et sécurisé. Un environnement où les analyses sont basées sur des données fiables, exploitables et construites sur une relation de confiance. Et surtout, un environnement où la performance de l'entreprise est étroitement liée au bien-être de ses collaborateurs."
+
+#: templates/about_us.html
+msgid "What We Do"
+msgstr "Ce que nous faisons"
+
+#: templates/about_us.html
+msgid "Know Employee provides an AI-driven platform designed to analyze workplace sentiment while ensuring employee anonymity. Our solution allows businesses to gain deep insights into their organizational environment without compromising trust or privacy."
+msgstr "Know Employee propose une plateforme alimentée par l'intelligence artificielle, conçue pour analyser le climat social et la satisfaction des employés tout en garantissant leur anonymat. Notre solution permet aux entreprises d'obtenir une vision claire et approfondie de leur environnement de travail, sans compromettre la confidentialité ni la confiance des équipes."
+
+#: templates/about_us.html
+msgid "Using cutting-edge algorithms, our platform evaluates employee sentiment and satisfaction patterns across teams, departments, and time periods. The result is a clear, data-backed understanding of how employees feel about their work environment and how that sentiment evolves."
+msgstr "Grâce à des algorithmes de pointe, notre plateforme identifie et analyse les tendances du ressenti des employés à travers les équipes, les départements et les périodes de temps. Elle offre ainsi une compréhension globale et objective de la manière dont les collaborateurs perçoivent leur environnement professionnel et de l'évolution de ce ressenti dans le temps."
+
+#: templates/about_us.html
+msgid "Rather than focusing on isolated opinions, we help organizations see the bigger picture: trends, signals, and underlying dynamics that influence morale, engagement, and performance."
+msgstr "Plutôt que de se limiter à des opinions isolées, Know Employee aide les organisations à détecter des signaux forts, des tendances durables et des dynamiques internes qui influencent l'engagement, la motivation et la performance."
+
+#: templates/about_us.html
+msgid "The Power of Anonymity"
+msgstr "La puissance de l'anonymat"
+
+#: templates/about_us.html
+msgid "One of the biggest barriers to honest employee feedback is fear—fear of retaliation, misinterpretation, or negative consequences. We recognized early on that meaningful insights can only be obtained when employees feel truly safe expressing themselves."
+msgstr "L'un des principaux freins à un feedback honnête est la peur : peur d'être identifié, jugé ou de subir des conséquences négatives. Dès le départ, nous avons compris que des analyses pertinentes ne peuvent exister que si les employés se sentent réellement en sécurité pour s'exprimer."
+
+#: templates/about_us.html
+msgid "That is why anonymity is at the core of Know Employee's platform. Our algorithms are designed to protect individual identities while still delivering accurate, aggregated insights to management. This approach encourages honesty, reduces bias, and increases participation."
+msgstr "C'est pourquoi l'anonymat est au cœur de la plateforme Know Employee. Nos algorithmes sont spécifiquement conçus pour protéger l'identité des individus tout en fournissant aux organisations des analyses agrégées, fiables et exploitables. Cette approche favorise l'honnêteté, réduit les biais et augmente significativement le taux de participation."
+
+#: templates/about_us.html
+msgid "By ensuring anonymity, we help organizations build trust—not just in the tool, but in the feedback process itself."
+msgstr "En garantissant l'anonymat, nous aidons les entreprises à instaurer une relation de confiance durable — non seulement envers l'outil, mais aussi envers la démarche de feedback elle-même."
+
+#: templates/about_us.html
+msgid "Why Employee Satisfaction Matters"
+msgstr "Pourquoi la satisfaction des employés est essentielle"
+
+#: templates/about_us.html
+msgid "Employee satisfaction is not a \"soft\" metric. It is a critical business driver."
+msgstr "La satisfaction des employés n'est pas un indicateur secondaire. Il s'agit d'un levier stratégique majeur."
+
+#: templates/about_us.html
+msgid "Satisfied employees are more engaged, more productive, and more likely to collaborate effectively. They take greater ownership of their work, contribute ideas more freely, and remain with organizations longer. On the other hand, low morale can lead to disengagement, reduced performance, absenteeism, and turnover—all of which carry significant costs."
+msgstr "Des employés satisfaits sont généralement plus engagés, plus productifs et plus enclins à collaborer efficacement. Ils prennent davantage d'initiatives, partagent leurs idées et s'investissent sur le long terme. À l'inverse, un climat de travail dégradé peut entraîner désengagement, baisse de performance, absentéisme et turnover, avec des coûts humains et financiers considérables."
+
+#: templates/about_us.html
+msgid "At Know Employee, we focus on helping organizations understand this connection between mood, satisfaction, and performance. By identifying areas of concern early and highlighting what works well, companies can take proactive steps to improve their work environment before small issues grow into major problems."
+msgstr "Chez Know Employee, nous aidons les organisations à comprendre ce lien fondamental entre bien-être, motivation et performance. En identifiant les points de tension à un stade précoce et en mettant en lumière les facteurs positifs, les entreprises peuvent agir de manière proactive et prévenir l'apparition de problématiques plus graves."
+
+#: templates/about_us.html
+msgid "Turning Insights into Action"
+msgstr "Transformer les analyses en actions concrètes"
+
+#: templates/about_us.html
+msgid "Data alone does not create change—action does. That is why Know Employee goes beyond surface-level reporting. Our analysis tools are designed to help decision-makers interpret results clearly and translate insights into meaningful improvements."
+msgstr "Les données seules ne suffisent pas à provoquer le changement. Ce sont les décisions et les actions qui font la différence. C'est pourquoi Know Employee ne se limite pas à la production de rapports. Nos outils d'analyse sont conçus pour aider les décideurs à interpréter les résultats de manière claire et à les transformer en actions concrètes."
+
+#: templates/about_us.html
+msgid "By understanding workforce sentiment, organizations can:"
+msgstr "Grâce à une meilleure compréhension du ressenti des équipes, les organisations peuvent :"
+
+#: templates/about_us.html
+msgid "Identify strengths in their workplace culture"
+msgstr "Identifier les forces de leur culture d'entreprise"
+
+#: templates/about_us.html
+msgid "Detect early warning signs of dissatisfaction"
+msgstr "Détecter rapidement les signes de démotivation"
+
+#: templates/about_us.html
+msgid "Evaluate the impact of organizational changes"
+msgstr "Évaluer l'impact des changements organisationnels"
+
+#: templates/about_us.html
+msgid "Improve communication and leadership practices"
+msgstr "Améliorer la communication et les pratiques managériales"
+
+#: templates/about_us.html
+msgid "Foster a more positive and supportive work environment"
+msgstr "Créer un environnement de travail plus positif et plus équilibré"
+
+#: templates/about_us.html
+msgid "Our platform empowers leaders, HR teams, and managers with the information they need to make informed decisions that benefit both employees and the organization as a whole."
+msgstr "Notre plateforme donne aux dirigeants, aux équipes RH et aux managers les clés nécessaires pour prendre des décisions éclairées, au bénéfice des employés comme de l'entreprise."
+
+#: templates/about_us.html
+msgid "A Human-Centered Approach to AI"
+msgstr "Une approche humaine de l'intelligence artificielle"
+
+#: templates/about_us.html
+msgid "While Know Employee is powered by advanced artificial intelligence, our approach is deeply human. We do not believe in replacing human judgment; we believe in enhancing it."
+msgstr "Bien que Know Employee repose sur des technologies d'intelligence artificielle avancées, notre approche reste profondément humaine. Nous ne cherchons pas à remplacer le jugement humain, mais à le renforcer."
+
+#: templates/about_us.html
+msgid "AI enables us to process complex patterns and large volumes of data efficiently, but empathy, understanding, and leadership remain human responsibilities. Our goal is to provide clarity and insight—not automated decisions—so organizations can act thoughtfully and responsibly."
+msgstr "L'IA nous permet d'analyser des volumes importants de données et de détecter des tendances complexes, mais l'empathie, l'écoute et le leadership demeurent des qualités humaines essentielles. Notre rôle est d'apporter de la clarté et des insights pertinents afin de permettre aux organisations d'agir avec discernement et responsabilité."
+
+#: templates/about_us.html
+msgid "By combining AI with a human-centered philosophy, we help businesses create environments where people feel valued, understood, and supported."
+msgstr "En combinant l'IA avec une philosophie centrée sur l'humain, nous aidons les entreprises à créer des environnements où les personnes se sentent valorisées, comprises et soutenues."
+
+#: templates/about_us.html
+msgid "Who We Serve"
+msgstr "À qui s'adresse Know Employee"
+
+#: templates/about_us.html
+msgid "Know Employee is designed for organizations that care about their people and recognize that employee satisfaction is essential to long-term success. Our solution is suitable for companies of various sizes and industries that want to:"
+msgstr "Know Employee s'adresse aux organisations qui placent l'humain au cœur de leur stratégie et qui reconnaissent que la satisfaction des employés est un facteur clé de réussite à long terme. Notre solution convient à des entreprises de toutes tailles et de tous secteurs souhaitant :"
+
+#: templates/about_us.html
+msgid "Better understand their workforce"
+msgstr "Mieux comprendre leurs équipes"
+
+#: templates/about_us.html
+msgid "Improve workplace culture"
+msgstr "Améliorer le climat de travail"
+
+#: templates/about_us.html
+msgid "Strengthen engagement and morale"
+msgstr "Renforcer l'engagement et la motivation"
+
+#: templates/about_us.html
+msgid "Support sustainable performance"
+msgstr "Soutenir une performance durable"
+
+#: templates/about_us.html
+msgid "Whether an organization is growing rapidly, navigating change, or simply looking to improve, Know Employee provides the tools to gain clarity and confidence in workforce decisions."
+msgstr "Que ce soit dans un contexte de croissance, de transformation ou d'optimisation, Know Employee accompagne les entreprises dans leurs démarches d'amélioration continue."
+
+#: templates/about_us.html
+msgid "Our Values"
+msgstr "Nos valeurs"
+
+#: templates/about_us.html
+msgid "Everything we build is guided by a core set of values:"
+msgstr "Notre travail est guidé par des valeurs fondamentales :"
+
+#: templates/about_us.html
+msgid "Trust"
+msgstr "Confiance"
+
+#: templates/about_us.html
+msgid "Trust is the foundation of effective feedback. We prioritize anonymity, transparency, and ethical use of data to ensure employees and organizations alike can rely on our platform."
+msgstr "La confiance est indispensable à un feedback de qualité. Nous mettons l'accent sur l'anonymat, la transparence et l'utilisation éthique des données."
+
+#: templates/about_us.html
+msgid "Insight"
+msgstr "Pertinence"
+
+#: templates/about_us.html
+msgid "We focus on delivering meaningful, actionable insights—not noise. Our tools are designed to highlight what truly matters."
+msgstr "Nous privilégions des analyses utiles et actionnables, en évitant toute complexité inutile."
+
+#: templates/about_us.html
+msgid "Respect"
+msgstr "Respect"
+
+#: templates/about_us.html
+msgid "We respect the individuality of employees and the complexity of organizational life. Our technology is designed to support people, not reduce them to numbers."
+msgstr "Nous respectons l'individualité des employés et la complexité des environnements de travail. Nos outils sont conçus pour soutenir les personnes, non pour les réduire à des chiffres."
+
+#: templates/about_us.html
+msgid "Impact"
+msgstr "Impact"
+
+#: templates/about_us.html
+msgid "We measure success by the positive changes organizations can make using our insights—better communication, stronger teams, and healthier work environments."
+msgstr "Notre réussite se mesure à l'impact positif que nos analyses permettent de créer au sein des organisations."
+
+#: templates/about_us.html
+msgid "Our Mission"
+msgstr "Notre mission"
+
+#: templates/about_us.html
+msgid "Our mission is simple: to help organizations get to know their employees better and improve the work environment through intelligent analysis tools."
+msgstr "Notre mission est claire : aider les entreprises à mieux connaître leurs employés et à améliorer l'environnement de travail grâce à des outils d'analyse intelligents."
+
+#: templates/about_us.html
+msgid "We believe that understanding employee sentiment is not about control—it is about care. When companies listen, learn, and act, they create workplaces where people thrive."
+msgstr "Nous sommes convaincus que comprendre le ressenti des équipes n'est pas une question de contrôle, mais d'attention et de considération. Lorsqu'une organisation écoute, comprend et agit, elle crée un environnement dans lequel les collaborateurs peuvent réellement s'épanouir."
+
+#: templates/about_us.html
+msgid "Looking Ahead"
+msgstr "Regard vers l'avenir"
+
+#: templates/about_us.html
+msgid "As workplaces continue to evolve—with remote work, hybrid models, and changing expectations—understanding employee satisfaction will only become more important. Know Employee is committed to evolving alongside these changes, continuously improving our technology and expanding our analytical capabilities."
+msgstr "À mesure que le monde du travail évolue — avec le télétravail, les modèles hybrides et des attentes en constante mutation — la compréhension de la satisfaction des employés devient plus essentielle que jamais. Know Employee s'engage à évoluer avec ces transformations, à améliorer continuellement sa technologie et à enrichir ses capacités d'analyse."
+
+#: templates/about_us.html
+msgid "We are building a future where organizations can confidently navigate complexity while keeping people at the center of every decision."
+msgstr "Nous construisons un avenir dans lequel les organisations peuvent faire face à la complexité tout en plaçant l'humain au centre de chaque décision."
+
+#: templates/about_us.html
+msgid "Join Us"
+msgstr "Rejoignez-nous"
+
+#: templates/about_us.html
+msgid "Know Employee is more than a platform—it is a commitment to better workplaces. We invite organizations to take the next step toward understanding their workforce, improving employee satisfaction, and unlocking the full potential of their teams."
+msgstr "Know Employee est bien plus qu'une plateforme : c'est un engagement en faveur de meilleurs environnements de travail. Nous invitons les entreprises à franchir une nouvelle étape pour mieux comprendre leurs équipes, améliorer la satisfaction des employés et libérer tout le potentiel de leurs talents."
+
+#: templates/about_us.html
+msgid "Because when people feel good at work, everyone benefits."
+msgstr "Parce que lorsque les collaborateurs se sentent bien au travail, tout le monde y gagne."
+

@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/contact/style.css') }}" type="text/css">
+{% endblock %}
+{% block title %}About Us - KnowEmployee {% endblock %}
+{% block headercontent %}
+{% include 'header-about.html' %}
+{% endblock %}
+{% block maincontent %}
+<div class="container" style="max-width: 900px; margin: 0 auto; padding: 40px 20px;">
+    <div style="line-height: 1.8; color: #333;">
+        
+        <section style="margin-bottom: 40px;">
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('At Know Employee, we believe that understanding people is the foundation of building successful, resilient, and high-performing organizations. We are an AI-powered startup dedicated to transforming how businesses understand employee satisfaction, workplace sentiment, and organizational well-being. By combining advanced technology with a deep appreciation for human behavior, we help companies create healthier, more productive work environments where people feel heard, respected, and motivated.') }}
+            </p>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('In today\'s fast-paced and competitive business landscape, organizations are under constant pressure to perform, innovate, and adapt. Yet behind every metric, deadline, and strategic decision stands a workforce whose mood, engagement, and sense of belonging directly influence outcomes. At Know Employee, we start with a simple but powerful belief: when people come to work in a good mood, they are more likely to perform at their best. Our mission is to help organizations understand what shapes that mood—and what they can do to improve it.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 2px solid #ddd; margin: 40px 0;">
+
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Our Vision') }}</h2>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('Our vision is to redefine how companies assess and improve employee satisfaction. Traditional surveys and feedback tools often fall short: they are infrequent, overly rigid, or fail to capture the real sentiment of employees. Even worse, employees may hesitate to provide honest feedback if they fear being identified or judged.') }}
+            </p>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('Know Employee was created to solve these challenges. We envision a workplace where employee feedback is continuous, meaningful, and safe. A workplace where insights are data-driven, actionable, and rooted in genuine trust. And ultimately, a workplace where organizations can align performance goals with employee well-being.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 2px solid #ddd; margin: 40px 0;">
+
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('What We Do') }}</h2>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('Know Employee provides an AI-driven platform designed to analyze workplace sentiment while ensuring employee anonymity. Our solution allows businesses to gain deep insights into their organizational environment without compromising trust or privacy.') }}
+            </p>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('Using cutting-edge algorithms, our platform evaluates employee sentiment and satisfaction patterns across teams, departments, and time periods. The result is a clear, data-backed understanding of how employees feel about their work environment and how that sentiment evolves.') }}
+            </p>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('Rather than focusing on isolated opinions, we help organizations see the bigger picture: trends, signals, and underlying dynamics that influence morale, engagement, and performance.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 2px solid #ddd; margin: 40px 0;">
+
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('The Power of Anonymity') }}</h2>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('One of the biggest barriers to honest employee feedback is fear—fear of retaliation, misinterpretation, or negative consequences. We recognized early on that meaningful insights can only be obtained when employees feel truly safe expressing themselves.') }}
+            </p>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('That is why anonymity is at the core of Know Employee\'s platform. Our algorithms are designed to protect individual identities while still delivering accurate, aggregated insights to management. This approach encourages honesty, reduces bias, and increases participation.') }}
+            </p>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('By ensuring anonymity, we help organizations build trust—not just in the tool, but in the feedback process itself.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 2px solid #ddd; margin: 40px 0;">
+
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Why Employee Satisfaction Matters') }}</h2>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('Employee satisfaction is not a "soft" metric. It is a critical business driver.') }}
+            </p>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('Satisfied employees are more engaged, more productive, and more likely to collaborate effectively. They take greater ownership of their work, contribute ideas more freely, and remain with organizations longer. On the other hand, low morale can lead to disengagement, reduced performance, absenteeism, and turnover—all of which carry significant costs.') }}
+            </p>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('At Know Employee, we focus on helping organizations understand this connection between mood, satisfaction, and performance. By identifying areas of concern early and highlighting what works well, companies can take proactive steps to improve their work environment before small issues grow into major problems.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 2px solid #ddd; margin: 40px 0;">
+
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Turning Insights into Action') }}</h2>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('Data alone does not create change—action does. That is why Know Employee goes beyond surface-level reporting. Our analysis tools are designed to help decision-makers interpret results clearly and translate insights into meaningful improvements.') }}
+            </p>
+            <p style="font-size: 16px; margin-bottom: 15px;">
+                {{ _('By understanding workforce sentiment, organizations can:') }}
+            </p>
+            <ul style="font-size: 16px; margin-left: 30px; margin-bottom: 20px;">
+                <li style="margin-bottom: 10px;">{{ _('Identify strengths in their workplace culture') }}</li>
+                <li style="margin-bottom: 10px;">{{ _('Detect early warning signs of dissatisfaction') }}</li>
+                <li style="margin-bottom: 10px;">{{ _('Evaluate the impact of organizational changes') }}</li>
+                <li style="margin-bottom: 10px;">{{ _('Improve communication and leadership practices') }}</li>
+                <li style="margin-bottom: 10px;">{{ _('Foster a more positive and supportive work environment') }}</li>
+            </ul>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('Our platform empowers leaders, HR teams, and managers with the information they need to make informed decisions that benefit both employees and the organization as a whole.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 2px solid #ddd; margin: 40px 0;">
+
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('A Human-Centered Approach to AI') }}</h2>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('While Know Employee is powered by advanced artificial intelligence, our approach is deeply human. We do not believe in replacing human judgment; we believe in enhancing it.') }}
+            </p>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('AI enables us to process complex patterns and large volumes of data efficiently, but empathy, understanding, and leadership remain human responsibilities. Our goal is to provide clarity and insight—not automated decisions—so organizations can act thoughtfully and responsibly.') }}
+            </p>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('By combining AI with a human-centered philosophy, we help businesses create environments where people feel valued, understood, and supported.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 2px solid #ddd; margin: 40px 0;">
+
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Who We Serve') }}</h2>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('Know Employee is designed for organizations that care about their people and recognize that employee satisfaction is essential to long-term success. Our solution is suitable for companies of various sizes and industries that want to:') }}
+            </p>
+            <ul style="font-size: 16px; margin-left: 30px; margin-bottom: 20px;">
+                <li style="margin-bottom: 10px;">{{ _('Better understand their workforce') }}</li>
+                <li style="margin-bottom: 10px;">{{ _('Improve workplace culture') }}</li>
+                <li style="margin-bottom: 10px;">{{ _('Strengthen engagement and morale') }}</li>
+                <li style="margin-bottom: 10px;">{{ _('Support sustainable performance') }}</li>
+            </ul>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('Whether an organization is growing rapidly, navigating change, or simply looking to improve, Know Employee provides the tools to gain clarity and confidence in workforce decisions.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 2px solid #ddd; margin: 40px 0;">
+
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Our Values') }}</h2>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('Everything we build is guided by a core set of values:') }}
+            </p>
+            <div style="margin-bottom: 25px;">
+                <h3 style="font-size: 20px; margin-bottom: 10px; font-weight: 600;">{{ _('Trust') }}</h3>
+                <p style="font-size: 16px;">{{ _('Trust is the foundation of effective feedback. We prioritize anonymity, transparency, and ethical use of data to ensure employees and organizations alike can rely on our platform.') }}</p>
+            </div>
+            <div style="margin-bottom: 25px;">
+                <h3 style="font-size: 20px; margin-bottom: 10px; font-weight: 600;">{{ _('Insight') }}</h3>
+                <p style="font-size: 16px;">{{ _('We focus on delivering meaningful, actionable insights—not noise. Our tools are designed to highlight what truly matters.') }}</p>
+            </div>
+            <div style="margin-bottom: 25px;">
+                <h3 style="font-size: 20px; margin-bottom: 10px; font-weight: 600;">{{ _('Respect') }}</h3>
+                <p style="font-size: 16px;">{{ _('We respect the individuality of employees and the complexity of organizational life. Our technology is designed to support people, not reduce them to numbers.') }}</p>
+            </div>
+            <div style="margin-bottom: 25px;">
+                <h3 style="font-size: 20px; margin-bottom: 10px; font-weight: 600;">{{ _('Impact') }}</h3>
+                <p style="font-size: 16px;">{{ _('We measure success by the positive changes organizations can make using our insights—better communication, stronger teams, and healthier work environments.') }}</p>
+            </div>
+        </section>
+
+        <hr style="border: none; border-top: 2px solid #ddd; margin: 40px 0;">
+
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Our Mission') }}</h2>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('Our mission is simple: to help organizations get to know their employees better and improve the work environment through intelligent analysis tools.') }}
+            </p>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('We believe that understanding employee sentiment is not about control—it is about care. When companies listen, learn, and act, they create workplaces where people thrive.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 2px solid #ddd; margin: 40px 0;">
+
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Looking Ahead') }}</h2>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('As workplaces continue to evolve—with remote work, hybrid models, and changing expectations—understanding employee satisfaction will only become more important. Know Employee is committed to evolving alongside these changes, continuously improving our technology and expanding our analytical capabilities.') }}
+            </p>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('We are building a future where organizations can confidently navigate complexity while keeping people at the center of every decision.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 2px solid #ddd; margin: 40px 0;">
+
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Join Us') }}</h2>
+            <p style="font-size: 16px; margin-bottom: 20px;">
+                {{ _('Know Employee is more than a platform—it is a commitment to better workplaces. We invite organizations to take the next step toward understanding their workforce, improving employee satisfaction, and unlocking the full potential of their teams.') }}
+            </p>
+            <p style="font-size: 16px; margin-bottom: 20px; font-weight: 600;">
+                {{ _('Because when people feel good at work, everyone benefits.') }}
+            </p>
+        </section>
+
+    </div>
+</div>
+{% include "footer-logo.html" %}
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='assets/menu/script.js') }}"></script>
+{% endblock %}
+

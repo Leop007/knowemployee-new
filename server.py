@@ -320,6 +320,22 @@ def contact():
 
     return render_template('contact.html', is_authenticated=is_authenticated)
 
+@app.route('/about-us')
+def about_us():
+    token = session.get('token', None)
+    is_authenticated = False
+
+    if token:
+        try:
+            decoded_token = jwt.decode(token, app.config['SECRET_KEY'], algorithms=["HS256"])
+            current_user = User.query.filter_by(public_id=decoded_token['public_id']).first()
+            if current_user:
+                is_authenticated = True
+        except (jwt.ExpiredSignatureError, jwt.InvalidTokenError):
+            pass
+
+    return render_template('about_us.html', is_authenticated=is_authenticated)
+
 @app.route('/cookie-policy')
 def cookie_policy():
     return render_template('cookie_policy.html', name_platform=NAME_PLATFORM, DOMAIN=DOMAIN)
