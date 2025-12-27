@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/contact/style.css') }}" type="text/css">
+{% endblock %}
+{% block title %}{{ _('Custom Feedback') }} - {{ name_platform }}{% endblock %}
+{% block headercontent %}
+{% include 'header-custom-feedback.html' %}
+{% endblock %}
+{% block maincontent %}
+<div class="wrapper" style="max-width: 800px; margin: 50px auto; padding: 20px; color: #000000;">
+    <div style="line-height: 1.8; font-size: 16px;">
+        <p>
+            {{ _('Custom feedback enables organizations to design tailored surveys and question flows based on their specific goals, audience, and context.') }}
+        </p>
+        <p>
+            {{ _('Survey questions can be created manually or assisted by an HR-oriented AI agent, ensuring clarity, neutrality, and inclusiveness.') }}
+        </p>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Key characteristics') }}</h2>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li><strong>{{ _('Fully configurable questions:') }}</strong> {{ _('open-ended, short answers, or guided prompts.') }}</li>
+                <li><strong>{{ _('Multiple input modes:') }}</strong> {{ _('written responses or voice recordings, with text-to-speech for accessibility.') }}</li>
+                <li><strong>{{ _('Context-aware analysis:') }}</strong> {{ _('AI models adapt interpretation based on the intent of the survey (e.g., performance, well-being, change management).') }}</li>
+            </ul>
+        </section>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Typical use cases') }}</h2>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>{{ _('Post-change or post-restructuring feedback') }}</li>
+                <li>{{ _('Team-specific or department-level pulse surveys') }}</li>
+                <li>{{ _('Customer experience or service-quality evaluations') }}</li>
+            </ul>
+        </section>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Value for organizations') }}</h2>
+            <p>
+                {{ _('Custom feedback ensures that organizations ask the right questions at the right time, while still benefiting from automated AI analysis and consistent reporting across different surveys.') }}
+            </p>
+        </section>
+    </div>
+</div>
+{% include "footer-logo.html" %}
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='assets/menu/script.js') }}"></script>
+{% endblock %}
+

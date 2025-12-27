@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/contact/style.css') }}" type="text/css">
+{% endblock %}
+{% block title %}{{ _('Metric-Based Feedback') }} - {{ name_platform }}{% endblock %}
+{% block headercontent %}
+{% include 'header-metric-feedback.html' %}
+{% endblock %}
+{% block maincontent %}
+<div class="wrapper" style="max-width: 800px; margin: 50px auto; padding: 20px; color: #000000;">
+    <div style="line-height: 1.8; font-size: 16px;">
+        <p>
+            {{ _('Metric-based feedback transforms qualitative responses into aggregated, trackable indicators that can be monitored over time.') }}
+        </p>
+        <p>
+            {{ _('Instead of focusing on individual answers, the system produces high-level metrics and trends derived from AI analysis.') }}
+        </p>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Key characteristics') }}</h2>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li><strong>{{ _('Quantified insights:') }}</strong> {{ _('sentiment scores, emotional distribution, topic frequency, confidence levels.') }}</li>
+                <li><strong>{{ _('Trend analysis:') }}</strong> {{ _('comparison across time periods, teams, or survey rounds.') }}</li>
+                <li><strong>{{ _('Visualization-ready:') }}</strong> {{ _('results are stored in a structured database and presented via dashboards and charts.') }}</li>
+            </ul>
+        </section>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Typical metrics') }}</h2>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>{{ _('Overall sentiment index (positive / neutral / negative)') }}</li>
+                <li>{{ _('Emotional signals (stress, engagement, frustration, trust)') }}</li>
+                <li>{{ _('Topic prevalence (e.g., workload, management, communication)') }}</li>
+                <li>{{ _('Response confidence and clarity indicators') }}</li>
+            </ul>
+        </section>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Value for organizations') }}</h2>
+            <p>
+                {{ _('Metric-based feedback enables data-driven decision-making, allowing leaders to detect early warning signs, measure the impact of actions taken, and track organizational health without exposing individual responses.') }}
+            </p>
+        </section>
+    </div>
+</div>
+{% include "footer-logo.html" %}
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='assets/menu/script.js') }}"></script>
+{% endblock %}
+
