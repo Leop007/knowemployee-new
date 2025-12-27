@@ -12,7 +12,7 @@ FROM python:3.10-alpine
 RUN apk add --no-cache \
     build-base \
     pkgconf \
-    mariadb-dev \
+    postgresql-dev \
     python3-dev 
     
 # Set the working directory in the container

@@ -1,4 +1,26 @@
 services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: knowemployee-postgres
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-knowemployee}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-knowemployee_password}
+      - POSTGRES_DB=${POSTGRES_DB:-knowemployee_db}
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    networks:
+      - knowemployee-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-knowemployee} -d ${POSTGRES_DB:-knowemployee_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   knowemployee:
     build:
       context: .
@@ -7,8 +29,6 @@ services:
     expose:
       - "8005"
     volumes:
-      # Persist SQLite database
-      - ./instance:/know/instance
       # Optional: Mount static files if you want to edit them without rebuilding
       - ./static:/know/static
       - ./templates:/know/templates
@@ -18,9 +38,17 @@ services:
     environment:
       - NAME=knowemployee
       - FLASK_ENV=production
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=${POSTGRES_USER:-knowemployee}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-knowemployee_password}
+      - POSTGRES_DB=${POSTGRES_DB:-knowemployee_db}
       # DOMAIN and other vars loaded from .env file
     env_file:
       - .env
+    depends_on:
+      postgres:
+        condition: service_healthy
     restart: unless-stopped
     networks:
       - knowemployee-network
@@ -52,6 +80,10 @@ services:
       - ./certbot/www:/var/www/certbot
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local
 
 networks:
   knowemployee-network:

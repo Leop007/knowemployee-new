@@ -1,4 +1,26 @@
 services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: knowemployee-postgres-dev
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-knowemployee}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-knowemployee_password}
+      - POSTGRES_DB=${POSTGRES_DB:-knowemployee_db}
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_data_dev:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"  # Different port to avoid conflicts with local PostgreSQL
+    networks:
+      - knowemployee-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-knowemployee} -d ${POSTGRES_DB:-knowemployee_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   knowemployee:
     build:
       context: .
@@ -7,8 +29,6 @@ services:
     ports:
       - "8001:8005"  # Expose directly for local development (changed from 8000 to avoid conflicts)
     volumes:
-      # Persist SQLite database
-      - ./instance:/know/instance
       # Mount source files for hot-reload (if using Flask dev server)
       - ./static:/know/static
       - ./templates:/know/templates
@@ -23,11 +43,28 @@ services:
       - NAME=knowemployee
       - FLASK_ENV=development
       - DOMAIN=http://localhost:8001
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=${POSTGRES_USER:-knowemployee}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-knowemployee_password}
+      - POSTGRES_DB=${POSTGRES_DB:-knowemployee_db}
       # Override with .env.dev if needed
     env_file:
       - .env  # Primary env file (create this with your credentials)
+    depends_on:
+      postgres:
+        condition: service_healthy
     restart: unless-stopped
+    networks:
+      - knowemployee-network
     # Override CMD to use Flask dev server for hot-reload (optional)
     # Uncomment the line below if you want Flask dev server instead of gunicorn
     # command: ["python", "server.py"]
 
+volumes:
+  postgres_data_dev:
+    driver: local
+
+networks:
+  knowemployee-network:
+    driver: bridge

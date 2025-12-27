@@ -57,7 +57,30 @@ else:
 NAME_PLATFORM = "KnowEmployee"
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', '97473497e94c7289a98fae8e9636ae67')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI', 'sqlite:///service.db')
+
+# Database configuration
+# Priority: 1. SQLALCHEMY_DATABASE_URI env var (explicit override)
+#           2. PostgreSQL connection from env vars
+#           3. SQLite fallback (for backward compatibility)
+database_uri = os.getenv('SQLALCHEMY_DATABASE_URI')
+if not database_uri:
+    # Try to construct PostgreSQL connection string from environment variables
+    postgres_host = os.getenv('POSTGRES_HOST')
+    postgres_port = os.getenv('POSTGRES_PORT', '5432')
+    postgres_user = os.getenv('POSTGRES_USER')
+    postgres_password = os.getenv('POSTGRES_PASSWORD')
+    postgres_db = os.getenv('POSTGRES_DB')
+    
+    if all([postgres_host, postgres_user, postgres_password, postgres_db]):
+        # Construct PostgreSQL connection string
+        database_uri = f"postgresql://{postgres_user}:{postgres_password}@{postgres_host}:{postgres_port}/{postgres_db}"
+        logger.info(f"Using PostgreSQL database: {postgres_host}:{postgres_port}/{postgres_db}")
+    else:
+        # Fallback to SQLite
+        database_uri = 'sqlite:///service.db'
+        logger.info("Using SQLite database (fallback)")
+
+app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
 
 # Flask-Babel configuration
 app.config['LANGUAGES'] = {

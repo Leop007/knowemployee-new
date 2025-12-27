@@ -19,3 +19,4 @@ SQLAlchemy~=2.0.32
 cryptography~=42.0.4
 Flask-Babel==4.0.0
 Babel==2.13.1
+psycopg2-binary==2.9.9
