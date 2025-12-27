@@ -405,6 +405,18 @@ def cookie_policy():
 def privacy_policy():
     return render_template('privacy_policy.html', name_platform=NAME_PLATFORM, DOMAIN=DOMAIN)
 
+@app.route('/anonymous-feedback')
+def anonymous_feedback():
+    return render_template('anonymous_feedback.html', name_platform=NAME_PLATFORM, DOMAIN=DOMAIN)
+
+@app.route('/custom-feedback')
+def custom_feedback():
+    return render_template('custom_feedback.html', name_platform=NAME_PLATFORM, DOMAIN=DOMAIN)
+
+@app.route('/metric-feedback')
+def metric_feedback():
+    return render_template('metric_feedback.html', name_platform=NAME_PLATFORM, DOMAIN=DOMAIN)
+
 @app.route('/terms')
 def terms():
     return render_template('terms.html', name_platform=NAME_PLATFORM)

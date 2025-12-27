@@ -6,13 +6,13 @@
                     <h2>{{ _('Services') }}</h2>
                     <ul>
                         <li>
-                            <a href="#">{{ _('Anonymous feedback') }}</a>
+                            <a href="{{ url_for('anonymous_feedback') }}">{{ _('Anonymous feedback') }}</a>
                         </li>
                         <li>
-                            <a href="#">{{ _('Custom feedback') }}</a>
+                            <a href="{{ url_for('custom_feedback') }}">{{ _('Custom feedback') }}</a>
                         </li>
                         <li>
-                            <a href="#">{{ _('Metrica feedback') }}</a>
+                            <a href="{{ url_for('metric_feedback') }}">{{ _('Metric feedback') }}</a>
                         </li>
                     </ul>
                 </div>

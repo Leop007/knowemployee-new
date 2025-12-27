@@ -1394,3 +1394,183 @@ msgstr "Autoriser l'accès au microphone"
 msgid "Close Window"
 msgstr "Fermer la fenêtre"
 
+#: templates/header-anonymous-feedback.html:3
+msgid "Anonymous Feedback"
+msgstr "Retour d'information anonyme"
+
+#: templates/anonymous_feedback.html
+msgid "Anonymous feedback allows employees or customers to share their thoughts, feelings, and perceptions without any form of personal identification."
+msgstr "Le retour d'information anonyme permet aux employés ou aux clients de partager leurs pensées, leurs sentiments et leurs perceptions sans aucune forme d'identification personnelle."
+
+#: templates/anonymous_feedback.html
+msgid "The system is designed so that no direct or indirect identifiers (name, email, device ID, IP address, voice fingerprint, etc.) are stored or exposed to the organization."
+msgstr "Le système est conçu pour qu'aucun identifiant direct ou indirect (nom, e-mail, ID d'appareil, adresse IP, empreinte vocale, etc.) ne soit stocké ou exposé à l'organisation."
+
+#: templates/anonymous_feedback.html
+msgid "Key characteristics"
+msgstr "Caractéristiques clés"
+
+#: templates/anonymous_feedback.html
+msgid "Privacy-first by design:"
+msgstr "Confidentialité d'abord par conception :"
+
+#: templates/anonymous_feedback.html
+msgid "responses are detached from identity at the data-collection layer."
+msgstr "les réponses sont détachées de l'identité au niveau de la collecte de données."
+
+#: templates/anonymous_feedback.html
+msgid "Psychological safety:"
+msgstr "Sécurité psychologique :"
+
+#: templates/anonymous_feedback.html
+msgid "participants are more likely to provide honest, critical, or sensitive input."
+msgstr "les participants sont plus susceptibles de fournir des commentaires honnêtes, critiques ou sensibles."
+
+#: templates/anonymous_feedback.html
+msgid "AI-ready:"
+msgstr "Prêt pour l'IA :"
+
+#: templates/anonymous_feedback.html
+msgid "text and transcribed voice responses are analyzed for sentiment, emotional tone, and recurring themes without profiling individuals."
+msgstr "les réponses textuelles et vocales transcrites sont analysées pour le sentiment, le ton émotionnel et les thèmes récurrents sans profiler les individus."
+
+#: templates/anonymous_feedback.html
+msgid "Typical use cases"
+msgstr "Cas d'utilisation typiques"
+
+#: templates/anonymous_feedback.html
+msgid "Organizational climate and trust surveys"
+msgstr "Enquêtes sur le climat organisationnel et la confiance"
+
+#: templates/anonymous_feedback.html
+msgid "Employee engagement and burnout detection"
+msgstr "Détection de l'engagement des employés et de l'épuisement professionnel"
+
+#: templates/anonymous_feedback.html
+msgid "Ethical concerns, leadership feedback, or whistle-style insights (non-investigative)"
+msgstr "Préoccupations éthiques, retour sur le leadership, ou informations de type dénonciation (non-investigatives)"
+
+#: templates/anonymous_feedback.html
+msgid "Value for organizations"
+msgstr "Valeur pour les organisations"
+
+#: templates/anonymous_feedback.html
+msgid "Anonymous feedback surfaces hidden risks, morale issues, and cultural patterns that would otherwise remain unspoken, while maintaining compliance with privacy regulations (e.g., GDPR principles of data minimization and purpose limitation)."
+msgstr "Le retour d'information anonyme révèle des risques cachés, des problèmes de moral et des modèles culturels qui resteraient autrement non exprimés, tout en maintenant la conformité aux réglementations sur la confidentialité (par exemple, les principes du RGPD de minimisation des données et de limitation de l'objectif)."
+
+#: templates/header-custom-feedback.html:3
+msgid "Custom Feedback"
+msgstr "Retour d'information personnalisé"
+
+#: templates/custom_feedback.html
+msgid "Custom feedback enables organizations to design tailored surveys and question flows based on their specific goals, audience, and context."
+msgstr "Le retour d'information personnalisé permet aux organisations de concevoir des enquêtes et des flux de questions adaptés en fonction de leurs objectifs, de leur public et de leur contexte spécifiques."
+
+#: templates/custom_feedback.html
+msgid "Survey questions can be created manually or assisted by an HR-oriented AI agent, ensuring clarity, neutrality, and inclusiveness."
+msgstr "Les questions d'enquête peuvent être créées manuellement ou assistées par un agent IA orienté RH, garantissant la clarté, la neutralité et l'inclusivité."
+
+#: templates/custom_feedback.html
+msgid "Fully configurable questions:"
+msgstr "Questions entièrement configurables :"
+
+#: templates/custom_feedback.html
+msgid "open-ended, short answers, or guided prompts."
+msgstr "questions ouvertes, réponses courtes ou invites guidées."
+
+#: templates/custom_feedback.html
+msgid "Multiple input modes:"
+msgstr "Modes de saisie multiples :"
+
+#: templates/custom_feedback.html
+msgid "written responses or voice recordings, with text-to-speech for accessibility."
+msgstr "réponses écrites ou enregistrements vocaux, avec synthèse vocale pour l'accessibilité."
+
+#: templates/custom_feedback.html
+msgid "Context-aware analysis:"
+msgstr "Analyse contextuelle :"
+
+#: templates/custom_feedback.html
+msgid "AI models adapt interpretation based on the intent of the survey (e.g., performance, well-being, change management)."
+msgstr "les modèles d'IA adaptent l'interprétation en fonction de l'intention de l'enquête (par exemple, performance, bien-être, gestion du changement)."
+
+#: templates/custom_feedback.html
+msgid "Post-change or post-restructuring feedback"
+msgstr "Retour d'information post-changement ou post-restructuration"
+
+#: templates/custom_feedback.html
+msgid "Team-specific or department-level pulse surveys"
+msgstr "Enquêtes de pulse spécifiques à l'équipe ou au niveau du département"
+
+#: templates/custom_feedback.html
+msgid "Customer experience or service-quality evaluations"
+msgstr "Évaluations de l'expérience client ou de la qualité du service"
+
+#: templates/custom_feedback.html
+msgid "Custom feedback ensures that organizations ask the right questions at the right time, while still benefiting from automated AI analysis and consistent reporting across different surveys."
+msgstr "Le retour d'information personnalisé garantit que les organisations posent les bonnes questions au bon moment, tout en bénéficiant d'une analyse IA automatisée et de rapports cohérents entre différentes enquêtes."
+
+#: templates/header-metric-feedback.html:3
+msgid "Metric-Based Feedback"
+msgstr "Retour d'information basé sur les métriques"
+
+#: templates/metric_feedback.html
+msgid "Metric-based feedback transforms qualitative responses into aggregated, trackable indicators that can be monitored over time."
+msgstr "Le retour d'information basé sur les métriques transforme les réponses qualitatives en indicateurs agrégés et traçables qui peuvent être surveillés dans le temps."
+
+#: templates/metric_feedback.html
+msgid "Instead of focusing on individual answers, the system produces high-level metrics and trends derived from AI analysis."
+msgstr "Au lieu de se concentrer sur les réponses individuelles, le système produit des métriques et des tendances de haut niveau dérivées de l'analyse IA."
+
+#: templates/metric_feedback.html
+msgid "Quantified insights:"
+msgstr "Informations quantifiées :"
+
+#: templates/metric_feedback.html
+msgid "sentiment scores, emotional distribution, topic frequency, confidence levels."
+msgstr "scores de sentiment, distribution émotionnelle, fréquence des sujets, niveaux de confiance."
+
+#: templates/metric_feedback.html
+msgid "Trend analysis:"
+msgstr "Analyse des tendances :"
+
+#: templates/metric_feedback.html
+msgid "comparison across time periods, teams, or survey rounds."
+msgstr "comparaison entre périodes, équipes ou cycles d'enquête."
+
+#: templates/metric_feedback.html
+msgid "Visualization-ready:"
+msgstr "Prêt pour la visualisation :"
+
+#: templates/metric_feedback.html
+msgid "results are stored in a structured database and presented via dashboards and charts."
+msgstr "les résultats sont stockés dans une base de données structurée et présentés via des tableaux de bord et des graphiques."
+
+#: templates/metric_feedback.html
+msgid "Typical metrics"
+msgstr "Métriques typiques"
+
+#: templates/metric_feedback.html
+msgid "Overall sentiment index (positive / neutral / negative)"
+msgstr "Indice de sentiment global (positif / neutre / négatif)"
+
+#: templates/metric_feedback.html
+msgid "Emotional signals (stress, engagement, frustration, trust)"
+msgstr "Signaux émotionnels (stress, engagement, frustration, confiance)"
+
+#: templates/metric_feedback.html
+msgid "Topic prevalence (e.g., workload, management, communication)"
+msgstr "Prévalence des sujets (par exemple, charge de travail, gestion, communication)"
+
+#: templates/metric_feedback.html
+msgid "Response confidence and clarity indicators"
+msgstr "Indicateurs de confiance et de clarté des réponses"
+
+#: templates/metric_feedback.html
+msgid "Metric-based feedback enables data-driven decision-making, allowing leaders to detect early warning signs, measure the impact of actions taken, and track organizational health without exposing individual responses."
+msgstr "Le retour d'information basé sur les métriques permet une prise de décision basée sur les données, permettant aux dirigeants de détecter les signes d'alerte précoces, de mesurer l'impact des actions entreprises et de suivre la santé organisationnelle sans exposer les réponses individuelles."
+
+#: templates/footer.html:15
+msgid "Metric feedback"
+msgstr "Retour d'information métrique"
+

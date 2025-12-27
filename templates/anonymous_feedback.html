@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/contact/style.css') }}" type="text/css">
+{% endblock %}
+{% block title %}{{ _('Anonymous Feedback') }} - {{ name_platform }}{% endblock %}
+{% block headercontent %}
+{% include 'header-anonymous-feedback.html' %}
+{% endblock %}
+{% block maincontent %}
+<div class="wrapper" style="max-width: 800px; margin: 50px auto; padding: 20px; color: #000000;">
+    <div style="line-height: 1.8; font-size: 16px;">
+        <p>
+            {{ _('Anonymous feedback allows employees or customers to share their thoughts, feelings, and perceptions without any form of personal identification.') }}
+        </p>
+        <p>
+            {{ _('The system is designed so that no direct or indirect identifiers (name, email, device ID, IP address, voice fingerprint, etc.) are stored or exposed to the organization.') }}
+        </p>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Key characteristics') }}</h2>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li><strong>{{ _('Privacy-first by design:') }}</strong> {{ _('responses are detached from identity at the data-collection layer.') }}</li>
+                <li><strong>{{ _('Psychological safety:') }}</strong> {{ _('participants are more likely to provide honest, critical, or sensitive input.') }}</li>
+                <li><strong>{{ _('AI-ready:') }}</strong> {{ _('text and transcribed voice responses are analyzed for sentiment, emotional tone, and recurring themes without profiling individuals.') }}</li>
+            </ul>
+        </section>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Typical use cases') }}</h2>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>{{ _('Organizational climate and trust surveys') }}</li>
+                <li>{{ _('Employee engagement and burnout detection') }}</li>
+                <li>{{ _('Ethical concerns, leadership feedback, or whistle-style insights (non-investigative)') }}</li>
+            </ul>
+        </section>
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">{{ _('Value for organizations') }}</h2>
+            <p>
+                {{ _('Anonymous feedback surfaces hidden risks, morale issues, and cultural patterns that would otherwise remain unspoken, while maintaining compliance with privacy regulations (e.g., GDPR principles of data minimization and purpose limitation).') }}
+            </p>
+        </section>
+    </div>
+</div>
+{% include "footer-logo.html" %}
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='assets/menu/script.js') }}"></script>
+{% endblock %}
+
