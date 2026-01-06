@@ -1,4 +1,12 @@
 <div class="quiz_link">
+    <div class="jw">
+        <div class="create">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path>
+            </svg>
+            {{ _('Create a Survey') }}
+        </div>
+    </div>
     <div class="name_link">
         {% if data_page.edit %}
             <input type="text" value="{{ data_page.data.title }}" placeholder="Quiz title (it will be seen by users passing the quiz)">
@@ -15,7 +23,7 @@
             <span>Save changes</span>
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M18 19h1V6.828L17.172 5H16v4H7V5H5v14h1v-7h12v7zM4 3h14l2.707 2.707a1 1 0 0 1 .293.707V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm4 11v5h8v-5H8z" fill="#ffffff" class="fill-000000"></path></svg>
             {% else %}
-            <span>Create quiz</span>
+            <span>{{ _('Create a survey and get the link') }}</span>
             <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><path d="M66 42H54V30a6 6 0 0 0-12 0v12H30a6 6 0 0 0 0 12h12v12a6 6 0 0 0 12 0V54h12a6 6 0 0 0 0-12Z" fill="#ffffff" class="fill-000000"></path><path d="M48 0a48 48 0 1 0 48 48A48.051 48.051 0 0 0 48 0Zm0 84a36 36 0 1 1 36-36 36.04 36.04 0 0 1-36 36Z" fill="#ffffff" class="fill-000000"></path></svg>
             {% endif %}
         </button>

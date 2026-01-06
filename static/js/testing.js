@@ -12,6 +12,8 @@ let availableDevices = [];
 let microphoneAccessGranted = false;
 let currentQuestionAudio = null;
 let isPlayingAudio = false;
+let currentInputMode = 'text'; // 'voice' or 'text'
+let currentQuestionMode = {}; // Store mode for each question
 
 if(document.querySelector('.button_big')){
     let wprTests = document.querySelector('.wpr_tests');
@@ -205,6 +207,135 @@ if (document.getElementById('microphoneSelector')) {
     }
 }
 
+// Handle input mode switching (voice/text)
+function setupInputModeSwitching() {
+    const modeButtons = document.querySelectorAll('.mode-btn');
+    modeButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const mode = this.getAttribute('data-mode');
+            switchInputMode(mode);
+        });
+    });
+    
+    // Disable microphone selector by default
+    const micSelector = document.getElementById('microphoneSelector');
+    if (micSelector) {
+        micSelector.disabled = true;
+        micSelector.style.opacity = '0.5';
+        micSelector.style.cursor = 'not-allowed';
+    }
+}
+
+function switchInputMode(mode) {
+    currentInputMode = mode;
+    const questionIndex = index_iter - 1; // Current question index (0-based)
+    if (questionIndex >= 0) {
+        currentQuestionMode[questionIndex] = mode;
+    }
+    
+    const voiceContainer = document.getElementById('voiceInputContainer');
+    const textContainer = document.getElementById('textInputContainer');
+    const textAnswer = document.getElementById('textAnswer');
+    const modeButtons = document.querySelectorAll('.mode-btn');
+    
+    if (mode === 'voice') {
+        // Show voice input, hide text input
+        if (voiceContainer) voiceContainer.classList.remove('hidden');
+        if (textContainer) textContainer.classList.add('hidden');
+        
+        // Enable microphone selector
+        const micSelector = document.getElementById('microphoneSelector');
+        if (micSelector) {
+            micSelector.disabled = false;
+            micSelector.style.opacity = '1';
+            micSelector.style.cursor = 'pointer';
+        }
+        
+        // Update button styles
+        modeButtons.forEach(btn => {
+            if (btn.getAttribute('data-mode') === 'voice') {
+                btn.classList.add('active');
+                btn.style.background = '#53EB12';
+                btn.style.color = 'white';
+            } else {
+                btn.classList.remove('active');
+                btn.style.background = 'transparent';
+                btn.style.color = '#666';
+            }
+        });
+        
+        // Clear text answer if switching to voice
+        if (textAnswer) textAnswer.value = '';
+
+        // Don't initialize MediaRecorder here - wait until user clicks "Start Recording"
+        // This prevents the microphone from being activated just by switching to VOICE mode
+
+        // Update button text - if not recording, show "Start Recording"
+        if (!mediaRecorder || mediaRecorder.state !== 'recording') {
+            $("#stopRecording span").text('Start Recording');
+        }
+        
+        // Don't auto-start recording - user must explicitly start it
+    } else {
+        // Show text input, hide voice input
+        if (voiceContainer) voiceContainer.classList.add('hidden');
+        if (textContainer) textContainer.classList.remove('hidden');
+        
+        // Disable microphone selector when text mode is selected
+        const micSelector = document.getElementById('microphoneSelector');
+        if (micSelector) {
+            micSelector.disabled = true;
+            micSelector.style.opacity = '0.5';
+            micSelector.style.cursor = 'not-allowed';
+        }
+        
+        // Update button styles
+        modeButtons.forEach(btn => {
+            if (btn.getAttribute('data-mode') === 'text') {
+                btn.classList.add('active');
+                btn.style.background = '#53EB12';
+                btn.style.color = 'white';
+            } else {
+                btn.classList.remove('active');
+                btn.style.background = 'transparent';
+                btn.style.color = '#666';
+            }
+        });
+        
+        // Stop recording if active and clear audio chunks
+        if (mediaRecorder && mediaRecorder.state === 'recording') {
+            clearTimeout(recordingTimeout);
+            mediaRecorder.stop();
+            // Clear audio chunks to prevent sending partial recording
+            audioChunks = [];
+        }
+        
+        // Stop microphone stream when switching to TYPE mode to prevent it from staying active
+        if (mediaRecorder && mediaRecorder.stream) {
+            mediaRecorder.stream.getTracks().forEach(track => {
+                track.stop();
+            });
+            // Reset mediaRecorder so it needs to be reinitialized when switching back to VOICE
+            mediaRecorder = null;
+        }
+        
+        // Focus on text input
+        if (textAnswer) {
+            setTimeout(() => textAnswer.focus(), 100);
+        }
+        
+        // Update button text to "Continue" for text mode
+        $("#stopRecording span").text('Continue');
+    }
+}
+
+// Initialize mode switching when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupInputModeSwitching);
+} else {
+    setupInputModeSwitching();
+}
+
 function stopRecordingAfterTimeout() {
     clearTimeout(recordingTimeout);
     recordingTimeout = setTimeout(() => {
@@ -231,29 +362,105 @@ function startRecord() {
     $(".q_count #a").text(index_iter)
     $(".q_count #c").text(questionsArray.length)
 
+    // Get the mode for this question
+    // If not set, use the previous question's mode (to maintain consistency)
+    // Only default to 'text' for the first question
+    const questionIndex = index_iter - 1;
+    let mode = currentQuestionMode[questionIndex];
+    if (!mode && questionIndex > 0) {
+        // Use previous question's mode
+        mode = currentQuestionMode[questionIndex - 1] || 'text';
+        // Save it for this question so it persists
+        currentQuestionMode[questionIndex] = mode;
+    } else if (!mode) {
+        // First question defaults to 'text'
+        mode = 'text';
+        currentQuestionMode[questionIndex] = mode;
+    }
+    currentInputMode = mode;
+
+    // Reset UI based on mode
+    const voiceContainer = document.getElementById('voiceInputContainer');
+    const textContainer = document.getElementById('textInputContainer');
+    const textAnswer = document.getElementById('textAnswer');
+    
+    if (mode === 'text') {
+        if (voiceContainer) voiceContainer.classList.add('hidden');
+        if (textContainer) textContainer.classList.remove('hidden');
+        if (textAnswer) {
+            textAnswer.value = '';
+            // Focus on text input after a short delay
+            setTimeout(() => textAnswer.focus(), 300);
+        }
+        
+        // Stop microphone when switching to TYPE mode (either by default or user choice)
+        if (mediaRecorder) {
+            // Stop recording if active
+            if (mediaRecorder.state === 'recording') {
+                clearTimeout(recordingTimeout);
+                mediaRecorder.stop();
+                audioChunks = [];
+            }
+            // Stop microphone stream
+            if (mediaRecorder.stream) {
+                mediaRecorder.stream.getTracks().forEach(track => {
+                    track.stop();
+                });
+            }
+            // Reset mediaRecorder
+            mediaRecorder = null;
+        }
+        
+        // Update mode buttons
+        document.querySelectorAll('.mode-btn').forEach(btn => {
+            if (btn.getAttribute('data-mode') === 'text') {
+                btn.classList.add('active');
+                btn.style.background = '#53EB12';
+                btn.style.color = 'white';
+            } else {
+                btn.classList.remove('active');
+                btn.style.background = 'transparent';
+                btn.style.color = '#666';
+            }
+        });
+    } else {
+        if (voiceContainer) voiceContainer.classList.remove('hidden');
+        if (textContainer) textContainer.classList.add('hidden');
+        if (textAnswer) textAnswer.value = '';
+        // Update mode buttons
+        document.querySelectorAll('.mode-btn').forEach(btn => {
+            if (btn.getAttribute('data-mode') === 'voice') {
+                btn.classList.add('active');
+                btn.style.background = '#53EB12';
+                btn.style.color = 'white';
+            } else {
+                btn.classList.remove('active');
+                btn.style.background = 'transparent';
+                btn.style.color = '#666';
+            }
+        });
+    }
+
     setTimeout(() => {
         $("#animation").hide();
-        if (questionsArray.length + 1 == index_iter) {
-        }else{
-            mediaRecorder.start();
-        }
+        // Don't auto-start recording - user must explicitly start it
         $("#stopRecording").prop("disabled", false);
+        
+        // Update button text based on mode and recording state
+        if (mode === 'voice') {
+            // If not recording, show "Start Recording", otherwise show "Continue"
+            if (!mediaRecorder || mediaRecorder.state !== 'recording') {
+                $("#stopRecording span").text('Start Recording');
+            } else {
+                $("#stopRecording span").text('Continue');
+            }
+        } else {
+            $("#stopRecording span").text('Continue');
+        }
     }, 2000);
 
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    analyser = audioContext.createAnalyser();
-    let source = audioContext.createMediaStreamSource(mediaRecorder.stream);
-    source.connect(analyser);
-    
-    analyser.fftSize = 256;
-    dataArray = new Uint8Array(analyser.frequencyBinCount);
-    try{
-        canvas = document.getElementById("visualization");
-        canvasContext = canvas.getContext("2d");
-        drawVisualization();
-    }catch{
-
-    }
+    // Don't setup audio visualization until recording actually starts
+    // This prevents the microphone from appearing active before recording begins
 
     if(index_iter == 1) {
         if(document.querySelector(".slide")){
@@ -266,6 +473,8 @@ function startRecord() {
                 $('.wrapper .q').removeClass('hidden');
                 // Setup TTS for first question
                 setupTTSForQuestion(questionsArray[0]);
+                // Setup mode switching
+                setupInputModeSwitching();
             }, 1000);
         }
         } else {
@@ -282,6 +491,20 @@ function startRecord() {
                 stopMicrophone();
                 // Stop any playing audio
                 stopQuestionAudio();
+                
+                // Check if we're done and submit
+                if (data_testing.length >= questionsArray.length) {
+                    if(document.querySelector('#wpr_tests')){
+                        if($('#wpr_tests').attr('d-type') == "custom"){
+                            done_custom()
+                        }else{
+                            done_anonymus()
+                        }
+                    }else{
+                        alert("You have tampered with the element code, we cannot accept the test results from you, we will relaunch the page")
+                        location.reload()
+                    }
+                }
             } else {
                 slideText(questionsArray[index_iter], questionsArray[index_iter-1]);
                 // Setup TTS for new question
@@ -289,7 +512,10 @@ function startRecord() {
             }
         }
 
-    stopRecordingAfterTimeout();
+    // Only set timeout for voice mode
+    if (mode === 'voice') {
+        stopRecordingAfterTimeout();
+    }
 }
 
 $("#startRecording").on("click", async function(event) {
@@ -300,39 +526,102 @@ $("#startRecording").on("click", async function(event) {
 
         event.preventDefault();
         
-        // Check if microphone access has been granted
-        if (!microphoneAccessGranted) {
-            $("#error").text('Please wait for microphone access to be granted, or allow microphone access in your browser settings.');
-            return;
-        }
-        
-        // First time starting - initialize MediaRecorder with selected device
-        if (!mediaRecorder) {
-            try {
-                // Make sure we have a selected device
-                if (!selectedDeviceId && availableDevices.length > 0) {
-                    selectedDeviceId = availableDevices[0].deviceId;
-                }
-                
-                await initializeMediaRecorder();
-            } catch (err) {
-                console.error('Error initializing microphone:', err);
-                $("#error").text('Error accessing microphone. Please check your permissions and try again.');
-                return;
-            }
-        }
+        // Don't initialize MediaRecorder here - wait until user selects VOICE mode
+        // and explicitly wants to start recording
         
         index_iter++;
         startRecord();
     }
 });
 
-$("#stopRecording").on("click", function(event) {
+$("#stopRecording").on("click", async function(event) {
     event.preventDefault();
     clearTimeout(recordingTimeout);
-    mediaRecorder.stop();
-    index_iter++;
-    startRecord();
+    
+    const questionIndex = index_iter - 1;
+    const mode = currentQuestionMode[questionIndex] || currentInputMode || 'text';
+    
+    if (mode === 'voice') {
+        // If not recording yet, start recording
+        if (!mediaRecorder || mediaRecorder.state !== 'recording') {
+            // Initialize MediaRecorder if not already initialized
+            if (!mediaRecorder) {
+                if (!microphoneAccessGranted) {
+                    $("#error").text('Please wait for microphone access to be granted, or allow microphone access in your browser settings.');
+                    return;
+                }
+                
+                try {
+                    // Make sure we have a selected device
+                    if (!selectedDeviceId && availableDevices.length > 0) {
+                        selectedDeviceId = availableDevices[0].deviceId;
+                    }
+                    
+                    await initializeMediaRecorder();
+                } catch (err) {
+                    console.error('Error initializing microphone:', err);
+                    $("#error").text('Error accessing microphone. Please check your permissions and try again.');
+                    return;
+                }
+            }
+            
+            // Start recording
+            if (mediaRecorder && mediaRecorder.state !== 'recording') {
+                try {
+                    mediaRecorder.start();
+                    
+                    // Setup audio visualization
+                    try {
+                        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        analyser = audioContext.createAnalyser();
+                        let source = audioContext.createMediaStreamSource(mediaRecorder.stream);
+                        source.connect(analyser);
+                        
+                        analyser.fftSize = 256;
+                        dataArray = new Uint8Array(analyser.frequencyBinCount);
+                        canvas = document.getElementById("visualization");
+                        canvasContext = canvas.getContext("2d");
+                        drawVisualization();
+                    } catch(e) {
+                        console.error('Error setting up audio visualization:', e);
+                    }
+                    
+                    // Set timeout to auto-stop after 30 seconds
+                    stopRecordingAfterTimeout();
+                    
+                    // Update button text to "Continue"
+                    $("#stopRecording span").text('Continue');
+                } catch (e) {
+                    console.error('Error starting recording:', e);
+                    $("#error").text('Error starting recording. Please try again.');
+                }
+            }
+        } else {
+            // Stop recording if active
+            mediaRecorder.stop();
+            // Move to next question (sendData will be called asynchronously from onstop handler)
+            index_iter++;
+            startRecord();
+        }
+    } else {
+        // Handle text input submission
+        const textAnswer = document.getElementById('textAnswer');
+        const answerText = textAnswer ? textAnswer.value.trim() : '';
+        
+        if (answerText === '') {
+            alert('Please enter an answer before continuing.');
+            return;
+        }
+        
+        // Submit text answer directly
+        submitTextAnswer(answerText, questionIndex);
+        
+        // Move to next question
+        index_iter++;
+        if (questionsArray.length + 1 > index_iter) {
+            startRecord();
+        }
+    }
 });
 
 function sendData(audioBlob) {
@@ -368,6 +657,13 @@ function sendData(audioBlob) {
         alert("An unanticipated error has occurred, please try the test again");
         location.reload()
     });
+}
+
+function submitTextAnswer(answerText, questionIndex) {
+    // Add text answer to data_testing array
+    data_testing.push({"question": questionsArray[questionIndex], "text": answerText});
+    
+    // Note: The check for last question is done in startRecord() or after incrementing index_iter
 }
 
 function slideText(currentText, nextText) {

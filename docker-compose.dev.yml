@@ -36,6 +36,7 @@ services:
       - ./wsgi.py:/know/wsgi.py
       - ./functions.py:/know/functions.py
       - ./analytics.py:/know/analytics.py
+      - ./migrate_sqlite_to_postgres.py:/know/migrate_sqlite_to_postgres.py
       # Mount translations directory for i18n
       - ./translations:/know/translations
       - ./babel:/know/babel
@@ -48,6 +49,7 @@ services:
       - POSTGRES_USER=${POSTGRES_USER:-knowemployee}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-knowemployee_password}
       - POSTGRES_DB=${POSTGRES_DB:-knowemployee_db}
+      - FERNET_KEY=${FERNET_KEY}
       # Override with .env.dev if needed
     env_file:
       - .env  # Primary env file (create this with your credentials)

@@ -7,10 +7,7 @@ gunicorn/*
 .idea/
 
 # Environment files
-.env
-.env.dev
-.env.local
-.env.*.local
+.env*
 
 # Database
 instance/*.db

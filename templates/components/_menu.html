@@ -1,7 +1,14 @@
 <div class="company_data">
     <div class="company">
         <span>
-            <img src="{{ '../../static/company.png' if data_page.user_data.avatar == '0' else data_page.user_data.avatar }}" alt="Logo you company">
+            {% set avatar_value = data_page.user_data.avatar|string|trim if data_page.user_data.avatar else '' %}
+            {% if avatar_value and avatar_value != '0' and avatar_value != 'False' and avatar_value != 'false' and avatar_value|length > 20 and avatar_value[:10] == 'data:image' %}
+                <img src="{{ data_page.user_data.avatar }}" alt="Logo you company">
+            {% else %}
+                {% set company_name = data_page.user_data.company_name if data_page.user_data.company_name and data_page.user_data.company_name != '0' else 'CO' %}
+                {% set initials = company_name[:2].upper() if company_name|length >= 2 else (company_name[0] + company_name[0]).upper() if company_name|length == 1 else 'CO' %}
+                <div class="company-initials">{{ initials }}</div>
+            {% endif %}
         </span>
         <p>{{ data_page.user_data.company_name }}</p>
     </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ session.get('language', 'en') }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,11 @@
     <title>Sign In | {{ name_platform }}</title>
 </head>
 <body>
-{% include "components/_language_selector.html" %}
 <div class="container">
-    <a href="/"><img src="../static/assets/images/logo-dark.svg"></a>
+    <div class="header-top">
+        <a href="/"><img src="../static/assets/images/logo-dark.svg"></a>
+        {% include "components/_language_selector.html" %}
+    </div>
     <section class="wrapper">
         <div class="sign_in">
             <div id="login_form" class="form">
@@ -54,6 +56,31 @@
                 </form>
 
                 <p class="q_acc">{{ _('You still don\'t have an account?') }} <a href="/register">{{ _('Sign up.') }}</a></p>
+
+                <div class="oauth-divider">
+                    <span>{{ _('or') }}</span>
+                </div>
+
+                <div class="oauth-buttons">
+                    <a href="/login/google" class="oauth-btn oauth-btn-google">
+                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" fill="#4285F4"/>
+                            <path d="M9 18c2.43 0 4.467-.806 5.965-2.184l-2.908-2.258c-.806.54-1.837.86-3.057.86-2.35 0-4.34-1.587-5.053-3.72H.957v2.332C2.438 15.983 5.482 18 9 18z" fill="#34A853"/>
+                            <path d="M3.947 10.698c-.18-.54-.282-1.117-.282-1.698s.102-1.158.282-1.698V4.97H.957C.348 6.175 0 7.55 0 9s.348 2.825.957 4.03l2.99-2.332z" fill="#FBBC05"/>
+                            <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.97L3.947 7.7C4.66 5.566 6.65 3.98 9 3.98z" fill="#EA4335"/>
+                        </svg>
+                        <span>{{ _('Continue with Google') }}</span>
+                    </a>
+                    <a href="/login/microsoft" class="oauth-btn oauth-btn-microsoft">
+                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0h8.5v8.5H0z" fill="#F25022"/>
+                            <path d="M9.5 0H18v8.5H9.5z" fill="#7FBA00"/>
+                            <path d="M0 9.5h8.5V18H0z" fill="#00A4EF"/>
+                            <path d="M9.5 9.5H18V18H9.5z" fill="#FFB900"/>
+                        </svg>
+                        <span>{{ _('Continue with Microsoft') }}</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>

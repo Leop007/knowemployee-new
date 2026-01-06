@@ -142,6 +142,14 @@ body {
   }
 }
 
+/* Ensure scrolling works on all resolutions - override any conflicting rules */
+.wpr_tests:not(.hidden) {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
 @media screen and (min-width: 1150px) {
   .thank_you {
     width: 1310px;
@@ -600,21 +608,33 @@ body {
 .wpr_tests {
   width: 100%;
   min-height: 100vh;
-  overflow: auto;
+  overflow: visible !important;
   background: #e7e7e7;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
+  position: relative;
+  height: auto !important;
+  max-height: none !important;
 }
 
-/* On mobile, ensure wpr_tests allows scrolling */
+/* Ensure wpr_tests allows content to grow on all resolutions - body will handle scrolling */
 @media screen and (max-width: 768px) {
   .wpr_tests {
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch;
+    overflow: visible !important;
     height: auto !important;
     min-height: 100vh !important;
+    max-height: none !important;
+  }
+}
+
+/* Ensure scrolling on tablet and desktop too */
+@media screen and (min-width: 769px) {
+  .wpr_tests {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
   }
 }
 
@@ -628,11 +648,19 @@ body {
   position: relative;
 }
 
-/* On mobile, allow wrapper to scroll if content overflows */
+/* Allow wrapper to grow with content - body will handle scrolling */
+.wpr_tests .wrapper {
+  overflow: visible !important;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+  flex: 0 0 auto !important;
+  padding-bottom: 20px;
+}
+
 @media screen and (max-width: 768px) {
   .wpr_tests .wrapper {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow: visible !important;
   }
 }
 
@@ -648,7 +676,7 @@ body {
     justify-content: center;
     margin: 0 auto;
     flex-direction: row;
-    overflow: hidden;
+    overflow: visible;
     align-items: flex-start;
   }
 }
@@ -779,12 +807,12 @@ body {
   font-weight: 700;
   font-size: 15px;
   display: flex;
-  margin-top: 30px;
+  margin-top: 0;
 }
 
 @media screen and (min-width: 1160px) {
   .question h5 {
-    margin-top: 45px;
+    margin-top: 0;
   }
 }
 
@@ -798,6 +826,69 @@ body {
   display: flex;
   justify-content: center;
   margin: 40px 0;
+}
+
+.question .input-mode-selector {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.question .input-mode-selector .mode-toggle {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  background: #f0f0f0;
+  padding: 5px;
+  border-radius: 25px;
+}
+
+.question .input-mode-selector .mode-toggle .mode-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.question .input-mode-selector .mode-toggle .mode-btn.active {
+  background: #53EB12;
+  color: white;
+}
+
+.question .input-mode-selector .mode-toggle .mode-btn:not(.active) {
+  background: transparent;
+  color: #666;
+}
+
+.question .input-mode-selector .mode-toggle .mode-btn:hover {
+  opacity: 0.8;
+}
+
+.question .text-input-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.question .text-input-container #textAnswer {
+  width: 100%;
+  min-height: 150px;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.question .text-input-container #textAnswer:focus {
+  outline: none;
+  border-color: #53EB12;
 }
 
 .slide {
@@ -1007,6 +1098,37 @@ body {
   overflow: auto;
 }
 
+/* Force scrolling when feedback section is visible - make body/html scrollable */
+/* Use :has() for modern browsers */
+body:has(.wpr_tests:not(.hidden)),
+html:has(.wpr_tests:not(.hidden)) {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  height: auto !important;
+  max-height: none !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Universal fallback - ensure body/html always allow scrolling on feedback pages */
+body {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+html {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* Make the section grow with content to trigger body scrolling */
+.wpr_tests:not(.hidden) {
+  position: relative;
+  overflow: visible !important;
+  min-height: 100vh;
+  height: auto !important;
+  max-height: none !important;
+}
+
 .hidden {
   display: none !important;
 }
@@ -1087,6 +1209,67 @@ body {
 
 .description p:last-child {
   color: #AFAFAF;
+}
+
+/* Logo positioning at top left, aligned with language selector */
+.logo-top {
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  z-index: 9998;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-top img {
+  height: 60px;
+  width: auto;
+}
+
+/* Enable scrolling on the page - allow section to grow and body to scroll */
+.wpr_tests:not(.hidden) {
+  overflow: visible !important;
+  min-height: 100vh;
+  height: auto !important;
+  max-height: none !important;
+  position: relative;
+  padding-bottom: 60px; /* Space for footer */
+}
+
+
+/* Shrink content to prevent overflow */
+.wpr_tests .wrapper .q,
+.wpr_tests .wrapper .content {
+  max-width: 100%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1160.98px) {
+  .wpr_tests .wrapper .q,
+  .wpr_tests .wrapper .content {
+    padding: 40px;
+    max-width: 800px;
+  }
+}
+
+/* Keep footer at bottom */
+.wpr_tests .powered {
+  position: relative !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
+  margin-top: 0;
+  padding: 20px 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Ensure typing mode also has proper spacing */
+.text-input-container {
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

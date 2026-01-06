@@ -18,6 +18,9 @@
 </div>
 
 <section class="wpr_tests hidden" id="wpr_tests" d-type="{{data_company.type}}" d-app="{{data_company.checked}}">
+    <div class="logo-top">
+        <img src="./../../static/assets/images/logo-dark.svg" alt="Know Employee survey page">
+    </div>
     <div class="wrapper">
 
         {% if data_company.type == "custom" %}
@@ -90,9 +93,6 @@
             </div>
         </div>
         <div class="q hidden">
-            <div class="logo">
-                <img src="./../../static/assets/images/logo-dark.svg" alt="Know Employee survey page">
-            </div>
             <div class="question">
                 <div class="q_count">{{ _('Question') }} <span id="a">1</span>/<span id="c"></span></div>
                 <div class="slide">
@@ -107,8 +107,25 @@
                     <audio id="questionAudio" style="display: none;"></audio>
                 </div>
 
-                <div class="recognize">
+                <div class="input-mode-selector" style="text-align: center; margin: 20px 0;">
+                    <label class="visually-hidden" for="inputMode">{{ _('Choose input method') }}</label>
+                    <div class="mode-toggle" style="display: inline-flex; gap: 10px; align-items: center; background: #f0f0f0; padding: 5px; border-radius: 25px;">
+                        <button type="button" class="mode-btn" data-mode="voice" style="padding: 10px 20px; border: none; border-radius: 20px; cursor: pointer; background: transparent; color: #666; font-weight: 600; transition: all 0.3s ease;">
+                            <span>🎤</span> {{ _('Voice') }}
+                        </button>
+                        <button type="button" class="mode-btn active" data-mode="text" style="padding: 10px 20px; border: none; border-radius: 20px; cursor: pointer; background: #53EB12; color: white; font-weight: 600; transition: all 0.3s ease;">
+                            <span>✍️</span> {{ _('Type') }}
+                        </button>
+                    </div>
+                </div>
+
+                <div class="recognize hidden" id="voiceInputContainer">
                     <canvas id="visualization"></canvas>
+                </div>
+
+                <div class="text-input-container" id="textInputContainer" style="width: 100%; max-width: 600px; margin: 20px auto;">
+                    <label class="visually-hidden" for="textAnswer">{{ _('Type your answer') }}</label>
+                    <textarea id="textAnswer" placeholder="{{ _('Type your answer here...') }}" style="width: 100%; min-height: 150px; padding: 15px; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; font-family: inherit; resize: vertical; box-sizing: border-box;"></textarea>
                 </div>
                 <h5>
                     {{ _('Your thoughtful and honest responses are crucial for your employer. Answering thoughtfully ensures meaningful insights that contribute to a better work environment. Rest assured, your responses are completely anonymous, prioritizing your privacy throughout the process') }}
@@ -174,8 +191,26 @@
                     <h3></h3>
                 </div>
                 <div class="q_count">{{ _('Question') }} <span id="a">1</span>/<span id="c"></span></div>
-                <div class="recognize">
+                
+                <div class="input-mode-selector" style="text-align: center; margin: 20px 0;">
+                    <label class="visually-hidden" for="inputMode">{{ _('Choose input method') }}</label>
+                    <div class="mode-toggle" style="display: inline-flex; gap: 10px; align-items: center; background: #f0f0f0; padding: 5px; border-radius: 25px;">
+                        <button type="button" class="mode-btn" data-mode="voice" style="padding: 10px 20px; border: none; border-radius: 20px; cursor: pointer; background: transparent; color: #666; font-weight: 600; transition: all 0.3s ease;">
+                            <span>🎤</span> {{ _('Voice') }}
+                        </button>
+                        <button type="button" class="mode-btn active" data-mode="text" style="padding: 10px 20px; border: none; border-radius: 20px; cursor: pointer; background: #53EB12; color: white; font-weight: 600; transition: all 0.3s ease;">
+                            <span>✍️</span> {{ _('Type') }}
+                        </button>
+                    </div>
+                </div>
+
+                <div class="recognize hidden" id="voiceInputContainer">
                     <canvas id="visualization"></canvas>
+                </div>
+
+                <div class="text-input-container" id="textInputContainer" style="width: 100%; max-width: 600px; margin: 20px auto;">
+                    <label class="visually-hidden" for="textAnswer">{{ _('Type your answer') }}</label>
+                    <textarea id="textAnswer" placeholder="{{ _('Type your answer here...') }}" style="width: 100%; min-height: 150px; padding: 15px; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; font-family: inherit; resize: vertical; box-sizing: border-box;"></textarea>
                 </div>
 
                 <div class="row_button">

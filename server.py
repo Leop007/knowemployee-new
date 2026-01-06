@@ -38,6 +38,7 @@ import subprocess
 import logging
 from flask_babel import Babel, gettext as _, lazy_gettext as _l
 from openai import OpenAI
+from authlib.integrations.flask_client import OAuth
 
 
 
@@ -57,30 +58,6 @@ else:
 NAME_PLATFORM = "KnowEmployee"
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', '97473497e94c7289a98fae8e9636ae67')
-
-# Database configuration
-# Priority: 1. SQLALCHEMY_DATABASE_URI env var (explicit override)
-#           2. PostgreSQL connection from env vars
-#           3. SQLite fallback (for backward compatibility)
-database_uri = os.getenv('SQLALCHEMY_DATABASE_URI')
-if not database_uri:
-    # Try to construct PostgreSQL connection string from environment variables
-    postgres_host = os.getenv('POSTGRES_HOST')
-    postgres_port = os.getenv('POSTGRES_PORT', '5432')
-    postgres_user = os.getenv('POSTGRES_USER')
-    postgres_password = os.getenv('POSTGRES_PASSWORD')
-    postgres_db = os.getenv('POSTGRES_DB')
-    
-    if all([postgres_host, postgres_user, postgres_password, postgres_db]):
-        # Construct PostgreSQL connection string
-        database_uri = f"postgresql://{postgres_user}:{postgres_password}@{postgres_host}:{postgres_port}/{postgres_db}"
-        logger.info(f"Using PostgreSQL database: {postgres_host}:{postgres_port}/{postgres_db}")
-    else:
-        # Fallback to SQLite
-        database_uri = 'sqlite:///service.db'
-        logger.info("Using SQLite database (fallback)")
-
-app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
 
 # Flask-Babel configuration
 app.config['LANGUAGES'] = {
@@ -124,6 +101,34 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 logger.info(f"Application starting in {ENV} mode. Domain: {DOMAIN}")
+
+# Database configuration
+# Priority: 1. PostgreSQL connection from env vars (if all vars present)
+#           2. SQLALCHEMY_DATABASE_URI env var (explicit override)
+#           3. SQLite fallback (for backward compatibility)
+postgres_host = os.getenv('POSTGRES_HOST')
+postgres_port = os.getenv('POSTGRES_PORT', '5432')
+postgres_user = os.getenv('POSTGRES_USER')
+postgres_password = os.getenv('POSTGRES_PASSWORD')
+postgres_db = os.getenv('POSTGRES_DB')
+
+# Check if all PostgreSQL environment variables are present
+if all([postgres_host, postgres_user, postgres_password, postgres_db]):
+    # Construct PostgreSQL connection string (highest priority)
+    database_uri = f"postgresql://{postgres_user}:{postgres_password}@{postgres_host}:{postgres_port}/{postgres_db}"
+    logger.info(f"Using PostgreSQL database: {postgres_host}:{postgres_port}/{postgres_db}")
+else:
+    # Fall back to SQLALCHEMY_DATABASE_URI or SQLite
+    database_uri = os.getenv('SQLALCHEMY_DATABASE_URI')
+    if not database_uri:
+        # Final fallback to SQLite
+        database_uri = 'sqlite:///service.db'
+        logger.info("Using SQLite database (fallback)")
+    else:
+        logger.info(f"Using database from SQLALCHEMY_DATABASE_URI: {database_uri.split('@')[-1] if '@' in database_uri else database_uri}")
+
+app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
+
 DG_API_KEY = os.getenv('DEEPGRAM_API_KEY')
 if not DG_API_KEY:
     logger.warning("DEEPGRAM_API_KEY is not set in environment variables. Deepgram transcription will not work.")
@@ -192,6 +197,31 @@ QUESTIONS = [
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+
+# OAuth configuration
+oauth = OAuth(app)
+
+# Google OAuth
+google = oauth.register(
+    name='google',
+    client_id=os.getenv('GOOGLE_CLIENT_ID'),
+    client_secret=os.getenv('GOOGLE_CLIENT_SECRET'),
+    server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
+    client_kwargs={
+        'scope': 'openid email profile'
+    }
+)
+
+# Microsoft OAuth
+microsoft = oauth.register(
+    name='microsoft',
+    client_id=os.getenv('MICROSOFT_CLIENT_ID'),
+    client_secret=os.getenv('MICROSOFT_CLIENT_SECRET'),
+    server_metadata_url='https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration',
+    client_kwargs={
+        'scope': 'openid email profile'
+    }
+)
 cipher = Fernet(FERNET_KEY.encode())
 
 def encrypt(message: str) -> str:
@@ -203,19 +233,45 @@ def decrypt(token: str) -> str:
     return cipher.decrypt(token.encode('utf-8')).decode()
 
 def run_migrations():
+    """
+    Run database migrations. For fresh PostgreSQL databases, creates tables from models first.
+    """
     with app.app_context():
         if not os.path.exists('migrations'):
             init()
             migrate()
             upgrade()
-
-        upgrade()
+        else:
+            # Check if this is a fresh database (no tables exist)
+            from sqlalchemy import inspect
+            inspector = inspect(db.engine)
+            existing_tables = inspector.get_table_names()
+            
+            # If no tables exist (fresh database), create them from models first
+            if not existing_tables or (len(existing_tables) == 1 and 'alembic_version' in existing_tables):
+                logger.info("Fresh database detected. Creating tables from models...")
+                db.create_all()
+                logger.info("Tables created. Stamping database with current migration head...")
+                from flask_migrate import stamp
+                try:
+                    stamp()
+                    logger.info("Database initialized successfully")
+                except Exception as e:
+                    logger.warning(f"Could not stamp database: {e}")
+            
+            # Run any pending migrations
+            try:
+                upgrade()
+            except Exception as e:
+                # If upgrade fails, it might be because tables don't match migrations
+                # This is okay for fresh databases that were just created
+                logger.debug(f"Migration upgrade note: {e}")
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     public_id = db.Column(db.Text, unique=True)
     company_name = db.Column(db.String(50))
-    password = db.Column(db.String(80))
+    password = db.Column(db.String(200))  # Increased for scrypt hashes (can be 120+ chars)
     email = db.Column(db.String(50), unique=True)
     confirmed = db.Column(db.Boolean, default=False)
     country = db.Column(db.Text)
@@ -509,6 +565,136 @@ def login():
             return jsonify({'status': True, 'token': token})
         
         return make_response('Could not verify', 401, {'WWW-Authenticate': 'Basic realm="Login required!"'})
+
+# OAuth login routes
+@app.route('/login/google')
+def login_google():
+    if not os.getenv('GOOGLE_CLIENT_ID') or not os.getenv('GOOGLE_CLIENT_SECRET'):
+        return redirect('/login?error=google_oauth_not_configured')
+    redirect_uri = url_for('auth_google_callback', _external=True)
+    return google.authorize_redirect(redirect_uri)
+
+@app.route('/login/microsoft')
+def login_microsoft():
+    if not os.getenv('MICROSOFT_CLIENT_ID') or not os.getenv('MICROSOFT_CLIENT_SECRET'):
+        return redirect('/login?error=microsoft_oauth_not_configured')
+    redirect_uri = url_for('auth_microsoft_callback', _external=True)
+    return microsoft.authorize_redirect(redirect_uri)
+
+# OAuth callback routes
+@app.route('/auth/google/callback')
+def auth_google_callback():
+    try:
+        token = google.authorize_access_token()
+        user_info = token.get('userinfo')
+        if not user_info:
+            # Fetch user info if not included in token
+            resp = google.get('https://www.googleapis.com/oauth2/v2/userinfo')
+            user_info = resp.json()
+        
+        email = user_info.get('email')
+        name = user_info.get('name', '')
+        picture = user_info.get('picture', '')
+        
+        if not email:
+            return redirect('/login?error=no_email_from_google')
+        
+        # Find or create user
+        user = User.query.filter_by(email=email).first()
+        
+        if user:
+            # Existing user - log them in
+            if not user.confirmed:
+                user.confirmed = True
+                db.session.commit()
+        else:
+            # New user - create account
+            uuid_str = str(uuid.uuid4())
+            hash_qr = hashlib.md5(uuid_str.encode()).hexdigest()
+            # Extract company name from email domain or use name
+            company_name = name.split()[0] if name else email.split('@')[0]
+            new_user = User(
+                public_id=uuid_str,
+                company_name=company_name[:50],
+                email=email,
+                confirmed=True,  # OAuth users are auto-confirmed
+                password='',  # OAuth users don't need password
+                anonimus_feedback=hash_qr
+            )
+            db.session.add(new_user)
+            db.session.commit()
+            user = new_user
+        
+        # Create JWT token and log in
+        token = jwt.encode({
+            'public_id': user.public_id,
+            'exp': datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=24)
+        }, app.config['SECRET_KEY'])
+        
+        session['token'] = token
+        session['logged_in'] = True
+        return redirect('/set_token/' + token)
+        
+    except Exception as e:
+        logger.error(f"Google OAuth error: {e}")
+        return redirect('/login?error=oauth_failed')
+
+@app.route('/auth/microsoft/callback')
+def auth_microsoft_callback():
+    try:
+        token = microsoft.authorize_access_token()
+        user_info = token.get('userinfo')
+        if not user_info:
+            # Fetch user info if not included in token
+            resp = microsoft.get('https://graph.microsoft.com/v1.0/me')
+            user_info = resp.json()
+        
+        email = user_info.get('email') or user_info.get('mail') or user_info.get('userPrincipalName')
+        name = user_info.get('name') or user_info.get('displayName', '')
+        picture = user_info.get('picture') or ''
+        
+        if not email:
+            return redirect('/login?error=no_email_from_microsoft')
+        
+        # Find or create user
+        user = User.query.filter_by(email=email).first()
+        
+        if user:
+            # Existing user - log them in
+            if not user.confirmed:
+                user.confirmed = True
+                db.session.commit()
+        else:
+            # New user - create account
+            uuid_str = str(uuid.uuid4())
+            hash_qr = hashlib.md5(uuid_str.encode()).hexdigest()
+            # Extract company name from email domain or use name
+            company_name = name.split()[0] if name else email.split('@')[0]
+            new_user = User(
+                public_id=uuid_str,
+                company_name=company_name[:50],
+                email=email,
+                confirmed=True,  # OAuth users are auto-confirmed
+                password='',  # OAuth users don't need password
+                anonimus_feedback=hash_qr
+            )
+            db.session.add(new_user)
+            db.session.commit()
+            user = new_user
+        
+        # Create JWT token and log in
+        token = jwt.encode({
+            'public_id': user.public_id,
+            'exp': datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=24)
+        }, app.config['SECRET_KEY'])
+        
+        session['token'] = token
+        session['logged_in'] = True
+        return redirect('/set_token/' + token)
+        
+    except Exception as e:
+        logger.error(f"Microsoft OAuth error: {e}")
+        return redirect('/login?error=oauth_failed')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():

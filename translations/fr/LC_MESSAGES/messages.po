@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-12-23 22:28+0000\n"
+"POT-Creation-Date: 2026-01-05 16:33+0000\n"
 "PO-Revision-Date: 2025-12-23 23:20+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -18,11 +18,948 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.13.1\n"
 
+#: templates/about_us.html:15
+msgid ""
+"At Know Employee, we believe that understanding people is the foundation "
+"of building successful, resilient, and high-performing organizations. We "
+"are an AI-powered startup dedicated to transforming how businesses "
+"understand employee satisfaction, workplace sentiment, and organizational"
+" well-being. By combining advanced technology with a deep appreciation "
+"for human behavior, we help companies create healthier, more productive "
+"work environments where people feel heard, respected, and motivated."
+msgstr ""
+"Chez Know Employee, nous sommes convaincus que la compréhension des "
+"personnes est le fondement de toute organisation performante, résiliente "
+"et durable. Nous sommes une startup innovante, propulsée par "
+"l'intelligence artificielle, dont la mission est de transformer la "
+"manière dont les entreprises évaluent la satisfaction des employés, le "
+"climat de travail et le ressenti des équipes. En combinant des "
+"technologies avancées à une compréhension approfondie du facteur humain, "
+"nous aidons les organisations à créer des environnements de travail plus "
+"sains, plus productifs et plus épanouissants, où chaque collaborateur se "
+"sent écouté, respecté et motivé."
+
+#: templates/about_us.html:18
+msgid ""
+"In today's fast-paced and competitive business landscape, organizations "
+"are under constant pressure to perform, innovate, and adapt. Yet behind "
+"every metric, deadline, and strategic decision stands a workforce whose "
+"mood, engagement, and sense of belonging directly influence outcomes. At "
+"Know Employee, we start with a simple but powerful belief: when people "
+"come to work in a good mood, they are more likely to perform at their "
+"best. Our mission is to help organizations understand what shapes that "
+"mood—and what they can do to improve it."
+msgstr ""
+"Dans un contexte économique en constante évolution, les entreprises "
+"doivent sans cesse innover, s'adapter et performer. Pourtant, derrière "
+"chaque objectif, chaque indicateur et chaque décision stratégique se "
+"trouvent des femmes et des hommes dont l'état d'esprit, l'engagement et "
+"le sentiment d'appartenance ont un impact direct sur les résultats. Chez "
+"Know Employee, nous partons d'une conviction simple mais essentielle : "
+"lorsqu'une personne arrive au travail dans un bon état d'esprit, elle est"
+" plus susceptible de donner le meilleur d'elle-même. Notre objectif est "
+"d'aider les entreprises à comprendre ce qui influence cet état d'esprit —"
+" et comment l'améliorer durablement."
+
+#: templates/about_us.html:25
+msgid "Our Vision"
+msgstr "Notre vision"
+
+#: templates/about_us.html:27
+msgid ""
+"Our vision is to redefine how companies assess and improve employee "
+"satisfaction. Traditional surveys and feedback tools often fall short: "
+"they are infrequent, overly rigid, or fail to capture the real sentiment "
+"of employees. Even worse, employees may hesitate to provide honest "
+"feedback if they fear being identified or judged."
+msgstr ""
+"Notre vision est de repenser en profondeur la manière dont les "
+"entreprises mesurent et améliorent la satisfaction de leurs employés. Les"
+" méthodes traditionnelles, comme les enquêtes ponctuelles ou les outils "
+"de feedback classiques, montrent souvent leurs limites : elles sont trop "
+"rigides, trop rares, ou ne parviennent pas à refléter le ressenti réel "
+"des collaborateurs. Plus encore, de nombreux employés hésitent à "
+"s'exprimer librement lorsqu'ils craignent de ne pas être totalement "
+"anonymes."
+
+#: templates/about_us.html:30
+msgid ""
+"Know Employee was created to solve these challenges. We envision a "
+"workplace where employee feedback is continuous, meaningful, and safe. A "
+"workplace where insights are data-driven, actionable, and rooted in "
+"genuine trust. And ultimately, a workplace where organizations can align "
+"performance goals with employee well-being."
+msgstr ""
+"Know Employee est né pour répondre à ces défis. Nous imaginons un monde "
+"du travail dans lequel le feedback des employés est continu, pertinent et"
+" sécurisé. Un environnement où les analyses sont basées sur des données "
+"fiables, exploitables et construites sur une relation de confiance. Et "
+"surtout, un environnement où la performance de l'entreprise est "
+"étroitement liée au bien-être de ses collaborateurs."
+
+#: templates/about_us.html:37
+msgid "What We Do"
+msgstr "Ce que nous faisons"
+
+#: templates/about_us.html:39
+msgid ""
+"Know Employee provides an AI-driven platform designed to analyze "
+"workplace sentiment while ensuring employee anonymity. Our solution "
+"allows businesses to gain deep insights into their organizational "
+"environment without compromising trust or privacy."
+msgstr ""
+"Know Employee propose une plateforme alimentée par l'intelligence "
+"artificielle, conçue pour analyser le climat social et la satisfaction "
+"des employés tout en garantissant leur anonymat. Notre solution permet "
+"aux entreprises d'obtenir une vision claire et approfondie de leur "
+"environnement de travail, sans compromettre la confidentialité ni la "
+"confiance des équipes."
+
+#: templates/about_us.html:42
+msgid ""
+"Using cutting-edge algorithms, our platform evaluates employee sentiment "
+"and satisfaction patterns across teams, departments, and time periods. "
+"The result is a clear, data-backed understanding of how employees feel "
+"about their work environment and how that sentiment evolves."
+msgstr ""
+"Grâce à des algorithmes de pointe, notre plateforme identifie et analyse "
+"les tendances du ressenti des employés à travers les équipes, les "
+"départements et les périodes de temps. Elle offre ainsi une compréhension"
+" globale et objective de la manière dont les collaborateurs perçoivent "
+"leur environnement professionnel et de l'évolution de ce ressenti dans le"
+" temps."
+
+#: templates/about_us.html:45
+msgid ""
+"Rather than focusing on isolated opinions, we help organizations see the "
+"bigger picture: trends, signals, and underlying dynamics that influence "
+"morale, engagement, and performance."
+msgstr ""
+"Plutôt que de se limiter à des opinions isolées, Know Employee aide les "
+"organisations à détecter des signaux forts, des tendances durables et des"
+" dynamiques internes qui influencent l'engagement, la motivation et la "
+"performance."
+
+#: templates/about_us.html:52
+msgid "The Power of Anonymity"
+msgstr "La puissance de l'anonymat"
+
+#: templates/about_us.html:54
+msgid ""
+"One of the biggest barriers to honest employee feedback is fear—fear of "
+"retaliation, misinterpretation, or negative consequences. We recognized "
+"early on that meaningful insights can only be obtained when employees "
+"feel truly safe expressing themselves."
+msgstr ""
+"L'un des principaux freins à un feedback honnête est la peur : peur "
+"d'être identifié, jugé ou de subir des conséquences négatives. Dès le "
+"départ, nous avons compris que des analyses pertinentes ne peuvent "
+"exister que si les employés se sentent réellement en sécurité pour "
+"s'exprimer."
+
+#: templates/about_us.html:57
+msgid ""
+"That is why anonymity is at the core of Know Employee's platform. Our "
+"algorithms are designed to protect individual identities while still "
+"delivering accurate, aggregated insights to management. This approach "
+"encourages honesty, reduces bias, and increases participation."
+msgstr ""
+"C'est pourquoi l'anonymat est au cœur de la plateforme Know Employee. Nos"
+" algorithmes sont spécifiquement conçus pour protéger l'identité des "
+"individus tout en fournissant aux organisations des analyses agrégées, "
+"fiables et exploitables. Cette approche favorise l'honnêteté, réduit les "
+"biais et augmente significativement le taux de participation."
+
+#: templates/about_us.html:60
+msgid ""
+"By ensuring anonymity, we help organizations build trust—not just in the "
+"tool, but in the feedback process itself."
+msgstr ""
+"En garantissant l'anonymat, nous aidons les entreprises à instaurer une "
+"relation de confiance durable — non seulement envers l'outil, mais aussi "
+"envers la démarche de feedback elle-même."
+
+#: templates/about_us.html:67
+msgid "Why Employee Satisfaction Matters"
+msgstr "Pourquoi la satisfaction des employés est essentielle"
+
+#: templates/about_us.html:69
+msgid ""
+"Employee satisfaction is not a \"soft\" metric. It is a critical business"
+" driver."
+msgstr ""
+"La satisfaction des employés n'est pas un indicateur secondaire. Il "
+"s'agit d'un levier stratégique majeur."
+
+#: templates/about_us.html:72
+msgid ""
+"Satisfied employees are more engaged, more productive, and more likely to"
+" collaborate effectively. They take greater ownership of their work, "
+"contribute ideas more freely, and remain with organizations longer. On "
+"the other hand, low morale can lead to disengagement, reduced "
+"performance, absenteeism, and turnover—all of which carry significant "
+"costs."
+msgstr ""
+"Des employés satisfaits sont généralement plus engagés, plus productifs "
+"et plus enclins à collaborer efficacement. Ils prennent davantage "
+"d'initiatives, partagent leurs idées et s'investissent sur le long terme."
+" À l'inverse, un climat de travail dégradé peut entraîner désengagement, "
+"baisse de performance, absentéisme et turnover, avec des coûts humains et"
+" financiers considérables."
+
+#: templates/about_us.html:75
+msgid ""
+"At Know Employee, we focus on helping organizations understand this "
+"connection between mood, satisfaction, and performance. By identifying "
+"areas of concern early and highlighting what works well, companies can "
+"take proactive steps to improve their work environment before small "
+"issues grow into major problems."
+msgstr ""
+"Chez Know Employee, nous aidons les organisations à comprendre ce lien "
+"fondamental entre bien-être, motivation et performance. En identifiant "
+"les points de tension à un stade précoce et en mettant en lumière les "
+"facteurs positifs, les entreprises peuvent agir de manière proactive et "
+"prévenir l'apparition de problématiques plus graves."
+
+#: templates/about_us.html:82
+msgid "Turning Insights into Action"
+msgstr "Transformer les analyses en actions concrètes"
+
+#: templates/about_us.html:84
+msgid ""
+"Data alone does not create change—action does. That is why Know Employee "
+"goes beyond surface-level reporting. Our analysis tools are designed to "
+"help decision-makers interpret results clearly and translate insights "
+"into meaningful improvements."
+msgstr ""
+"Les données seules ne suffisent pas à provoquer le changement. Ce sont "
+"les décisions et les actions qui font la différence. C'est pourquoi Know "
+"Employee ne se limite pas à la production de rapports. Nos outils "
+"d'analyse sont conçus pour aider les décideurs à interpréter les "
+"résultats de manière claire et à les transformer en actions concrètes."
+
+#: templates/about_us.html:87
+msgid "By understanding workforce sentiment, organizations can:"
+msgstr ""
+"Grâce à une meilleure compréhension du ressenti des équipes, les "
+"organisations peuvent :"
+
+#: templates/about_us.html:90
+msgid "Identify strengths in their workplace culture"
+msgstr "Identifier les forces de leur culture d'entreprise"
+
+#: templates/about_us.html:91
+msgid "Detect early warning signs of dissatisfaction"
+msgstr "Détecter rapidement les signes de démotivation"
+
+#: templates/about_us.html:92
+msgid "Evaluate the impact of organizational changes"
+msgstr "Évaluer l'impact des changements organisationnels"
+
+#: templates/about_us.html:93
+msgid "Improve communication and leadership practices"
+msgstr "Améliorer la communication et les pratiques managériales"
+
+#: templates/about_us.html:94
+msgid "Foster a more positive and supportive work environment"
+msgstr "Créer un environnement de travail plus positif et plus équilibré"
+
+#: templates/about_us.html:97
+msgid ""
+"Our platform empowers leaders, HR teams, and managers with the "
+"information they need to make informed decisions that benefit both "
+"employees and the organization as a whole."
+msgstr ""
+"Notre plateforme donne aux dirigeants, aux équipes RH et aux managers les"
+" clés nécessaires pour prendre des décisions éclairées, au bénéfice des "
+"employés comme de l'entreprise."
+
+#: templates/about_us.html:104
+msgid "A Human-Centered Approach to AI"
+msgstr "Une approche humaine de l'intelligence artificielle"
+
+#: templates/about_us.html:106
+msgid ""
+"While Know Employee is powered by advanced artificial intelligence, our "
+"approach is deeply human. We do not believe in replacing human judgment; "
+"we believe in enhancing it."
+msgstr ""
+"Bien que Know Employee repose sur des technologies d'intelligence "
+"artificielle avancées, notre approche reste profondément humaine. Nous ne"
+" cherchons pas à remplacer le jugement humain, mais à le renforcer."
+
+#: templates/about_us.html:109
+msgid ""
+"AI enables us to process complex patterns and large volumes of data "
+"efficiently, but empathy, understanding, and leadership remain human "
+"responsibilities. Our goal is to provide clarity and insight—not "
+"automated decisions—so organizations can act thoughtfully and "
+"responsibly."
+msgstr ""
+"L'IA nous permet d'analyser des volumes importants de données et de "
+"détecter des tendances complexes, mais l'empathie, l'écoute et le "
+"leadership demeurent des qualités humaines essentielles. Notre rôle est "
+"d'apporter de la clarté et des insights pertinents afin de permettre aux "
+"organisations d'agir avec discernement et responsabilité."
+
+#: templates/about_us.html:112
+msgid ""
+"By combining AI with a human-centered philosophy, we help businesses "
+"create environments where people feel valued, understood, and supported."
+msgstr ""
+"En combinant l'IA avec une philosophie centrée sur l'humain, nous aidons "
+"les entreprises à créer des environnements où les personnes se sentent "
+"valorisées, comprises et soutenues."
+
+#: templates/about_us.html:119
+msgid "Who We Serve"
+msgstr "À qui s'adresse Know Employee"
+
+#: templates/about_us.html:121
+msgid ""
+"Know Employee is designed for organizations that care about their people "
+"and recognize that employee satisfaction is essential to long-term "
+"success. Our solution is suitable for companies of various sizes and "
+"industries that want to:"
+msgstr ""
+"Know Employee s'adresse aux organisations qui placent l'humain au cœur de"
+" leur stratégie et qui reconnaissent que la satisfaction des employés est"
+" un facteur clé de réussite à long terme. Notre solution convient à des "
+"entreprises de toutes tailles et de tous secteurs souhaitant :"
+
+#: templates/about_us.html:124
+msgid "Better understand their workforce"
+msgstr "Mieux comprendre leurs équipes"
+
+#: templates/about_us.html:125
+msgid "Improve workplace culture"
+msgstr "Améliorer le climat de travail"
+
+#: templates/about_us.html:126
+msgid "Strengthen engagement and morale"
+msgstr "Renforcer l'engagement et la motivation"
+
+#: templates/about_us.html:127
+msgid "Support sustainable performance"
+msgstr "Soutenir une performance durable"
+
+#: templates/about_us.html:130
+msgid ""
+"Whether an organization is growing rapidly, navigating change, or simply "
+"looking to improve, Know Employee provides the tools to gain clarity and "
+"confidence in workforce decisions."
+msgstr ""
+"Que ce soit dans un contexte de croissance, de transformation ou "
+"d'optimisation, Know Employee accompagne les entreprises dans leurs "
+"démarches d'amélioration continue."
+
+#: templates/about_us.html:137
+msgid "Our Values"
+msgstr "Nos valeurs"
+
+#: templates/about_us.html:139
+msgid "Everything we build is guided by a core set of values:"
+msgstr "Notre travail est guidé par des valeurs fondamentales :"
+
+#: templates/about_us.html:142
+msgid "Trust"
+msgstr "Confiance"
+
+#: templates/about_us.html:143
+msgid ""
+"Trust is the foundation of effective feedback. We prioritize anonymity, "
+"transparency, and ethical use of data to ensure employees and "
+"organizations alike can rely on our platform."
+msgstr ""
+"La confiance est indispensable à un feedback de qualité. Nous mettons "
+"l'accent sur l'anonymat, la transparence et l'utilisation éthique des "
+"données."
+
+#: templates/about_us.html:146
+msgid "Insight"
+msgstr "Pertinence"
+
+#: templates/about_us.html:147
+msgid ""
+"We focus on delivering meaningful, actionable insights—not noise. Our "
+"tools are designed to highlight what truly matters."
+msgstr ""
+"Nous privilégions des analyses utiles et actionnables, en évitant toute "
+"complexité inutile."
+
+#: templates/about_us.html:150
+msgid "Respect"
+msgstr "Respect"
+
+#: templates/about_us.html:151
+msgid ""
+"We respect the individuality of employees and the complexity of "
+"organizational life. Our technology is designed to support people, not "
+"reduce them to numbers."
+msgstr ""
+"Nous respectons l'individualité des employés et la complexité des "
+"environnements de travail. Nos outils sont conçus pour soutenir les "
+"personnes, non pour les réduire à des chiffres."
+
+#: templates/about_us.html:154
+msgid "Impact"
+msgstr "Impact"
+
+#: templates/about_us.html:155
+msgid ""
+"We measure success by the positive changes organizations can make using "
+"our insights—better communication, stronger teams, and healthier work "
+"environments."
+msgstr ""
+"Notre réussite se mesure à l'impact positif que nos analyses permettent "
+"de créer au sein des organisations."
+
+#: templates/about_us.html:162
+msgid "Our Mission"
+msgstr "Notre mission"
+
+#: templates/about_us.html:164
+msgid ""
+"Our mission is simple: to help organizations get to know their employees "
+"better and improve the work environment through intelligent analysis "
+"tools."
+msgstr ""
+"Notre mission est claire : aider les entreprises à mieux connaître leurs "
+"employés et à améliorer l'environnement de travail grâce à des outils "
+"d'analyse intelligents."
+
+#: templates/about_us.html:167
+msgid ""
+"We believe that understanding employee sentiment is not about control—it "
+"is about care. When companies listen, learn, and act, they create "
+"workplaces where people thrive."
+msgstr ""
+"Nous sommes convaincus que comprendre le ressenti des équipes n'est pas "
+"une question de contrôle, mais d'attention et de considération. "
+"Lorsqu'une organisation écoute, comprend et agit, elle crée un "
+"environnement dans lequel les collaborateurs peuvent réellement "
+"s'épanouir."
+
+#: templates/about_us.html:174
+msgid "Looking Ahead"
+msgstr "Regard vers l'avenir"
+
+#: templates/about_us.html:176
+msgid ""
+"As workplaces continue to evolve—with remote work, hybrid models, and "
+"changing expectations—understanding employee satisfaction will only "
+"become more important. Know Employee is committed to evolving alongside "
+"these changes, continuously improving our technology and expanding our "
+"analytical capabilities."
+msgstr ""
+"À mesure que le monde du travail évolue — avec le télétravail, les "
+"modèles hybrides et des attentes en constante mutation — la compréhension"
+" de la satisfaction des employés devient plus essentielle que jamais. "
+"Know Employee s'engage à évoluer avec ces transformations, à améliorer "
+"continuellement sa technologie et à enrichir ses capacités d'analyse."
+
+#: templates/about_us.html:179
+msgid ""
+"We are building a future where organizations can confidently navigate "
+"complexity while keeping people at the center of every decision."
+msgstr ""
+"Nous construisons un avenir dans lequel les organisations peuvent faire "
+"face à la complexité tout en plaçant l'humain au centre de chaque "
+"décision."
+
+#: templates/about_us.html:186
+msgid "Join Us"
+msgstr "Rejoignez-nous"
+
+#: templates/about_us.html:188
+msgid ""
+"Know Employee is more than a platform—it is a commitment to better "
+"workplaces. We invite organizations to take the next step toward "
+"understanding their workforce, improving employee satisfaction, and "
+"unlocking the full potential of their teams."
+msgstr ""
+"Know Employee est bien plus qu'une plateforme : c'est un engagement en "
+"faveur de meilleurs environnements de travail. Nous invitons les "
+"entreprises à franchir une nouvelle étape pour mieux comprendre leurs "
+"équipes, améliorer la satisfaction des employés et libérer tout le "
+"potentiel de leurs talents."
+
+#: templates/about_us.html:191
+msgid "Because when people feel good at work, everyone benefits."
+msgstr ""
+"Parce que lorsque les collaborateurs se sentent bien au travail, tout le "
+"monde y gagne."
+
+#: templates/anonymous_feedback.html:5
+#: templates/header-anonymous-feedback.html:4
+msgid "Anonymous Feedback"
+msgstr "Retour d'information anonyme"
+
+#: templates/anonymous_feedback.html:13
+msgid ""
+"Anonymous feedback allows employees or customers to share their thoughts,"
+" feelings, and perceptions without any form of personal identification."
+msgstr ""
+"Le retour d'information anonyme permet aux employés ou aux clients de "
+"partager leurs pensées, leurs sentiments et leurs perceptions sans aucune"
+" forme d'identification personnelle."
+
+#: templates/anonymous_feedback.html:16
+msgid ""
+"The system is designed so that no direct or indirect identifiers (name, "
+"email, device ID, IP address, voice fingerprint, etc.) are stored or "
+"exposed to the organization."
+msgstr ""
+"Le système est conçu pour qu'aucun identifiant direct ou indirect (nom, "
+"e-mail, ID d'appareil, adresse IP, empreinte vocale, etc.) ne soit stocké"
+" ou exposé à l'organisation."
+
+#: templates/anonymous_feedback.html:20 templates/custom_feedback.html:20
+#: templates/metric_feedback.html:20
+msgid "Key characteristics"
+msgstr "Caractéristiques clés"
+
+#: templates/anonymous_feedback.html:22
+msgid "Privacy-first by design:"
+msgstr "Confidentialité d'abord par conception :"
+
+#: templates/anonymous_feedback.html:22
+msgid "responses are detached from identity at the data-collection layer."
+msgstr ""
+"les réponses sont détachées de l'identité au niveau de la collecte de "
+"données."
+
+#: templates/anonymous_feedback.html:23
+msgid "Psychological safety:"
+msgstr "Sécurité psychologique :"
+
+#: templates/anonymous_feedback.html:23
+msgid ""
+"participants are more likely to provide honest, critical, or sensitive "
+"input."
+msgstr ""
+"les participants sont plus susceptibles de fournir des commentaires "
+"honnêtes, critiques ou sensibles."
+
+#: templates/anonymous_feedback.html:24
+msgid "AI-ready:"
+msgstr "Prêt pour l'IA :"
+
+#: templates/anonymous_feedback.html:24
+msgid ""
+"text and transcribed voice responses are analyzed for sentiment, "
+"emotional tone, and recurring themes without profiling individuals."
+msgstr ""
+"les réponses textuelles et vocales transcrites sont analysées pour le "
+"sentiment, le ton émotionnel et les thèmes récurrents sans profiler les "
+"individus."
+
+#: templates/anonymous_feedback.html:29 templates/custom_feedback.html:29
+msgid "Typical use cases"
+msgstr "Cas d'utilisation typiques"
+
+#: templates/anonymous_feedback.html:31
+msgid "Organizational climate and trust surveys"
+msgstr "Enquêtes sur le climat organisationnel et la confiance"
+
+#: templates/anonymous_feedback.html:32
+msgid "Employee engagement and burnout detection"
+msgstr "Détection de l'engagement des employés et de l'épuisement professionnel"
+
+#: templates/anonymous_feedback.html:33
+msgid ""
+"Ethical concerns, leadership feedback, or whistle-style insights (non-"
+"investigative)"
+msgstr ""
+"Préoccupations éthiques, retour sur le leadership, ou informations de "
+"type dénonciation (non-investigatives)"
+
+#: templates/anonymous_feedback.html:38 templates/custom_feedback.html:38
+#: templates/metric_feedback.html:39
+msgid "Value for organizations"
+msgstr "Valeur pour les organisations"
+
+#: templates/anonymous_feedback.html:40
+msgid ""
+"Anonymous feedback surfaces hidden risks, morale issues, and cultural "
+"patterns that would otherwise remain unspoken, while maintaining "
+"compliance with privacy regulations (e.g., GDPR principles of data "
+"minimization and purpose limitation)."
+msgstr ""
+"Le retour d'information anonyme révèle des risques cachés, des problèmes "
+"de moral et des modèles culturels qui resteraient autrement non exprimés,"
+" tout en maintenant la conformité aux réglementations sur la "
+"confidentialité (par exemple, les principes du RGPD de minimisation des "
+"données et de limitation de l'objectif)."
+
+#: templates/cookie_policy.html:12 templates/privacy_policy.html:12
+msgid "Last updated:"
+msgstr "Dernière mise à jour :"
+
+#: templates/cookie_policy.html:15
+msgid "This Cookie Policy explains how"
+msgstr "Cette politique de cookies explique comment"
+
+#: templates/cookie_policy.html:15
+msgid "(\"we\", \"us\", \"our\")"
+msgstr "(\"nous\", \"notre\")"
+
+#: templates/cookie_policy.html:15
+msgid "uses cookies and similar technologies when you visit our website"
+msgstr ""
+"utilise des cookies et technologies similaires lorsque vous visitez notre"
+" site web"
+
+#: templates/cookie_policy.html:19
+msgid "What are cookies?"
+msgstr "Que sont les cookies ?"
+
+#: templates/cookie_policy.html:21
+msgid ""
+"Cookies are small text files that are stored on your device (computer, "
+"smartphone, tablet) when you visit a website. They are widely used to "
+"make websites work properly, improve efficiency, and provide information "
+"to the website owner."
+msgstr ""
+"Les cookies sont de petits fichiers texte stockés sur votre appareil "
+"(ordinateur, smartphone, tablette) lorsque vous visitez un site web. Ils "
+"sont largement utilisés pour faire fonctionner correctement les sites "
+"web, améliorer l'efficacité et fournir des informations au propriétaire "
+"du site web."
+
+#: templates/cookie_policy.html:24
+msgid "Cookies can be:"
+msgstr "Les cookies peuvent être :"
+
+#: templates/cookie_policy.html:27
+msgid "Session cookies"
+msgstr "Cookies de session"
+
+#: templates/cookie_policy.html:27
+msgid "deleted when you close your browser"
+msgstr "supprimés lorsque vous fermez votre navigateur"
+
+#: templates/cookie_policy.html:28
+msgid "Persistent cookies"
+msgstr "Cookies persistants"
+
+#: templates/cookie_policy.html:28
+msgid "remain on your device for a defined period or until deleted"
+msgstr ""
+"restent sur votre appareil pendant une période définie ou jusqu'à leur "
+"suppression"
+
+#: templates/cookie_policy.html:33
+msgid "Types of cookies we use"
+msgstr "Types de cookies que nous utilisons"
+
+#: templates/cookie_policy.html:35
+msgid "Strictly necessary cookies"
+msgstr "Cookies strictement nécessaires"
+
+#: templates/cookie_policy.html:37
+msgid ""
+"These cookies are essential for the website to function correctly. They "
+"enable core features such as security, network management, and "
+"accessibility."
+msgstr ""
+"Ces cookies sont essentiels au bon fonctionnement du site web. Ils "
+"activent des fonctionnalités de base telles que la sécurité, la gestion "
+"du réseau et l'accessibilité."
+
+#: templates/cookie_policy.html:40
+msgid "Legal basis: Legitimate interest"
+msgstr "Base légale : Intérêt légitime"
+
+#: templates/cookie_policy.html:41
+msgid "Consent required: No"
+msgstr "Consentement requis : Non"
+
+#: templates/cookie_policy.html:44
+msgid "Functional cookies"
+msgstr "Cookies fonctionnels"
+
+#: templates/cookie_policy.html:46
+msgid ""
+"These cookies allow the website to remember choices you make (such as "
+"language or region) and provide enhanced, more personalized features."
+msgstr ""
+"Ces cookies permettent au site web de se souvenir des choix que vous "
+"faites (comme la langue ou la région) et de fournir des fonctionnalités "
+"améliorées et plus personnalisées."
+
+#: templates/cookie_policy.html:49 templates/cookie_policy.html:58
+#: templates/cookie_policy.html:74
+msgid "Legal basis: Consent"
+msgstr "Base légale : Consentement"
+
+#: templates/cookie_policy.html:50 templates/cookie_policy.html:59
+#: templates/cookie_policy.html:75
+msgid "Consent required: Yes"
+msgstr "Consentement requis : Oui"
+
+#: templates/cookie_policy.html:53
+msgid "Analytics / performance cookies"
+msgstr "Cookies d'analyse / de performance"
+
+#: templates/components/_cookie_consent.html:31 templates/cookie_policy.html:55
+msgid ""
+"These cookies help us understand how visitors interact with our website "
+"by collecting and reporting information anonymously."
+msgstr ""
+"Ces cookies nous aident à comprendre comment les visiteurs interagissent "
+"avec notre site web en collectant et en rapportant des informations de "
+"manière anonyme."
+
+#: templates/cookie_policy.html:60
+msgid "Examples:"
+msgstr "Exemples :"
+
+#: templates/cookie_policy.html:62
+msgid "Page visit statistics"
+msgstr "Statistiques de visite de pages"
+
+#: templates/cookie_policy.html:63
+msgid "Traffic sources"
+msgstr "Sources de trafic"
+
+#: templates/cookie_policy.html:64
+msgid "Error monitoring"
+msgstr "Surveillance des erreurs"
+
+#: templates/cookie_policy.html:69
+msgid "Marketing / advertising cookies"
+msgstr "Cookies marketing / publicitaires"
+
+#: templates/cookie_policy.html:71
+msgid ""
+"These cookies are used to track visitors across websites in order to "
+"display relevant advertisements and measure the effectiveness of "
+"marketing campaigns."
+msgstr ""
+"Ces cookies sont utilisés pour suivre les visiteurs sur différents sites "
+"web afin d'afficher des publicités pertinentes et de mesurer l'efficacité"
+" des campagnes marketing."
+
+#: templates/cookie_policy.html:80
+msgid "Third-party cookies"
+msgstr "Cookies tiers"
+
+#: templates/cookie_policy.html:82
+msgid ""
+"We may allow third-party service providers to place cookies on your "
+"device to provide analytics, functionality, or marketing services."
+msgstr ""
+"Nous pouvons autoriser des prestataires de services tiers à placer des "
+"cookies sur votre appareil pour fournir des services d'analyse, de "
+"fonctionnalité ou de marketing."
+
+#: templates/cookie_policy.html:85
+msgid ""
+"These third parties may collect data independently in accordance with "
+"their own privacy policies."
+msgstr ""
+"Ces tiers peuvent collecter des données indépendamment conformément à "
+"leurs propres politiques de confidentialité."
+
+#: templates/cookie_policy.html:90
+msgid "Cookie consent and management"
+msgstr "Consentement et gestion des cookies"
+
+#: templates/cookie_policy.html:92
+msgid ""
+"When you first visit our website, you will be presented with a cookie "
+"banner allowing you to:"
+msgstr ""
+"Lors de votre première visite sur notre site web, une bannière de cookies"
+" vous sera présentée vous permettant de :"
+
+#: templates/cookie_policy.html:95
+msgid "Accept all cookies"
+msgstr "Accepter tous les cookies"
+
+#: templates/cookie_policy.html:96
+msgid "Reject non-essential cookies"
+msgstr "Rejeter les cookies non essentiels"
+
+#: templates/cookie_policy.html:97
+msgid "Customize your cookie preferences"
+msgstr "Personnaliser vos préférences de cookies"
+
+#: templates/cookie_policy.html:100
+msgid ""
+"You can change or withdraw your consent at any time by adjusting your "
+"cookie settings or browser preferences."
+msgstr ""
+"Vous pouvez modifier ou retirer votre consentement à tout moment en "
+"ajustant vos paramètres de cookies ou les préférences de votre "
+"navigateur."
+
+#: templates/cookie_policy.html:105
+msgid "How to manage cookies in your browser"
+msgstr "Comment gérer les cookies dans votre navigateur"
+
+#: templates/cookie_policy.html:107
+msgid ""
+"Most browsers allow you to view, delete, or block cookies. Instructions "
+"vary by browser. Please refer to your browser's help section for more "
+"information."
+msgstr ""
+"La plupart des navigateurs vous permettent de visualiser, supprimer ou "
+"bloquer les cookies. Les instructions varient selon le navigateur. "
+"Veuillez consulter la section d'aide de votre navigateur pour plus "
+"d'informations."
+
+#: templates/cookie_policy.html:110
+msgid ""
+"Please note that disabling cookies may affect the functionality of the "
+"website."
+msgstr ""
+"Veuillez noter que la désactivation des cookies peut affecter la "
+"fonctionnalité du site web."
+
+#: templates/cookie_policy.html:115
+msgid "Data protection and privacy"
+msgstr "Protection des données et confidentialité"
+
+#: templates/cookie_policy.html:117
+msgid ""
+"Any personal data collected through cookies is processed in accordance "
+"with our"
+msgstr ""
+"Toutes les données personnelles collectées via les cookies sont traitées "
+"conformément à notre"
+
+#: templates/cookie_policy.html:117 templates/footer.html:42
+#: templates/header-privacy-policy.html:4
+msgid "Privacy Policy"
+msgstr "Politique de confidentialité"
+
+#: templates/cookie_policy.html:117
+msgid "and applicable data protection laws, including the GDPR."
+msgstr "et aux lois applicables sur la protection des données, y compris le RGPD."
+
+#: templates/cookie_policy.html:122
+msgid "Updates to this Cookie Policy"
+msgstr "Mises à jour de cette politique de cookies"
+
+#: templates/cookie_policy.html:124
+msgid ""
+"We may update this Cookie Policy from time to time to reflect changes in "
+"technology, legislation, or our practices. The updated version will be "
+"published on this page with a revised \"Last updated\" date."
+msgstr ""
+"Nous pouvons mettre à jour cette politique de cookies de temps à autre "
+"pour refléter les changements technologiques, législatifs ou nos "
+"pratiques. La version mise à jour sera publiée sur cette page avec une "
+"date de \"Dernière mise à jour\" révisée."
+
+#: templates/cookie_policy.html:129 templates/privacy_policy.html:160
+msgid "Contact information"
+msgstr "Informations de contact"
+
+#: templates/cookie_policy.html:131
+msgid ""
+"If you have any questions about this Cookie Policy or our use of cookies,"
+" please contact us:"
+msgstr ""
+"Si vous avez des questions concernant cette politique de cookies ou notre"
+" utilisation des cookies, veuillez nous contacter :"
+
+#: templates/cookie_policy.html:134 templates/privacy_policy.html:166
+msgid "Email:"
+msgstr "E-mail :"
+
+#: templates/cookie_policy.html:135 templates/privacy_policy.html:167
+msgid "Phone:"
+msgstr "Téléphone :"
+
+#: templates/cookie_policy.html:136 templates/privacy_policy.html:168
+msgid "Address:"
+msgstr "Adresse :"
+
+#: templates/custom_feedback.html:5 templates/header-custom-feedback.html:4
+msgid "Custom Feedback"
+msgstr "Retour d'information personnalisé"
+
+#: templates/custom_feedback.html:13
+msgid ""
+"Custom feedback enables organizations to design tailored surveys and "
+"question flows based on their specific goals, audience, and context."
+msgstr ""
+"Le retour d'information personnalisé permet aux organisations de "
+"concevoir des enquêtes et des flux de questions adaptés en fonction de "
+"leurs objectifs, de leur public et de leur contexte spécifiques."
+
+#: templates/custom_feedback.html:16
+msgid ""
+"Survey questions can be created manually or assisted by an HR-oriented AI"
+" agent, ensuring clarity, neutrality, and inclusiveness."
+msgstr ""
+"Les questions d'enquête peuvent être créées manuellement ou assistées par"
+" un agent IA orienté RH, garantissant la clarté, la neutralité et "
+"l'inclusivité."
+
+#: templates/custom_feedback.html:22
+msgid "Fully configurable questions:"
+msgstr "Questions entièrement configurables :"
+
+#: templates/custom_feedback.html:22
+msgid "open-ended, short answers, or guided prompts."
+msgstr "questions ouvertes, réponses courtes ou invites guidées."
+
+#: templates/custom_feedback.html:23
+msgid "Multiple input modes:"
+msgstr "Modes de saisie multiples :"
+
+#: templates/custom_feedback.html:23
+msgid ""
+"written responses or voice recordings, with text-to-speech for "
+"accessibility."
+msgstr ""
+"réponses écrites ou enregistrements vocaux, avec synthèse vocale pour "
+"l'accessibilité."
+
+#: templates/custom_feedback.html:24
+msgid "Context-aware analysis:"
+msgstr "Analyse contextuelle :"
+
+#: templates/custom_feedback.html:24
+msgid ""
+"AI models adapt interpretation based on the intent of the survey (e.g., "
+"performance, well-being, change management)."
+msgstr ""
+"les modèles d'IA adaptent l'interprétation en fonction de l'intention de "
+"l'enquête (par exemple, performance, bien-être, gestion du changement)."
+
+#: templates/custom_feedback.html:31
+msgid "Post-change or post-restructuring feedback"
+msgstr "Retour d'information post-changement ou post-restructuration"
+
+#: templates/custom_feedback.html:32
+msgid "Team-specific or department-level pulse surveys"
+msgstr "Enquêtes de pulse spécifiques à l'équipe ou au niveau du département"
+
+#: templates/custom_feedback.html:33
+msgid "Customer experience or service-quality evaluations"
+msgstr "Évaluations de l'expérience client ou de la qualité du service"
+
+#: templates/custom_feedback.html:40
+msgid ""
+"Custom feedback ensures that organizations ask the right questions at the"
+" right time, while still benefiting from automated AI analysis and "
+"consistent reporting across different surveys."
+msgstr ""
+"Le retour d'information personnalisé garantit que les organisations "
+"posent les bonnes questions au bon moment, tout en bénéficiant d'une "
+"analyse IA automatisée et de rapports cohérents entre différentes "
+"enquêtes."
+
 #: templates/footer.html:6
 msgid "Services"
 msgstr "Services"
 
-#: templates/footer.html:9
+#: templates/footer.html:9 templates/pages_dashboard/services.html:9
 msgid "Anonymous feedback"
 msgstr "Retour d'information anonyme"
 
@@ -31,14 +968,15 @@ msgid "Custom feedback"
 msgstr "Retour d'information personnalisé"
 
 #: templates/footer.html:15
-msgid "Metrica feedback"
+msgid "Metric feedback"
 msgstr "Retour d'information métrique"
 
 #: templates/footer.html:21
 msgid "Why do we"
 msgstr "Pourquoi nous"
 
-#: templates/footer.html:24
+#: templates/footer.html:24 templates/header-about.html:4
+#: templates/menu.html:14
 msgid "About Us"
 msgstr "À propos de nous"
 
@@ -46,7 +984,8 @@ msgstr "À propos de nous"
 msgid "Partners"
 msgstr "Partenaires"
 
-#: templates/footer.html:30 templates/index.html:30
+#: templates/footer.html:30 templates/header-contact.html:4
+#: templates/index.html:30
 msgid "Contact us"
 msgstr "Contactez-nous"
 
@@ -54,13 +993,10 @@ msgstr "Contactez-nous"
 msgid "Legal"
 msgstr "Légal"
 
-#: templates/footer.html:39
+#: templates/footer.html:39 templates/header-cookie-policy.html:4
+#: templates/privacy_policy.html:60
 msgid "Cookie Policy"
 msgstr "Politique de cookies"
-
-#: templates/footer.html:42
-msgid "Privacy Policy"
-msgstr "Politique de confidentialité"
 
 #: templates/footer.html:54
 msgid ""
@@ -105,6 +1041,10 @@ msgstr ""
 msgid "Start the process"
 msgstr "Démarrer le processus"
 
+#: templates/header-metric-feedback.html:4 templates/metric_feedback.html:5
+msgid "Metric-Based Feedback"
+msgstr "Retour d'information basé sur les métriques"
+
 #: templates/index.html:11
 msgid "Anonymous"
 msgstr "Anonyme"
@@ -138,87 +1078,500 @@ msgstr ""
 "un produit dans votre entreprise ? Contactez-nous pour recevoir une offre"
 " personnelle avantageuse."
 
-#: templates/menu.html:16
+#: templates/menu.html:12
 msgid "Home"
 msgstr "Accueil"
 
-#: templates/menu.html:17
+#: templates/menu.html:13
 msgid "Contact"
 msgstr "Contact"
 
-#: templates/menu.html:18
+#: templates/menu.html:15
 msgid "Sign Up"
 msgstr "S'inscrire"
 
-#: templates/menu.html:19
+#: templates/menu.html:16
 msgid "Sign In"
 msgstr "Se connecter"
 
-#: templates/sign_in.html:16
+#: templates/metric_feedback.html:13
+msgid ""
+"Metric-based feedback transforms qualitative responses into aggregated, "
+"trackable indicators that can be monitored over time."
+msgstr ""
+"Le retour d'information basé sur les métriques transforme les réponses "
+"qualitatives en indicateurs agrégés et traçables qui peuvent être "
+"surveillés dans le temps."
+
+#: templates/metric_feedback.html:16
+msgid ""
+"Instead of focusing on individual answers, the system produces high-level"
+" metrics and trends derived from AI analysis."
+msgstr ""
+"Au lieu de se concentrer sur les réponses individuelles, le système "
+"produit des métriques et des tendances de haut niveau dérivées de "
+"l'analyse IA."
+
+#: templates/metric_feedback.html:22
+msgid "Quantified insights:"
+msgstr "Informations quantifiées :"
+
+#: templates/metric_feedback.html:22
+msgid ""
+"sentiment scores, emotional distribution, topic frequency, confidence "
+"levels."
+msgstr ""
+"scores de sentiment, distribution émotionnelle, fréquence des sujets, "
+"niveaux de confiance."
+
+#: templates/metric_feedback.html:23
+msgid "Trend analysis:"
+msgstr "Analyse des tendances :"
+
+#: templates/metric_feedback.html:23
+msgid "comparison across time periods, teams, or survey rounds."
+msgstr "comparaison entre périodes, équipes ou cycles d'enquête."
+
+#: templates/metric_feedback.html:24
+msgid "Visualization-ready:"
+msgstr "Prêt pour la visualisation :"
+
+#: templates/metric_feedback.html:24
+msgid ""
+"results are stored in a structured database and presented via dashboards "
+"and charts."
+msgstr ""
+"les résultats sont stockés dans une base de données structurée et "
+"présentés via des tableaux de bord et des graphiques."
+
+#: templates/metric_feedback.html:29
+msgid "Typical metrics"
+msgstr "Métriques typiques"
+
+#: templates/metric_feedback.html:31
+msgid "Overall sentiment index (positive / neutral / negative)"
+msgstr "Indice de sentiment global (positif / neutre / négatif)"
+
+#: templates/metric_feedback.html:32
+msgid "Emotional signals (stress, engagement, frustration, trust)"
+msgstr "Signaux émotionnels (stress, engagement, frustration, confiance)"
+
+#: templates/metric_feedback.html:33
+msgid "Topic prevalence (e.g., workload, management, communication)"
+msgstr ""
+"Prévalence des sujets (par exemple, charge de travail, gestion, "
+"communication)"
+
+#: templates/metric_feedback.html:34
+msgid "Response confidence and clarity indicators"
+msgstr "Indicateurs de confiance et de clarté des réponses"
+
+#: templates/metric_feedback.html:41
+msgid ""
+"Metric-based feedback enables data-driven decision-making, allowing "
+"leaders to detect early warning signs, measure the impact of actions "
+"taken, and track organizational health without exposing individual "
+"responses."
+msgstr ""
+"Le retour d'information basé sur les métriques permet une prise de "
+"décision basée sur les données, permettant aux dirigeants de détecter les"
+" signes d'alerte précoces, de mesurer l'impact des actions entreprises et"
+" de suivre la santé organisationnelle sans exposer les réponses "
+"individuelles."
+
+#: templates/privacy_policy.html:15
+msgid "This Privacy Policy describes how"
+msgstr "Cette politique de confidentialité décrit comment"
+
+#: templates/privacy_policy.html:15
+msgid ""
+"(\"we\", \"us\", or \"our\") collects, uses, and discloses information "
+"when you visit or use our website"
+msgstr ""
+"(\"nous\", \"notre\") collecte, utilise et divulgue des informations "
+"lorsque vous visitez ou utilisez notre site web"
+
+#: templates/privacy_policy.html:15
+msgid "(the \"Website\")."
+msgstr "(le \"Site web\")."
+
+#: templates/privacy_policy.html:19
+msgid ""
+"By accessing or using the Website, you agree to the collection and use of"
+" information in accordance with this Privacy Policy."
+msgstr ""
+"En accédant ou en utilisant le Site web, vous acceptez la collecte et "
+"l'utilisation d'informations conformément à cette politique de "
+"confidentialité."
+
+#: templates/privacy_policy.html:25
+msgid "Information we collect"
+msgstr "Informations que nous collectons"
+
+#: templates/privacy_policy.html:27
+msgid "We may collect the following categories of information:"
+msgstr "Nous pouvons collecter les catégories d'informations suivantes :"
+
+#: templates/privacy_policy.html:30
+msgid "Personal information"
+msgstr "Informations personnelles"
+
+#: templates/privacy_policy.html:30
+msgid ""
+"such as name, email address, phone number, company name, or other "
+"information you voluntarily provide"
+msgstr ""
+"telles que le nom, l'adresse e-mail, le numéro de téléphone, le nom de "
+"l'entreprise ou d'autres informations que vous fournissez volontairement"
+
+#: templates/privacy_policy.html:31
+msgid "Internet or technical information"
+msgstr "Informations Internet ou techniques"
+
+#: templates/privacy_policy.html:31
+msgid ""
+"such as IP address, browser type, device type, operating system, and "
+"referring URLs"
+msgstr ""
+"telles que l'adresse IP, le type de navigateur, le type d'appareil, le "
+"système d'exploitation et les URL de référence"
+
+#: templates/privacy_policy.html:32
+msgid "Usage data"
+msgstr "Données d'utilisation"
+
+#: templates/privacy_policy.html:32
+msgid "including pages viewed, time spent on the Website, and interactions"
+msgstr ""
+"y compris les pages consultées, le temps passé sur le Site web et les "
+"interactions"
+
+#: templates/privacy_policy.html:39
+msgid "How we use information"
+msgstr "Comment nous utilisons les informations"
+
+#: templates/privacy_policy.html:41
+msgid "We use collected information for purposes including:"
+msgstr "Nous utilisons les informations collectées à des fins notamment :"
+
+#: templates/privacy_policy.html:44
+msgid "Operating and maintaining the Website"
+msgstr "Exploitation et maintenance du Site web"
+
+#: templates/privacy_policy.html:45
+msgid "Responding to inquiries or requests"
+msgstr "Répondre aux demandes ou requêtes"
+
+#: templates/privacy_policy.html:46
+msgid "Improving functionality and user experience"
+msgstr "Améliorer la fonctionnalité et l'expérience utilisateur"
+
+#: templates/privacy_policy.html:47
+msgid "Monitoring security and preventing fraud or misuse"
+msgstr ""
+"Surveillance de la sécurité et prévention de la fraude ou de "
+"l'utilisation abusive"
+
+#: templates/privacy_policy.html:48
+msgid "Complying with legal obligations"
+msgstr "Conformité aux obligations légales"
+
+#: templates/privacy_policy.html:55
+msgid "Cookies and tracking technologies"
+msgstr "Cookies et technologies de suivi"
+
+#: templates/privacy_policy.html:57
+msgid ""
+"We may use cookies, pixels, and similar tracking technologies to analyze "
+"usage and enhance the Website's performance. You may control cookies "
+"through your browser settings."
+msgstr ""
+"Nous pouvons utiliser des cookies, pixels et technologies de suivi "
+"similaires pour analyser l'utilisation et améliorer les performances du "
+"Site web. Vous pouvez contrôler les cookies via les paramètres de votre "
+"navigateur."
+
+#: templates/privacy_policy.html:60
+msgid "For more information, please see our"
+msgstr "Pour plus d'informations, veuillez consulter notre"
+
+#: templates/privacy_policy.html:67
+msgid "Sharing of information"
+msgstr "Partage d'informations"
+
+#: templates/privacy_policy.html:69
+msgid ""
+"We do not sell personal information. We may share information in the "
+"following situations:"
+msgstr ""
+"Nous ne vendons pas d'informations personnelles. Nous pouvons partager "
+"des informations dans les situations suivantes :"
+
+#: templates/privacy_policy.html:72
+msgid ""
+"With service providers that assist in operating the Website (hosting, "
+"analytics, support)"
+msgstr ""
+"Avec des prestataires de services qui aident à exploiter le Site web "
+"(hébergement, analyse, support)"
+
+#: templates/privacy_policy.html:73
+msgid "To comply with applicable laws, regulations, or legal processes"
+msgstr ""
+"Pour se conformer aux lois, réglementations ou processus légaux "
+"applicables"
+
+#: templates/privacy_policy.html:74
+msgid ""
+"To protect the rights, safety, or property of the Website, users, or "
+"others"
+msgstr ""
+"Pour protéger les droits, la sécurité ou les biens du Site web, des "
+"utilisateurs ou d'autres personnes"
+
+#: templates/privacy_policy.html:75
+msgid "In connection with a business transaction (merger, sale, or acquisition)"
+msgstr "Dans le cadre d'une transaction commerciale (fusion, vente ou acquisition)"
+
+#: templates/privacy_policy.html:82
+msgid "Data retention"
+msgstr "Conservation des données"
+
+#: templates/privacy_policy.html:84
+msgid ""
+"We retain personal information only for as long as reasonably necessary "
+"to fulfill the purposes described in this Privacy Policy, unless a longer"
+" retention period is required or permitted by law."
+msgstr ""
+"Nous conservons les informations personnelles uniquement aussi longtemps "
+"que raisonnablement nécessaire pour remplir les objectifs décrits dans "
+"cette politique de confidentialité, sauf si une période de conservation "
+"plus longue est requise ou permise par la loi."
+
+#: templates/privacy_policy.html:91
+msgid "Data security"
+msgstr "Sécurité des données"
+
+#: templates/privacy_policy.html:93
+msgid ""
+"We use reasonable administrative, technical, and physical safeguards "
+"designed to protect personal information. However, no method of "
+"transmission or storage is completely secure."
+msgstr ""
+"Nous utilisons des mesures de protection administratives, techniques et "
+"physiques raisonnables conçues pour protéger les informations "
+"personnelles. Cependant, aucune méthode de transmission ou de stockage "
+"n'est totalement sécurisée."
+
+#: templates/privacy_policy.html:100
+msgid "Your privacy rights"
+msgstr "Vos droits en matière de confidentialité"
+
+#: templates/privacy_policy.html:102
+msgid "United States (California residents)"
+msgstr "États-Unis (résidents de Californie)"
+
+#: templates/privacy_policy.html:104
+msgid "If you are a California resident, you may have rights under the"
+msgstr ""
+"Si vous êtes résident de Californie, vous pouvez avoir des droits en "
+"vertu de la"
+
+#: templates/privacy_policy.html:104
+msgid "California Consumer Privacy Act (CCPA)"
+msgstr ""
+"Loi californienne sur la protection de la vie privée des consommateurs "
+"(CCPA)"
+
+#: templates/privacy_policy.html:104
+msgid "and the"
+msgstr "et de la"
+
+#: templates/privacy_policy.html:104
+msgid "California Privacy Rights Act (CPRA)"
+msgstr "Loi californienne sur les droits à la vie privée (CPRA)"
+
+#: templates/privacy_policy.html:104
+msgid "including:"
+msgstr "notamment :"
+
+#: templates/privacy_policy.html:107
+msgid "The right to know what personal information is collected"
+msgstr "Le droit de savoir quelles informations personnelles sont collectées"
+
+#: templates/privacy_policy.html:108
+msgid "The right to request deletion of personal information"
+msgstr "Le droit de demander la suppression d'informations personnelles"
+
+#: templates/privacy_policy.html:109
+msgid "The right to correct inaccurate personal information"
+msgstr "Le droit de corriger des informations personnelles inexactes"
+
+#: templates/privacy_policy.html:110
+msgid "The right to opt out of the sale or sharing of personal information"
+msgstr "Le droit de refuser la vente ou le partage d'informations personnelles"
+
+#: templates/privacy_policy.html:111
+msgid "The right to not be discriminated against for exercising privacy rights"
+msgstr ""
+"Le droit de ne pas être discriminé pour avoir exercé des droits en "
+"matière de confidentialité"
+
+#: templates/privacy_policy.html:114
+msgid "Requests can be made using the contact details below."
+msgstr "Les demandes peuvent être faites en utilisant les coordonnées ci-dessous."
+
+#: templates/privacy_policy.html:119
+msgid "Canada"
+msgstr "Canada"
+
+#: templates/privacy_policy.html:121
+msgid ""
+"If you are located in Canada, we process personal information in "
+"accordance with"
+msgstr ""
+"Si vous êtes situé au Canada, nous traitons les informations personnelles"
+" conformément à la"
+
+#: templates/privacy_policy.html:121
+msgid "and applicable provincial privacy laws. You have the right to:"
+msgstr ""
+"et aux lois provinciales applicables sur la protection de la vie privée. "
+"Vous avez le droit de :"
+
+#: templates/privacy_policy.html:124
+msgid "Access your personal information"
+msgstr "Accéder à vos informations personnelles"
+
+#: templates/privacy_policy.html:125
+msgid "Request corrections to inaccurate information"
+msgstr "Demander des corrections aux informations inexactes"
+
+#: templates/privacy_policy.html:126
+msgid "Withdraw consent, subject to legal or contractual restrictions"
+msgstr ""
+"Retirer le consentement, sous réserve de restrictions légales ou "
+"contractuelles"
+
+#: templates/privacy_policy.html:133
+msgid "Children's privacy"
+msgstr "Confidentialité des enfants"
+
+#: templates/privacy_policy.html:135
+msgid ""
+"The Website is not intended for children under the age of 13. We do not "
+"knowingly collect personal information from children. If you believe a "
+"child has provided personal information, please contact us."
+msgstr ""
+"Le Site web n'est pas destiné aux enfants de moins de 13 ans. Nous ne "
+"collectons pas sciemment d'informations personnelles auprès d'enfants. Si"
+" vous pensez qu'un enfant a fourni des informations personnelles, "
+"veuillez nous contacter."
+
+#: templates/privacy_policy.html:142
+msgid "External links"
+msgstr "Liens externes"
+
+#: templates/privacy_policy.html:144
+msgid ""
+"The Website may contain links to third-party websites. We are not "
+"responsible for the privacy practices or content of those websites."
+msgstr ""
+"Le Site web peut contenir des liens vers des sites web tiers. Nous ne "
+"sommes pas responsables des pratiques de confidentialité ou du contenu de"
+" ces sites web."
+
+#: templates/privacy_policy.html:151
+msgid "Changes to this Privacy Policy"
+msgstr "Modifications de cette politique de confidentialité"
+
+#: templates/privacy_policy.html:153
+msgid ""
+"We may update this Privacy Policy from time to time. Any changes will be "
+"posted on this page with an updated revision date."
+msgstr ""
+"Nous pouvons mettre à jour cette politique de confidentialité de temps à "
+"autre. Toute modification sera publiée sur cette page avec une date de "
+"révision mise à jour."
+
+#: templates/privacy_policy.html:162
+msgid ""
+"If you have questions or requests regarding this Privacy Policy, please "
+"contact us:"
+msgstr ""
+"Si vous avez des questions ou des demandes concernant cette politique de "
+"confidentialité, veuillez nous contacter :"
+
+#: templates/privacy_policy.html:165
+msgid "Company Name:"
+msgstr "Nom de l'entreprise :"
+
+#: templates/sign_in.html:17
 msgid "Sign in"
 msgstr "Se connecter"
 
-#: templates/sign_in.html:21 templates/sign_up.html:27
+#: templates/sign_in.html:22 templates/sign_up.html:28
 msgid "E-mail"
 msgstr "E-mail"
 
-#: templates/sign_in.html:38 templates/sign_up.html:51
+#: templates/sign_in.html:39 templates/sign_up.html:52
 msgid "Password"
 msgstr "Mot de passe"
 
-#: templates/sign_in.html:51
+#: templates/sign_in.html:52 templates/testing.html:137
+#: templates/testing.html:218 templates/ui_chunks/pre-questionary.html:12
 msgid "Continue"
 msgstr "Continuer"
 
-#: templates/sign_in.html:55
+#: templates/sign_in.html:56
 msgid "You still don't have an account?"
 msgstr "Vous n'avez toujours pas de compte ?"
 
-#: templates/sign_in.html:55
+#: templates/sign_in.html:56
 msgid "Sign up."
 msgstr "S'inscrire."
 
-#: templates/sign_up.html:16
+#: templates/sign_up.html:17
 msgid "Sign up"
 msgstr "S'inscrire"
 
-#: templates/sign_up.html:22
+#: templates/sign_up.html:23
 msgid "Company Name"
 msgstr "Nom de l'entreprise"
 
-#: templates/sign_up.html:33
+#: templates/sign_up.html:34
 msgid "Country"
 msgstr "Pays"
 
-#: templates/sign_up.html:58
+#: templates/sign_up.html:59
 msgid "Business Address"
 msgstr "Adresse professionnelle"
 
-#: templates/sign_up.html:63
+#: templates/sign_up.html:64
 msgid "Postal Code"
 msgstr "Code postal"
 
-#: templates/sign_up.html:84
+#: templates/pages_dashboard/settings.html:49 templates/sign_up.html:85
 msgid "Confirm Password"
 msgstr "Confirmer le mot de passe"
 
-#: templates/sign_up.html:89
+#: templates/sign_up.html:90
 msgid "I have carefully reviewed and hereby accept the"
 msgstr "J'ai soigneusement examiné et j'accepte par la présente les"
 
-#: templates/sign_up.html:91
+#: templates/sign_up.html:92
 msgid "terms of use"
 msgstr "conditions d'utilisation"
 
-#: templates/sign_up.html:91
+#: templates/sign_up.html:92
 msgid "and"
 msgstr "et la"
 
-#: templates/sign_up.html:92
+#: templates/sign_up.html:93
 msgid "privacy policy"
 msgstr "politique de confidentialité"
 
-#: templates/sign_up.html:92
+#: templates/sign_up.html:93
 msgid ""
 "By continuing to use this service, I acknowledge and agree to comply with"
 " all applicable terms and conditions."
@@ -226,15 +1579,15 @@ msgstr ""
 "En continuant à utiliser ce service, je reconnais et accepte de me "
 "conformer à tous les termes et conditions applicables."
 
-#: templates/sign_up.html:106
+#: templates/sign_up.html:107
 msgid "Register a company"
 msgstr "Enregistrer une entreprise"
 
-#: templates/sign_up.html:110
+#: templates/sign_up.html:111
 msgid "You already have an account?"
 msgstr "Vous avez déjà un compte ?"
 
-#: templates/sign_up.html:110
+#: templates/sign_up.html:111
 msgid "Sign in."
 msgstr "Se connecter."
 
@@ -246,9 +1599,193 @@ msgstr "S'abonner"
 msgid "Subscribe so not to miss exclusive offers"
 msgstr "Abonnez-vous pour ne pas manquer les offres exclusives"
 
-#: templates/w-know.html:3
+#: templates/testing.html:38
+msgid "Anonymous company review to improve level of satisfaction"
+msgstr ""
+"Évaluation anonyme de l'entreprise pour améliorer le niveau de "
+"satisfaction"
+
+#: templates/testing.html:39
+msgid ""
+"Do not worry that your feedback can be seen. We don't save your feedback "
+"voice or results."
+msgstr ""
+"Ne vous inquiétez pas que vos commentaires puissent être vus. Nous ne "
+"sauvegardons pas votre voix ou vos résultats."
+
+#: templates/testing.html:40
+msgid "The employer will only get a squeeze of artificial intelligence."
+msgstr "L'employeur ne recevra qu'un résumé de l'intelligence artificielle."
+
+#: templates/testing.html:45 templates/testing.html:164
+msgid "Anonymous company review, to improve quality in the work environment"
+msgstr ""
+"Évaluation anonyme de l'entreprise, pour améliorer la qualité de "
+"l'environnement de travail"
+
+#: templates/testing.html:46 templates/testing.html:165
+msgid ""
+"Important! do not worry that your feedback can be seen, we do not save "
+"your feedback not your voice feedback. The employer will only get a "
+"squeeze of artificial intelligence."
+msgstr ""
+"Important ! Ne vous inquiétez pas que vos commentaires puissent être vus,"
+" nous ne sauvegardons pas vos commentaires ni vos commentaires vocaux. "
+"L'employeur ne recevra qu'un résumé de l'intelligence artificielle."
+
+#: templates/testing.html:50
+msgid ""
+"You can provide feedback here, but be aware that your responses will be "
+"shared with management. To leave an anonymous review for this company,"
+msgstr ""
+"Vous pouvez fournir des commentaires ici, mais sachez que vos réponses "
+"seront partagées avec la direction. Pour laisser un avis anonyme pour "
+"cette entreprise,"
+
+#: templates/testing.html:51
+msgid "click here"
+msgstr "cliquez ici"
+
+#: templates/testing.html:57 templates/testing.html:58
+msgid "Your name"
+msgstr "Votre nom"
+
+#: templates/testing.html:63
+msgid "Select Microphone"
+msgstr "Sélectionner le microphone"
+
+#: templates/testing.html:65
+msgid "Loading microphones..."
+msgstr "Chargement des microphones..."
+
+#: templates/testing.html:75 templates/testing.html:172
+msgid "Get Started"
+msgstr "Commencer"
+
+#: templates/testing.html:81
+msgid ""
+"By clicking the \"Start testing\" button you agree to the processing and "
+"transfer of data to your management team."
+msgstr ""
+"En cliquant sur le bouton \"Démarrer le test\", vous acceptez le "
+"traitement et le transfert des données à votre équipe de direction."
+
+#: templates/pages_dashboard/create_custom_link.html:24
+#: templates/testing.html:97 templates/testing.html:193
+msgid "Question"
+msgstr "Question"
+
+#: templates/testing.html:105
+#, fuzzy
+msgid "Read Question Aloud"
+msgstr "Ajouter une question"
+
+#: templates/testing.html:111 templates/testing.html:196
+msgid "Choose input method"
+msgstr "Choisir la méthode de saisie"
+
+#: templates/testing.html:114 templates/testing.html:199
+msgid "Voice"
+msgstr "Voix"
+
+#: templates/testing.html:117 templates/testing.html:202
+msgid "Type"
+msgstr "Taper"
+
+#: templates/testing.html:127 templates/testing.html:212
+msgid "Type your answer"
+msgstr "Tapez votre réponse"
+
+#: templates/testing.html:128 templates/testing.html:213
+msgid "Type your answer here..."
+msgstr "Tapez votre réponse ici..."
+
+#: templates/testing.html:131
+msgid ""
+"Your thoughtful and honest responses are crucial for your employer. "
+"Answering thoughtfully ensures meaningful insights that contribute to a "
+"better work environment. Rest assured, your responses are completely "
+"anonymous, prioritizing your privacy throughout the process"
+msgstr ""
+"Vos réponses réfléchies et honnêtes sont cruciales pour votre employeur. "
+"Répondre de manière réfléchie garantit des informations significatives "
+"qui contribuent à un meilleur environnement de travail. Soyez assuré que "
+"vos réponses sont complètement anonymes, priorisant votre confidentialité"
+" tout au long du processus"
+
+#: templates/testing.html:222
+msgid ""
+"Please answer the questions for accurate analysis, you will have the "
+"opportunity to add information from yourself at the end of the thesis"
+msgstr ""
+"Veuillez répondre aux questions pour une analyse précise, vous aurez "
+"l'occasion d'ajouter des informations de votre part à la fin du "
+"questionnaire"
+
+#: templates/testing.html:234 templates/w-know.html:3
 msgid "How does it work?"
 msgstr "Comment ça fonctionne ?"
+
+#: templates/testing.html:238
+msgid "We prepare questions to determine necessary changes in your company."
+msgstr ""
+"Nous préparons des questions pour déterminer les changements nécessaires "
+"dans votre entreprise."
+
+#: templates/testing.html:242
+msgid "We process your answers confidentially without recording voice messages."
+msgstr ""
+"Nous traitons vos réponses de manière confidentielle sans enregistrer de "
+"messages vocaux."
+
+#: templates/testing.html:246
+msgid "After the questionnaire, you can provide further feedback for analysis."
+msgstr ""
+"Après le questionnaire, vous pouvez fournir d'autres commentaires pour "
+"l'analyse."
+
+#: templates/testing.html:250
+msgid "Our service informs the employer about staff preferences and concerns."
+msgstr ""
+"Notre service informe l'employeur des préférences et préoccupations du "
+"personnel."
+
+#: templates/testing.html:254
+msgid "Your company receives insights for workflow improvement."
+msgstr ""
+"Votre entreprise reçoit des informations pour l'amélioration du flux de "
+"travail."
+
+#: templates/testing.html:266
+msgid "Thank you for your feedback"
+msgstr "Merci pour vos commentaires"
+
+#: templates/testing.html:276 templates/testing.html:306
+msgid "We are sure your feedback can improve quality in the workplace."
+msgstr ""
+"Nous sommes sûrs que vos commentaires peuvent améliorer la qualité sur le"
+" lieu de travail."
+
+#: templates/testing.html:277 templates/testing.html:308
+#: templates/testing.html:310
+msgid "You have already left a review. This link is disposable!"
+msgstr "Vous avez déjà laissé un avis. Ce lien est à usage unique !"
+
+#: templates/testing.html:279 templates/testing.html:313
+msgid "Close Window"
+msgstr "Fermer la fenêtre"
+
+#: templates/testing.html:297
+msgid "Thank you"
+msgstr "Merci"
+
+#: templates/testing.html:297
+msgid "for your feedback"
+msgstr "pour vos commentaires"
+
+#: templates/testing.html:321
+msgid "powered by"
+msgstr "propulsé par"
 
 #: templates/w-know.html:4
 msgid ""
@@ -286,461 +1823,75 @@ msgstr ""
 "Notre plateforme informe l'employeur des préférences et préoccupations du"
 " personnel"
 
-#: templates/header-contact.html:4
-msgid "Contact us"
-msgstr "Contactez-nous"
-
-#: templates/cookie_policy.html:11
-msgid "Cookie Policy"
-msgstr "Politique de cookies"
-
-#: templates/cookie_policy.html:14
-msgid "Last updated:"
-msgstr "Dernière mise à jour :"
-
-#: templates/cookie_policy.html:17
-msgid "This Cookie Policy explains how"
-msgstr "Cette politique de cookies explique comment"
-
-#: templates/cookie_policy.html:17
-msgid "(\"we\", \"us\", \"our\")"
-msgstr "(\"nous\", \"notre\")"
-
-#: templates/cookie_policy.html:17
-msgid "uses cookies and similar technologies when you visit our website"
-msgstr "utilise des cookies et technologies similaires lorsque vous visitez notre site web"
-
-#: templates/cookie_policy.html:23
-msgid "What are cookies?"
-msgstr "Que sont les cookies ?"
-
-#: templates/cookie_policy.html:25
-msgid "Cookies are small text files that are stored on your device (computer, smartphone, tablet) when you visit a website. They are widely used to make websites work properly, improve efficiency, and provide information to the website owner."
-msgstr "Les cookies sont de petits fichiers texte stockés sur votre appareil (ordinateur, smartphone, tablette) lorsque vous visitez un site web. Ils sont largement utilisés pour faire fonctionner correctement les sites web, améliorer l'efficacité et fournir des informations au propriétaire du site web."
-
-#: templates/cookie_policy.html:30
-msgid "Cookies can be:"
-msgstr "Les cookies peuvent être :"
-
-#: templates/cookie_policy.html:33
-msgid "Session cookies"
-msgstr "Cookies de session"
-
-#: templates/cookie_policy.html:33
-msgid "deleted when you close your browser"
-msgstr "supprimés lorsque vous fermez votre navigateur"
-
-#: templates/cookie_policy.html:34
-msgid "Persistent cookies"
-msgstr "Cookies persistants"
-
-#: templates/cookie_policy.html:34
-msgid "remain on your device for a defined period or until deleted"
-msgstr "restent sur votre appareil pendant une période définie ou jusqu'à leur suppression"
-
-#: templates/cookie_policy.html:39
-msgid "Types of cookies we use"
-msgstr "Types de cookies que nous utilisons"
-
-#: templates/cookie_policy.html:41
-msgid "Strictly necessary cookies"
-msgstr "Cookies strictement nécessaires"
-
-#: templates/cookie_policy.html:43
-msgid "These cookies are essential for the website to function correctly. They enable core features such as security, network management, and accessibility."
-msgstr "Ces cookies sont essentiels au bon fonctionnement du site web. Ils activent des fonctionnalités de base telles que la sécurité, la gestion du réseau et l'accessibilité."
-
-#: templates/cookie_policy.html:47
-msgid "Legal basis: Legitimate interest"
-msgstr "Base légale : Intérêt légitime"
-
-#: templates/cookie_policy.html:48
-msgid "Consent required: No"
-msgstr "Consentement requis : Non"
-
-#: templates/cookie_policy.html:51
-msgid "Functional cookies"
-msgstr "Cookies fonctionnels"
-
-#: templates/cookie_policy.html:53
-msgid "These cookies allow the website to remember choices you make (such as language or region) and provide enhanced, more personalized features."
-msgstr "Ces cookies permettent au site web de se souvenir des choix que vous faites (comme la langue ou la région) et de fournir des fonctionnalités améliorées et plus personnalisées."
-
-#: templates/cookie_policy.html:57
-msgid "Legal basis: Consent"
-msgstr "Base légale : Consentement"
-
-#: templates/cookie_policy.html:58
-msgid "Consent required: Yes"
-msgstr "Consentement requis : Oui"
-
-#: templates/cookie_policy.html:61
-msgid "Analytics / performance cookies"
-msgstr "Cookies d'analyse / de performance"
-
-#: templates/cookie_policy.html:63
-msgid "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously."
-msgstr "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site web en collectant et en rapportant des informations de manière anonyme."
-
-#: templates/cookie_policy.html:69
-msgid "Examples:"
-msgstr "Exemples :"
-
-#: templates/cookie_policy.html:71
-msgid "Page visit statistics"
-msgstr "Statistiques de visite de pages"
-
-#: templates/cookie_policy.html:72
-msgid "Traffic sources"
-msgstr "Sources de trafic"
-
-#: templates/cookie_policy.html:73
-msgid "Error monitoring"
-msgstr "Surveillance des erreurs"
-
-#: templates/cookie_policy.html:78
-msgid "Marketing / advertising cookies"
-msgstr "Cookies marketing / publicitaires"
-
-#: templates/cookie_policy.html:80
-msgid "These cookies are used to track visitors across websites in order to display relevant advertisements and measure the effectiveness of marketing campaigns."
-msgstr "Ces cookies sont utilisés pour suivre les visiteurs sur différents sites web afin d'afficher des publicités pertinentes et de mesurer l'efficacité des campagnes marketing."
-
-#: templates/cookie_policy.html:90
-msgid "Third-party cookies"
-msgstr "Cookies tiers"
-
-#: templates/cookie_policy.html:92
-msgid "We may allow third-party service providers to place cookies on your device to provide analytics, functionality, or marketing services."
-msgstr "Nous pouvons autoriser des prestataires de services tiers à placer des cookies sur votre appareil pour fournir des services d'analyse, de fonctionnalité ou de marketing."
-
-#: templates/cookie_policy.html:96
-msgid "These third parties may collect data independently in accordance with their own privacy policies."
-msgstr "Ces tiers peuvent collecter des données indépendamment conformément à leurs propres politiques de confidentialité."
-
-#: templates/cookie_policy.html:101
-msgid "Cookie consent and management"
-msgstr "Consentement et gestion des cookies"
-
-#: templates/cookie_policy.html:103
-msgid "When you first visit our website, you will be presented with a cookie banner allowing you to:"
-msgstr "Lors de votre première visite sur notre site web, une bannière de cookies vous sera présentée vous permettant de :"
-
-#: templates/cookie_policy.html:106
-msgid "Accept all cookies"
-msgstr "Accepter tous les cookies"
-
-#: templates/cookie_policy.html:107
-msgid "Reject non-essential cookies"
-msgstr "Rejeter les cookies non essentiels"
-
-#: templates/cookie_policy.html:108
-msgid "Customize your cookie preferences"
-msgstr "Personnaliser vos préférences de cookies"
-
-#: templates/cookie_policy.html:111
-msgid "You can change or withdraw your consent at any time by adjusting your cookie settings or browser preferences."
-msgstr "Vous pouvez modifier ou retirer votre consentement à tout moment en ajustant vos paramètres de cookies ou les préférences de votre navigateur."
-
-#: templates/cookie_policy.html:117
-msgid "How to manage cookies in your browser"
-msgstr "Comment gérer les cookies dans votre navigateur"
-
-#: templates/cookie_policy.html:119
-msgid "Most browsers allow you to view, delete, or block cookies. Instructions vary by browser. Please refer to your browser's help section for more information."
-msgstr "La plupart des navigateurs vous permettent de visualiser, supprimer ou bloquer les cookies. Les instructions varient selon le navigateur. Veuillez consulter la section d'aide de votre navigateur pour plus d'informations."
-
-#: templates/cookie_policy.html:123
-msgid "Please note that disabling cookies may affect the functionality of the website."
-msgstr "Veuillez noter que la désactivation des cookies peut affecter la fonctionnalité du site web."
-
-#: templates/cookie_policy.html:128
-msgid "Data protection and privacy"
-msgstr "Protection des données et confidentialité"
-
-#: templates/cookie_policy.html:130
-msgid "Any personal data collected through cookies is processed in accordance with our"
-msgstr "Toutes les données personnelles collectées via les cookies sont traitées conformément à notre"
-
-#: templates/cookie_policy.html:130
-msgid "and applicable data protection laws, including the GDPR."
-msgstr "et aux lois applicables sur la protection des données, y compris le RGPD."
-
-#: templates/cookie_policy.html:136
-msgid "Updates to this Cookie Policy"
-msgstr "Mises à jour de cette politique de cookies"
-
-#: templates/cookie_policy.html:138
-msgid "We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our practices. The updated version will be published on this page with a revised \"Last updated\" date."
-msgstr "Nous pouvons mettre à jour cette politique de cookies de temps à autre pour refléter les changements technologiques, législatifs ou nos pratiques. La version mise à jour sera publiée sur cette page avec une date de \"Dernière mise à jour\" révisée."
-
-#: templates/cookie_policy.html:145
-msgid "Contact information"
-msgstr "Informations de contact"
-
-#: templates/cookie_policy.html:147
-msgid "If you have any questions about this Cookie Policy or our use of cookies, please contact us:"
-msgstr "Si vous avez des questions concernant cette politique de cookies ou notre utilisation des cookies, veuillez nous contacter :"
-
-#: templates/cookie_policy.html:150
-msgid "Email:"
-msgstr "E-mail :"
-
-#: templates/cookie_policy.html:151
-msgid "Phone:"
-msgstr "Téléphone :"
-
-#: templates/cookie_policy.html:152
-msgid "Address:"
-msgstr "Adresse :"
-
-#: templates/privacy_policy.html:11
-msgid "Privacy Policy"
-msgstr "Politique de confidentialité"
-
-#: templates/privacy_policy.html:14
-msgid "Last updated:"
-msgstr "Dernière mise à jour :"
-
-#: templates/privacy_policy.html:17
-msgid "This Privacy Policy describes how"
-msgstr "Cette politique de confidentialité décrit comment"
-
-#: templates/privacy_policy.html:17
-msgid "(\"we\", \"us\", or \"our\") collects, uses, and discloses information when you visit or use our website"
-msgstr "(\"nous\", \"notre\") collecte, utilise et divulgue des informations lorsque vous visitez ou utilisez notre site web"
-
-#: templates/privacy_policy.html:17
-msgid "(the \"Website\")."
-msgstr "(le \"Site web\")."
-
-#: templates/privacy_policy.html:23
-msgid "By accessing or using the Website, you agree to the collection and use of information in accordance with this Privacy Policy."
-msgstr "En accédant ou en utilisant le Site web, vous acceptez la collecte et l'utilisation d'informations conformément à cette politique de confidentialité."
-
-#: templates/privacy_policy.html:30
-msgid "Information we collect"
-msgstr "Informations que nous collectons"
-
-#: templates/privacy_policy.html:32
-msgid "We may collect the following categories of information:"
-msgstr "Nous pouvons collecter les catégories d'informations suivantes :"
-
-#: templates/privacy_policy.html:35
-msgid "Personal information"
-msgstr "Informations personnelles"
-
-#: templates/privacy_policy.html:35
-msgid "such as name, email address, phone number, company name, or other information you voluntarily provide"
-msgstr "telles que le nom, l'adresse e-mail, le numéro de téléphone, le nom de l'entreprise ou d'autres informations que vous fournissez volontairement"
-
-#: templates/privacy_policy.html:36
-msgid "Internet or technical information"
-msgstr "Informations Internet ou techniques"
-
-#: templates/privacy_policy.html:36
-msgid "such as IP address, browser type, device type, operating system, and referring URLs"
-msgstr "telles que l'adresse IP, le type de navigateur, le type d'appareil, le système d'exploitation et les URL de référence"
-
-#: templates/privacy_policy.html:37
-msgid "Usage data"
-msgstr "Données d'utilisation"
-
-#: templates/privacy_policy.html:37
-msgid "including pages viewed, time spent on the Website, and interactions"
-msgstr "y compris les pages consultées, le temps passé sur le Site web et les interactions"
-
-#: templates/privacy_policy.html:44
-msgid "How we use information"
-msgstr "Comment nous utilisons les informations"
-
-#: templates/privacy_policy.html:46
-msgid "We use collected information for purposes including:"
-msgstr "Nous utilisons les informations collectées à des fins notamment :"
-
-#: templates/privacy_policy.html:49
-msgid "Operating and maintaining the Website"
-msgstr "Exploitation et maintenance du Site web"
-
-#: templates/privacy_policy.html:50
-msgid "Responding to inquiries or requests"
-msgstr "Répondre aux demandes ou requêtes"
-
-#: templates/privacy_policy.html:51
-msgid "Improving functionality and user experience"
-msgstr "Améliorer la fonctionnalité et l'expérience utilisateur"
-
-#: templates/privacy_policy.html:52
-msgid "Monitoring security and preventing fraud or misuse"
-msgstr "Surveillance de la sécurité et prévention de la fraude ou de l'utilisation abusive"
-
-#: templates/privacy_policy.html:53
-msgid "Complying with legal obligations"
-msgstr "Conformité aux obligations légales"
-
-#: templates/privacy_policy.html:60
-msgid "Cookies and tracking technologies"
-msgstr "Cookies et technologies de suivi"
-
-#: templates/privacy_policy.html:62
-msgid "We may use cookies, pixels, and similar tracking technologies to analyze usage and enhance the Website's performance. You may control cookies through your browser settings."
-msgstr "Nous pouvons utiliser des cookies, pixels et technologies de suivi similaires pour analyser l'utilisation et améliorer les performances du Site web. Vous pouvez contrôler les cookies via les paramètres de votre navigateur."
-
-#: templates/privacy_policy.html:65
-msgid "For more information, please see our"
-msgstr "Pour plus d'informations, veuillez consulter notre"
-
-#: templates/privacy_policy.html:73
-msgid "Sharing of information"
-msgstr "Partage d'informations"
-
-#: templates/privacy_policy.html:75
-msgid "We do not sell personal information. We may share information in the following situations:"
-msgstr "Nous ne vendons pas d'informations personnelles. Nous pouvons partager des informations dans les situations suivantes :"
-
-#: templates/privacy_policy.html:78
-msgid "With service providers that assist in operating the Website (hosting, analytics, support)"
-msgstr "Avec des prestataires de services qui aident à exploiter le Site web (hébergement, analyse, support)"
-
-#: templates/privacy_policy.html:79
-msgid "To comply with applicable laws, regulations, or legal processes"
-msgstr "Pour se conformer aux lois, réglementations ou processus légaux applicables"
-
-#: templates/privacy_policy.html:80
-msgid "To protect the rights, safety, or property of the Website, users, or others"
-msgstr "Pour protéger les droits, la sécurité ou les biens du Site web, des utilisateurs ou d'autres personnes"
-
-#: templates/privacy_policy.html:81
-msgid "In connection with a business transaction (merger, sale, or acquisition)"
-msgstr "Dans le cadre d'une transaction commerciale (fusion, vente ou acquisition)"
-
-#: templates/privacy_policy.html:88
-msgid "Data retention"
-msgstr "Conservation des données"
-
-#: templates/privacy_policy.html:90
-msgid "We retain personal information only for as long as reasonably necessary to fulfill the purposes described in this Privacy Policy, unless a longer retention period is required or permitted by law."
-msgstr "Nous conservons les informations personnelles uniquement aussi longtemps que raisonnablement nécessaire pour remplir les objectifs décrits dans cette politique de confidentialité, sauf si une période de conservation plus longue est requise ou permise par la loi."
-
-#: templates/privacy_policy.html:99
-msgid "Data security"
-msgstr "Sécurité des données"
-
-#: templates/privacy_policy.html:101
-msgid "We use reasonable administrative, technical, and physical safeguards designed to protect personal information. However, no method of transmission or storage is completely secure."
-msgstr "Nous utilisons des mesures de protection administratives, techniques et physiques raisonnables conçues pour protéger les informations personnelles. Cependant, aucune méthode de transmission ou de stockage n'est totalement sécurisée."
-
-#: templates/privacy_policy.html:110
-msgid "Your privacy rights"
-msgstr "Vos droits en matière de confidentialité"
-
-#: templates/privacy_policy.html:112
-msgid "United States (California residents)"
-msgstr "États-Unis (résidents de Californie)"
-
-#: templates/privacy_policy.html:114
-msgid "If you are a California resident, you may have rights under the"
-msgstr "Si vous êtes résident de Californie, vous pouvez avoir des droits en vertu de la"
-
-#: templates/privacy_policy.html:114
-msgid "California Consumer Privacy Act (CCPA)"
-msgstr "Loi californienne sur la protection de la vie privée des consommateurs (CCPA)"
-
-#: templates/privacy_policy.html:114
-msgid "and the"
-msgstr "et de la"
-
-#: templates/privacy_policy.html:114
-msgid "California Privacy Rights Act (CPRA)"
-msgstr "Loi californienne sur les droits à la vie privée (CPRA)"
-
-#: templates/privacy_policy.html:114
-msgid "including:"
-msgstr "notamment :"
-
-#: templates/privacy_policy.html:119
-msgid "The right to know what personal information is collected"
-msgstr "Le droit de savoir quelles informations personnelles sont collectées"
-
-#: templates/privacy_policy.html:120
-msgid "The right to request deletion of personal information"
-msgstr "Le droit de demander la suppression d'informations personnelles"
-
-#: templates/privacy_policy.html:121
-msgid "The right to correct inaccurate personal information"
-msgstr "Le droit de corriger des informations personnelles inexactes"
-
-#: templates/privacy_policy.html:122
-msgid "The right to opt out of the sale or sharing of personal information"
-msgstr "Le droit de refuser la vente ou le partage d'informations personnelles"
-
-#: templates/privacy_policy.html:123
-msgid "The right to not be discriminated against for exercising privacy rights"
-msgstr "Le droit de ne pas être discriminé pour avoir exercé des droits en matière de confidentialité"
-
-#: templates/privacy_policy.html:126
-msgid "Requests can be made using the contact details below."
-msgstr "Les demandes peuvent être faites en utilisant les coordonnées ci-dessous."
-
-#: templates/privacy_policy.html:131
-msgid "Canada"
-msgstr "Canada"
-
-#: templates/privacy_policy.html:133
-msgid "If you are located in Canada, we process personal information in accordance with"
-msgstr "Si vous êtes situé au Canada, nous traitons les informations personnelles conformément à la"
-
-#: templates/privacy_policy.html:133
-msgid "and applicable provincial privacy laws. You have the right to:"
-msgstr "et aux lois provinciales applicables sur la protection de la vie privée. Vous avez le droit de :"
-
-#: templates/privacy_policy.html:137
-msgid "Access your personal information"
-msgstr "Accéder à vos informations personnelles"
-
-#: templates/privacy_policy.html:138
-msgid "Request corrections to inaccurate information"
-msgstr "Demander des corrections aux informations inexactes"
-
-#: templates/privacy_policy.html:139
-msgid "Withdraw consent, subject to legal or contractual restrictions"
-msgstr "Retirer le consentement, sous réserve de restrictions légales ou contractuelles"
-
-#: templates/privacy_policy.html:146
-msgid "Children's privacy"
-msgstr "Confidentialité des enfants"
-
-#: templates/privacy_policy.html:148
-msgid "The Website is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information, please contact us."
-msgstr "Le Site web n'est pas destiné aux enfants de moins de 13 ans. Nous ne collectons pas sciemment d'informations personnelles auprès d'enfants. Si vous pensez qu'un enfant a fourni des informations personnelles, veuillez nous contacter."
-
-#: templates/privacy_policy.html:157
-msgid "External links"
-msgstr "Liens externes"
-
-#: templates/privacy_policy.html:159
-msgid "The Website may contain links to third-party websites. We are not responsible for the privacy practices or content of those websites."
-msgstr "Le Site web peut contenir des liens vers des sites web tiers. Nous ne sommes pas responsables des pratiques de confidentialité ou du contenu de ces sites web."
-
-#: templates/privacy_policy.html:167
-msgid "Changes to this Privacy Policy"
-msgstr "Modifications de cette politique de confidentialité"
-
-#: templates/privacy_policy.html:169
-msgid "We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date."
-msgstr "Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Toute modification sera publiée sur cette page avec une date de révision mise à jour."
-
-#: templates/privacy_policy.html:177
-msgid "Contact information"
-msgstr "Informations de contact"
-
-#: templates/privacy_policy.html:179
-msgid "If you have questions or requests regarding this Privacy Policy, please contact us:"
-msgstr "Si vous avez des questions ou des demandes concernant cette politique de confidentialité, veuillez nous contacter :"
-
-#: templates/privacy_policy.html:182
-msgid "Company Name:"
-msgstr "Nom de l'entreprise :"
+#: templates/components/_cookie_consent.html:4
+msgid "Cookie Consent"
+msgstr "Consentement aux cookies"
+
+#: templates/components/_cookie_consent.html:5
+msgid ""
+"We use cookies to enhance your browsing experience, serve personalized "
+"content, and analyze our traffic. By clicking \"Accept All\", you consent"
+" to our use of cookies."
+msgstr ""
+"Nous utilisons des cookies pour améliorer votre expérience de navigation,"
+" fournir du contenu personnalisé et analyser notre trafic. En cliquant "
+"sur \"Tout accepter\", vous consentez à notre utilisation des cookies."
+
+#: templates/components/_cookie_consent.html:7
+msgid "Learn more in our Cookie Policy"
+msgstr "En savoir plus dans notre Politique de cookies"
+
+#: templates/components/_cookie_consent.html:11
+msgid "Accept All"
+msgstr "Tout accepter"
+
+#: templates/components/_cookie_consent.html:12
+msgid "Necessary Only"
+msgstr "Nécessaires uniquement"
+
+#: templates/components/_cookie_consent.html:13
+msgid "Customize"
+msgstr "Personnaliser"
+
+#: templates/components/_cookie_consent.html:19
+msgid "Cookie Preferences"
+msgstr "Préférences de cookies"
+
+#: templates/components/_cookie_consent.html:23
+msgid "Necessary Cookies"
+msgstr "Cookies nécessaires"
+
+#: templates/components/_cookie_consent.html:24
+msgid ""
+"These cookies are essential for the website to function properly. They "
+"cannot be disabled."
+msgstr ""
+"Ces cookies sont essentiels au bon fonctionnement du site web. Ils ne "
+"peuvent pas être désactivés."
+
+#: templates/components/_cookie_consent.html:30
+msgid "Analytics Cookies"
+msgstr "Cookies d'analyse"
+
+#: templates/components/_cookie_consent.html:37
+msgid "Marketing Cookies"
+msgstr "Cookies marketing"
+
+#: templates/components/_cookie_consent.html:38
+msgid ""
+"These cookies are used to track visitors across websites to display "
+"relevant advertisements."
+msgstr ""
+"Ces cookies sont utilisés pour suivre les visiteurs sur différents sites "
+"web afin d'afficher des publicités pertinentes."
+
+#: templates/components/_cookie_consent.html:42
+msgid "Save Preferences"
+msgstr "Enregistrer les préférences"
+
+#: templates/components/_cookie_consent.html:43
+msgid "Cancel"
+msgstr "Annuler"
 
 #: templates/components/_menu.html:24
 msgid "Dashboard"
@@ -778,6 +1929,132 @@ msgstr "Essai"
 msgid "Change plan"
 msgstr "Changer de plan"
 
+#: templates/components/_promo.html:2
+#, python-format
+msgid "Get -30%% premium rate, until Dec 30th"
+msgstr "Obtenez -30%% sur le tarif premium, jusqu'au 30 déc"
+
+#: templates/components/_promo.html:3
+msgid "Buy at a discount"
+msgstr "Acheter à prix réduit"
+
+#: templates/pages_dashboard/create_custom_link.html:7
+#: templates/pages_dashboard/feedback_custom.html:9
+msgid "Create a Survey"
+msgstr "Créer une enquête"
+
+#: templates/pages_dashboard/create_custom_link.html:11
+#: templates/pages_dashboard/feedback_custom.html:16
+msgid "Survey Name"
+msgstr "Nom de l'enquête"
+
+#: templates/pages_dashboard/create_custom_link.html:15
+#: templates/pages_dashboard/settings.html:51
+msgid "Save changes"
+msgstr "Enregistrer les modifications"
+
+#: templates/pages_dashboard/create_custom_link.html:17
+msgid "Get the link"
+msgstr "Obtenir le lien"
+
+#: templates/pages_dashboard/create_custom_link.html:25
+msgid "Add question"
+msgstr "Ajouter une question"
+
+#: templates/pages_dashboard/create_custom_link.html:26
+msgid "Add the question"
+msgstr "Ajouter la question"
+
+#: templates/pages_dashboard/create_custom_link.html:51
+msgid "Provide recommendations from AI?"
+msgstr "Fournir des recommandations de l'IA ?"
+
+#: templates/pages_dashboard/create_custom_link.html:52
+msgid ""
+"Our AI component can provide you with recommendations on how to improve "
+"your work environment."
+msgstr ""
+"Notre composant IA peut vous fournir des recommandations sur la façon "
+"d'améliorer votre environnement de travail."
+
+#: templates/pages_dashboard/create_custom_link.html:55
+#: templates/pages_dashboard/create_custom_link.html:60
+#: templates/pages_dashboard/create_custom_link.html:72
+#: templates/pages_dashboard/create_custom_link.html:77
+#: templates/pages_dashboard/create_custom_link.html:88
+#: templates/pages_dashboard/create_custom_link.html:93
+#: templates/pages_dashboard/create_custom_link.html:104
+#: templates/pages_dashboard/create_custom_link.html:113
+msgid "Yes"
+msgstr "Oui"
+
+#: templates/pages_dashboard/create_custom_link.html:56
+#: templates/pages_dashboard/create_custom_link.html:61
+#: templates/pages_dashboard/create_custom_link.html:73
+#: templates/pages_dashboard/create_custom_link.html:78
+#: templates/pages_dashboard/create_custom_link.html:89
+#: templates/pages_dashboard/create_custom_link.html:94
+#: templates/pages_dashboard/create_custom_link.html:105
+#: templates/pages_dashboard/create_custom_link.html:114
+msgid "No"
+msgstr "Non"
+
+#: templates/pages_dashboard/create_custom_link.html:67
+msgid "Will the link be anonymous?"
+msgstr "Le lien sera-t-il anonyme ?"
+
+#: templates/pages_dashboard/create_custom_link.html:68
+msgid ""
+"If the link is anonymous, the user will see that they can say anything, "
+"and you won't see what the user said."
+msgstr ""
+"Si le lien est anonyme, l'utilisateur verra qu'il peut dire n'importe "
+"quoi, et vous ne verrez pas ce que l'utilisateur a dit."
+
+#: templates/pages_dashboard/create_custom_link.html:84
+msgid "Multiple links?"
+msgstr "Liens multiples ?"
+
+#: templates/pages_dashboard/create_custom_link.html:85
+msgid ""
+"YES means that one user can leave multiple reviews, NO means that on this"
+" link you can leave only one-time review."
+msgstr ""
+"OUI signifie qu'un utilisateur peut laisser plusieurs avis, NON signifie "
+"que sur ce lien vous ne pouvez laisser qu'un seul avis."
+
+#: templates/pages_dashboard/create_custom_link.html:101
+#: templates/pages_dashboard/create_custom_link.html:110
+msgid "Requesting a username?"
+msgstr "Demander un nom d'utilisateur ?"
+
+#: templates/pages_dashboard/create_custom_link.html:102
+#: templates/pages_dashboard/create_custom_link.html:111
+msgid ""
+"This function is so that you can identify the person who will be tested. "
+"If you allow it, we will ask for the person's name before we start the "
+"review/testing process."
+msgstr ""
+"Cette fonction permet d'identifier la personne qui sera testée. Si vous "
+"l'autorisez, nous demanderons le nom de la personne avant de commencer le"
+" processus d'évaluation/test."
+
+#: templates/pages_dashboard/feedback_anonimus.html:5
+msgid "Uploading the list of anonymous reviews"
+msgstr "Téléchargement de la liste des avis anonymes"
+
+#: templates/pages_dashboard/feedback_custom.html:13
+msgid "Search for survey"
+msgstr "Rechercher une enquête"
+
+#: templates/pages_dashboard/feedback_custom.html:15
+msgid "Search survey"
+msgstr "Rechercher une enquête"
+
+#: templates/pages_dashboard/feedback_custom.html:35
+msgid "Uploading the list custom feedbacks"
+msgstr "Téléchargement de la liste des retours personnalisés"
+
 #: templates/pages_dashboard/main.html:3
 msgid "Welcome,"
 msgstr "Bienvenue,"
@@ -789,6 +2066,64 @@ msgstr "L'endroit de votre gestion de l'atmosphère dans le travail de vos emplo
 #: templates/pages_dashboard/main.html:10
 msgid "All"
 msgstr "Tout"
+
+#: templates/pages_dashboard/services.html:10
+msgid ""
+"Find out from your staff what they think about the company and the "
+"working atmosphere in your company's campuses."
+msgstr ""
+"Découvrez ce que votre personnel pense de l'entreprise et de l'atmosphère"
+" de travail dans les campus de votre entreprise."
+
+#: templates/pages_dashboard/services.html:15
+#: templates/pages_dashboard/services.html:36
+#: templates/pages_dashboard/services.html:57
+#: templates/pages_dashboard/services.html:78
+msgid "Use"
+msgstr "Utiliser"
+
+#: templates/pages_dashboard/services.html:30
+msgid "Custom reviews"
+msgstr "Avis personnalisés"
+
+#: templates/pages_dashboard/services.html:31
+msgid ""
+"Test process similar to that of anonymous reviews. But with custom ones, "
+"you have more options to customize exactly to your needs. Use flexibility"
+" to make life better for your employees."
+msgstr ""
+"Processus de test similaire à celui des avis anonymes. Mais avec les avis"
+" personnalisés, vous avez plus d'options pour personnaliser exactement "
+"selon vos besoins. Utilisez la flexibilité pour améliorer la vie de vos "
+"employés."
+
+#: templates/pages_dashboard/services.html:51
+msgid "Range estimation"
+msgstr "Estimation de plage"
+
+#: templates/pages_dashboard/services.html:52
+msgid ""
+"This component will give you the ability to customize questions and get "
+"results metrics. Give your worker the ability to make a score from 1 to "
+"10 based on your questions."
+msgstr ""
+"Ce composant vous permettra de personnaliser les questions et d'obtenir "
+"des métriques de résultats. Donnez à votre travailleur la possibilité de "
+"faire un score de 1 à 10 basé sur vos questions."
+
+#: templates/pages_dashboard/services.html:72
+msgid "Quiz"
+msgstr "Quiz"
+
+#: templates/pages_dashboard/services.html:73
+msgid ""
+"Create a survey for people on behalf of your company from which you can "
+"make an analysis. Fine tune the quiz, change the theme, and the picture "
+"of the quiz, get a preview when you create it."
+msgstr ""
+"Créez une enquête pour les personnes au nom de votre entreprise à partir "
+"de laquelle vous pouvez faire une analyse. Ajustez le quiz, changez le "
+"thème et l'image du quiz, obtenez un aperçu lors de sa création."
 
 #: templates/pages_dashboard/settings.html:21
 msgid "Company name"
@@ -826,751 +2161,38 @@ msgstr "Nouveau mot de passe"
 msgid "Confirm password"
 msgstr "Confirmer le mot de passe"
 
-#: templates/pages_dashboard/settings.html:49
-msgid "Confirm Password"
-msgstr "Confirmer le mot de passe"
-
-#: templates/pages_dashboard/settings.html:51
-msgid "Save changes"
-msgstr "Enregistrer les modifications"
-
 #: templates/pages_dashboard/settings.html:66
 msgid "Watch out for the danger zone"
 msgstr "Attention à la zone de danger"
 
 #: templates/pages_dashboard/settings.html:67
-msgid "If you choose to delete your company account, your data will be irreversibly erased. We grant you the right to make this decision."
-msgstr "Si vous choisissez de supprimer le compte de votre entreprise, vos données seront irréversiblement effacées. Nous vous accordons le droit de prendre cette décision."
+msgid ""
+"If you choose to delete your company account, your data will be "
+"irreversibly erased. We grant you the right to make this decision."
+msgstr ""
+"Si vous choisissez de supprimer le compte de votre entreprise, vos "
+"données seront irréversiblement effacées. Nous vous accordons le droit de"
+" prendre cette décision."
 
-#: templates/pages_dashboard/settings.html:70
+#: templates/pages_dashboard/settings.html:69
 msgid "Delete account"
 msgstr "Supprimer le compte"
 
-#: templates/pages_dashboard/feedback_custom.html:9
-msgid "Create a Survey"
-msgstr "Créer une enquête"
-
-#: templates/pages_dashboard/feedback_custom.html:13
-msgid "Search for survey"
-msgstr "Rechercher une enquête"
-
-#: templates/pages_dashboard/feedback_custom.html:15
-msgid "Search survey"
-msgstr "Rechercher une enquête"
-
-#: templates/pages_dashboard/feedback_custom.html:16
-msgid "Survey Name"
-msgstr "Nom de l'enquête"
-
-#: templates/pages_dashboard/feedback_custom.html:35
-msgid "Uploading the list custom feedbacks"
-msgstr "Téléchargement de la liste des retours personnalisés"
-
-#: templates/pages_dashboard/feedback_anonimus.html:5
-msgid "Uploading the list of anonymous reviews"
-msgstr "Téléchargement de la liste des avis anonymes"
-
-#: templates/pages_dashboard/services.html:9
-msgid "Anonymous feedback"
-msgstr "Retour d'information anonyme"
-
-#: templates/pages_dashboard/services.html:10
-msgid "Find out from your staff what they think about the company and the working atmosphere in your company's campuses."
-msgstr "Découvrez ce que votre personnel pense de l'entreprise et de l'atmosphère de travail dans les campus de votre entreprise."
-
-#: templates/pages_dashboard/services.html:15
-msgid "Use"
-msgstr "Utiliser"
-
-#: templates/pages_dashboard/services.html:30
-msgid "Custom reviews"
-msgstr "Avis personnalisés"
-
-#: templates/pages_dashboard/services.html:31
-msgid "Test process similar to that of anonymous reviews. But with custom ones, you have more options to customize exactly to your needs. Use flexibility to make life better for your employees."
-msgstr "Processus de test similaire à celui des avis anonymes. Mais avec les avis personnalisés, vous avez plus d'options pour personnaliser exactement selon vos besoins. Utilisez la flexibilité pour améliorer la vie de vos employés."
-
-#: templates/pages_dashboard/services.html:51
-msgid "Range estimation"
-msgstr "Estimation de plage"
-
-#: templates/pages_dashboard/services.html:52
-msgid "This component will give you the ability to customize questions and get results metrics. Give your worker the ability to make a score from 1 to 10 based on your questions."
-msgstr "Ce composant vous permettra de personnaliser les questions et d'obtenir des métriques de résultats. Donnez à votre travailleur la possibilité de faire un score de 1 à 10 basé sur vos questions."
-
-#: templates/pages_dashboard/services.html:72
-msgid "Quiz"
-msgstr "Quiz"
-
-#: templates/pages_dashboard/services.html:73
-msgid "Create a survey for people on behalf of your company from which you can make an analysis. Fine tune the quiz, change the theme, and the picture of the quiz, get a preview when you create it."
-msgstr "Créez une enquête pour les personnes au nom de votre entreprise à partir de laquelle vous pouvez faire une analyse. Ajustez le quiz, changez le thème et l'image du quiz, obtenez un aperçu lors de sa création."
-
-#: templates/pages_dashboard/create_custom_link.html:7
-msgid "Create a Survey"
-msgstr "Créer une enquête"
-
-#: templates/pages_dashboard/create_custom_link.html:11
-msgid "Survey Name"
-msgstr "Nom de l'enquête"
-
-#: templates/pages_dashboard/create_custom_link.html:15
-msgid "Save changes"
-msgstr "Enregistrer les modifications"
-
-#: templates/pages_dashboard/create_custom_link.html:17
-msgid "Get the link"
-msgstr "Obtenir le lien"
-
-#: templates/pages_dashboard/create_custom_link.html:24
-msgid "Question"
-msgstr "Question"
-
-#: templates/pages_dashboard/create_custom_link.html:25
-msgid "Add question"
-msgstr "Ajouter une question"
-
-#: templates/pages_dashboard/create_custom_link.html:26
-msgid "Add the question"
-msgstr "Ajouter la question"
-
-#: templates/pages_dashboard/create_custom_link.html:51
-msgid "Provide recommendations from AI?"
-msgstr "Fournir des recommandations de l'IA ?"
-
-#: templates/pages_dashboard/create_custom_link.html:52
-msgid "Our AI component can provide you with recommendations on how to improve your work environment."
-msgstr "Notre composant IA peut vous fournir des recommandations sur la façon d'améliorer votre environnement de travail."
-
-#: templates/pages_dashboard/create_custom_link.html:55
-msgid "Yes"
-msgstr "Oui"
-
-#: templates/pages_dashboard/create_custom_link.html:56
-msgid "No"
-msgstr "Non"
-
-#: templates/pages_dashboard/create_custom_link.html:67
-msgid "Will the link be anonymous?"
-msgstr "Le lien sera-t-il anonyme ?"
-
-#: templates/pages_dashboard/create_custom_link.html:68
-msgid "If the link is anonymous, the user will see that they can say anything, and you won't see what the user said."
-msgstr "Si le lien est anonyme, l'utilisateur verra qu'il peut dire n'importe quoi, et vous ne verrez pas ce que l'utilisateur a dit."
-
-#: templates/pages_dashboard/create_custom_link.html:85
-msgid "Multiple links?"
-msgstr "Liens multiples ?"
-
-#: templates/pages_dashboard/create_custom_link.html:86
-msgid "YES means that one user can leave multiple reviews, NO means that on this link you can leave only one-time review."
-msgstr "OUI signifie qu'un utilisateur peut laisser plusieurs avis, NON signifie que sur ce lien vous ne pouvez laisser qu'un seul avis."
-
-#: templates/pages_dashboard/create_custom_link.html:103
-msgid "Requesting a username?"
-msgstr "Demander un nom d'utilisateur ?"
-
-#: templates/pages_dashboard/create_custom_link.html:104
-msgid "This function is so that you can identify the person who will be tested. If you allow it, we will ask for the person's name before we start the review/testing process."
-msgstr "Cette fonction permet d'identifier la personne qui sera testée. Si vous l'autorisez, nous demanderons le nom de la personne avant de commencer le processus d'évaluation/test."
-
-#: templates/components/_promo.html:2
-msgid "Get -30%% premium rate, until Dec 30th"
-msgstr "Obtenez -30%% sur le tarif premium, jusqu'au 30 déc"
-
-#: templates/components/_promo.html:3
-msgid "Buy at a discount"
-msgstr "Acheter à prix réduit"
-
-#: templates/testing.html:35
-msgid "Anonymous company review to improve level of satisfaction"
-msgstr "Évaluation anonyme de l'entreprise pour améliorer le niveau de satisfaction"
-
-#: templates/testing.html:36
-msgid "Do not worry that your feedback can be seen. We don't save your feedback voice or results."
-msgstr "Ne vous inquiétez pas que vos commentaires puissent être vus. Nous ne sauvegardons pas votre voix ou vos résultats."
-
-#: templates/testing.html:37
-msgid "The employer will only get a squeeze of artificial intelligence."
-msgstr "L'employeur ne recevra qu'un résumé de l'intelligence artificielle."
-
-#: templates/testing.html:42
-msgid "Anonymous company review, to improve quality in the work environment"
-msgstr "Évaluation anonyme de l'entreprise, pour améliorer la qualité de l'environnement de travail"
-
-#: templates/testing.html:43
-msgid "Important! do not worry that your feedback can be seen, we do not save your feedback not your voice feedback. The employer will only get a squeeze of artificial intelligence."
-msgstr "Important ! Ne vous inquiétez pas que vos commentaires puissent être vus, nous ne sauvegardons pas vos commentaires ni vos commentaires vocaux. L'employeur ne recevra qu'un résumé de l'intelligence artificielle."
-
-#: templates/testing.html:47
-msgid "You can provide feedback here, but be aware that your responses will be shared with management. To leave an anonymous review for this company,"
-msgstr "Vous pouvez fournir des commentaires ici, mais sachez que vos réponses seront partagées avec la direction. Pour laisser un avis anonyme pour cette entreprise,"
-
-#: templates/testing.html:48
-msgid "click here"
-msgstr "cliquez ici"
-
-#: templates/testing.html:54
-msgid "Your name"
-msgstr "Votre nom"
-
-#: templates/testing.html:67
-msgid "Get Started"
-msgstr "Commencer"
-
-#: templates/testing.html:73
-msgid "By clicking the \"Start testing\" button you agree to the processing and transfer of data to your management team."
-msgstr "En cliquant sur le bouton \"Démarrer le test\", vous acceptez le traitement et le transfert des données à votre équipe de direction."
-
-#: templates/testing.html:87
-msgid "Question"
-msgstr "Question"
-
-#: templates/testing.html:99
-msgid "Your thoughtful and honest responses are crucial for your employer. Answering thoughtfully ensures meaningful insights that contribute to a better work environment. Rest assured, your responses are completely anonymous, prioritizing your privacy throughout the process"
-msgstr "Vos réponses réfléchies et honnêtes sont cruciales pour votre employeur. Répondre de manière réfléchie garantit des informations significatives qui contribuent à un meilleur environnement de travail. Soyez assuré que vos réponses sont complètement anonymes, priorisant votre confidentialité tout au long du processus"
-
-#: templates/testing.html:107
-msgid "Continue"
-msgstr "Continuer"
-
-#: templates/testing.html:175
-msgid "Please answer the questions for accurate analysis, you will have the opportunity to add information from yourself at the end of the thesis"
-msgstr "Veuillez répondre aux questions pour une analyse précise, vous aurez l'occasion d'ajouter des informations de votre part à la fin du questionnaire"
-
-#: templates/testing.html:187
-msgid "How does it work?"
-msgstr "Comment ça fonctionne ?"
-
-#: templates/testing.html:191
-msgid "We prepare questions to determine necessary changes in your company."
-msgstr "Nous préparons des questions pour déterminer les changements nécessaires dans votre entreprise."
-
-#: templates/testing.html:195
-msgid "We process your answers confidentially without recording voice messages."
-msgstr "Nous traitons vos réponses de manière confidentielle sans enregistrer de messages vocaux."
-
-#: templates/testing.html:199
-msgid "After the questionnaire, you can provide further feedback for analysis."
-msgstr "Après le questionnaire, vous pouvez fournir d'autres commentaires pour l'analyse."
-
-#: templates/testing.html:203
-msgid "Our service informs the employer about staff preferences and concerns."
-msgstr "Notre service informe l'employeur des préférences et préoccupations du personnel."
-
-#: templates/testing.html:207
-msgid "Your company receives insights for workflow improvement."
-msgstr "Votre entreprise reçoit des informations pour l'amélioration du flux de travail."
-
-#: templates/testing.html:219
-msgid "Thank you for your feedback"
-msgstr "Merci pour vos commentaires"
-
-#: templates/testing.html:229
-msgid "We are sure your feedback can improve quality in the workplace."
-msgstr "Nous sommes sûrs que vos commentaires peuvent améliorer la qualité sur le lieu de travail."
-
-#: templates/testing.html:230
-msgid "You have already left a review. This link is disposable!"
-msgstr "Vous avez déjà laissé un avis. Ce lien est à usage unique !"
-
-#: templates/testing.html:249
-msgid "Thank you"
-msgstr "Merci"
-
-#: templates/testing.html:249
-msgid "for your feedback"
-msgstr "pour vos commentaires"
-
-#: templates/testing.html:272
-msgid "powered by"
-msgstr "propulsé par"
-
-#: templates/ui_chunks/pre-questionary.html:12
-msgid "Continue"
-msgstr "Continuer"
-
-#: templates/header-about.html:3
-msgid "About Us"
-msgstr "À propos de nous"
-
-#: templates/about_us.html
-msgid "At Know Employee, we believe that understanding people is the foundation of building successful, resilient, and high-performing organizations. We are an AI-powered startup dedicated to transforming how businesses understand employee satisfaction, workplace sentiment, and organizational well-being. By combining advanced technology with a deep appreciation for human behavior, we help companies create healthier, more productive work environments where people feel heard, respected, and motivated."
-msgstr "Chez Know Employee, nous sommes convaincus que la compréhension des personnes est le fondement de toute organisation performante, résiliente et durable. Nous sommes une startup innovante, propulsée par l'intelligence artificielle, dont la mission est de transformer la manière dont les entreprises évaluent la satisfaction des employés, le climat de travail et le ressenti des équipes. En combinant des technologies avancées à une compréhension approfondie du facteur humain, nous aidons les organisations à créer des environnements de travail plus sains, plus productifs et plus épanouissants, où chaque collaborateur se sent écouté, respecté et motivé."
-
-#: templates/about_us.html
-msgid "In today's fast-paced and competitive business landscape, organizations are under constant pressure to perform, innovate, and adapt. Yet behind every metric, deadline, and strategic decision stands a workforce whose mood, engagement, and sense of belonging directly influence outcomes. At Know Employee, we start with a simple but powerful belief: when people come to work in a good mood, they are more likely to perform at their best. Our mission is to help organizations understand what shapes that mood—and what they can do to improve it."
-msgstr "Dans un contexte économique en constante évolution, les entreprises doivent sans cesse innover, s'adapter et performer. Pourtant, derrière chaque objectif, chaque indicateur et chaque décision stratégique se trouvent des femmes et des hommes dont l'état d'esprit, l'engagement et le sentiment d'appartenance ont un impact direct sur les résultats. Chez Know Employee, nous partons d'une conviction simple mais essentielle : lorsqu'une personne arrive au travail dans un bon état d'esprit, elle est plus susceptible de donner le meilleur d'elle-même. Notre objectif est d'aider les entreprises à comprendre ce qui influence cet état d'esprit — et comment l'améliorer durablement."
-
-#: templates/about_us.html
-msgid "Our Vision"
-msgstr "Notre vision"
-
-#: templates/about_us.html
-msgid "Our vision is to redefine how companies assess and improve employee satisfaction. Traditional surveys and feedback tools often fall short: they are infrequent, overly rigid, or fail to capture the real sentiment of employees. Even worse, employees may hesitate to provide honest feedback if they fear being identified or judged."
-msgstr "Notre vision est de repenser en profondeur la manière dont les entreprises mesurent et améliorent la satisfaction de leurs employés. Les méthodes traditionnelles, comme les enquêtes ponctuelles ou les outils de feedback classiques, montrent souvent leurs limites : elles sont trop rigides, trop rares, ou ne parviennent pas à refléter le ressenti réel des collaborateurs. Plus encore, de nombreux employés hésitent à s'exprimer librement lorsqu'ils craignent de ne pas être totalement anonymes."
-
-#: templates/about_us.html
-msgid "Know Employee was created to solve these challenges. We envision a workplace where employee feedback is continuous, meaningful, and safe. A workplace where insights are data-driven, actionable, and rooted in genuine trust. And ultimately, a workplace where organizations can align performance goals with employee well-being."
-msgstr "Know Employee est né pour répondre à ces défis. Nous imaginons un monde du travail dans lequel le feedback des employés est continu, pertinent et sécurisé. Un environnement où les analyses sont basées sur des données fiables, exploitables et construites sur une relation de confiance. Et surtout, un environnement où la performance de l'entreprise est étroitement liée au bien-être de ses collaborateurs."
-
-#: templates/about_us.html
-msgid "What We Do"
-msgstr "Ce que nous faisons"
-
-#: templates/about_us.html
-msgid "Know Employee provides an AI-driven platform designed to analyze workplace sentiment while ensuring employee anonymity. Our solution allows businesses to gain deep insights into their organizational environment without compromising trust or privacy."
-msgstr "Know Employee propose une plateforme alimentée par l'intelligence artificielle, conçue pour analyser le climat social et la satisfaction des employés tout en garantissant leur anonymat. Notre solution permet aux entreprises d'obtenir une vision claire et approfondie de leur environnement de travail, sans compromettre la confidentialité ni la confiance des équipes."
-
-#: templates/about_us.html
-msgid "Using cutting-edge algorithms, our platform evaluates employee sentiment and satisfaction patterns across teams, departments, and time periods. The result is a clear, data-backed understanding of how employees feel about their work environment and how that sentiment evolves."
-msgstr "Grâce à des algorithmes de pointe, notre plateforme identifie et analyse les tendances du ressenti des employés à travers les équipes, les départements et les périodes de temps. Elle offre ainsi une compréhension globale et objective de la manière dont les collaborateurs perçoivent leur environnement professionnel et de l'évolution de ce ressenti dans le temps."
-
-#: templates/about_us.html
-msgid "Rather than focusing on isolated opinions, we help organizations see the bigger picture: trends, signals, and underlying dynamics that influence morale, engagement, and performance."
-msgstr "Plutôt que de se limiter à des opinions isolées, Know Employee aide les organisations à détecter des signaux forts, des tendances durables et des dynamiques internes qui influencent l'engagement, la motivation et la performance."
-
-#: templates/about_us.html
-msgid "The Power of Anonymity"
-msgstr "La puissance de l'anonymat"
-
-#: templates/about_us.html
-msgid "One of the biggest barriers to honest employee feedback is fear—fear of retaliation, misinterpretation, or negative consequences. We recognized early on that meaningful insights can only be obtained when employees feel truly safe expressing themselves."
-msgstr "L'un des principaux freins à un feedback honnête est la peur : peur d'être identifié, jugé ou de subir des conséquences négatives. Dès le départ, nous avons compris que des analyses pertinentes ne peuvent exister que si les employés se sentent réellement en sécurité pour s'exprimer."
-
-#: templates/about_us.html
-msgid "That is why anonymity is at the core of Know Employee's platform. Our algorithms are designed to protect individual identities while still delivering accurate, aggregated insights to management. This approach encourages honesty, reduces bias, and increases participation."
-msgstr "C'est pourquoi l'anonymat est au cœur de la plateforme Know Employee. Nos algorithmes sont spécifiquement conçus pour protéger l'identité des individus tout en fournissant aux organisations des analyses agrégées, fiables et exploitables. Cette approche favorise l'honnêteté, réduit les biais et augmente significativement le taux de participation."
-
-#: templates/about_us.html
-msgid "By ensuring anonymity, we help organizations build trust—not just in the tool, but in the feedback process itself."
-msgstr "En garantissant l'anonymat, nous aidons les entreprises à instaurer une relation de confiance durable — non seulement envers l'outil, mais aussi envers la démarche de feedback elle-même."
-
-#: templates/about_us.html
-msgid "Why Employee Satisfaction Matters"
-msgstr "Pourquoi la satisfaction des employés est essentielle"
-
-#: templates/about_us.html
-msgid "Employee satisfaction is not a \"soft\" metric. It is a critical business driver."
-msgstr "La satisfaction des employés n'est pas un indicateur secondaire. Il s'agit d'un levier stratégique majeur."
-
-#: templates/about_us.html
-msgid "Satisfied employees are more engaged, more productive, and more likely to collaborate effectively. They take greater ownership of their work, contribute ideas more freely, and remain with organizations longer. On the other hand, low morale can lead to disengagement, reduced performance, absenteeism, and turnover—all of which carry significant costs."
-msgstr "Des employés satisfaits sont généralement plus engagés, plus productifs et plus enclins à collaborer efficacement. Ils prennent davantage d'initiatives, partagent leurs idées et s'investissent sur le long terme. À l'inverse, un climat de travail dégradé peut entraîner désengagement, baisse de performance, absentéisme et turnover, avec des coûts humains et financiers considérables."
-
-#: templates/about_us.html
-msgid "At Know Employee, we focus on helping organizations understand this connection between mood, satisfaction, and performance. By identifying areas of concern early and highlighting what works well, companies can take proactive steps to improve their work environment before small issues grow into major problems."
-msgstr "Chez Know Employee, nous aidons les organisations à comprendre ce lien fondamental entre bien-être, motivation et performance. En identifiant les points de tension à un stade précoce et en mettant en lumière les facteurs positifs, les entreprises peuvent agir de manière proactive et prévenir l'apparition de problématiques plus graves."
-
-#: templates/about_us.html
-msgid "Turning Insights into Action"
-msgstr "Transformer les analyses en actions concrètes"
-
-#: templates/about_us.html
-msgid "Data alone does not create change—action does. That is why Know Employee goes beyond surface-level reporting. Our analysis tools are designed to help decision-makers interpret results clearly and translate insights into meaningful improvements."
-msgstr "Les données seules ne suffisent pas à provoquer le changement. Ce sont les décisions et les actions qui font la différence. C'est pourquoi Know Employee ne se limite pas à la production de rapports. Nos outils d'analyse sont conçus pour aider les décideurs à interpréter les résultats de manière claire et à les transformer en actions concrètes."
-
-#: templates/about_us.html
-msgid "By understanding workforce sentiment, organizations can:"
-msgstr "Grâce à une meilleure compréhension du ressenti des équipes, les organisations peuvent :"
-
-#: templates/about_us.html
-msgid "Identify strengths in their workplace culture"
-msgstr "Identifier les forces de leur culture d'entreprise"
-
-#: templates/about_us.html
-msgid "Detect early warning signs of dissatisfaction"
-msgstr "Détecter rapidement les signes de démotivation"
-
-#: templates/about_us.html
-msgid "Evaluate the impact of organizational changes"
-msgstr "Évaluer l'impact des changements organisationnels"
-
-#: templates/about_us.html
-msgid "Improve communication and leadership practices"
-msgstr "Améliorer la communication et les pratiques managériales"
-
-#: templates/about_us.html
-msgid "Foster a more positive and supportive work environment"
-msgstr "Créer un environnement de travail plus positif et plus équilibré"
-
-#: templates/about_us.html
-msgid "Our platform empowers leaders, HR teams, and managers with the information they need to make informed decisions that benefit both employees and the organization as a whole."
-msgstr "Notre plateforme donne aux dirigeants, aux équipes RH et aux managers les clés nécessaires pour prendre des décisions éclairées, au bénéfice des employés comme de l'entreprise."
-
-#: templates/about_us.html
-msgid "A Human-Centered Approach to AI"
-msgstr "Une approche humaine de l'intelligence artificielle"
-
-#: templates/about_us.html
-msgid "While Know Employee is powered by advanced artificial intelligence, our approach is deeply human. We do not believe in replacing human judgment; we believe in enhancing it."
-msgstr "Bien que Know Employee repose sur des technologies d'intelligence artificielle avancées, notre approche reste profondément humaine. Nous ne cherchons pas à remplacer le jugement humain, mais à le renforcer."
-
-#: templates/about_us.html
-msgid "AI enables us to process complex patterns and large volumes of data efficiently, but empathy, understanding, and leadership remain human responsibilities. Our goal is to provide clarity and insight—not automated decisions—so organizations can act thoughtfully and responsibly."
-msgstr "L'IA nous permet d'analyser des volumes importants de données et de détecter des tendances complexes, mais l'empathie, l'écoute et le leadership demeurent des qualités humaines essentielles. Notre rôle est d'apporter de la clarté et des insights pertinents afin de permettre aux organisations d'agir avec discernement et responsabilité."
-
-#: templates/about_us.html
-msgid "By combining AI with a human-centered philosophy, we help businesses create environments where people feel valued, understood, and supported."
-msgstr "En combinant l'IA avec une philosophie centrée sur l'humain, nous aidons les entreprises à créer des environnements où les personnes se sentent valorisées, comprises et soutenues."
-
-#: templates/about_us.html
-msgid "Who We Serve"
-msgstr "À qui s'adresse Know Employee"
-
-#: templates/about_us.html
-msgid "Know Employee is designed for organizations that care about their people and recognize that employee satisfaction is essential to long-term success. Our solution is suitable for companies of various sizes and industries that want to:"
-msgstr "Know Employee s'adresse aux organisations qui placent l'humain au cœur de leur stratégie et qui reconnaissent que la satisfaction des employés est un facteur clé de réussite à long terme. Notre solution convient à des entreprises de toutes tailles et de tous secteurs souhaitant :"
-
-#: templates/about_us.html
-msgid "Better understand their workforce"
-msgstr "Mieux comprendre leurs équipes"
-
-#: templates/about_us.html
-msgid "Improve workplace culture"
-msgstr "Améliorer le climat de travail"
-
-#: templates/about_us.html
-msgid "Strengthen engagement and morale"
-msgstr "Renforcer l'engagement et la motivation"
-
-#: templates/about_us.html
-msgid "Support sustainable performance"
-msgstr "Soutenir une performance durable"
-
-#: templates/about_us.html
-msgid "Whether an organization is growing rapidly, navigating change, or simply looking to improve, Know Employee provides the tools to gain clarity and confidence in workforce decisions."
-msgstr "Que ce soit dans un contexte de croissance, de transformation ou d'optimisation, Know Employee accompagne les entreprises dans leurs démarches d'amélioration continue."
-
-#: templates/about_us.html
-msgid "Our Values"
-msgstr "Nos valeurs"
-
-#: templates/about_us.html
-msgid "Everything we build is guided by a core set of values:"
-msgstr "Notre travail est guidé par des valeurs fondamentales :"
-
-#: templates/about_us.html
-msgid "Trust"
-msgstr "Confiance"
-
-#: templates/about_us.html
-msgid "Trust is the foundation of effective feedback. We prioritize anonymity, transparency, and ethical use of data to ensure employees and organizations alike can rely on our platform."
-msgstr "La confiance est indispensable à un feedback de qualité. Nous mettons l'accent sur l'anonymat, la transparence et l'utilisation éthique des données."
-
-#: templates/about_us.html
-msgid "Insight"
-msgstr "Pertinence"
-
-#: templates/about_us.html
-msgid "We focus on delivering meaningful, actionable insights—not noise. Our tools are designed to highlight what truly matters."
-msgstr "Nous privilégions des analyses utiles et actionnables, en évitant toute complexité inutile."
-
-#: templates/about_us.html
-msgid "Respect"
-msgstr "Respect"
-
-#: templates/about_us.html
-msgid "We respect the individuality of employees and the complexity of organizational life. Our technology is designed to support people, not reduce them to numbers."
-msgstr "Nous respectons l'individualité des employés et la complexité des environnements de travail. Nos outils sont conçus pour soutenir les personnes, non pour les réduire à des chiffres."
-
-#: templates/about_us.html
-msgid "Impact"
-msgstr "Impact"
-
-#: templates/about_us.html
-msgid "We measure success by the positive changes organizations can make using our insights—better communication, stronger teams, and healthier work environments."
-msgstr "Notre réussite se mesure à l'impact positif que nos analyses permettent de créer au sein des organisations."
-
-#: templates/about_us.html
-msgid "Our Mission"
-msgstr "Notre mission"
-
-#: templates/about_us.html
-msgid "Our mission is simple: to help organizations get to know their employees better and improve the work environment through intelligent analysis tools."
-msgstr "Notre mission est claire : aider les entreprises à mieux connaître leurs employés et à améliorer l'environnement de travail grâce à des outils d'analyse intelligents."
-
-#: templates/about_us.html
-msgid "We believe that understanding employee sentiment is not about control—it is about care. When companies listen, learn, and act, they create workplaces where people thrive."
-msgstr "Nous sommes convaincus que comprendre le ressenti des équipes n'est pas une question de contrôle, mais d'attention et de considération. Lorsqu'une organisation écoute, comprend et agit, elle crée un environnement dans lequel les collaborateurs peuvent réellement s'épanouir."
-
-#: templates/about_us.html
-msgid "Looking Ahead"
-msgstr "Regard vers l'avenir"
-
-#: templates/about_us.html
-msgid "As workplaces continue to evolve—with remote work, hybrid models, and changing expectations—understanding employee satisfaction will only become more important. Know Employee is committed to evolving alongside these changes, continuously improving our technology and expanding our analytical capabilities."
-msgstr "À mesure que le monde du travail évolue — avec le télétravail, les modèles hybrides et des attentes en constante mutation — la compréhension de la satisfaction des employés devient plus essentielle que jamais. Know Employee s'engage à évoluer avec ces transformations, à améliorer continuellement sa technologie et à enrichir ses capacités d'analyse."
-
-#: templates/about_us.html
-msgid "We are building a future where organizations can confidently navigate complexity while keeping people at the center of every decision."
-msgstr "Nous construisons un avenir dans lequel les organisations peuvent faire face à la complexité tout en plaçant l'humain au centre de chaque décision."
-
-#: templates/about_us.html
-msgid "Join Us"
-msgstr "Rejoignez-nous"
-
-#: templates/about_us.html
-msgid "Know Employee is more than a platform—it is a commitment to better workplaces. We invite organizations to take the next step toward understanding their workforce, improving employee satisfaction, and unlocking the full potential of their teams."
-msgstr "Know Employee est bien plus qu'une plateforme : c'est un engagement en faveur de meilleurs environnements de travail. Nous invitons les entreprises à franchir une nouvelle étape pour mieux comprendre leurs équipes, améliorer la satisfaction des employés et libérer tout le potentiel de leurs talents."
-
-#: templates/about_us.html
-msgid "Because when people feel good at work, everyone benefits."
-msgstr "Parce que lorsque les collaborateurs se sentent bien au travail, tout le monde y gagne."
-
-#: templates/components/_cookie_consent.html:4
-msgid "Cookie Consent"
-msgstr "Consentement aux cookies"
-
-#: templates/components/_cookie_consent.html:5
-msgid "We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies."
-msgstr "Nous utilisons des cookies pour améliorer votre expérience de navigation, fournir du contenu personnalisé et analyser notre trafic. En cliquant sur \"Tout accepter\", vous consentez à notre utilisation des cookies."
-
-#: templates/components/_cookie_consent.html:7
-msgid "Learn more in our Cookie Policy"
-msgstr "En savoir plus dans notre Politique de cookies"
-
-#: templates/components/_cookie_consent.html:12
-msgid "Accept All"
-msgstr "Tout accepter"
-
-#: templates/components/_cookie_consent.html:13
-msgid "Necessary Only"
-msgstr "Nécessaires uniquement"
-
-#: templates/components/_cookie_consent.html:14
-msgid "Customize"
-msgstr "Personnaliser"
-
-#: templates/components/_cookie_consent.html:19
-msgid "Cookie Preferences"
-msgstr "Préférences de cookies"
-
-#: templates/components/_cookie_consent.html:23
-msgid "Necessary Cookies"
-msgstr "Cookies nécessaires"
-
-#: templates/components/_cookie_consent.html:24
-msgid "These cookies are essential for the website to function properly. They cannot be disabled."
-msgstr "Ces cookies sont essentiels au bon fonctionnement du site web. Ils ne peuvent pas être désactivés."
-
-#: templates/components/_cookie_consent.html:29
-msgid "Analytics Cookies"
-msgstr "Cookies d'analyse"
-
-#: templates/components/_cookie_consent.html:30
-msgid "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously."
-msgstr "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site web en collectant et en rapportant des informations de manière anonyme."
-
-#: templates/components/_cookie_consent.html:35
-msgid "Marketing Cookies"
-msgstr "Cookies marketing"
-
-#: templates/components/_cookie_consent.html:36
-msgid "These cookies are used to track visitors across websites to display relevant advertisements."
-msgstr "Ces cookies sont utilisés pour suivre les visiteurs sur différents sites web afin d'afficher des publicités pertinentes."
-
-#: templates/components/_cookie_consent.html:41
-msgid "Save Preferences"
-msgstr "Enregistrer les préférences"
-
-#: templates/components/_cookie_consent.html:42
-msgid "Cancel"
-msgstr "Annuler"
-
-#: templates/testing.html:63
-msgid "Select Microphone"
-msgstr "Sélectionner le microphone"
-
-#: templates/testing.html:65
-msgid "Loading microphones..."
-msgstr "Chargement des microphones..."
-
-#: templates/testing.html:64
-msgid "Allow Microphone Access"
-msgstr "Autoriser l'accès au microphone"
-
-#: templates/testing.html:273
-msgid "Close Window"
-msgstr "Fermer la fenêtre"
-
-#: templates/header-anonymous-feedback.html:3
-msgid "Anonymous Feedback"
-msgstr "Retour d'information anonyme"
-
-#: templates/anonymous_feedback.html
-msgid "Anonymous feedback allows employees or customers to share their thoughts, feelings, and perceptions without any form of personal identification."
-msgstr "Le retour d'information anonyme permet aux employés ou aux clients de partager leurs pensées, leurs sentiments et leurs perceptions sans aucune forme d'identification personnelle."
-
-#: templates/anonymous_feedback.html
-msgid "The system is designed so that no direct or indirect identifiers (name, email, device ID, IP address, voice fingerprint, etc.) are stored or exposed to the organization."
-msgstr "Le système est conçu pour qu'aucun identifiant direct ou indirect (nom, e-mail, ID d'appareil, adresse IP, empreinte vocale, etc.) ne soit stocké ou exposé à l'organisation."
-
-#: templates/anonymous_feedback.html
-msgid "Key characteristics"
-msgstr "Caractéristiques clés"
-
-#: templates/anonymous_feedback.html
-msgid "Privacy-first by design:"
-msgstr "Confidentialité d'abord par conception :"
-
-#: templates/anonymous_feedback.html
-msgid "responses are detached from identity at the data-collection layer."
-msgstr "les réponses sont détachées de l'identité au niveau de la collecte de données."
-
-#: templates/anonymous_feedback.html
-msgid "Psychological safety:"
-msgstr "Sécurité psychologique :"
-
-#: templates/anonymous_feedback.html
-msgid "participants are more likely to provide honest, critical, or sensitive input."
-msgstr "les participants sont plus susceptibles de fournir des commentaires honnêtes, critiques ou sensibles."
-
-#: templates/anonymous_feedback.html
-msgid "AI-ready:"
-msgstr "Prêt pour l'IA :"
-
-#: templates/anonymous_feedback.html
-msgid "text and transcribed voice responses are analyzed for sentiment, emotional tone, and recurring themes without profiling individuals."
-msgstr "les réponses textuelles et vocales transcrites sont analysées pour le sentiment, le ton émotionnel et les thèmes récurrents sans profiler les individus."
-
-#: templates/anonymous_feedback.html
-msgid "Typical use cases"
-msgstr "Cas d'utilisation typiques"
-
-#: templates/anonymous_feedback.html
-msgid "Organizational climate and trust surveys"
-msgstr "Enquêtes sur le climat organisationnel et la confiance"
-
-#: templates/anonymous_feedback.html
-msgid "Employee engagement and burnout detection"
-msgstr "Détection de l'engagement des employés et de l'épuisement professionnel"
-
-#: templates/anonymous_feedback.html
-msgid "Ethical concerns, leadership feedback, or whistle-style insights (non-investigative)"
-msgstr "Préoccupations éthiques, retour sur le leadership, ou informations de type dénonciation (non-investigatives)"
-
-#: templates/anonymous_feedback.html
-msgid "Value for organizations"
-msgstr "Valeur pour les organisations"
-
-#: templates/anonymous_feedback.html
-msgid "Anonymous feedback surfaces hidden risks, morale issues, and cultural patterns that would otherwise remain unspoken, while maintaining compliance with privacy regulations (e.g., GDPR principles of data minimization and purpose limitation)."
-msgstr "Le retour d'information anonyme révèle des risques cachés, des problèmes de moral et des modèles culturels qui resteraient autrement non exprimés, tout en maintenant la conformité aux réglementations sur la confidentialité (par exemple, les principes du RGPD de minimisation des données et de limitation de l'objectif)."
-
-#: templates/header-custom-feedback.html:3
-msgid "Custom Feedback"
-msgstr "Retour d'information personnalisé"
-
-#: templates/custom_feedback.html
-msgid "Custom feedback enables organizations to design tailored surveys and question flows based on their specific goals, audience, and context."
-msgstr "Le retour d'information personnalisé permet aux organisations de concevoir des enquêtes et des flux de questions adaptés en fonction de leurs objectifs, de leur public et de leur contexte spécifiques."
-
-#: templates/custom_feedback.html
-msgid "Survey questions can be created manually or assisted by an HR-oriented AI agent, ensuring clarity, neutrality, and inclusiveness."
-msgstr "Les questions d'enquête peuvent être créées manuellement ou assistées par un agent IA orienté RH, garantissant la clarté, la neutralité et l'inclusivité."
-
-#: templates/custom_feedback.html
-msgid "Fully configurable questions:"
-msgstr "Questions entièrement configurables :"
-
-#: templates/custom_feedback.html
-msgid "open-ended, short answers, or guided prompts."
-msgstr "questions ouvertes, réponses courtes ou invites guidées."
-
-#: templates/custom_feedback.html
-msgid "Multiple input modes:"
-msgstr "Modes de saisie multiples :"
-
-#: templates/custom_feedback.html
-msgid "written responses or voice recordings, with text-to-speech for accessibility."
-msgstr "réponses écrites ou enregistrements vocaux, avec synthèse vocale pour l'accessibilité."
-
-#: templates/custom_feedback.html
-msgid "Context-aware analysis:"
-msgstr "Analyse contextuelle :"
-
-#: templates/custom_feedback.html
-msgid "AI models adapt interpretation based on the intent of the survey (e.g., performance, well-being, change management)."
-msgstr "les modèles d'IA adaptent l'interprétation en fonction de l'intention de l'enquête (par exemple, performance, bien-être, gestion du changement)."
-
-#: templates/custom_feedback.html
-msgid "Post-change or post-restructuring feedback"
-msgstr "Retour d'information post-changement ou post-restructuration"
-
-#: templates/custom_feedback.html
-msgid "Team-specific or department-level pulse surveys"
-msgstr "Enquêtes de pulse spécifiques à l'équipe ou au niveau du département"
-
-#: templates/custom_feedback.html
-msgid "Customer experience or service-quality evaluations"
-msgstr "Évaluations de l'expérience client ou de la qualité du service"
-
-#: templates/custom_feedback.html
-msgid "Custom feedback ensures that organizations ask the right questions at the right time, while still benefiting from automated AI analysis and consistent reporting across different surveys."
-msgstr "Le retour d'information personnalisé garantit que les organisations posent les bonnes questions au bon moment, tout en bénéficiant d'une analyse IA automatisée et de rapports cohérents entre différentes enquêtes."
-
-#: templates/header-metric-feedback.html:3
-msgid "Metric-Based Feedback"
-msgstr "Retour d'information basé sur les métriques"
-
-#: templates/metric_feedback.html
-msgid "Metric-based feedback transforms qualitative responses into aggregated, trackable indicators that can be monitored over time."
-msgstr "Le retour d'information basé sur les métriques transforme les réponses qualitatives en indicateurs agrégés et traçables qui peuvent être surveillés dans le temps."
-
-#: templates/metric_feedback.html
-msgid "Instead of focusing on individual answers, the system produces high-level metrics and trends derived from AI analysis."
-msgstr "Au lieu de se concentrer sur les réponses individuelles, le système produit des métriques et des tendances de haut niveau dérivées de l'analyse IA."
-
-#: templates/metric_feedback.html
-msgid "Quantified insights:"
-msgstr "Informations quantifiées :"
-
-#: templates/metric_feedback.html
-msgid "sentiment scores, emotional distribution, topic frequency, confidence levels."
-msgstr "scores de sentiment, distribution émotionnelle, fréquence des sujets, niveaux de confiance."
-
-#: templates/metric_feedback.html
-msgid "Trend analysis:"
-msgstr "Analyse des tendances :"
-
-#: templates/metric_feedback.html
-msgid "comparison across time periods, teams, or survey rounds."
-msgstr "comparaison entre périodes, équipes ou cycles d'enquête."
-
-#: templates/metric_feedback.html
-msgid "Visualization-ready:"
-msgstr "Prêt pour la visualisation :"
-
-#: templates/metric_feedback.html
-msgid "results are stored in a structured database and presented via dashboards and charts."
-msgstr "les résultats sont stockés dans une base de données structurée et présentés via des tableaux de bord et des graphiques."
-
-#: templates/metric_feedback.html
-msgid "Typical metrics"
-msgstr "Métriques typiques"
-
-#: templates/metric_feedback.html
-msgid "Overall sentiment index (positive / neutral / negative)"
-msgstr "Indice de sentiment global (positif / neutre / négatif)"
-
-#: templates/metric_feedback.html
-msgid "Emotional signals (stress, engagement, frustration, trust)"
-msgstr "Signaux émotionnels (stress, engagement, frustration, confiance)"
-
-#: templates/metric_feedback.html
-msgid "Topic prevalence (e.g., workload, management, communication)"
-msgstr "Prévalence des sujets (par exemple, charge de travail, gestion, communication)"
-
-#: templates/metric_feedback.html
-msgid "Response confidence and clarity indicators"
-msgstr "Indicateurs de confiance et de clarté des réponses"
-
-#: templates/metric_feedback.html
-msgid "Metric-based feedback enables data-driven decision-making, allowing leaders to detect early warning signs, measure the impact of actions taken, and track organizational health without exposing individual responses."
-msgstr "Le retour d'information basé sur les métriques permet une prise de décision basée sur les données, permettant aux dirigeants de détecter les signes d'alerte précoces, de mesurer l'impact des actions entreprises et de suivre la santé organisationnelle sans exposer les réponses individuelles."
-
-#: templates/footer.html:15
-msgid "Metric feedback"
-msgstr "Retour d'information métrique"
+#: templates/sign_in.html:56
+msgid "or"
+msgstr "ou"
+
+#: templates/sign_in.html:60
+msgid "Continue with Google"
+msgstr "Continuer avec Google"
+
+#: templates/sign_in.html:68
+msgid "Continue with Microsoft"
+msgstr "Continuer avec Microsoft"
+
+#~ msgid "Metrica feedback"
+#~ msgstr "Retour d'information métrique"
+
+#~ msgid "Allow Microphone Access"
+#~ msgstr "Autoriser l'accès au microphone"
 

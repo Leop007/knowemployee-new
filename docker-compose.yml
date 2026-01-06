@@ -43,6 +43,7 @@ services:
       - POSTGRES_USER=${POSTGRES_USER:-knowemployee}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-knowemployee_password}
       - POSTGRES_DB=${POSTGRES_DB:-knowemployee_db}
+      - FERNET_KEY=${FERNET_KEY}
       # DOMAIN and other vars loaded from .env file
     env_file:
       - .env

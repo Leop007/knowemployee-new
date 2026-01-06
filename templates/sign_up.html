@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ session.get('language', 'en') }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,11 @@
     <title>Sign Up | {{ name_platform }}</title>
 </head>
 <body>
-{% include "components/_language_selector.html" %}
 <div class="container sign_up">
-    <a href="/"><img src="../static/assets/images/logo-dark.svg"></a>
+    <div class="header-top">
+        <a href="/"><img src="../static/assets/images/logo-dark.svg"></a>
+        {% include "components/_language_selector.html" %}
+    </div>
     <section class="wrapper">
         <div class="sign">
             <div id="register_form" class="form">
