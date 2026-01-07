@@ -1,0 +1,47 @@
+# Exclude certbot certificates and keys (sensitive, not needed in build)
+certbot/conf/accounts/
+certbot/conf/archive/
+certbot/conf/live/
+certbot/conf/renewal/
+certbot/www/
+
+# Exclude local database files
+instance/*.db
+instance/service.db
+
+# Exclude environment files
+.env
+.env.local
+.env.dev
+
+# Exclude Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Exclude IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Exclude git
+.git/
+.gitignore
+
+# Exclude local backups
+.local-backup-*
+.reset-backup-*
+
+# Exclude compiled translation files
+translations/*/LC_MESSAGES/*.mo
+
+# Exclude node modules if any
+node_modules/
+
+# Exclude documentation
+*.md
+!readme.md
+
