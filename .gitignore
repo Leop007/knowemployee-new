@@ -14,11 +14,21 @@ instance/service.db
 instance/*.db
 
 # Certbot certificates and keys (sensitive, should not be committed)
+# Ignore all certificate directories and files
 certbot/conf/live/
 certbot/conf/archive/
 certbot/conf/renewal/
 certbot/conf/accounts/
 certbot/www/
+# Ignore all certificate files (pem, key, crt, csr) and logs
+certbot/conf/**/*.pem
+certbot/conf/**/*.key
+certbot/conf/**/*.crt
+certbot/conf/**/*.csr
+certbot/conf/**/*.log
+# Ignore certbot configuration files (may contain paths or be auto-generated)
+certbot/conf/options-ssl-nginx.conf
+certbot/conf/ssl-dhparams.pem
 
 # Local backups
 .local-backup-*
