@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, make_response, render_template, redirect, session, url_for, render_template_string, current_app as app
+from flask import Flask, request, jsonify, make_response, render_template, redirect, session, url_for, render_template_string, current_app as app, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
 import jwt
@@ -39,6 +39,7 @@ import logging
 from flask_babel import Babel, gettext as _, lazy_gettext as _l
 from openai import OpenAI
 from authlib.integrations.flask_client import OAuth
+import requests
 
 
 
@@ -202,15 +203,21 @@ migrate = Migrate(app, db)
 oauth = OAuth(app)
 
 # Google OAuth
-google = oauth.register(
-    name='google',
-    client_id=os.getenv('GOOGLE_CLIENT_ID'),
-    client_secret=os.getenv('GOOGLE_CLIENT_SECRET'),
-    server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
-    client_kwargs={
-        'scope': 'openid email profile'
-    }
-)
+google_client_id = os.getenv('GOOGLE_CLIENT_ID')
+google_client_secret = os.getenv('GOOGLE_CLIENT_SECRET')
+if google_client_id and google_client_secret and google_client_id != 'your_google_client_id_here' and google_client_secret != 'your_google_client_secret_here':
+    google = oauth.register(
+        name='google',
+        client_id=google_client_id,
+        client_secret=google_client_secret,
+        server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
+        client_kwargs={
+            'scope': 'openid email profile'
+        }
+    )
+else:
+    google = None
+    logger.warning("Google OAuth not configured - GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET must be set in .env")
 
 # Microsoft OAuth
 microsoft = oauth.register(
@@ -416,6 +423,33 @@ def send_mail(recipient, token, type="register"):
         logger.error(f"Unexpected error sending email to {recipient}: {str(e)}", exc_info=True)
         return False
 
+@app.route('/.well-known/microsoft-identity-association.json')
+def microsoft_identity_association():
+    """Serve Microsoft identity association file for domain verification
+    
+    In development, this will work with tunneling services (ngrok, etc.)
+    or you can skip domain verification for local development.
+    """
+    # In development, log a helpful message
+    if ENV == 'development':
+        logger.info("Microsoft identity association file requested in development mode")
+        logger.info("For local development, consider using ngrok or skip domain verification")
+    
+    try:
+        return send_from_directory('static/.well-known', 'microsoft-identity-association.json', mimetype='application/json')
+    except Exception as e:
+        logger.error(f"Error serving Microsoft identity association file: {e}")
+        # Return a basic structure if file doesn't exist
+        microsoft_client_id = os.getenv('MICROSOFT_CLIENT_ID', '')
+        response_data = {
+            "associatedApplications": [
+                {
+                    "applicationId": microsoft_client_id
+                }
+            ] if microsoft_client_id else []
+        }
+        return jsonify(response_data), 200, {'Content-Type': 'application/json'}
+
 @app.route('/set_language/<language>')
 def set_language(language):
     """Set the language in session and redirect back"""
@@ -569,21 +603,21 @@ def login():
 # OAuth login routes
 @app.route('/login/google')
 def login_google():
-    if not os.getenv('GOOGLE_CLIENT_ID') or not os.getenv('GOOGLE_CLIENT_SECRET'):
+    if not google:
         return redirect('/login?error=google_oauth_not_configured')
     redirect_uri = url_for('auth_google_callback', _external=True)
     return google.authorize_redirect(redirect_uri)
 
 @app.route('/login/microsoft')
 def login_microsoft():
-    if not os.getenv('MICROSOFT_CLIENT_ID') or not os.getenv('MICROSOFT_CLIENT_SECRET'):
-        return redirect('/login?error=microsoft_oauth_not_configured')
     redirect_uri = url_for('auth_microsoft_callback', _external=True)
     return microsoft.authorize_redirect(redirect_uri)
 
 # OAuth callback routes
 @app.route('/auth/google/callback')
 def auth_google_callback():
+    if not google:
+        return redirect('/login?error=google_oauth_not_configured')
     try:
         token = google.authorize_access_token()
         user_info = token.get('userinfo')
@@ -642,18 +676,62 @@ def auth_google_callback():
 @app.route('/auth/microsoft/callback')
 def auth_microsoft_callback():
     try:
-        token = microsoft.authorize_access_token()
+        # Handle Microsoft OAuth token with flexible issuer validation
+        # The /common endpoint can return tokens with different issuers
+        try:
+            token = microsoft.authorize_access_token()
+        except Exception as token_error:
+            # If issuer validation fails, try to get token without strict validation
+            if 'iss' in str(token_error) or 'invalid_claim' in str(token_error):
+                logger.warning(f"Microsoft OAuth issuer validation issue, attempting alternative method: {token_error}")
+                # Get the authorization code from request
+                from flask import request
+                code = request.args.get('code')
+                if code:
+                    # Manually exchange code for token
+                    redirect_uri = url_for('auth_microsoft_callback', _external=True)
+                    token_url = 'https://login.microsoftonline.com/common/oauth2/v2.0/token'
+                    token_data = {
+                        'client_id': os.getenv('MICROSOFT_CLIENT_ID'),
+                        'client_secret': os.getenv('MICROSOFT_CLIENT_SECRET'),
+                        'code': code,
+                        'redirect_uri': redirect_uri,
+                        'grant_type': 'authorization_code',
+                        'scope': 'openid email profile User.Read'
+                    }
+                    token_response = requests.post(token_url, data=token_data)
+                    token_response.raise_for_status()
+                    token = token_response.json()
+                else:
+                    raise token_error
+            else:
+                raise token_error
+        
         user_info = token.get('userinfo')
         if not user_info:
             # Fetch user info if not included in token
-            resp = microsoft.get('https://graph.microsoft.com/v1.0/me')
-            user_info = resp.json()
+            # If we got token manually, use requests directly
+            if 'access_token' in token:
+                headers = {'Authorization': f'Bearer {token["access_token"]}'}
+                resp = requests.get('https://graph.microsoft.com/v1.0/me', headers=headers)
+                resp.raise_for_status()
+                user_info = resp.json()
+            else:
+                # Use OAuth client method
+                resp = microsoft.get('https://graph.microsoft.com/v1.0/me')
+                user_info = resp.json()
         
-        email = user_info.get('email') or user_info.get('mail') or user_info.get('userPrincipalName')
-        name = user_info.get('name') or user_info.get('displayName', '')
+        logger.info(f"Microsoft OAuth user_info keys: {list(user_info.keys())}")
+        
+        # Microsoft Graph API returns email in different fields depending on account type
+        email = user_info.get('mail') or user_info.get('userPrincipalName') or user_info.get('email')
+        name = user_info.get('displayName') or user_info.get('name') or ''
         picture = user_info.get('picture') or ''
         
+        logger.info(f"Microsoft OAuth - email: {email}, name: {name}")
+        
         if not email:
+            logger.error(f"Microsoft OAuth - No email found in user_info: {user_info}")
             return redirect('/login?error=no_email_from_microsoft')
         
         # Find or create user
@@ -694,7 +772,16 @@ def auth_microsoft_callback():
         
     except Exception as e:
         logger.error(f"Microsoft OAuth error: {e}")
-        return redirect('/login?error=oauth_failed')
+        import traceback
+        logger.error(f"Microsoft OAuth traceback: {traceback.format_exc()}")
+        # Return more specific error information
+        error_msg = str(e)
+        if 'email' in error_msg.lower() or 'no_email' in error_msg.lower():
+            return redirect('/login?error=no_email_from_microsoft')
+        elif 'token' in error_msg.lower() or 'access' in error_msg.lower():
+            return redirect('/login?error=microsoft_token_error')
+        else:
+            return redirect('/login?error=oauth_failed')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():

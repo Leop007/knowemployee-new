@@ -52,7 +52,7 @@ services:
       - FERNET_KEY=${FERNET_KEY}
       # Override with .env.dev if needed
     env_file:
-      - .env  # Primary env file (create this with your credentials)
+      - .env.dev  # Primary env file (create this with your credentials)
     depends_on:
       postgres:
         condition: service_healthy
