@@ -220,13 +220,23 @@ else:
     logger.warning("Google OAuth not configured - GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET must be set in .env")
 
 # Microsoft OAuth
+# Configure with flexible issuer validation for /common endpoint
+# The /common endpoint can return tokens with different issuers depending on account type
 microsoft = oauth.register(
     name='microsoft',
     client_id=os.getenv('MICROSOFT_CLIENT_ID'),
     client_secret=os.getenv('MICROSOFT_CLIENT_SECRET'),
     server_metadata_url='https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration',
     client_kwargs={
-        'scope': 'openid email profile'
+        'scope': 'openid email profile User.Read'  # User.Read needed for Graph API /me endpoint
+    },
+    # Configure claims options to allow flexible issuer validation
+    # This allows tokens from different tenants when using /common endpoint
+    claims_options={
+        'iss': {
+            'essential': True,
+            'values': None  # Allow any issuer (since /common can return different issuers)
+        }
     }
 )
 cipher = Fernet(FERNET_KEY.encode())
@@ -435,20 +445,39 @@ def microsoft_identity_association():
         logger.info("Microsoft identity association file requested in development mode")
         logger.info("For local development, consider using ngrok or skip domain verification")
     
-    try:
-        return send_from_directory('static/.well-known', 'microsoft-identity-association.json', mimetype='application/json')
-    except Exception as e:
-        logger.error(f"Error serving Microsoft identity association file: {e}")
-        # Return a basic structure if file doesn't exist
-        microsoft_client_id = os.getenv('MICROSOFT_CLIENT_ID', '')
-        response_data = {
-            "associatedApplications": [
-                {
-                    "applicationId": microsoft_client_id
-                }
-            ] if microsoft_client_id else []
-        }
-        return jsonify(response_data), 200, {'Content-Type': 'application/json'}
+    # Try multiple possible paths
+    possible_paths = [
+        os.path.join('static', '.well-known', 'microsoft-identity-association.json'),
+        os.path.join('/know', 'static', '.well-known', 'microsoft-identity-association.json'),
+        os.path.join(app.root_path, 'static', '.well-known', 'microsoft-identity-association.json'),
+    ]
+    
+    file_path = None
+    for path in possible_paths:
+        if os.path.exists(path):
+            file_path = path
+            break
+    
+    if file_path:
+        try:
+            logger.info(f"Serving Microsoft identity association file from: {file_path}")
+            return send_from_directory(os.path.dirname(file_path), os.path.basename(file_path), mimetype='application/json')
+        except Exception as e:
+            logger.error(f"Error serving Microsoft identity association file: {e}")
+    
+    # Return a basic structure if file doesn't exist
+    logger.warning("Microsoft identity association file not found, returning generated response")
+    microsoft_client_id = os.getenv('MICROSOFT_CLIENT_ID', '')
+    response_data = {
+        "associatedApplications": [
+            {
+                "applicationId": microsoft_client_id
+            }
+        ] if microsoft_client_id else []
+    }
+    response = jsonify(response_data)
+    response.headers['Content-Type'] = 'application/json'
+    return response, 200
 
 @app.route('/set_language/<language>')
 def set_language(language):
@@ -678,48 +707,87 @@ def auth_microsoft_callback():
     try:
         # Handle Microsoft OAuth token with flexible issuer validation
         # The /common endpoint can return tokens with different issuers
-        try:
-            token = microsoft.authorize_access_token()
-        except Exception as token_error:
-            # If issuer validation fails, try to get token without strict validation
-            if 'iss' in str(token_error) or 'invalid_claim' in str(token_error):
-                logger.warning(f"Microsoft OAuth issuer validation issue, attempting alternative method: {token_error}")
-                # Get the authorization code from request
-                from flask import request
-                code = request.args.get('code')
-                if code:
-                    # Manually exchange code for token
-                    redirect_uri = url_for('auth_microsoft_callback', _external=True)
-                    token_url = 'https://login.microsoftonline.com/common/oauth2/v2.0/token'
-                    token_data = {
-                        'client_id': os.getenv('MICROSOFT_CLIENT_ID'),
-                        'client_secret': os.getenv('MICROSOFT_CLIENT_SECRET'),
-                        'code': code,
-                        'redirect_uri': redirect_uri,
-                        'grant_type': 'authorization_code',
-                        'scope': 'openid email profile User.Read'
-                    }
-                    token_response = requests.post(token_url, data=token_data)
-                    token_response.raise_for_status()
-                    token = token_response.json()
-                else:
-                    raise token_error
-            else:
-                raise token_error
+        # We need to manually exchange the code to avoid ID token issuer validation issues
+        from flask import request
+        code = request.args.get('code')
         
-        user_info = token.get('userinfo')
-        if not user_info:
-            # Fetch user info if not included in token
-            # If we got token manually, use requests directly
-            if 'access_token' in token:
-                headers = {'Authorization': f'Bearer {token["access_token"]}'}
-                resp = requests.get('https://graph.microsoft.com/v1.0/me', headers=headers)
-                resp.raise_for_status()
-                user_info = resp.json()
+        if not code:
+            return redirect('/login?error=no_authorization_code')
+        
+        # Manually exchange code for token to avoid Authlib's strict issuer validation
+        redirect_uri = url_for('auth_microsoft_callback', _external=True)
+        token_url = 'https://login.microsoftonline.com/common/oauth2/v2.0/token'
+        
+        # Get the original scope from the authorization request
+        # Microsoft requires the scope to match exactly what was requested
+        # We need User.Read scope to access Microsoft Graph API /me endpoint
+        original_scope = 'openid email profile User.Read'  # Include User.Read for Graph API access
+        
+        token_data = {
+            'client_id': os.getenv('MICROSOFT_CLIENT_ID'),
+            'client_secret': os.getenv('MICROSOFT_CLIENT_SECRET'),
+            'code': code,
+            'redirect_uri': redirect_uri,
+            'grant_type': 'authorization_code',
+            'scope': original_scope  # Must match the original authorization request
+        }
+        
+        logger.info(f"Exchanging Microsoft authorization code for token")
+        logger.info(f"  redirect_uri: {redirect_uri}")
+        token_response = requests.post(token_url, data=token_data)
+        
+        if not token_response.ok:
+            error_detail = token_response.text
+            error_code = None
+            error_description = None
+            try:
+                error_json = token_response.json()
+                error_code = error_json.get('error', 'unknown')
+                error_description = error_json.get('error_description', error_detail)
+                error_detail = f"{error_code}: {error_description}"
+            except:
+                pass
+            logger.error(f"Microsoft token exchange failed: {token_response.status_code}")
+            logger.error(f"  Error: {error_detail}")
+            logger.error(f"  Request redirect_uri: {redirect_uri}")
+            logger.error(f"  Request scope: {original_scope}")
+            logger.error(f"  Full response: {token_response.text[:500]}")
+            
+            # Provide more helpful error message
+            if error_code == 'invalid_grant':
+                return redirect('/login?error=microsoft_code_expired')
+            elif error_code == 'invalid_client':
+                return redirect('/login?error=microsoft_client_error')
+            elif 'redirect_uri' in str(error_description).lower():
+                return redirect('/login?error=microsoft_redirect_mismatch')
             else:
-                # Use OAuth client method
-                resp = microsoft.get('https://graph.microsoft.com/v1.0/me')
-                user_info = resp.json()
+                return redirect('/login?error=microsoft_token_error')
+        
+        token = token_response.json()
+        logger.info("Microsoft token exchange successful")
+        
+        # Get user info from Microsoft Graph API using the access token
+        # The token response contains access_token, not userinfo
+        if 'access_token' in token:
+            headers = {'Authorization': f'Bearer {token["access_token"]}'}
+            logger.info(f"Fetching user info from Microsoft Graph API")
+            resp = requests.get('https://graph.microsoft.com/v1.0/me', headers=headers)
+            
+            if not resp.ok:
+                error_detail = resp.text
+                logger.error(f"Microsoft Graph API error: {resp.status_code}")
+                logger.error(f"  Response: {error_detail[:500]}")
+                logger.error(f"  Token scopes: {token.get('scope', 'not provided')}")
+                
+                if resp.status_code == 403:
+                    return redirect('/login?error=microsoft_permissions_required')
+                else:
+                    return redirect('/login?error=microsoft_graph_error')
+            
+            user_info = resp.json()
+        else:
+            logger.error(f"Microsoft token response missing access_token: {list(token.keys())}")
+            return redirect('/login?error=microsoft_token_error')
         
         logger.info(f"Microsoft OAuth user_info keys: {list(user_info.keys())}")
         

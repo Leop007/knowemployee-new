@@ -65,7 +65,8 @@ services:
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./certbot/conf:/etc/letsencrypt:ro
       - ./certbot/www:/var/www/certbot:ro
-      # Remove the static mount - Flask will serve static files
+      - ./static:/usr/share/nginx/html/static:ro
+      # Mount static for .well-known files (Microsoft identity association, etc.)
     depends_on:
       - knowemployee
     restart: unless-stopped

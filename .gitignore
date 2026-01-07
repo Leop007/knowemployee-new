@@ -3,16 +3,25 @@ __pycache__
 *.pyo
 .anima
 .venv
+.env
+.env.dev
+.env.local
 gunicorn/*
 .idea/
 
-# Environment files
-.env*
-
-# Database
+# Local database files
+instance/service.db
 instance/*.db
-instance/*.db-journal
 
-# Translations
-translations/**/*.mo
-messages.pot
+# Certbot certificates and keys (sensitive, should not be committed)
+certbot/conf/live/
+certbot/conf/archive/
+certbot/conf/renewal/
+certbot/conf/accounts/
+certbot/www/
+
+# Local backups
+.local-backup-*
+
+# Compiled translation files (can be regenerated)
+translations/*/LC_MESSAGES/*.mo
