@@ -15,11 +15,13 @@
         <p class="current-plan-info">{{ _('Your current plan:') }} <strong>{{ current_plan }}</strong></p>
         
         <div class="plans-carousel-wrapper">
-            <button class="carousel-prev" onclick="moveCarousel(-1)" aria-label="Previous plan">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+            </div>
+            <div class="carousel-left-click" onclick="moveCarousel(-1)"></div>
+            <div class="carousel-right-click" onclick="moveCarousel(1)"></div>
             <div class="plans-container-popup" id="plans-carousel">
                 <!-- Free Plan -->
                 <div class="plan-card-popup carousel-slide {% if current_plan == 'Free' %}active{% endif %}">
@@ -106,16 +108,6 @@
                     {% endif %}
                 </div>
             </div>
-            <button class="carousel-next" onclick="moveCarousel(1)" aria-label="Next plan">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <div class="carousel-dots">
-                <span class="dot active" onclick="goToSlide(0)"></span>
-                <span class="dot" onclick="goToSlide(1)"></span>
-                <span class="dot" onclick="goToSlide(2)"></span>
-            </div>
         </div>
     </div>
 </div>
@@ -127,7 +119,7 @@ const slides = document.querySelectorAll('.carousel-slide');
 const dots = document.querySelectorAll('.dot');
 
 function updateCarousel() {
-    const isMobile = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 900;
     if (!isMobile) {
         // On desktop, show all slides
         slides.forEach((slide, index) => {
@@ -153,8 +145,9 @@ function updateCarousel() {
     });
 }
 
-function moveCarousel(direction) {
-    const isMobile = window.innerWidth <= 768;
+// Make functions globally accessible for onclick handlers
+window.moveCarousel = function(direction) {
+    const isMobile = window.innerWidth <= 900;
     if (!isMobile) return;
     
     currentSlide += direction;
@@ -162,15 +155,15 @@ function moveCarousel(direction) {
     if (currentSlide >= slides.length) currentSlide = 0;
     
     updateCarousel();
-}
+};
 
-function goToSlide(index) {
-    const isMobile = window.innerWidth <= 768;
+window.goToSlide = function(index) {
+    const isMobile = window.innerWidth <= 900;
     if (!isMobile) return;
     
     currentSlide = index;
     updateCarousel();
-}
+};
 
 // Initialize carousel on load and resize
 window.addEventListener('load', updateCarousel);
@@ -193,7 +186,26 @@ if (carousel) {
 }
 
 function handleSwipe() {
-    const isMobile = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 900;
+    if (!isMobile) return;
+    
+    if (touchEndX < touchStartX - 50) {
+        moveCarousel(1); // Swipe left - next
+    }
+    if (touchEndX > touchStartX + 50) {
+        moveCarousel(-1); // Swipe right - previous
+    }
+}
+
+// Update on resize
+window.addEventListener('resize', function() {
+    if (slides.length > 0) {
+        updateCarousel();
+    }
+});
+
+function handleSwipe() {
+    const isMobile = window.innerWidth <= 900;
     if (!isMobile) return;
     
     if (touchEndX < touchStartX - 50) {
@@ -229,6 +241,55 @@ function changePlan(planName) {
         });
     }
 }
+</script>
+
+<script src="{{ url_for('static', filename='assets/menu/script.js') }}"></script>
+<script>
+// Ensure language selector is initialized for popup window
+(function() {
+    function initPlanPopupLanguageSelector() {
+        const languageSelector = document.querySelector('.plan-popup-language-selector .language-selector, #language-selector');
+        if (!languageSelector) return;
+        
+        // Skip if already initialized
+        if (languageSelector.dataset.initialized === 'true') return;
+        
+        // Mark as initialized
+        languageSelector.dataset.initialized = 'true';
+        
+        // Get current language from data attribute, localStorage, or default to 'en'
+        const currentLang = languageSelector.getAttribute('data-current-lang') || 
+                          localStorage.getItem('selectedLanguage') || 
+                          'en';
+        
+        // Set the selector to match current language
+        if (currentLang && ['en', 'fr'].includes(currentLang)) {
+            languageSelector.value = currentLang;
+        }
+
+        languageSelector.addEventListener('change', function(e) {
+            const selectedLanguage = e.target.value;
+            
+            // Save language preference
+            localStorage.setItem('selectedLanguage', selectedLanguage);
+            
+            // Get current page URL to preserve it after language change
+            const currentPath = window.location.pathname;
+            const currentQuery = window.location.search;
+            const currentUrl = currentPath + currentQuery;
+            
+            // Redirect to set language route, which will redirect back to current page
+            window.location.href = `/set_language/${selectedLanguage}?redirect=${encodeURIComponent(currentUrl)}`;
+        });
+    }
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPlanPopupLanguageSelector);
+    } else {
+        initPlanPopupLanguageSelector();
+    }
+})();
 </script>
 
 <style>
@@ -318,15 +379,10 @@ function changePlan(planName) {
 }
 
 @media (max-width: 900px) {
-    .plans-container-popup {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
     .plans-carousel-wrapper {
         position: relative;
-        padding: 15px 50px 0;
+        /* Match main window mobile padding so card width feels the same */
+        padding: 0 0 0;
         overflow: visible;
     }
     
@@ -342,56 +398,12 @@ function changePlan(planName) {
         transition: transform 0.3s ease;
     }
     
-    .carousel-prev,
-    .carousel-next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: #fff;
-        border: 2px solid #53EB12;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 10;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    .carousel-prev {
-        left: 0;
-    }
-    
-    .carousel-next {
-        right: 0;
-    }
-    
-    .carousel-prev:hover,
-    .carousel-next:hover {
-        background: #53EB12;
-        color: #000;
-    }
-    
-    .carousel-prev svg,
-    .carousel-next svg {
-        width: 20px;
-        height: 20px;
-        stroke: #53EB12;
-    }
-    
-    .carousel-prev:hover svg,
-    .carousel-next:hover svg {
-        stroke: #000;
-    }
-    
     .carousel-dots {
         display: flex;
         justify-content: center;
         gap: 10px;
-        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 0 20px;
     }
     
     .carousel-dots .dot {
@@ -408,17 +420,43 @@ function changePlan(planName) {
         width: 30px;
         border-radius: 5px;
     }
+    
+    .carousel-left-click,
+    .carousel-right-click {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        z-index: 5;
+        cursor: pointer;
+    }
+    
+    .carousel-left-click {
+        left: 0;
+    }
+    
+    .carousel-right-click {
+        right: 0;
+    }
+    
+    /* Hide click areas on touch devices - use swipe instead */
+    @media (hover: none) and (pointer: coarse) {
+        .carousel-left-click,
+        .carousel-right-click {
+            display: none;
+        }
+    }
 }
 
-@media (min-width: 769px) {
-    .carousel-prev,
-    .carousel-next,
-    .carousel-dots {
+@media (min-width: 901px) {
+    .carousel-dots,
+    .carousel-left-click,
+    .carousel-right-click {
         display: none;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .plan-popup-header {
         flex-direction: row;
         gap: 15px;
@@ -450,15 +488,15 @@ function changePlan(planName) {
     transform-origin: center;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 901px) {
     .plan-card-popup:hover {
-        transform: translateY(-15px) scale(1.15) !important;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2) !important;
+        transform: translateY(-7.5px) scale(1.075) !important;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
         z-index: 5;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .plan-card-popup:hover {
         transform: translateY(-5px) scale(1.05);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
