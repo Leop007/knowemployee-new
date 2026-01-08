@@ -1022,6 +1022,14 @@ msgstr ""
 msgid "All rights reserved."
 msgstr "Tous droits réservés."
 
+#: templates/footer.html:62
+msgid "All rights reserved to KnowEmployee."
+msgstr "Tous droits réservés à KnowEmployee."
+
+#: templates/footer.html:62
+msgid "All rights reserved"
+msgstr "Tous droits réservés"
+
 #: templates/header-main.html:117
 msgid "Know Employee is an"
 msgstr "Know Employee est une startup"
@@ -2189,6 +2197,166 @@ msgstr "Continuer avec Google"
 #: templates/sign_in.html:68
 msgid "Continue with Microsoft"
 msgstr "Continuer avec Microsoft"
+
+#: templates/pages_dashboard/create_custom_link.html:17
+msgid "Add a survey and get a link"
+msgstr "Ajouter une enquête et obtenir un lien"
+
+#: templates/footer.html:44
+msgid "Terms and Conditions"
+msgstr "Conditions générales"
+
+#: templates/terms.html
+msgid "Introduction"
+msgstr "Introduction"
+
+#: templates/terms.html
+msgid "Welcome to Knowemployee (\"we\", \"us\", \"our\"). These Terms and Conditions govern your access to and use of the Knowemployee website and platform (the \"Service\"). By accessing or using the Service, you agree to be bound by these Terms and any applicable policies referenced herein."
+msgstr "Bienvenue sur Knowemployee (« nous », « notre »). Ces Conditions générales régissent votre accès et votre utilisation du site web et de la plateforme Knowemployee (le « Service »). En accédant ou en utilisant le Service, vous acceptez d'être lié par ces Conditions et toute politique applicable référencée dans le présent document."
+
+#: templates/terms.html
+msgid "If you do not agree with any part of these Terms, you must not use the Service."
+msgstr "Si vous n'acceptez pas une partie de ces Conditions, vous ne devez pas utiliser le Service."
+
+#: templates/terms.html
+msgid "Privacy and Data Protection"
+msgstr "Confidentialité et protection des données"
+
+#: templates/terms.html
+msgid "Your use of the Service is also governed by our Privacy Policy, which explains how we collect, use, store, and disclose information when you visit or use the website. The Privacy Policy is incorporated into these Terms by reference and can be found here:"
+msgstr "Votre utilisation du Service est également régie par notre Politique de confidentialité, qui explique comment nous collectons, utilisons, stockons et divulguons les informations lorsque vous visitez ou utilisez le site web. La Politique de confidentialité est incorporée dans ces Conditions par référence et peut être consultée ici :"
+
+#: templates/terms.html
+msgid "By using the Service, you consent to the collection and use of your information as outlined in the Privacy Policy."
+msgstr "En utilisant le Service, vous consentez à la collecte et à l'utilisation de vos informations telles que décrites dans la Politique de confidentialité."
+
+#: templates/terms.html
+msgid "Eligibility"
+msgstr "Éligibilité"
+
+#: templates/terms.html
+msgid "You must be at least 18 years old and legally capable of entering into a binding agreement to use our Service. If you use the Service on behalf of your organization, you represent that you are authorized to bind that organization to these Terms."
+msgstr "Vous devez avoir au moins 18 ans et être légalement capable de conclure un accord contraignant pour utiliser notre Service. Si vous utilisez le Service au nom de votre organisation, vous déclarez que vous êtes autorisé à lier cette organisation à ces Conditions."
+
+#: templates/terms.html
+msgid "Account Registration"
+msgstr "Inscription au compte"
+
+#: templates/terms.html
+msgid "To access certain features, you may be required to create an account. You are responsible for keeping your account information accurate and for maintaining the confidentiality of your credentials."
+msgstr "Pour accéder à certaines fonctionnalités, vous devrez peut-être créer un compte. Vous êtes responsable de maintenir les informations de votre compte à jour et de préserver la confidentialité de vos identifiants."
+
+#: templates/terms.html
+msgid "You agree to notify us immediately of any unauthorized use of your account."
+msgstr "Vous acceptez de nous informer immédiatement de toute utilisation non autorisée de votre compte."
+
+#: templates/terms.html
+msgid "Use of the Service"
+msgstr "Utilisation du Service"
+
+#: templates/terms.html
+msgid "You agree to use the Service legally and in compliance with these Terms, including any content or features made available through the platform."
+msgstr "Vous acceptez d'utiliser le Service de manière légale et en conformité avec ces Conditions, y compris tout contenu ou fonctionnalité mis à disposition via la plateforme."
+
+#: templates/terms.html
+msgid "You may not use the Service to:"
+msgstr "Vous ne pouvez pas utiliser le Service pour :"
+
+#: templates/terms.html
+msgid "Violate any applicable laws or rights of third parties"
+msgstr "Violer toute loi applicable ou les droits de tiers"
+
+#: templates/terms.html
+msgid "Attempt to re-identify anonymous users"
+msgstr "Tenter de ré-identifier les utilisateurs anonymes"
+
+#: templates/terms.html
+msgid "Upload harmful content or engage in malicious activities"
+msgstr "Télécharger du contenu nuisible ou se livrer à des activités malveillantes"
+
+#: templates/terms.html
+msgid "Intellectual Property"
+msgstr "Propriété intellectuelle"
+
+#: templates/terms.html
+msgid "All content provided on the Service, including software, text, graphics, logos, models, and trademarks, is owned by Knowemployee or its licensors and is protected by applicable intellectual property laws."
+msgstr "Tout contenu fourni sur le Service, y compris les logiciels, textes, graphiques, logos, modèles et marques, est la propriété de Knowemployee ou de ses concédants de licence et est protégé par les lois applicables en matière de propriété intellectuelle."
+
+#: templates/terms.html
+msgid "Anonymous Feedback and AI Features"
+msgstr "Retour d'information anonyme et fonctionnalités IA"
+
+#: templates/terms.html
+msgid "Your Service may include features that support anonymous employee feedback. While we design systems to protect personal identity, no system is perfect. Organizations are responsible for survey design to avoid unintended re-identification."
+msgstr "Votre Service peut inclure des fonctionnalités qui prennent en charge les retours d'information anonymes des employés. Bien que nous concevions des systèmes pour protéger l'identité personnelle, aucun système n'est parfait. Les organisations sont responsables de la conception des enquêtes pour éviter une ré-identification non intentionnelle."
+
+#: templates/terms.html
+msgid "AI-generated analyses are provided for informational purposes only and should not be relied upon as professional advice."
+msgstr "Les analyses générées par l'IA sont fournies à titre informatif uniquement et ne doivent pas être considérées comme des conseils professionnels."
+
+#: templates/terms.html
+msgid "Data Handling and Cookies"
+msgstr "Gestion des données et cookies"
+
+#: templates/terms.html
+msgid "We use cookies and similar technologies as described in the Privacy Policy to support necessary functions and improve user experience across the Service."
+msgstr "Nous utilisons des cookies et des technologies similaires comme décrit dans la Politique de confidentialité pour prendre en charge les fonctions nécessaires et améliorer l'expérience utilisateur sur le Service."
+
+#: templates/terms.html
+msgid "You may manage your cookie preferences as outlined in the Privacy Policy."
+msgstr "Vous pouvez gérer vos préférences de cookies comme décrit dans la Politique de confidentialité."
+
+#: templates/terms.html
+msgid "Service Modifications and Availability"
+msgstr "Modifications et disponibilité du Service"
+
+#: templates/terms.html
+msgid "We may modify, suspend, or discontinue the Service (or any feature) at any time without prior notice."
+msgstr "Nous pouvons modifier, suspendre ou interrompre le Service (ou toute fonctionnalité) à tout moment sans préavis."
+
+#: templates/terms.html
+msgid "Limitation of Liability"
+msgstr "Limitation de responsabilité"
+
+#: templates/terms.html
+msgid "To the maximum extent permitted by law:"
+msgstr "Dans la mesure maximale permise par la loi :"
+
+#: templates/terms.html
+msgid "Knowemployee shall not be liable for indirect or consequential losses"
+msgstr "Knowemployee ne sera pas responsable des pertes indirectes ou consécutives"
+
+#: templates/terms.html
+msgid "Our total liability under these Terms shall not exceed amounts paid to us for the Service in the previous 12 months (if any)"
+msgstr "Notre responsabilité totale en vertu de ces Conditions ne dépassera pas les montants payés pour le Service au cours des 12 derniers mois (le cas échéant)"
+
+#: templates/terms.html
+msgid "Termination"
+msgstr "Résiliation"
+
+#: templates/terms.html
+msgid "We may terminate or suspend your access to the Service at any time, with or without cause, including if you breach these Terms."
+msgstr "Nous pouvons résilier ou suspendre votre accès au Service à tout moment, avec ou sans motif, notamment si vous violez ces Conditions."
+
+#: templates/terms.html
+msgid "Governing Law"
+msgstr "Loi applicable"
+
+#: templates/terms.html
+msgid "These Terms shall be governed by the laws of [specify jurisdiction, e.g., Luxembourg/EU law] without regard to conflict of law principles."
+msgstr "Ces Conditions seront régies par les lois de [spécifier la juridiction, par exemple, le droit luxembourgeois/droit de l'UE] sans égard aux principes de conflit de lois."
+
+#: templates/terms.html
+msgid "Contact"
+msgstr "Contact"
+
+#: templates/terms.html
+msgid "If you have questions about these Terms, contact us at:"
+msgstr "Si vous avez des questions concernant ces Conditions, contactez-nous à :"
+
+#: templates/terms.html
+msgid "Website:"
+msgstr "Site web :"
 
 #~ msgid "Metrica feedback"
 #~ msgstr "Retour d'information métrique"

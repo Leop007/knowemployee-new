@@ -41,6 +41,9 @@
                         <li>
                             <a href="{{ url_for('privacy_policy') }}">{{ _('Privacy Policy') }}</a>
                         </li>
+                        <li>
+                            <a href="{{ url_for('terms') }}">{{ _('Terms and Conditions') }}</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -56,7 +59,7 @@
             </div>
         </div>
         <div class="copyright">
-            <span>© {{ year }} KnowEmployee. {{ _('All rights reserved.') }}</span>
+            <span>{{ _('All rights reserved to') }} © {{ year }} KnowEmployee</span>
         </div>
     </div>
 </footer>

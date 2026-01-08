@@ -31,11 +31,18 @@
             <div class="hd">
                 <div class="company">
                     <div class="image">
-                        <img src="{{ '../../static/company.png' if data_company.avatar == '0' else data_company.avatar }}"
-                             alt="{{ data_company.company_name }}">
+                        {% set avatar_value = data_company.avatar|string|trim if data_company.avatar else '' %}
+                        {% if avatar_value and avatar_value != '0' and avatar_value != 'False' and avatar_value != 'false' and avatar_value|length > 20 and avatar_value[:10] == 'data:image' %}
+                            <img src="{{ data_company.avatar }}" alt="{{ data_company.company_name }}">
+                        {% else %}
+                            {% set company_name = data_company.company_name if data_company.company_name and data_company.company_name != '0' else 'CO' %}
+                            {% set initials = company_name[:2].upper() if company_name|length >= 2 else (company_name[0] + company_name[0]).upper() if company_name|length == 1 else 'CO' %}
+                            <div class="company-initials">{{ initials }}</div>
+                        {% endif %}
                     </div>
                     <h3>{{ data_company.company_name }}</h3>
-                    <p>{{ data_company.slogan if data_company.slogan != "" and data_company.slogan != '0' else "" }}</p>
+                    {% set slogan_value = data_company.slogan|string|trim if data_company.slogan else '' %}
+                    <p>{% if slogan_value and slogan_value != '0' and slogan_value != 'False' and slogan_value != 'false' %}{{ data_company.slogan }}{% endif %}</p>
                 </div>
                 <div class="description">
                     <p>{{ _('Anonymous company review to improve level of satisfaction') }}</p>
@@ -153,11 +160,18 @@
             <div class="hd">
                 <div class="company">
                     <div class="image">
-                        <img src="{{ '../../static/company.png' if data_company.avatar == '0' else data_company.avatar }}"
-                             alt="{{ data_company.company_name }}">
+                        {% set avatar_value = data_company.avatar|string|trim if data_company.avatar else '' %}
+                        {% if avatar_value and avatar_value != '0' and avatar_value != 'False' and avatar_value != 'false' and avatar_value|length > 20 and avatar_value[:10] == 'data:image' %}
+                            <img src="{{ data_company.avatar }}" alt="{{ data_company.company_name }}">
+                        {% else %}
+                            {% set company_name = data_company.company_name if data_company.company_name and data_company.company_name != '0' else 'CO' %}
+                            {% set initials = company_name[:2].upper() if company_name|length >= 2 else (company_name[0] + company_name[0]).upper() if company_name|length == 1 else 'CO' %}
+                            <div class="company-initials">{{ initials }}</div>
+                        {% endif %}
                     </div>
                     <h3>{{ data_company.company_name }}</h3>
-                    <p>{{ data_company.slogan if data_company.slogan != "" and data_company.slogan != '0' else "" }}</p>
+                    {% set slogan_value = data_company.slogan|string|trim if data_company.slogan else '' %}
+                    <p>{% if slogan_value and slogan_value != '0' and slogan_value != 'False' and slogan_value != 'false' %}{{ data_company.slogan }}{% endif %}</p>
                 </div>
 
                 <div class="row_user">

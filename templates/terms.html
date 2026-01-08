@@ -2,81 +2,159 @@
 {% block style %}
 <link rel="stylesheet" href="{{ url_for('static', filename='assets/contact/style.css') }}" type="text/css">
 {% endblock %}
-{% block title %}Terms of Use - {{ name_platform }}{% endblock %}
+{% block title %}Terms and Conditions - {{ name_platform }}{% endblock %}
 {% block headercontent %}
-{% include 'header-contact.html' %}
+{% include 'header-terms.html' %}
 {% endblock %}
 {% block maincontent %}
-<div class="wrapper" style="max-width: 800px; margin: 50px auto; padding: 20px; color: #D9D9D9;">
-    <h1 style="font-size: 32px; margin-bottom: 30px; font-weight: 800;">Terms of Use</h1>
-    
+<div class="wrapper" style="max-width: 800px; margin: 50px auto; padding: 20px; color: #000000;">
     <div style="line-height: 1.8; font-size: 16px;">
-        <p><strong>Last Updated:</strong> December 23, 2024</p>
+        <p><strong>{{ _('Last updated:') }}</strong> January 7, 2026</p>
         
         <section style="margin-bottom: 30px;">
-            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">Agreement to Terms</h2>
-            <p>By accessing or using {{ name_platform }} ("the Service"), you agree to be bound by these Terms of Use. If you disagree with any part of these terms, you may not access the Service.</p>
-        </section>
-
-        <section style="margin-bottom: 30px;">
-            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">Use License</h2>
-            <p>Permission is granted to temporarily use {{ name_platform }} for personal or commercial use. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
-            <ul style="margin-left: 20px; margin-top: 10px;">
-                <li>Modify or copy the materials</li>
-                <li>Use the materials for any commercial purpose or for any public display</li>
-                <li>Attempt to reverse engineer any software contained on the Service</li>
-                <li>Remove any copyright or other proprietary notations from the materials</li>
-            </ul>
-        </section>
-
-        <section style="margin-bottom: 30px;">
-            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">User Accounts</h2>
-            <p>When you create an account with us, you must provide information that is accurate, complete, and current at all times. You are responsible for safeguarding the password and for all activities that occur under your account.</p>
-        </section>
-
-        <section style="margin-bottom: 30px;">
-            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">Prohibited Uses</h2>
-            <p>You may not use our Service:</p>
-            <ul style="margin-left: 20px; margin-top: 10px;">
-                <li>In any way that violates any applicable national or international law or regulation</li>
-                <li>To transmit, or procure the sending of, any advertising or promotional material</li>
-                <li>To impersonate or attempt to impersonate the company, employees, or other users</li>
-                <li>In any way that infringes upon the rights of others</li>
-            </ul>
-        </section>
-
-        <section style="margin-bottom: 30px;">
-            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">Intellectual Property</h2>
-            <p>The Service and its original content, features, and functionality are and will remain the exclusive property of {{ name_platform }} and its licensors. The Service is protected by copyright, trademark, and other laws.</p>
-        </section>
-
-        <section style="margin-bottom: 30px;">
-            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">Disclaimer</h2>
-            <p>The information on this Service is provided on an "as is" basis. To the fullest extent permitted by law, {{ name_platform }} excludes all representations, warranties, and conditions relating to our Service and the use of this Service.</p>
-        </section>
-
-        <section style="margin-bottom: 30px;">
-            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">Limitation of Liability</h2>
-            <p>In no event shall {{ name_platform }}, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses.</p>
-        </section>
-
-        <section style="margin-bottom: 30px;">
-            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">Termination</h2>
-            <p>We may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.</p>
-        </section>
-
-        <section style="margin-bottom: 30px;">
-            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">Changes to Terms</h2>
-            <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days notice prior to any new terms taking effect.</p>
-        </section>
-
-        <section style="margin-bottom: 30px;">
-            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">Contact Information</h2>
-            <p>If you have any questions about these Terms of Use, please contact us at:</p>
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">1. {{ _('Introduction') }}</h2>
             <p>
-                <strong>Email:</strong> <a href="mailto:knowemployee.ai@gmail.com" style="color: #2a94f4;">knowemployee.ai@gmail.com</a><br>
-                <strong>Phone:</strong> <a href="tel:+14372391720" style="color: #2a94f4;">+14372391720 CA</a><br>
-                <strong>Address:</strong> Fredericton, New Brunswick
+                {{ _('Welcome to Knowemployee ("we", "us", "our"). These Terms and Conditions govern your access to and use of the Knowemployee website and platform (the "Service"). By accessing or using the Service, you agree to be bound by these Terms and any applicable policies referenced herein.') }}
+            </p>
+            <p>
+                {{ _('If you do not agree with any part of these Terms, you must not use the Service.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">2. {{ _('Privacy and Data Protection') }}</h2>
+            <p>
+                {{ _('Your use of the Service is also governed by our Privacy Policy, which explains how we collect, use, store, and disclose information when you visit or use the website. The Privacy Policy is incorporated into these Terms by reference and can be found here:') }} <a href="{{ url_for('privacy_policy') }}" style="color: #2a94f4;">https://knowemployee.com/privacy-policy</a>.
+            </p>
+            <p>
+                {{ _('By using the Service, you consent to the collection and use of your information as outlined in the Privacy Policy.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">3. {{ _('Eligibility') }}</h2>
+            <p>
+                {{ _('You must be at least 18 years old and legally capable of entering into a binding agreement to use our Service. If you use the Service on behalf of your organization, you represent that you are authorized to bind that organization to these Terms.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">4. {{ _('Account Registration') }}</h2>
+            <p>
+                {{ _('To access certain features, you may be required to create an account. You are responsible for keeping your account information accurate and for maintaining the confidentiality of your credentials.') }}
+            </p>
+            <p>
+                {{ _('You agree to notify us immediately of any unauthorized use of your account.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">5. {{ _('Use of the Service') }}</h2>
+            <p>
+                {{ _('You agree to use the Service legally and in compliance with these Terms, including any content or features made available through the platform.') }}
+            </p>
+            <p>
+                {{ _('You may not use the Service to:') }}
+            </p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>{{ _('Violate any applicable laws or rights of third parties') }}</li>
+                <li>{{ _('Attempt to re-identify anonymous users') }}</li>
+                <li>{{ _('Upload harmful content or engage in malicious activities') }}</li>
+            </ul>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">6. {{ _('Intellectual Property') }}</h2>
+            <p>
+                {{ _('All content provided on the Service, including software, text, graphics, logos, models, and trademarks, is owned by Knowemployee or its licensors and is protected by applicable intellectual property laws.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">7. {{ _('Anonymous Feedback and AI Features') }}</h2>
+            <p>
+                {{ _('Your Service may include features that support anonymous employee feedback. While we design systems to protect personal identity, no system is perfect. Organizations are responsible for survey design to avoid unintended re-identification.') }}
+            </p>
+            <p>
+                {{ _('AI-generated analyses are provided for informational purposes only and should not be relied upon as professional advice.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">8. {{ _('Data Handling and Cookies') }}</h2>
+            <p>
+                {{ _('We use cookies and similar technologies as described in the Privacy Policy to support necessary functions and improve user experience across the Service.') }}
+            </p>
+            <p>
+                {{ _('You may manage your cookie preferences as outlined in the Privacy Policy.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">9. {{ _('Service Modifications and Availability') }}</h2>
+            <p>
+                {{ _('We may modify, suspend, or discontinue the Service (or any feature) at any time without prior notice.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">10. {{ _('Limitation of Liability') }}</h2>
+            <p>
+                {{ _('To the maximum extent permitted by law:') }}
+            </p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>{{ _('Knowemployee shall not be liable for indirect or consequential losses') }}</li>
+                <li>{{ _('Our total liability under these Terms shall not exceed amounts paid to us for the Service in the previous 12 months (if any)') }}</li>
+            </ul>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">11. {{ _('Termination') }}</h2>
+            <p>
+                {{ _('We may terminate or suspend your access to the Service at any time, with or without cause, including if you breach these Terms.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">12. {{ _('Governing Law') }}</h2>
+            <p>
+                {{ _('These Terms shall be governed by the laws of [specify jurisdiction, e.g., Luxembourg/EU law] without regard to conflict of law principles.') }}
+            </p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid #444; margin: 30px 0;">
+
+        <section style="margin-bottom: 30px;">
+            <h2 style="font-size: 24px; margin-top: 30px; margin-bottom: 15px;">13. {{ _('Contact') }}</h2>
+            <p>
+                {{ _('If you have questions about these Terms, contact us at:') }}
+            </p>
+            <p>
+                <strong>Knowemployee</strong><br>
+                <strong>{{ _('Email:') }}</strong> <a href="mailto:knowemployee.ai@gmail.com" style="color: #2a94f4;">knowemployee.ai@gmail.com</a><br>
+                <strong>{{ _('Website:') }}</strong> <a href="https://knowemployee.com" style="color: #2a94f4;">https://knowemployee.com</a>
             </p>
         </section>
     </div>
@@ -86,4 +164,3 @@
 {% block scripts %}
 <script src="{{ url_for('static', filename='assets/menu/script.js') }}"></script>
 {% endblock %}
-

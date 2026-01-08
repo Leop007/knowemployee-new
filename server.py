@@ -279,10 +279,12 @@ def run_migrations():
             # Run any pending migrations
             try:
                 upgrade()
+                logger.info("Database migrations completed successfully")
             except Exception as e:
                 # If upgrade fails, it might be because tables don't match migrations
                 # This is okay for fresh databases that were just created
-                logger.debug(f"Migration upgrade note: {e}")
+                logger.warning(f"Migration upgrade failed: {e}")
+                logger.warning("You may need to run 'flask db upgrade' manually")
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -561,7 +563,7 @@ def metric_feedback():
 
 @app.route('/terms')
 def terms():
-    return render_template('terms.html', name_platform=NAME_PLATFORM)
+    return render_template('terms.html', name_platform=NAME_PLATFORM, DOMAIN=DOMAIN)
 
 def token_required(f):
     @wraps(f)

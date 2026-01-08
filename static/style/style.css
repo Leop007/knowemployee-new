@@ -561,6 +561,22 @@ body {
   object-fit: cover;
 }
 
+.thank_you .company .image .company-initials,
+.q .company .image .company-initials,
+.content .company .image .company-initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #53EB12;
+  color: #fff;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
 .thank_you .company h3,
 .q .company h3,
 .content .company h3 {
@@ -1211,7 +1227,7 @@ html {
   color: #AFAFAF;
 }
 
-/* Logo positioning at top left, aligned with language selector */
+/* Logo positioning at top left */
 .logo-top {
   position: fixed;
   top: 10px;
@@ -1222,9 +1238,74 @@ html {
   align-items: center;
 }
 
-.logo-top img {
+/* Language selector positioning - same as home page */
+.language-selector {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 9999;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: #444;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.language-selector:hover {
+  opacity: 0.8;
+  border-color: #34DD0A;
+}
+
+.language-selector:focus {
+  border-color: #34DD0A;
+  box-shadow: 0 0 0 2px rgba(52, 221, 10, 0.2);
+}
+
+@media (max-width: 768px) {
+  .language-selector {
+    top: 10px;
+    right: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
+
+.logo-top .image {
+  width: 60px;
   height: 60px;
-  width: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-top .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-top .image .company-initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #53EB12;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 /* Enable scrolling on the page - allow section to grow and body to scroll */
