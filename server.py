@@ -1556,6 +1556,20 @@ def settings(current_user):
     }
     return render_template('dashboard.html', data_page=data_page)
 
+#! Plan
+@app.route('/plan', methods=['GET'])
+@token_required
+def plan(current_user):
+    user_data = getUserData(current_user)
+    
+    data_page = {
+        "title": "Plan",
+        "path": request.path,
+        "name_platform": NAME_PLATFORM,
+        "user_data": user_data
+    }
+    return render_template('plan_popup.html', data_page=data_page)
+
 #! Logout
 @app.route('/logout', methods=['GET'])
 def logout():

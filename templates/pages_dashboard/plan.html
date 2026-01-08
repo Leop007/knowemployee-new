@@ -1,0 +1,147 @@
+<div class="plan-page">
+    <div class="plan-header">
+        <h2>{{ _('Choose Your Plan') }}</h2>
+        <p class="current-plan-info">{{ _('Your current plan:') }} <strong>{{ current_plan }}</strong></p>
+    </div>
+
+    <div class="plans-container">
+        <!-- Trial Plan -->
+        <div class="plan-card {% if current_plan == 'Trial' %}active{% endif %}">
+            <div class="plan-header-card">
+                <h3>{{ _('Trial') }}</h3>
+                <div class="plan-price">
+                    <span class="price-amount">{{ _('Free') }}</span>
+                </div>
+            </div>
+            <div class="plan-features">
+                <ul>
+                    <li>{{ _('Basic features') }}</li>
+                    <li>{{ _('Limited surveys') }}</li>
+                    <li>{{ _('Basic analytics') }}</li>
+                    <li>{{ _('Email support') }}</li>
+                </ul>
+            </div>
+            <div class="plan-action">
+                {% if current_plan == 'Trial' %}
+                    <button class="plan-button current" disabled>{{ _('Current Plan') }}</button>
+                {% else %}
+                    <button class="plan-button" onclick="changePlan('Trial')">{{ _('Select Plan') }}</button>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Basic Plan -->
+        <div class="plan-card {% if current_plan == 'Basic' %}active{% endif %}">
+            <div class="plan-header-card">
+                <h3>{{ _('Basic') }}</h3>
+                <div class="plan-price">
+                    <span class="currency">$</span>
+                    <span class="price-amount">29</span>
+                    <span class="price-period">/{{ _('month') }}</span>
+                </div>
+            </div>
+            <div class="plan-features">
+                <ul>
+                    <li>{{ _('All Trial features') }}</li>
+                    <li>{{ _('Unlimited surveys') }}</li>
+                    <li>{{ _('Advanced analytics') }}</li>
+                    <li>{{ _('Priority support') }}</li>
+                    <li>{{ _('Custom branding') }}</li>
+                </ul>
+            </div>
+            <div class="plan-action">
+                {% if current_plan == 'Basic' %}
+                    <button class="plan-button current" disabled>{{ _('Current Plan') }}</button>
+                {% else %}
+                    <button class="plan-button" onclick="changePlan('Basic')">{{ _('Select Plan') }}</button>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Pro Plan -->
+        <div class="plan-card {% if current_plan == 'Pro' %}active{% endif %} featured">
+            <div class="plan-badge">{{ _('Popular') }}</div>
+            <div class="plan-header-card">
+                <h3>{{ _('Pro') }}</h3>
+                <div class="plan-price">
+                    <span class="currency">$</span>
+                    <span class="price-amount">79</span>
+                    <span class="price-period">/{{ _('month') }}</span>
+                </div>
+            </div>
+            <div class="plan-features">
+                <ul>
+                    <li>{{ _('All Basic features') }}</li>
+                    <li>{{ _('Unlimited surveys') }}</li>
+                    <li>{{ _('Advanced AI analytics') }}</li>
+                    <li>{{ _('24/7 Priority support') }}</li>
+                    <li>{{ _('Custom branding') }}</li>
+                    <li>{{ _('API access') }}</li>
+                    <li>{{ _('Team collaboration') }}</li>
+                </ul>
+            </div>
+            <div class="plan-action">
+                {% if current_plan == 'Pro' %}
+                    <button class="plan-button current" disabled>{{ _('Current Plan') }}</button>
+                {% else %}
+                    <button class="plan-button featured" onclick="changePlan('Pro')">{{ _('Select Plan') }}</button>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="plan-card {% if current_plan == 'Enterprise' %}active{% endif %}">
+            <div class="plan-header-card">
+                <h3>{{ _('Enterprise') }}</h3>
+                <div class="plan-price">
+                    <span class="price-amount">{{ _('Custom') }}</span>
+                </div>
+            </div>
+            <div class="plan-features">
+                <ul>
+                    <li>{{ _('All Pro features') }}</li>
+                    <li>{{ _('Unlimited everything') }}</li>
+                    <li>{{ _('Dedicated account manager') }}</li>
+                    <li>{{ _('Custom integrations') }}</li>
+                    <li>{{ _('SLA guarantee') }}</li>
+                    <li>{{ _('On-premise option') }}</li>
+                </ul>
+            </div>
+            <div class="plan-action">
+                {% if current_plan == 'Enterprise' %}
+                    <button class="plan-button current" disabled>{{ _('Current Plan') }}</button>
+                {% else %}
+                    <button class="plan-button" onclick="changePlan('Enterprise')">{{ _('Contact Sales') }}</button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function changePlan(planName) {
+    if (confirm('{{ _("Are you sure you want to change your plan to") }} ' + planName + '?')) {
+        // TODO: Implement plan change API call
+        fetch('/api/change-plan', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ plan: planName })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('{{ _("Plan changed successfully!") }}');
+                window.location.reload();
+            } else {
+                alert(data.message || '{{ _("Failed to change plan") }}');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('{{ _("An error occurred. Please try again.") }}');
+        });
+    }
+}
+</script>

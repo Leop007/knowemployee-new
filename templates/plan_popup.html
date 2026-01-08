@@ -1,0 +1,603 @@
+{% include './components/_head.html' %}
+
+<div class="plan-popup-container">
+    <div class="plan-popup-header">
+        <h1>{{ _('Choose Your Plan') }}</h1>
+        <div class="plan-popup-language-selector">
+            {% include './components/_language_selector.html' %}
+        </div>
+    </div>
+
+    <div class="plan-popup-content">
+        {% set plan_value = data_page.user_data.plan|string|trim if data_page.user_data.plan else '' %}
+        {% set current_plan = 'Free' if not plan_value or plan_value == '0' or plan_value == 'False' or plan_value == 'false' else plan_value %}
+        
+        <p class="current-plan-info">{{ _('Your current plan:') }} <strong>{{ current_plan }}</strong></p>
+        
+        <div class="plans-carousel-wrapper">
+            <button class="carousel-prev" onclick="moveCarousel(-1)" aria-label="Previous plan">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="plans-container-popup" id="plans-carousel">
+                <!-- Free Plan -->
+                <div class="plan-card-popup carousel-slide {% if current_plan == 'Free' %}active{% endif %}">
+                <div class="plan-header-card">
+                    <h3>{{ _('Free') }}</h3>
+                    <div class="plan-price">
+                        <span class="currency">$</span>
+                        <span class="price-amount">0</span>
+                        <span class="price-period">/{{ _('month') }}</span>
+                    </div>
+                </div>
+                <div class="plan-features">
+                    <ul>
+                        <li>{{ _('Basic features') }}</li>
+                        <li>{{ _('Limited surveys') }}</li>
+                        <li>{{ _('Basic analytics') }}</li>
+                        <li>{{ _('Email support') }}</li>
+                    </ul>
+                </div>
+                <div class="plan-action">
+                    {% if current_plan == 'Free' %}
+                        <button class="plan-button current" disabled>{{ _('Current Plan') }}</button>
+                    {% else %}
+                        <button class="plan-button" onclick="changePlan('Free')">{{ _('Select Plan') }}</button>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Basic Plan -->
+            <div class="plan-card-popup carousel-slide {% if current_plan == 'Basic' %}active{% endif %}">
+                <div class="plan-header-card">
+                    <h3>{{ _('Basic') }}</h3>
+                    <div class="plan-price">
+                        <span class="currency">$</span>
+                        <span class="price-amount">29</span>
+                        <span class="price-period">/{{ _('month') }}</span>
+                    </div>
+                </div>
+                <div class="plan-features">
+                    <ul>
+                        <li>{{ _('All Free features') }}</li>
+                        <li>{{ _('Unlimited surveys') }}</li>
+                        <li>{{ _('Advanced analytics') }}</li>
+                        <li>{{ _('Priority support') }}</li>
+                        <li>{{ _('Custom branding') }}</li>
+                    </ul>
+                </div>
+                <div class="plan-action">
+                    {% if current_plan == 'Basic' %}
+                        <button class="plan-button current" disabled>{{ _('Current Plan') }}</button>
+                    {% else %}
+                        <button class="plan-button" onclick="changePlan('Basic')">{{ _('Select Plan') }}</button>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="plan-card-popup carousel-slide {% if current_plan == 'Pro' %}active{% endif %}">
+                <div class="plan-badge">{{ _('Popular') }}</div>
+                <div class="plan-header-card">
+                    <h3>{{ _('Pro') }}</h3>
+                    <div class="plan-price">
+                        <span class="currency">$</span>
+                        <span class="price-amount">79</span>
+                        <span class="price-period">/{{ _('month') }}</span>
+                    </div>
+                </div>
+                <div class="plan-features">
+                    <ul>
+                        <li>{{ _('All Basic features') }}</li>
+                        <li>{{ _('Unlimited surveys') }}</li>
+                        <li>{{ _('Advanced AI analytics') }}</li>
+                        <li>{{ _('24/7 Priority support') }}</li>
+                        <li>{{ _('Custom branding') }}</li>
+                        <li>{{ _('API access') }}</li>
+                        <li>{{ _('Team collaboration') }}</li>
+                    </ul>
+                </div>
+                <div class="plan-action">
+                    {% if current_plan == 'Pro' %}
+                        <button class="plan-button current" disabled>{{ _('Current Plan') }}</button>
+                    {% else %}
+                        <button class="plan-button" onclick="changePlan('Pro')">{{ _('Select Plan') }}</button>
+                    {% endif %}
+                </div>
+            </div>
+            <button class="carousel-next" onclick="moveCarousel(1)" aria-label="Next plan">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Carousel functionality for mobile
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.dot');
+
+function updateCarousel() {
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) {
+        // On desktop, show all slides
+        slides.forEach((slide, index) => {
+            slide.style.display = 'flex';
+            slide.style.transform = 'translateX(0)';
+        });
+        return;
+    }
+    
+    // On mobile, show only current slide
+    slides.forEach((slide, index) => {
+        if (index === currentSlide) {
+            slide.style.display = 'flex';
+            slide.style.transform = 'translateX(0)';
+        } else {
+            slide.style.display = 'none';
+        }
+    });
+    
+    // Update dots
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+    });
+}
+
+function moveCarousel(direction) {
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) return;
+    
+    currentSlide += direction;
+    if (currentSlide < 0) currentSlide = slides.length - 1;
+    if (currentSlide >= slides.length) currentSlide = 0;
+    
+    updateCarousel();
+}
+
+function goToSlide(index) {
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) return;
+    
+    currentSlide = index;
+    updateCarousel();
+}
+
+// Initialize carousel on load and resize
+window.addEventListener('load', updateCarousel);
+window.addEventListener('resize', updateCarousel);
+
+// Touch swipe support for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+const carousel = document.getElementById('plans-carousel');
+if (carousel) {
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+}
+
+function handleSwipe() {
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) return;
+    
+    if (touchEndX < touchStartX - 50) {
+        moveCarousel(1); // Swipe left - next
+    }
+    if (touchEndX > touchStartX + 50) {
+        moveCarousel(-1); // Swipe right - previous
+    }
+}
+
+function changePlan(planName) {
+    if (confirm('{{ _("Are you sure you want to change your plan to") }} ' + planName + '?')) {
+        fetch('/api/change-plan', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ plan: planName })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('{{ _("Plan changed successfully!") }}');
+                window.opener.location.reload(); // Reload parent window
+                window.close(); // Close popup
+            } else {
+                alert(data.message || '{{ _("Failed to change plan") }}');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('{{ _("An error occurred. Please try again.") }}');
+        });
+    }
+}
+</script>
+
+<style>
+.plan-popup-container {
+    width: 100%;
+    min-height: 100vh;
+    background: #fafafa;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.plan-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.plan-popup-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.plan-popup-language-selector {
+    display: flex;
+    align-items: center;
+}
+
+.plan-popup-language-selector .language-selector {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: #444;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.plan-popup-language-selector .language-selector:hover {
+    opacity: 0.8;
+    border-color: #34DD0A;
+}
+
+.plan-popup-language-selector .language-selector:focus {
+    border-color: #34DD0A;
+    box-shadow: 0 0 0 2px rgba(52, 221, 10, 0.2);
+}
+
+.plan-popup-content {
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.current-plan-info {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.current-plan-info strong {
+    color: #53EB12;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.plans-carousel-wrapper {
+    position: relative;
+    margin-top: 30px;
+}
+
+.plans-container-popup {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    overflow: visible;
+}
+
+@media (max-width: 900px) {
+    .plans-container-popup {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .plans-carousel-wrapper {
+        position: relative;
+        padding: 15px 50px 0;
+        overflow: visible;
+    }
+    
+    .plans-container-popup {
+        display: flex;
+        overflow: visible;
+        gap: 0;
+    }
+    
+    .plan-card-popup.carousel-slide {
+        min-width: 100%;
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+    }
+    
+    .carousel-prev,
+    .carousel-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        border: 2px solid #53EB12;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .carousel-prev {
+        left: 0;
+    }
+    
+    .carousel-next {
+        right: 0;
+    }
+    
+    .carousel-prev:hover,
+    .carousel-next:hover {
+        background: #53EB12;
+        color: #000;
+    }
+    
+    .carousel-prev svg,
+    .carousel-next svg {
+        width: 20px;
+        height: 20px;
+        stroke: #53EB12;
+    }
+    
+    .carousel-prev:hover svg,
+    .carousel-next:hover svg {
+        stroke: #000;
+    }
+    
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .carousel-dots .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ddd;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .carousel-dots .dot.active {
+        background: #53EB12;
+        width: 30px;
+        border-radius: 5px;
+    }
+}
+
+@media (min-width: 769px) {
+    .carousel-prev,
+    .carousel-next,
+    .carousel-dots {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .plan-popup-header {
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .plan-popup-header h1 {
+        font-size: 22px;
+        flex: 1;
+    }
+    
+    .plan-popup-language-selector {
+        flex-shrink: 0;
+    }
+}
+
+.plan-card-popup {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid transparent;
+    overflow: visible;
+    transform-origin: center;
+}
+
+@media (min-width: 769px) {
+    .plan-card-popup:hover {
+        transform: translateY(-15px) scale(1.15) !important;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2) !important;
+        z-index: 5;
+    }
+}
+
+@media (max-width: 768px) {
+    .plan-card-popup:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.plan-card-popup.active {
+    border-color: #53EB12;
+    box-shadow: 0 4px 12px rgba(83, 235, 18, 0.3);
+}
+
+.plan-card-popup .plan-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: #53EB12;
+    color: #000;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 10;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateZ(0);
+}
+
+.plan-card-popup .plan-header-card {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.plan-card-popup .plan-header-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.plan-card-popup .plan-header-card .plan-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+}
+
+.plan-card-popup .plan-header-card .plan-price .currency {
+    font-size: 20px;
+    font-weight: 600;
+    color: #666;
+}
+
+.plan-card-popup .plan-header-card .plan-price .price-amount {
+    font-size: 36px;
+    font-weight: 800;
+    color: #333;
+}
+
+.plan-card-popup .plan-header-card .plan-price .price-period {
+    font-size: 16px;
+    color: #666;
+}
+
+.plan-card-popup .plan-features {
+    flex: 1;
+    margin-bottom: 25px;
+}
+
+.plan-card-popup .plan-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.plan-card-popup .plan-features ul li {
+    padding: 10px 0;
+    color: #555;
+    font-size: 14px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.plan-card-popup .plan-features ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #53EB12;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.plan-card-popup .plan-action {
+    margin-top: auto;
+}
+
+.plan-card-popup .plan-button {
+    width: 100%;
+    padding: 12px 24px;
+    border: 2px solid #53EB12;
+    border-radius: 8px;
+    background: transparent;
+    color: #53EB12;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.plan-card-popup .plan-button:hover:not(:disabled) {
+    background: #53EB12;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(83, 235, 18, 0.3);
+}
+
+.plan-card-popup .plan-button.current {
+    background: #424141;
+    color: #fff;
+    border-color: #424141;
+    cursor: not-allowed;
+}
+
+.plan-card-popup .plan-button.featured {
+    background: #53EB12;
+    color: #000;
+    border-color: #53EB12;
+}
+
+.plan-card-popup .plan-button.featured:hover {
+    background: #37A408;
+    color: #fff;
+    border-color: #37A408;
+}
+
+.plan-card-popup .plan-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+</style>

@@ -1,0 +1,170 @@
+<!-- Plan Modal for Mobile -->
+<div id="plan-modal" class="plan-modal" style="display: none;">
+    <div class="plan-modal-overlay" onclick="closePlanModal()"></div>
+    <div class="plan-modal-content">
+        <div class="plan-modal-header">
+            <h2>{{ _('Choose Your Plan') }}</h2>
+            <button class="plan-modal-close" onclick="closePlanModal()" aria-label="Close">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="plan-modal-body">
+            <p class="current-plan-info">{{ _('Your current plan:') }} <strong id="current-plan-display">{{ current_plan }}</strong></p>
+            
+            <div class="plans-container-modal">
+                <!-- Basic Plan -->
+                <div class="plan-card-modal {% if current_plan == 'Basic' %}active{% endif %}">
+                    <div class="plan-header-card">
+                        <h3>{{ _('Basic') }}</h3>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="price-amount">29</span>
+                            <span class="price-period">/{{ _('month') }}</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li>{{ _('All Free features') }}</li>
+                            <li>{{ _('Unlimited surveys') }}</li>
+                            <li>{{ _('Advanced analytics') }}</li>
+                            <li>{{ _('Priority support') }}</li>
+                            <li>{{ _('Custom branding') }}</li>
+                        </ul>
+                    </div>
+                    <div class="plan-action">
+                        {% if current_plan == 'Basic' %}
+                            <button class="plan-button current" disabled>{{ _('Current Plan') }}</button>
+                        {% else %}
+                            <button class="plan-button" onclick="changePlan('Basic')">{{ _('Select Plan') }}</button>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="plan-card-modal {% if current_plan == 'Pro' %}active{% endif %} featured">
+                    <div class="plan-badge">{{ _('Popular') }}</div>
+                    <div class="plan-header-card">
+                        <h3>{{ _('Pro') }}</h3>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="price-amount">79</span>
+                            <span class="price-period">/{{ _('month') }}</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li>{{ _('All Basic features') }}</li>
+                            <li>{{ _('Unlimited surveys') }}</li>
+                            <li>{{ _('Advanced AI analytics') }}</li>
+                            <li>{{ _('24/7 Priority support') }}</li>
+                            <li>{{ _('Custom branding') }}</li>
+                            <li>{{ _('API access') }}</li>
+                            <li>{{ _('Team collaboration') }}</li>
+                        </ul>
+                    </div>
+                    <div class="plan-action">
+                        {% if current_plan == 'Pro' %}
+                            <button class="plan-button current" disabled>{{ _('Current Plan') }}</button>
+                        {% else %}
+                            <button class="plan-button featured" onclick="changePlan('Pro')">{{ _('Select Plan') }}</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Make function globally available
+window.openPlanModal = function() {
+    const modal = document.getElementById('plan-modal');
+    console.log('openPlanModal called', modal, window.innerWidth);
+    if (!modal) {
+        console.error('Modal element not found!');
+        return;
+    }
+    
+    // Force show modal
+    modal.style.cssText = 'display: flex !important; position: fixed !important; z-index: 999999 !important; top: 0 !important; left: 0 !important; width: 100vw !important; height: 100vh !important;';
+    document.body.style.overflow = 'hidden';
+    
+    // Prevent scrolling of underlying content
+    const main = document.querySelector('.main');
+    const container = document.querySelector('.dashboard_container');
+    if (main) main.style.setProperty('overflow', 'hidden', 'important');
+    if (container) container.style.setProperty('overflow', 'hidden', 'important');
+    
+    console.log('Modal should be visible now', modal.style.display);
+};
+
+// Also define it in global scope for inline onclick
+if (typeof openPlanModal === 'undefined') {
+    var openPlanModal = window.openPlanModal;
+}
+
+function closePlanModal() {
+    const modal = document.getElementById('plan-modal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        // Restore scrolling of underlying content
+        document.querySelector('.main')?.style.removeProperty('overflow');
+        document.querySelector('.dashboard_container')?.style.removeProperty('overflow');
+    }
+}
+
+function changePlan(planName) {
+    if (confirm('{{ _("Are you sure you want to change your plan to") }} ' + planName + '?')) {
+        // TODO: Implement plan change API call
+        fetch('/api/change-plan', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ plan: planName })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('{{ _("Plan changed successfully!") }}');
+                // Update current plan display
+                const currentPlanDisplay = document.getElementById('current-plan-display');
+                if (currentPlanDisplay) {
+                    currentPlanDisplay.textContent = planName;
+                }
+                // Reload to update UI
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1000);
+            } else {
+                alert(data.message || '{{ _("Failed to change plan") }}');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('{{ _("An error occurred. Please try again.") }}');
+        });
+    }
+}
+
+// Close modal on ESC key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closePlanModal();
+    }
+});
+
+// Ensure functions are available when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Plan modal script loaded');
+    const modal = document.getElementById('plan-modal');
+    console.log('Modal element found:', modal);
+    if (modal) {
+        console.log('Modal initial display:', modal.style.display);
+    }
+});
+</script>

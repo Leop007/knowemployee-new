@@ -49,6 +49,8 @@
 </div>
 
 <div class="sub_menu"> 
-    <h3>{{ _('Your plan:') }} {{ _('Trial') if data_page.user_data.plan == '0' else data_page.user_data.plan }}</h3>
-    <a href="/plan">{{ _('Change plan') }}</a>
+    {% set plan_value = data_page.user_data.plan|string|trim if data_page.user_data.plan else '' %}
+    {% set plan_display = _('Free') if not plan_value or plan_value == '0' or plan_value == 'False' or plan_value == 'false' else plan_value %}
+    <h3>{{ _('Your plan is:') }} {{ plan_display }}</h3>
+    <a href="#" class="plan-link" onclick="event.preventDefault(); if (window.innerWidth < 769) { window.open('/plan', 'planWindow', 'width=500,height=700,scrollbars=yes,resizable=yes'); } else { window.open('/plan', 'planWindow', 'width=800,height=900,scrollbars=yes,resizable=yes'); } return false;">{{ _('Change plan') }}</a>
 </div>

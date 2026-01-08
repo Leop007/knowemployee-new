@@ -91,4 +91,8 @@
 {{ data_page.script|safe }}
 {% endif %}
 
+{% set plan_value = data_page.user_data.plan|string|trim if data_page.user_data.plan else '' %}
+{% set current_plan = 'Free' if not plan_value or plan_value == '0' or plan_value == 'False' or plan_value == 'false' else plan_value %}
+{% include './components/_plan_modal.html' %}
+
 {% include './components/_footer.html' %}
