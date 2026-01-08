@@ -245,6 +245,28 @@ body > .container {
     transform: translateY(-50%) !important;
     right: 20px !important;
     z-index: 10000;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: #444;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    
+    &:hover {
+      opacity: 0.8;
+      border-color: #34DD0A;
+    }
+    
+    &:focus {
+      border-color: #34DD0A;
+      box-shadow: 0 0 0 2px rgba(52, 221, 10, 0.2);
+    }
   }
 }
 
